@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://daya0576.github.io//sitemap.xml 
+Sitemap: http://www.changchen.com/sitemap.xml 

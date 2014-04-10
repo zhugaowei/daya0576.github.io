@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://daya0576.github.io//atom.xml" rel="self"/>
-  <link href="http://daya0576.github.io//"/>
-  <updated>2014-04-10T20:09:23+08:00</updated>
-  <id>http://daya0576.github.io//</id>
+  <link href="http://www.changchen.com/atom.xml" rel="self"/>
+  <link href="http://www.changchen.com/"/>
+  <updated>2014-04-10T20:21:49+08:00</updated>
+  <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[topit.me的icon]]></title>
-    <link href="http://daya0576.github.io//blog/20140408/icon-surprise/"/>
+    <link href="http://www.changchen.com/blog/20140408/icon-surprise/"/>
     <updated>2014-04-08T16:10:38+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140408/icon-surprise</id>
+    <id>http://www.changchen.com/blog/20140408/icon-surprise</id>
     <content type="html"><![CDATA[<h3>最近想把网页的icon换一下</h3>
 
 <h3>就想偷用<code>topit.me/favicon.ico</code>的那个16*16的粉红色爱心</h3>
@@ -29,7 +29,7 @@
 <!--more-->
 
 
-<p><img src="http://daya0576.github.io//images\blog\140408_topitme\1.jpg" alt="ico_topitme" /></p>
+<p><img src="http://www.changchen.com/images\blog\140408_topitme\1.jpg" alt="ico_topitme" /></p>
 
 <p>边缘的粉色真的是十多种透明度。   也太用心了。</p>
 
@@ -40,9 +40,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
-    <link href="http://daya0576.github.io//blog/20140407/octopress-tips-test-web/"/>
+    <link href="http://www.changchen.com/blog/20140407/octopress-tips-test-web/"/>
     <updated>2014-04-07T20:21:46+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140407/octopress-tips-test-web</id>
+    <id>http://www.changchen.com/blog/20140407/octopress-tips-test-web</id>
     <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
 
 <p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
@@ -63,14 +63,14 @@
   
   <entry>
     <title type="html"><![CDATA[【探78】【小船】和幸~~日式调调~呼]]></title>
-    <link href="http://daya0576.github.io//blog/20140407/two-year-meeting-day/"/>
+    <link href="http://www.changchen.com/blog/20140407/two-year-meeting-day/"/>
     <updated>2014-04-07T14:52:59+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140407/two-year-meeting-day</id>
+    <id>http://www.changchen.com/blog/20140407/two-year-meeting-day</id>
     <content type="html"><![CDATA[<p><a href="http://s.dianping.com/topic/7162596"><strong>&mdash;&ndash;> 原文</strong></a></p>
 
 <p>嘻嘻 清明假期 和幸店小试。</p>
 
-<p><img src="http://daya0576.github.io//images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
+<p><img src="http://www.changchen.com/images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
 
 <!--more-->
 
@@ -84,9 +84,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cousera-学习记录-Week2]]></title>
-    <link href="http://daya0576.github.io//blog/20140407/cousera-week2/"/>
+    <link href="http://www.changchen.com/blog/20140407/cousera-week2/"/>
     <updated>2014-04-07T13:44:25+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140407/cousera-week2</id>
+    <id>http://www.changchen.com/blog/20140407/cousera-week2</id>
     <content type="html"><![CDATA[<h1>欢迎使用 Cmd &ndash; 在线 Markdown 编辑阅读器</h1>
 
 <hr />
@@ -240,18 +240,18 @@
   
   <entry>
     <title type="html"><![CDATA[Test1]]></title>
-    <link href="http://daya0576.github.io//blog/20140405/test1/"/>
+    <link href="http://www.changchen.com/blog/20140405/test1/"/>
     <updated>2014-04-05T11:09:27+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140405/test1</id>
+    <id>http://www.changchen.com/blog/20140405/test1</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[My First Blog]]></title>
-    <link href="http://daya0576.github.io//blog/20140404/my-first-blog/"/>
+    <link href="http://www.changchen.com/blog/20140404/my-first-blog/"/>
     <updated>2014-04-04T21:38:49+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140404/my-first-blog</id>
+    <id>http://www.changchen.com/blog/20140404/my-first-blog</id>
     <content type="html"><![CDATA[<p>哈哈</p>
 
 <pre><code>这是我的第一篇blog，献给我最爱的cc~

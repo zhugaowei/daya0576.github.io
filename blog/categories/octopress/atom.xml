@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Octopress | My Octopress Blog]]></title>
-  <link href="http://daya0576.github.io//blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://daya0576.github.io//"/>
-  <updated>2014-04-10T20:09:23+08:00</updated>
-  <id>http://daya0576.github.io//</id>
+  <link href="http://www.changchen.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://www.changchen.com/"/>
+  <updated>2014-04-10T20:21:49+08:00</updated>
+  <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
-    <link href="http://daya0576.github.io//blog/20140407/octopress-tips-test-web/"/>
+    <link href="http://www.changchen.com/blog/20140407/octopress-tips-test-web/"/>
     <updated>2014-04-07T20:21:46+08:00</updated>
-    <id>http://daya0576.github.io//blog/20140407/octopress-tips-test-web</id>
+    <id>http://www.changchen.com/blog/20140407/octopress-tips-test-web</id>
     <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
 
 <p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
