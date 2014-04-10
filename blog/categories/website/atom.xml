@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Website | My Octopress Blog]]></title>
+  <link href="http://daya0576.github.io//blog/categories/website/atom.xml" rel="self"/>
+  <link href="http://daya0576.github.io//"/>
+  <updated>2014-04-10T20:09:23+08:00</updated>
+  <id>http://daya0576.github.io//</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[topit.me的icon]]></title>
+    <link href="http://daya0576.github.io//blog/20140408/icon-surprise/"/>
+    <updated>2014-04-08T16:10:38+08:00</updated>
+    <id>http://daya0576.github.io//blog/20140408/icon-surprise</id>
+    <content type="html"><![CDATA[<h3>最近想把网页的icon换一下</h3>
+
+<h3>就想偷用<code>topit.me/favicon.ico</code>的那个16*16的粉红色爱心</h3>
+
+<h3>改成背景色的</h3>
+
+<p>结果一打开。。</p>
+
+<!--more-->
+
+
+<p><img src="/images\blog\140408_topitme\1.jpg" alt="ico_topitme" /></p>
+
+<p>边缘的粉色真的是十多种透明度。   也太用心了。</p>
+
+<p>让人改的机会也没有     好吧放过你了    哈哈 <br/>
+再去找一个</p>
+]]></content>
+  </entry>
+  
+</feed>

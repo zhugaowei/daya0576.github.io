@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Me | My Octopress Blog]]></title>
+  <link href="http://daya0576.github.io//blog/categories/me/atom.xml" rel="self"/>
+  <link href="http://daya0576.github.io//"/>
+  <updated>2014-04-10T20:09:23+08:00</updated>
+  <id>http://daya0576.github.io//</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My First Blog]]></title>
+    <link href="http://daya0576.github.io//blog/20140404/my-first-blog/"/>
+    <updated>2014-04-04T21:38:49+08:00</updated>
+    <id>http://daya0576.github.io//blog/20140404/my-first-blog</id>
+    <content type="html"><![CDATA[<p>哈哈</p>
+
+<pre><code>这是我的第一篇blog，献给我最爱的cc~
+
+两周年快乐  (*^_^*) 
+</code></pre>
+
+<!--more-->
+
+]]></content>
+  </entry>
+  
+</feed>

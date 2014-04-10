@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | My Octopress Blog]]></title>
+  <link href="http://daya0576.github.io//blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://daya0576.github.io//"/>
+  <updated>2014-04-10T20:09:23+08:00</updated>
+  <id>http://daya0576.github.io//</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
+    <link href="http://daya0576.github.io//blog/20140407/octopress-tips-test-web/"/>
+    <updated>2014-04-07T20:21:46+08:00</updated>
+    <id>http://daya0576.github.io//blog/20140407/octopress-tips-test-web</id>
+    <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
+
+<p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
+
+<p>突然有一天想到为什么不开两个控制台。 <br/>
+一个一直"preview" 另一个用来"generate"</p>
+
+<p>然后又突然想到，<code>rake generate</code>如果不用是不是也可以。  <br/>
+结果真的只要保存了， 网页上就能直接反馈出来这样就真的方便多了，哈哈</p>
+
+<p><code>rake generate</code>：</p>
+
+<p>作者 <a href="http://weibo.com/2478163907">@daya0576</a>   <br/>
+于 2014 年 04月 07日  <br/>
+天津</p>
+]]></content>
+  </entry>
+  
+</feed>
