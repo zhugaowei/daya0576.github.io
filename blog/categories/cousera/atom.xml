@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Cousera | My Octopress Blog]]></title>
+  <link href="http://www.changchen.com/blog/categories/cousera/atom.xml" rel="self"/>
+  <link href="http://www.changchen.com/"/>
+  <updated>2014-04-13T21:28:11+08:00</updated>
+  <id>http://www.changchen.com/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cousera作业]]></title>
+    <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
+    <updated>2014-04-13T21:03:09+08:00</updated>
+    <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>哎   半夜把第三周的大作业写完了     差点来不及</p>
+
+<!--more-->
+
+
+<p>一个二分法猜数字的小游戏       都给出提示了    照着写就行了 <br/>
+可是用的是codeskullptor，还要翻个墙    心酸。</p>
+
+<p>```python</p>
+
+<h1>template for &ldquo;Guess the number&rdquo; mini-project</h1>
+
+<h1>input will come from buttons and an input field</h1>
+
+<h1>all output for the game will be printed in the console</h1>
+
+<p>import simplegui
+import random
+import math</p>
+
+<h1>initialize global variables used in your code</h1>
+
+<p>secret_number = 0
+remain = 0</p>
+
+<h1>define event handlers for control panel</h1>
+
+<p>def range100():</p>
+
+<pre><code># button that changes range to range [0,100) and restarts
+
+print "New game. Range is from 0 to 100"
+print "Number of remaining guesses is 7"
+
+global secret_number, remain
+secret_number = random.randrange(0, 100)
+remain = 7
+print 
+</code></pre>
+
+<p>def range1000():</p>
+
+<pre><code># button that changes range to range [0,1000) and restarts
+
+print "New game. Range is from 0 to 1000"
+print "Number of remaining guesses is 10"
+
+global secret_number, remain
+secret_number = random.randrange(0, 1000)
+remain = 10
+print
+</code></pre>
+
+<h1>helper function to start and restart the game</h1>
+
+<p>def new_game():</p>
+
+<pre><code> range100()
+</code></pre>
+
+<p>def input_guess(guess):</p>
+
+<pre><code># main game logic goes here 
+global remain
+print "Guess was " + guess
+
+
+guess = int(guess)
+if guess &gt; secret_number:
+    print "Lower!"
+elif guess &lt; secret_number:
+    print "Higher!"
+else:
+    print "Correct!\n"
+    new_game()
+remain = remain - 1
+print "Number of remaining guesses is %d"%(remain) 
+
+if remain == 0:
+    print "sorry u run out of range, the num is %d"%secret_number
+    new_game()
+
+print
+</code></pre>
+
+<h1>Handler to draw on canvas</h1>
+
+<p>def draw(canvas):</p>
+
+<pre><code>canvas.draw_text(message, [50,112], 48, "Red")
+</code></pre>
+
+<h1>create frame</h1>
+
+<p>f = simplegui.create_frame(&ldquo;Home&rdquo;, 300, 200)</p>
+
+<h1>register event handlers for control elements</h1>
+
+<p>f.add_button(&ldquo;Range is [0, 100)&rdquo;, range100, 200)
+f.add_button(&ldquo;Range is [0, 1000)&rdquo;, range1000, 200)
+f.add_input(&ldquo;Enter a guess&rdquo;, input_guess, 200)</p>
+
+<h1>call new_game and start frame</h1>
+
+<p>f.start()
+new_game()</p>
+
+<h1>always remember to check your completed program against the grading rubric</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>
