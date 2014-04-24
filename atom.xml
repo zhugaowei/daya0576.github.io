@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://www.changchen.com/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-04-17T22:20:52+08:00</updated>
+  <updated>2014-04-24T10:57:53+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -40,7 +40,7 @@
     <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
-<p>哎   半夜把第三周的大作业写完了     差点来不及</p>
+<p><strong>哎   半夜把第三周的大作业写完了     差点来不及  </strong></p>
 
 <!--more-->
 
