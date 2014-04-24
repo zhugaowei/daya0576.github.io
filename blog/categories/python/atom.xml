@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-04-24T10:57:53+08:00</updated>
+  <updated>2014-04-24T11:49:04+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux中安装python的egg包]]></title>
+    <link href="http://www.changchen.com/blog/20140424/linux-python-egg-install/"/>
+    <updated>2014-04-24T11:28:48+08:00</updated>
+    <id>http://www.changchen.com/blog/20140424/linux-python-egg-install</id>
+    <content type="html"><![CDATA[<h3>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h3>
+
+<p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
+networkx-1.1-py2.6.egg   <br/>
+然后下载 setuptools:<a href="https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea">setuptools-0.6c11-py2.7.egg (md5)</a></p>
+
+<h3>1. 安装setuptools</h3>
+
+<p><img src="\images\blog\140424_python_egg\1.png" alt="ico_topitme" /></p>
+
+<h3>2. 安装networkx</h3>
+
+<p><img src="\images\blog\140424_python_egg\2.png" alt="ico_topitme" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cousera作业]]></title>
