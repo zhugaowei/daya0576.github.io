@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-04-24T11:49:04+08:00</updated>
+  <updated>2014-04-24T12:09:28+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -18,7 +18,7 @@
     <link href="http://www.changchen.com/blog/20140424/linux-python-egg-install/"/>
     <updated>2014-04-24T11:28:48+08:00</updated>
     <id>http://www.changchen.com/blog/20140424/linux-python-egg-install</id>
-    <content type="html"><![CDATA[<h3>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h3>
+    <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
 
 <p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
 networkx-1.1-py2.6.egg   <br/>
