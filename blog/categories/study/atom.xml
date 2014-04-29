@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Study | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-04-24T12:09:28+08:00</updated>
+  <updated>2014-04-29T17:21:12+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,188 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
+    <link href="http://www.changchen.com/blog/20140429/cousera-pong/"/>
+    <updated>2014-04-29T16:27:47+08:00</updated>
+    <id>http://www.changchen.com/blog/20140429/cousera-pong</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>**小游戏~&ldquo;Pong&rdquo; <br/>
+这次时间还是挺充裕的，但是看英文看的头大，就没按步骤写了 <br/>
+结果花了更多的时间   还写错了一些  <br/>
+下次还是认真按步骤写好了</p>
+
+<p>我做的： <br/>
+<img src="\images\blog\140430_cousera\1.png" alt="ico_topitme" /></p>
+
+<p>改作业改到一个做的好有创意： 评语评了一句碉堡了 <br/>
+不知道看懂看不懂 哈哈 <br/>
+<img src="\images\blog\140430_cousera\2.png" alt="ico_topitme" /></p>
+
+<!--more-->
+
+
+<p>可以在<a href="http://www.codeskulptor.org/">codeskullptor</a>上运行 <br/>
+code: <br/>
+```python</p>
+
+<h1>Implementation of classic arcade game Pong</h1>
+
+<p>import simplegui
+import random</p>
+
+<h1>initialize globals &ndash; pos and vel encode vertical info for paddles</h1>
+
+<p>WIDTH = 600
+HEIGHT = 400     <br/>
+BALL_RADIUS = 20
+PAD_WIDTH = 8
+PAD_HEIGHT = 80
+HALF_PAD_WIDTH = PAD_WIDTH / 2
+HALF_PAD_HEIGHT = PAD_HEIGHT / 2
+LEFT = False
+RIGHT = True</p>
+
+<h1>initialize ball_pos and ball_vel for new bal in middle of table</h1>
+
+<h1>if direction is RIGHT, the ball&rsquo;s velocity is upper right, else upper left</h1>
+
+<p>def spawn_ball(direction):</p>
+
+<pre><code>global ball_pos, ball_vel # these are vectors stored as lists
+ball_pos = [WIDTH/2, HEIGHT/2]
+ball_vel = [random.randrange(1, 2)*2, random.randrange(-2, 2)+0.5]
+if(direction == "LEFT"):    ball_vel[0] = -ball_vel[0]
+</code></pre>
+
+<h1>define event handlers</h1>
+
+<p>def new_game():</p>
+
+<pre><code>global paddle1_pos, paddle2_pos, paddle1_vel, paddle2_vel  # these are numbers
+paddle1_pos = [HALF_PAD_WIDTH, HEIGHT / 2]
+paddle2_pos = [WIDTH - HALF_PAD_WIDTH, HEIGHT / 2]
+global score1, score2  # these are ints
+score1 = 0
+score2 = 0
+paddle2_vel = 0
+paddle1_vel = 0
+spawn_ball(random.choice(["LEFT", "RIGHT"]))
+</code></pre>
+
+<p>def draw(canvas):</p>
+
+<pre><code>global score1, score2, paddle1_pos, paddle2_pos, ball_pos, ball_vel
+global paddle2_vel, paddle1_vel
+
+
+# draw mid line and gutters
+canvas.draw_line([WIDTH / 2, 0],[WIDTH / 2, HEIGHT], 1, "White")
+canvas.draw_line([PAD_WIDTH, 0],[PAD_WIDTH, HEIGHT], 1, "White")
+canvas.draw_line([WIDTH - PAD_WIDTH, 0],[WIDTH - PAD_WIDTH, HEIGHT], 1, "White")
+
+# update ball
+ball_pos[0] += ball_vel[0]
+ball_pos[1] += ball_vel[1]      
+
+# draw ball
+canvas.draw_circle(ball_pos, BALL_RADIUS, 2, "Red", "White")
+
+# update paddle's vertical position, keep paddle on the screen
+if(ball_pos[1] + BALL_RADIUS &gt;= HEIGHT or ball_pos[1] - BALL_RADIUS &lt;= 0):
+    ball_vel[1] = -ball_vel[1]
+
+# draw paddles
+canvas.draw_polyline([[HALF_PAD_WIDTH, paddle1_pos[1]-HALF_PAD_HEIGHT], 
+                      [HALF_PAD_WIDTH, paddle1_pos[1]+HALF_PAD_HEIGHT]], 
+                     PAD_WIDTH, 'Red')
+paddle1_pos[1] += paddle1_vel
+
+canvas.draw_polyline([[WIDTH - HALF_PAD_WIDTH, paddle2_pos[1]-HALF_PAD_HEIGHT], 
+                      [WIDTH - HALF_PAD_WIDTH, paddle2_pos[1]+HALF_PAD_HEIGHT]], 
+                     PAD_WIDTH, 'Red')
+paddle2_pos[1] += paddle2_vel
+
+if paddle1_pos[1] + HALF_PAD_HEIGHT &gt;= HEIGHT:
+    paddle1_pos[1] = HEIGHT - HALF_PAD_HEIGHT
+    paddle1_vel = 0
+if paddle1_pos[1] - HALF_PAD_HEIGHT &lt;= 0:
+    paddle1_pos[1] = HALF_PAD_HEIGHT
+    paddle1_vel = 0
+
+if paddle2_pos[1] + HALF_PAD_HEIGHT &gt;= HEIGHT:
+    paddle2_pos[1] = HEIGHT - HALF_PAD_HEIGHT
+    paddle2_vel = 0
+if paddle2_pos[1] - HALF_PAD_HEIGHT &lt;= 0:
+    paddle2_pos[1] = HALF_PAD_HEIGHT
+    paddle2_vel = 0
+
+if(ball_pos[1] &lt; paddle1_pos[1] + HALF_PAD_HEIGHT and
+   ball_pos[1] &gt; paddle1_pos[1] - HALF_PAD_HEIGHT and
+   ball_pos[0] &lt;=  BALL_RADIUS + PAD_WIDTH):
+    ball_vel[0] = -ball_vel[0]
+    ball_vel[0] *= 1.2
+    ball_vel[1] *= 1.2
+elif(ball_pos[0] &lt;  -1*BALL_RADIUS):
+    score2 += 1
+    spawn_ball(random.choice(["LEFT", "RIGHT"]))
+
+if(ball_pos[1] &lt; paddle2_pos[1] + HALF_PAD_HEIGHT and
+   ball_pos[1] &gt; paddle2_pos[1] - HALF_PAD_HEIGHT and
+   ball_pos[0] &gt;= WIDTH - BALL_RADIUS - PAD_WIDTH):
+
+    ball_vel[0] = -ball_vel[0] 
+    ball_vel[0] *= 1.2
+    ball_vel[1] *= 1.2
+elif(ball_pos[0] &gt;= WIDTH + BALL_RADIUS):
+    score1 += 1
+    spawn_ball(random.choice(["LEFT", "RIGHT"]))
+# draw scores
+canvas.draw_text(str(score1), [50, 50], 50, 'Blue', 'serif')
+canvas.draw_text(str(score2), [500, 50], 50, 'Blue', 'serif')
+</code></pre>
+
+<p>def keydown(key):</p>
+
+<pre><code>global paddle1_vel, paddle2_vel
+acc = 1
+if key==simplegui.KEY_MAP["s"]:
+    paddle1_vel += acc
+elif key==simplegui.KEY_MAP["w"]:
+    paddle1_vel -= acc
+elif key==simplegui.KEY_MAP["down"]:
+    paddle2_vel += acc
+elif key==simplegui.KEY_MAP["up"]:
+    paddle2_vel -= acc
+</code></pre>
+
+<p>def keyup(key):</p>
+
+<pre><code>global paddle1_vel, paddle2_vel
+</code></pre>
+
+<p>def button_handler():</p>
+
+<pre><code>new_game()
+</code></pre>
+
+<h1>create frame</h1>
+
+<p>frame = simplegui.create_frame(&ldquo;Pong&rdquo;, WIDTH, HEIGHT)
+frame.set_draw_handler(draw)
+frame.set_keydown_handler(keydown)
+frame.set_keyup_handler(keyup)
+frame.add_button(&lsquo;Reset&rsquo;, button_handler, 60)</p>
+
+<h1>start frame</h1>
+
+<p>new_game()
+frame.start()
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Linux中安装python的egg包]]></title>
@@ -35,7 +217,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Cousera作业]]></title>
+    <title type="html"><![CDATA[cousera作业_Guess the Number]]></title>
     <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
     <updated>2014-04-13T21:03:09+08:00</updated>
     <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
@@ -208,29 +390,6 @@ new_game()</p>
 
 <p>让人改的机会也没有     好吧放过你了    哈哈 <br/>
 再去找一个</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
-    <link href="http://www.changchen.com/blog/20140407/octopress-tips-test-web/"/>
-    <updated>2014-04-07T20:21:46+08:00</updated>
-    <id>http://www.changchen.com/blog/20140407/octopress-tips-test-web</id>
-    <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
-
-<p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
-
-<p>突然有一天想到为什么不开两个控制台。 <br/>
-一个一直"preview" 另一个用来"generate"</p>
-
-<p>然后又突然想到，<code>rake generate</code>如果不用是不是也可以。  <br/>
-结果真的只要保存了， 网页上就能直接反馈出来这样就真的方便多了，哈哈</p>
-
-<p><code>rake generate</code>：</p>
-
-<p>作者 <a href="http://weibo.com/2478163907">@daya0576</a>   <br/>
-于 2014 年 04月 07日  <br/>
-天津</p>
 ]]></content>
   </entry>
   

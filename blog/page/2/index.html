@@ -11,7 +11,7 @@
   <meta name="author" content="Daya">
 
   
-  <meta name="description" content="最近想把网页的icon换一下 就想偷用topit.me/favicon.ico的那个16*16的粉红色爱心 改成背景色的 结果一打开。。 ">
+  <meta name="description" content="哎 弄个域名绑定也弄了一天。 貌似绑定A级域名要用192.30.252.153才行了 照着一个外国大叔的配的： Set the @ (used to denote the domain name for which you’re configuring the DNS) IP Address/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +93,105 @@ $(document).bind('DOMNodeInserted', function(event) {
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/20140410/custom-domain/">Custom_domain</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-10T23:38:30+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2014</time>
+        
+      </p>
+    
+
+
+	
+	<style type="text/css">  
+	#content .blog-index a[rel=full-article] {
+		padding: 2px;
+		-webkit-transition: background-color 0.5s;
+		-moz-transition: background-color 0.5s;
+		-o-transition: background-color 0.5s;
+		transition: background-color 0.5s;
+
+		border-radius: 13px ;
+			border-width: 3px;
+			border-color: #f8f8f8;
+			border-style: solid;
+
+		border-radius: 12px ;
+		background: #1ba1e2;
+		text-shadow: none;
+		color: #f8f8f8;
+		}
+
+		#content .blog-index a[rel=full-article]:hover {	
+			padding: 2px;
+			font-size: 100%;
+			background:  #ffffff;
+			display: inline-block;
+			margin-right: .25em;
+			text-decoration: none;
+			color: #225076;
+
+			border-radius: 13px ;
+			border-width: 3px;
+			border-color: #1ba1e2;
+			border-style: dotted;
+		}
+	</style>
+
+</header>
+
+
+
+  <div class="entry-content"><p>哎   弄个域名绑定也弄了一天。    <br/>
+貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
+
+<p>照着一个外国大叔的配的：</p>
+
+<ol> <li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>192.30.252.153</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li> <li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io.</code> (with trailing period) and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li> <li>In <strong>SUB-DOMAIN SETTINGS</strong>, add an <code>@</code> in the first field, and duplicate the settings in Step 1, save for the <strong>IP Address/URL</strong>, which should be <code>192.30.252.154</code>.</li> </ol>
+
+
+
+
+<p><img src="http://davidensinger.com/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border"></p>
+
+
+
+
+<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
+
+
+
+
+<div class="gray-box"> <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090">Basic Guide to DNS</a>.</p> </div>
+
+
+<p>github官方文档：<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -455,82 +554,6 @@ $(document).bind('DOMNodeInserted', function(event) {
 
     </article>
   
-  
-    <article>
-      
-
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/20140405/test1/">Test1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-05T11:09:27+08:00" pubdate data-updated="true">Apr 5<span>th</span>, 2014</time>
-        
-      </p>
-    
-
-
-	
-	<style type="text/css">  
-	#content .blog-index a[rel=full-article] {
-		padding: 2px;
-		-webkit-transition: background-color 0.5s;
-		-moz-transition: background-color 0.5s;
-		-o-transition: background-color 0.5s;
-		transition: background-color 0.5s;
-
-		border-radius: 13px ;
-			border-width: 3px;
-			border-color: #f8f8f8;
-			border-style: solid;
-
-		border-radius: 12px ;
-		background: #1ba1e2;
-		text-shadow: none;
-		color: #f8f8f8;
-		}
-
-		#content .blog-index a[rel=full-article]:hover {	
-			padding: 2px;
-			font-size: 100%;
-			background:  #ffffff;
-			display: inline-block;
-			margin-right: .25em;
-			text-decoration: none;
-			color: #225076;
-
-			border-radius: 13px ;
-			border-width: 3px;
-			border-color: #1ba1e2;
-			border-style: dotted;
-		}
-	</style>
-
-</header>
-
-
-
-  <div class="entry-content">
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/"><i class="fa fa-chevron-circle-left fa-2x icon-color"></i></a>
@@ -547,15 +570,15 @@ $(document).bind('DOMNodeInserted', function(event) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/20140429/cousera-pong/">cousera_Mini-project # 4 - Pong</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/20140424/linux-python-egg-install/">Linux中安装python的egg包</a>
       </li>
     
       <li class="post">
         <a href="/blog/20140417/hanluoyuan/">韩罗苑</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/20140413/cousera-python-week3/">Cousera作业</a>
       </li>
     
   </ul>
