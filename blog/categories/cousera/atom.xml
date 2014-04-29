@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cousera | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/cousera/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-04-29T17:49:40+08:00</updated>
+  <updated>2014-04-29T17:52:54+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,38 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cousera_comments]]></title>
+    <link href="http://www.changchen.com/blog/20140429/cousera-comments/"/>
+    <updated>2014-04-29T17:29:28+08:00</updated>
+    <id>http://www.changchen.com/blog/20140429/cousera-comments</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>突然想去看看之前mini_project别人给我的评价  <br/>
+不看不知道  一看吓一跳  <br/>
+感动的都要哭了 T ^ T <br/>
+敢不敢再负责一点</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Mini-project # 1 &ndash; Rock-paper-scissors-lizard-Spock <br/>
+<img src="\images\blog\140430_cousera\3.png" alt="ico_topitme" /> <br/>
+<img src="\images\blog\140430_cousera\4.png" alt="ico_topitme" /></p></li>
+<li><p>Mini-project # 2 &ndash; &ldquo;Guess the number&rdquo; game" <br/>
+<img src="\images\blog\140430_cousera\5.png" alt="ico_topitme" />   <br/>
+<img src="\images\blog\140430_cousera\6.png" alt="ico_topitme" /> <br/>
+<img src="\images\blog\140430_cousera\7.png" alt="ico_topitme" /></p></li>
+</ul>
+
+
+<h4>&ldquo;:&ndash;) All the best.&rdquo;</h4>
+
+<h4>继续加油   以后改作业也要更认真一点了</h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
