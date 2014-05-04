@@ -1,0 +1,561 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mini-project#5-Memory - My Octopress Blog</title>
+  <meta name="author" content="Daya">
+
+  
+  <meta name="description" content="《An Introduction to Interactive Programming in Python》 差点来不及了 心都碎了 deadline是一点钟。。 还没写完就交了个半成品 心都碎了 但是偷偷把本地的时间改早了40分钟，竟然成功地把deadlin延迟了 好开心 哈哈哈哈哈哈 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.changchen.com/blog/20140504/mini-project-number-5-memory">
+  <link href="/favicon.ico" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<!--<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css"> -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  
+
+
+
+</head>
+<script type="text/javascript">
+
+function addBlankTargetForLinks () {
+
+  $('a[href^="http"]').each(function(){
+
+      $(this).attr('target', '_blank');
+
+  });
+
+}
+
+$(document).bind('DOMNodeInserted', function(event) {
+
+  addBlankTargetForLinks();
+
+});
+
+</script>
+<body    class="collapse-sidebar sidebar-footer" >
+  <nav role="navigation"><!--<ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+-->
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.changchen.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+
+<ul class="main-navigation">
+  <li><a href="/" >主页</a></li>
+  <li><a href="/blog">博客</a></li>
+  <li><a href="/archives">目录</a></li>
+  <li><a href="/about">关于</a></li>
+</ul>
+
+</nav>
+  <!-- <header role="banner"><hgroup>
+  <h1><a href="/">My Octopress Blog</a></h1>
+  
+    <h2>A blog to memorialize my life.</h2>
+  
+</hgroup>
+
+
+</header> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+
+  <header>
+    
+      <h1 class="entry-title">Mini-project#5-Memory</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-04T14:03:07+08:00" pubdate data-updated="true">May 4<span>th</span>, 2014</time>
+        
+      </p>
+    
+
+
+	
+	<style type="text/css">  
+	#content .blog-index a[rel=full-article] {
+		padding: 2px;
+		-webkit-transition: background-color 0.5s;
+		-moz-transition: background-color 0.5s;
+		-o-transition: background-color 0.5s;
+		transition: background-color 0.5s;
+
+		border-radius: 13px ;
+			border-width: 3px;
+			border-color: #f8f8f8;
+			border-style: solid;
+
+		border-radius: 12px ;
+		background: #1ba1e2;
+		text-shadow: none;
+		color: #f8f8f8;
+		}
+
+		#content .blog-index a[rel=full-article]:hover {	
+			padding: 2px;
+			font-size: 100%;
+			background:  #ffffff;
+			display: inline-block;
+			margin-right: .25em;
+			text-decoration: none;
+			color: #225076;
+
+			border-radius: 13px ;
+			border-width: 3px;
+			border-color: #1ba1e2;
+			border-style: dotted;
+		}
+	</style>
+
+</header>
+
+
+
+<div class="entry-content"><blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>差点来不及了   心都碎了  <br/>
+deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
+但是偷偷把本地的时间改早了40分钟，竟然成功地把deadlin延迟了 <br/>
+好开心  哈哈哈哈哈哈<img src="http://i3.dpfile.com/s/img/editor/Emoticon68.gif" alt="哈哈" /></p>
+
+<p>一个翻牌的游戏 考记忆力 直戳我的软肋呀 哈哈  <br/>
+我做的： <br/>
+（一看以为是女生做的一定会多给分吧 直戳程序员的软肋<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e151.gif?max_age=2592000" alt="阴笑" />）
+<img src="\images\blog\140504_cousera\1.png" alt="ico_topitme" /></p>
+
+<p>TT吃饭去了   饿的手指都颤抖了<img src="http://i3.dpfile.com/s/img/editor/Emoticon89.gif" alt="饿" /></p>
+
+<!--more-->
+
+
+<p>code：<a href="http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py">http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># implementation of card game - Memory</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">simplegui</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">random</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">tures</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">before1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">before2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">list_word</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</span><span class='line'><span class="n">list_word</span> <span class="o">=</span> <span class="n">list_word</span> <span class="o">+</span> <span class="n">list_word</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">list_word_exposed</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">list_word_exposed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">clear_exposion</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">list_word_exposed</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">win</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">win</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">win</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">win</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># helper function to initialize globals</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">new_game</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">list_word</span>
+</span><span class='line'>    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">list_word</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">clear_exposion</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="n">before</span> <span class="o">=</span> <span class="bp">None</span>
+</span><span class='line'>    <span class="n">tures</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># define event handlers</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">mouseclick</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">tures</span><span class="p">,</span> <span class="n">list_word_exposed</span><span class="p">,</span> <span class="n">before</span>
+</span><span class='line'>    <span class="n">click</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">50</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">click</span><span class="p">]</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">global</span> <span class="n">before1</span><span class="p">,</span> <span class="n">before2</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">before1</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before1&quot;</span><span class="p">,</span> <span class="n">before1</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">before2</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before2&quot;</span><span class="p">,</span> <span class="n">before2</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">tures</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>            <span class="k">if</span> <span class="ow">not</span> <span class="n">list_word</span><span class="p">[</span><span class="n">before1</span><span class="p">]</span> <span class="o">==</span> <span class="n">list_word</span><span class="p">[</span><span class="n">before2</span><span class="p">]:</span>
+</span><span class='line'>                <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">before2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>                <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">before1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">before1</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before1&quot;</span><span class="p">,</span> <span class="n">before1</span>
+</span><span class='line'>            <span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s">&quot;Tures = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tures</span><span class="p">))</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">click</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># cards are logically 50x100 pixels in size    </span>
+</span><span class='line'><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">canvas</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">win</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="s">&quot;YOU WIN!!!! haha :)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="mi">80</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_word</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="p">),</span> <span class="p">(</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="mi">80</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">exposed</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_word_exposed</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">exposed</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polygon</span><span class="p">([[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">]],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;pink&#39;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">elif</span><span class="p">(</span><span class="ow">not</span> <span class="n">exposed</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polygon</span><span class="p">([[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">]],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">button_handler</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">new_game</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># create frame and add a button and labels</span>
+</span><span class='line'><span class="n">frame</span> <span class="o">=</span> <span class="n">simplegui</span><span class="o">.</span><span class="n">create_frame</span><span class="p">(</span><span class="s">&quot;Memory&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">add_button</span><span class="p">(</span><span class="s">&quot;Reset&quot;</span><span class="p">,</span> <span class="n">new_game</span><span class="p">)</span>
+</span><span class='line'><span class="n">label</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s">&quot;Turns = 0&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># register event handlers</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_mouseclick_handler</span><span class="p">(</span><span class="n">mouseclick</span><span class="p">)</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_draw_handler</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># get things rolling</span>
+</span><span class='line'><span class="n">new_game</span><span class="p">()</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Always remember to review the grading rubric</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Daya</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-04T14:03:07+08:00" pubdate data-updated="true">May 4<span>th</span>, 2014</time>
+      
+
+
+    </p>
+
+	
+		<div class="sharing">
+  <!--
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.changchen.com/blog/20140504/mini-project-number-5-memory/" data-via="" data-counturl="http://www.changchen.com/blog/20140504/mini-project-number-5-memory/" >Tweet</a>
+  
+  
+  
+  -->
+
+<div class="bshare-custom"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+<a></a>
+</div>
+	
+
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/20140429/cousera-comments/" title="Previous Post: cousera_comments">&laquo; cousera_comments</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+
+
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"> <!-- 多说评论框 start -->
+	<div class="ds-thread" ></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"daya0576"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/20140504/mini-project-number-5-memory/">Mini-project#5-Memory</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140429/cousera-comments/">Cousera_comments</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/20140429/cousera-pong/">cousera_Mini-project # 4 - Pong</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/daya0576">@daya0576</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'daya0576',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+	
+  </div>
+<!-- <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Daya -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+
+
+</footer> -->
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+
+</html>
