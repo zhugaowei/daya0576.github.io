@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cc | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/cc/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-10T15:50:19+08:00</updated>
+  <updated>2014-05-10T15:51:53+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -22,7 +22,7 @@
 
 <p>嘻嘻 清明假期 和幸店小试。</p>
 
-<p>{% img /images\blog\140407_cc_和幸餐厅/thumb(2).jpg %}</p>
+<p><img src="/images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
 
 <!--more-->
 
