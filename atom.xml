@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://www.changchen.com/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-10T15:51:53+08:00</updated>
+  <updated>2014-05-11T00:25:55+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[octopress_Plugins]]></title>
+    <link href="http://www.changchen.com/blog/20140511/octopress-plugins/"/>
+    <updated>2014-05-11T00:25:54+08:00</updated>
+    <id>http://www.changchen.com/blog/20140511/octopress-plugins</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Diary]]></title>
@@ -1263,23 +1272,6 @@ networkx-1.1-py2.6.egg   <br/>
     <updated>2014-04-05T11:09:27+08:00</updated>
     <id>http://www.changchen.com/blog/20140405/test1</id>
     <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My First Blog]]></title>
-    <link href="http://www.changchen.com/blog/20140404/my-first-blog/"/>
-    <updated>2014-04-04T21:38:49+08:00</updated>
-    <id>http://www.changchen.com/blog/20140404/my-first-blog</id>
-    <content type="html"><![CDATA[<p>哈哈</p>
-
-<pre><code>这是我的第一篇blog，献给我最爱的cc~
-
-两周年快乐  (*^_^*) 
-</code></pre>
-
-<!--more-->
-
 ]]></content>
   </entry>
   

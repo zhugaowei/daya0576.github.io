@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Study | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-10T15:51:53+08:00</updated>
+  <updated>2014-05-11T00:36:49+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[octopress_Plugins]]></title>
+    <link href="http://www.changchen.com/blog/20140511/octopress-plugins/"/>
+    <updated>2014-05-11T00:25:54+08:00</updated>
+    <id>http://www.changchen.com/blog/20140511/octopress-plugins</id>
+    <content type="html"><![CDATA[<h2>Plugins:</h2>
+
+<p>HTML5 Video Tag</p>
+
+<blockquote><p>{% video url/to/video [width height] [url/to/poster] %}</p></blockquote>
+
+<p>Image Tag</p>
+
+<blockquote><p>{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}</p></blockquote>
+
+<p>Pullquote <br/>
+{% pullquote %}
+Surround your paragraph with the pull quote tags. Then when you come to
+the text you want to pull, {&ldquo; surround it like this &rdquo;} and that&rsquo;s all there is to it.
+{% endpullquote %}</p>
+
+<p>Codeblock
+{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}</p>
+
+<p>{% codeblock %}
+Awesome code snippet
+{% endcodeblock %}</p>
+
+<p>{% codeblock Javascript Array Syntax lang:js <a href="http://j.mp/pPUUmW">http://j.mp/pPUUmW</a> MDN Documentation %}
+var arr1 = new Array(arrayLength);
+var arr2 = new Array(element0, element1, &hellip;, elementN);
+{% endcodeblock %}</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cousera_comments总和]]></title>
@@ -368,38 +405,6 @@ new_game()</p>
 <h1>always remember to check your completed program against the grading rubric</h1>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Custom_domain]]></title>
-    <link href="http://www.changchen.com/blog/20140410/custom-domain/"/>
-    <updated>2014-04-10T23:38:30+08:00</updated>
-    <id>http://www.changchen.com/blog/20140410/custom-domain</id>
-    <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
-貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
-
-<p>照着一个外国大叔的配的：</p>
-
-<ol> <li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>192.30.252.153</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li> <li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io.</code> (with trailing period) and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li> <li>In <strong>SUB-DOMAIN SETTINGS</strong>, add an <code>@</code> in the first field, and duplicate the settings in Step 1, save for the <strong>IP Address/URL</strong>, which should be <code>192.30.252.154</code>.</li> </ol>
-
-
-
-
-<p><img src="http://davidensinger.com/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border"></p>
-
-
-
-
-<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
-
-
-
-
-<div class="gray-box"> <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090">Basic Guide to DNS</a>.</p> </div>
-
-
-<p>github官方文档：<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a></p>
 ]]></content>
   </entry>
   
