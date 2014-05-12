@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-11T00:36:49+08:00</updated>
+  <updated>2014-05-12T15:44:21+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,43 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[octopress_Plugins]]></title>
-    <link href="http://www.changchen.com/blog/20140511/octopress-plugins/"/>
-    <updated>2014-05-11T00:25:54+08:00</updated>
-    <id>http://www.changchen.com/blog/20140511/octopress-plugins</id>
-    <content type="html"><![CDATA[<h2>Plugins:</h2>
-
-<p>HTML5 Video Tag</p>
-
-<blockquote><p>{% video url/to/video [width height] [url/to/poster] %}</p></blockquote>
-
-<p>Image Tag</p>
-
-<blockquote><p>{% img [class names] /path/to/image [width] [height] [title text [alt text]] %}</p></blockquote>
-
-<p>Pullquote <br/>
-{% pullquote %}
-Surround your paragraph with the pull quote tags. Then when you come to
-the text you want to pull, {&ldquo; surround it like this &rdquo;} and that&rsquo;s all there is to it.
-{% endpullquote %}</p>
-
-<p>Codeblock
-{% codeblock lang:objc %}
-[rectangle setX: 10 y: 10 width: 20 height: 20];
-{% endcodeblock %}</p>
-
-<p>{% codeblock %}
-Awesome code snippet
-{% endcodeblock %}</p>
-
-<p>{% codeblock Javascript Array Syntax lang:js <a href="http://j.mp/pPUUmW">http://j.mp/pPUUmW</a> MDN Documentation %}
-var arr1 = new Array(arrayLength);
-var arr2 = new Array(element0, element1, &hellip;, elementN);
-{% endcodeblock %}</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
