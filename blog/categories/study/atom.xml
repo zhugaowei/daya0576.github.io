@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Study | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-12T23:47:34+08:00</updated>
+  <updated>2014-05-16T21:29:11+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,261 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
+    <link href="http://www.changchen.com/blog/20140516/mini-project-number-6/"/>
+    <updated>2014-05-16T10:11:18+08:00</updated>
+    <id>http://www.changchen.com/blog/20140516/mini-project-number-6</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>眼泪都要调出来了~~    <br/>
+图片没加载出来。。
+T ^ T <br/>
+<img src="\images\blog\140516_cousera\2014-05-16_212319.jpg" alt="ico_topitme" /> <br/>
+刚看到的时候还是很郁闷的，毕竟付出了好多的心血，结果因为一个不是自身的原因毁掉了。。   <br/>
+现在还是看开了吧 :) 过去就过去了  无所谓了。</p>
+
+<!--more-->
+
+
+<p>我做的~ <br/>
+<img src="\images\blog\140516_cousera\2014-05-16_211654.jpg" alt="ico_topitme" /></p>
+
+<p>code: <br/>
+``` python</p>
+
+<h1>Mini-project #6 &ndash; Blackjack</h1>
+
+<p>import simplegui
+import random</p>
+
+<h1>load card sprite &ndash; 949x392 &ndash; source: jfitz.com</h1>
+
+<p>CARD_SIZE = (73, 98)
+CARD_CENTER = (36.5, 49)
+card_images = simplegui.load_image(&ldquo;<a href="http://g.hiphotos.baidu.com/album/pic/item/8b82b9014a90f6039500b4ce3b12b31bb151ed83.jpg?psign=9500b4ce3b12b31bb051f8198618367adbb44aed2f73c9bb">http://g.hiphotos.baidu.com/album/pic/item/8b82b9014a90f6039500b4ce3b12b31bb151ed83.jpg?psign=9500b4ce3b12b31bb051f8198618367adbb44aed2f73c9bb</a>&rdquo;)
+CARD_BACK_SIZE = (71, 96)
+CARD_BACK_CENTER = (35.5, 48)
+card_back = simplegui.load_image(&ldquo;<a href="http://f.hiphotos.baidu.com/album/pic/item/d833c895d143ad4b1c4e6e4980025aafa50f06d2.jpg?psign=1c4e6e4980025aafa40f4bfbfbedab64024f78f0f63622ea">http://f.hiphotos.baidu.com/album/pic/item/d833c895d143ad4b1c4e6e4980025aafa50f06d2.jpg?psign=1c4e6e4980025aafa40f4bfbfbedab64024f78f0f63622ea</a>&rdquo;)</p>
+
+<h1>initialize some useful global variables</h1>
+
+<p>in_play = False
+outcome = &ldquo;&rdquo;
+score = 0
+deck_cards = None
+player_hands = None
+deck_hands = None</p>
+
+<h1>define globals for cards</h1>
+
+<p>SUITS = (&lsquo;C&rsquo;, &rsquo;S', &lsquo;H&rsquo;, &rsquo;D')
+RANKS = (&lsquo;A&rsquo;, &lsquo;2&rsquo;, &lsquo;3&rsquo;, &lsquo;4&rsquo;, &lsquo;5&rsquo;, &lsquo;6&rsquo;, &lsquo;7&rsquo;, &lsquo;8&rsquo;, &lsquo;9&rsquo;, &rsquo;T', &lsquo;J&rsquo;, &lsquo;Q&rsquo;, &lsquo;K&rsquo;)
+VALUES = {&lsquo;A&rsquo;:1, &lsquo;2&rsquo;:2, &lsquo;3&rsquo;:3, &lsquo;4&rsquo;:4, &lsquo;5&rsquo;:5, &lsquo;6&rsquo;:6, &lsquo;7&rsquo;:7, &lsquo;8&rsquo;:8, &lsquo;9&rsquo;:9, &rsquo;T':10, &lsquo;J&rsquo;:10, &lsquo;Q&rsquo;:10, &lsquo;K&rsquo;:10}</p>
+
+<h1>define card class</h1>
+
+<p>class Card:</p>
+
+<pre><code>def __init__(self, suit, rank):
+    if (suit in SUITS) and (rank in RANKS):
+        self.suit = suit
+        self.rank = rank
+    else:
+        self.suit = None
+        self.rank = None
+        print "Invalid card: ", suit, rank
+
+def __str__(self):
+    return self.suit + self.rank
+
+def get_suit(self):
+    return self.suit
+
+def get_rank(self):
+    return self.rank
+
+def draw(self, canvas, pos):
+    card_loc = (CARD_CENTER[0] + CARD_SIZE[0] * RANKS.index(self.rank), 
+                CARD_CENTER[1] + CARD_SIZE[1] * SUITS.index(self.suit))
+    canvas.draw_image(card_images, card_loc, CARD_SIZE, [pos[0] + CARD_CENTER[0], pos[1] + CARD_CENTER[1]], CARD_SIZE)
+</code></pre>
+
+<h1>define hand class</h1>
+
+<p>class Hand:</p>
+
+<pre><code>def __init__(self):
+    self.hand_cards = []
+    self.value_card = 0
+
+def __str__(self):
+    hand_str = "Hand contains "
+    for card in self.hand_cards:
+        hand_str = hand_str + str(card) + " "
+    return hand_str
+
+def add_card(self, card):
+    self.hand_cards.append(card)
+
+def get_value(self):
+    value_sum = 0
+    Ace_in = False
+    # count aces as 1, if the hand has an ace, then add 10 to hand value if it doesn't bust
+    for card in self.hand_cards:
+        self.value_card = VALUES[card.get_rank()] 
+        value_sum += self.value_card
+        if self.value_card == 1:
+            Ace_in = True
+
+    if Ace_in == False:
+        return value_sum
+    else:
+        if value_sum + 10 &lt; 21:
+            return value_sum + 10
+        else:
+            return value_sum
+
+def draw(self, canvas, pos):
+    for card in self.hand_cards:  
+        index = self.hand_cards.index(card)
+        card.draw(canvas, pos)
+        pos[0] += CARD_SIZE[0] + 10
+</code></pre>
+
+<h1>define deck class</h1>
+
+<p>class Deck:</p>
+
+<pre><code>def __init__(self):
+    self.deck_cards = []
+    for suit in SUITS:
+        for rank in RANKS:
+            self.deck_cards.append(Card(suit, rank))
+
+def shuffle(self):
+    random.shuffle(self.deck_cards)
+
+def deal_card(self):
+    card = self.deck_cards[-1]
+    self.deck_cards.remove(card)
+    return card
+
+def __str__(self):
+    deck_str = "Deck contains"
+    for card in self.deck_cards:
+        deck_str += str(card) + " "       
+    return deck_str
+</code></pre>
+
+<h1>define event handlers for buttons</h1>
+
+<p>def deal():</p>
+
+<pre><code>global outcome, in_play, deck_cards, player_hands, deck_hands, score
+if in_play == True:
+    score -= 1
+
+deck_cards = Deck()
+deck_cards.shuffle()
+
+player_hands = Hand()
+player_hands.add_card(deck_cards.deal_card())
+player_hands.add_card(deck_cards.deal_card())
+print str(player_hands)
+
+deck_hands = Hand()
+deck_hands.add_card(deck_cards.deal_card())
+deck_hands.add_card(deck_cards.deal_card())
+print str(deck_hands)
+in_play = True
+</code></pre>
+
+<p>def hit():</p>
+
+<pre><code>global outcome, in_play, score, player_hands
+# if the hand is in play, hit the player
+if in_play == True:
+    player_hands.add_card(deck_cards.deal_card())
+    print "deck_hands.get_value()", deck_hands.get_value()
+    if(player_hands.get_value() &gt; 21):
+        print  "You have busted"
+        outcome = "Busted, you lose~~"
+        in_play = False
+        score -= 1
+
+print  str(player_hands)
+</code></pre>
+
+<p>def stand():</p>
+
+<pre><code>global outcome, in_play, score, deck_hands
+# if hand is in play, repeatedly hit dealer until his hand has value 17 or more
+if in_play == True:
+    while deck_hands.get_value() &lt; 17:
+        deck_hands.add_card(deck_cards.deal_card())
+        if(deck_hands.get_value() &gt; 21):
+            outcome = "Dealer busted, you wine~~"
+            in_play = False
+            score += 1
+    print "deck_hands.get_value()", deck_hands.get_value()
+
+    if in_play == True:
+        if player_hands.get_value() &gt; deck_hands.get_value():
+            outcome = "bigger You win!!!"
+            score += 1
+        else:
+            outcome = "smaller lose~~"
+            score -= 1
+        in_play = False
+# assign a message to outcome, update in_play and score
+</code></pre>
+
+<h1>draw handler</h1>
+
+<p>def draw(canvas):</p>
+
+<pre><code>global outcome
+canvas.draw_text('Blackjack', (40, 80), 50, 'Gray', 'serif')
+
+canvas.draw_text("Dealer", (50, 140), 30, 'black', 'serif')
+canvas.draw_text("Player", (50, 290), 30, 'black', 'serif')
+
+canvas.draw_text("score: " + str(score), (450, 90), 30, 'Gray', 'serif')
+
+player_hands.draw(canvas, [50, 300])
+deck_hands.draw(canvas, [50, 150])
+if in_play == True:
+    canvas.draw_text("Hit or stand?", (200, 290), 30, 'Gray', 'serif')
+    canvas.draw_image(card_back, CARD_BACK_CENTER, CARD_BACK_SIZE, (50+CARD_BACK_CENTER[0], 150+CARD_BACK_CENTER[1]), CARD_BACK_SIZE)
+else:
+    canvas.draw_text(outcome, (200, 140), 30, 'Gray', 'serif')
+    canvas.draw_text("New deal?", (200, 290), 30, 'Gray', 'serif')
+</code></pre>
+
+<h1>initialization frame</h1>
+
+<p>frame = simplegui.create_frame(&ldquo;Blackjack~&rdquo;, 600, 600)
+frame.set_canvas_background(&ldquo;Green&rdquo;)</p>
+
+<h1>create buttons and canvas callback</h1>
+
+<p>frame.add_button(&ldquo;Deal&rdquo;, deal, 200)
+frame.add_button(&ldquo;Hit&rdquo;,  hit, 200)
+frame.add_button(&ldquo;Stand&rdquo;, stand, 200)
+frame.set_draw_handler(draw)</p>
+
+<h1>get things rolling</h1>
+
+<p>deal()
+frame.start()</p>
+
+<h1>remember to review the gradic rubric</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Cousera_comments总和]]></title>
@@ -368,38 +623,6 @@ new_game()</p>
 <h1>always remember to check your completed program against the grading rubric</h1>
 
 <p>```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Custom_domain]]></title>
-    <link href="http://www.changchen.com/blog/20140410/custom-domain/"/>
-    <updated>2014-04-10T23:38:30+08:00</updated>
-    <id>http://www.changchen.com/blog/20140410/custom-domain</id>
-    <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
-貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
-
-<p>照着一个外国大叔的配的：</p>
-
-<ol> <li>Set the <strong>@</strong> (used to denote the domain name for which you’re configuring the DNS) <strong>IP Address/URL</strong> to <code>192.30.252.153</code> and the <strong>Record Type</strong> to <code>A (Address)</code> with a <strong>TTL</strong> (an acronym for <strong>Time To Live</strong> that refers to the capability of the DNS servers to cache DNS records) of <code>1800</code>.</li> <li>Set the <strong>www</strong> (the subdomain www) <strong>IP Address/URL</strong> to <code>username.github.io.</code> (with trailing period) and the <strong>Record Type</strong> to <code>CNAME (Alias)</code> with a <strong>TTL</strong> of <code>1800</code>.</li> <li>In <strong>SUB-DOMAIN SETTINGS</strong>, add an <code>@</code> in the first field, and duplicate the settings in Step 1, save for the <strong>IP Address/URL</strong>, which should be <code>192.30.252.154</code>.</li> </ol>
-
-
-
-
-<p><img src="http://davidensinger.com/assets/img/posts/2014-01-07-namecheap-dns-settings.png" alt="Image of DNS settings" class="media-center img-border"></p>
-
-
-
-
-<p>Save and then you’re all set! Please note, however that it may take some time for the changes to the DNS to propagate.</p>
-
-
-
-
-<div class="gray-box"> <p><strong>More Info:</strong> Google has a pretty good <a href="http://support.google.com/a/bin/answer.py?hl=en&amp;answer=48090">Basic Guide to DNS</a>.</p> </div>
-
-
-<p>github官方文档：<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a></p>
 ]]></content>
   </entry>
   
