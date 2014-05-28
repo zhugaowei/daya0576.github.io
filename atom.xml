@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://www.changchen.com/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-23T10:10:58+08:00</updated>
+  <updated>2014-05-28T09:49:13+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -451,7 +451,7 @@ T ^ T <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Diary]]></title>
+    <title type="html"><![CDATA[diary]]></title>
     <link href="http://www.changchen.com/blog/20140510/diary/"/>
     <updated>2014-05-10T13:20:20+08:00</updated>
     <id>http://www.changchen.com/blog/20140510/diary</id>
@@ -506,14 +506,14 @@ Things get worse before they get better. <br/>
 <p>没想到心里想的都被你一阵见血的说出来了    <br/>
 你还是挺懂我的。      <br/>
 开心 :)  <br/>
-得到了最想要的东西 “理解~”       <br/>
+得到了最想要的东西 “理解~”吧       <br/>
 么么   晚安了
 <img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e175.gif?max_age=2592000" alt="goodnight" /></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Chrome设置（转）]]></title>
+    <title type="html"><![CDATA[chrome设置（转）]]></title>
     <link href="http://www.changchen.com/blog/20140510/chrome-setting/"/>
     <updated>2014-05-10T00:54:33+08:00</updated>
     <id>http://www.changchen.com/blog/20140510/chrome-setting</id>
@@ -901,7 +901,7 @@ deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Cousera_comments总和]]></title>
+    <title type="html"><![CDATA[cousera_comments总和]]></title>
     <link href="http://www.changchen.com/blog/20140429/cousera-comments/"/>
     <updated>2014-04-29T17:29:28+08:00</updated>
     <id>http://www.changchen.com/blog/20140429/cousera-comments</id>
@@ -1234,7 +1234,7 @@ code:</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Linux中安装python的egg包]]></title>
+    <title type="html"><![CDATA[linux中安装python的egg包]]></title>
     <link href="http://www.changchen.com/blog/20140424/linux-python-egg-install/"/>
     <updated>2014-04-24T11:28:48+08:00</updated>
     <id>http://www.changchen.com/blog/20140424/linux-python-egg-install</id>
@@ -1275,7 +1275,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[cousera作业_Guess the Number]]></title>
+    <title type="html"><![CDATA[cousera作业_Guess the number]]></title>
     <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
     <updated>2014-04-13T21:03:09+08:00</updated>
     <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
@@ -1485,7 +1485,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Custom_domain]]></title>
+    <title type="html"><![CDATA[custom_domain]]></title>
     <link href="http://www.changchen.com/blog/20140410/custom-domain/"/>
     <updated>2014-04-10T23:38:30+08:00</updated>
     <id>http://www.changchen.com/blog/20140410/custom-domain</id>
@@ -1517,7 +1517,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[topit.me的icon]]></title>
+    <title type="html"><![CDATA[topit.me的icon ]]></title>
     <link href="http://www.changchen.com/blog/20140408/icon-surprise/"/>
     <updated>2014-04-08T16:10:38+08:00</updated>
     <id>http://www.changchen.com/blog/20140408/icon-surprise</id>
@@ -1542,7 +1542,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
+    <title type="html"><![CDATA[octopress测试网站的小技巧【原创】]]></title>
     <link href="http://www.changchen.com/blog/20140407/octopress-tips-test-web/"/>
     <updated>2014-04-07T20:21:46+08:00</updated>
     <id>http://www.changchen.com/blog/20140407/octopress-tips-test-web</id>
@@ -1742,7 +1742,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Test1]]></title>
+    <title type="html"><![CDATA[test1]]></title>
     <link href="http://www.changchen.com/blog/20140405/test1/"/>
     <updated>2014-04-05T11:09:27+08:00</updated>
     <id>http://www.changchen.com/blog/20140405/test1</id>

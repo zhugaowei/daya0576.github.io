@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Life | My Octopress Blog]]></title>
+  <title><![CDATA[Category: life | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-23T10:10:58+08:00</updated>
+  <updated>2014-05-28T09:49:13+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Diary]]></title>
+    <title type="html"><![CDATA[diary]]></title>
     <link href="http://www.changchen.com/blog/20140510/diary/"/>
     <updated>2014-05-10T13:20:20+08:00</updated>
     <id>http://www.changchen.com/blog/20140510/diary</id>
@@ -69,7 +69,7 @@ Things get worse before they get better. <br/>
 <p>没想到心里想的都被你一阵见血的说出来了    <br/>
 你还是挺懂我的。      <br/>
 开心 :)  <br/>
-得到了最想要的东西 “理解~”       <br/>
+得到了最想要的东西 “理解~”吧       <br/>
 么么   晚安了
 <img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e175.gif?max_age=2592000" alt="goodnight" /></p>
 ]]></content>

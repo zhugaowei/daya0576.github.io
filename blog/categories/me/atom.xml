@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Me | My Octopress Blog]]></title>
+  <title><![CDATA[Category: me | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/me/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-23T10:10:58+08:00</updated>
+  <updated>2014-05-28T09:49:13+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[My First Blog]]></title>
+    <title type="html"><![CDATA[my first blog]]></title>
     <link href="http://www.changchen.com/blog/20140404/my-first-blog/"/>
     <updated>2014-04-04T21:38:49+08:00</updated>
     <id>http://www.changchen.com/blog/20140404/my-first-blog</id>

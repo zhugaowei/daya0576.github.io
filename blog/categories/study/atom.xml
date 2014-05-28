@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Study | My Octopress Blog]]></title>
+  <title><![CDATA[Category: study | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-23T10:10:58+08:00</updated>
+  <updated>2014-05-28T09:49:13+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -269,7 +269,7 @@ frame.start()</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Cousera_comments总和]]></title>
+    <title type="html"><![CDATA[cousera_comments总和]]></title>
     <link href="http://www.changchen.com/blog/20140429/cousera-comments/"/>
     <updated>2014-04-29T17:29:28+08:00</updated>
     <id>http://www.changchen.com/blog/20140429/cousera-comments</id>
@@ -486,7 +486,7 @@ frame.start()
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Linux中安装python的egg包]]></title>
+    <title type="html"><![CDATA[linux中安装python的egg包]]></title>
     <link href="http://www.changchen.com/blog/20140424/linux-python-egg-install/"/>
     <updated>2014-04-24T11:28:48+08:00</updated>
     <id>http://www.changchen.com/blog/20140424/linux-python-egg-install</id>
@@ -507,7 +507,7 @@ networkx-1.1-py2.6.egg   <br/>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[cousera作业_Guess the Number]]></title>
+    <title type="html"><![CDATA[cousera作业_Guess the number]]></title>
     <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
     <updated>2014-04-13T21:03:09+08:00</updated>
     <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>

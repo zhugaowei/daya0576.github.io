@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Octopress | My Octopress Blog]]></title>
+  <title><![CDATA[Category: octopress | My Octopress Blog]]></title>
   <link href="http://www.changchen.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.changchen.com/"/>
-  <updated>2014-05-23T10:10:58+08:00</updated>
+  <updated>2014-05-28T09:49:13+08:00</updated>
   <id>http://www.changchen.com/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Octopress测试网站的小技巧【原创】]]></title>
+    <title type="html"><![CDATA[octopress测试网站的小技巧【原创】]]></title>
     <link href="http://www.changchen.com/blog/20140407/octopress-tips-test-web/"/>
     <updated>2014-04-07T20:21:46+08:00</updated>
     <id>http://www.changchen.com/blog/20140407/octopress-tips-test-web</id>
