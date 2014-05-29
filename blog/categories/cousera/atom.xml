@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: cousera | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/cousera/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: cousera | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/cousera/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
-    <link href="http://www.changchen.com/blog/20140516/mini-project-number-6/"/>
+    <link href="http://www.changchen.me/blog/20140516/mini-project-number-6/"/>
     <updated>2014-05-16T10:11:18+08:00</updated>
-    <id>http://www.changchen.com/blog/20140516/mini-project-number-6</id>
+    <id>http://www.changchen.me/blog/20140516/mini-project-number-6</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p>眼泪都要调出来了~~    <br/>
@@ -270,9 +270,9 @@ frame.start()</p>
   
   <entry>
     <title type="html"><![CDATA[cousera_comments总和]]></title>
-    <link href="http://www.changchen.com/blog/20140429/cousera-comments/"/>
+    <link href="http://www.changchen.me/blog/20140429/cousera-comments/"/>
     <updated>2014-04-29T17:29:28+08:00</updated>
-    <id>http://www.changchen.com/blog/20140429/cousera-comments</id>
+    <id>http://www.changchen.me/blog/20140429/cousera-comments</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p>突然想去看看之前mini_project别人给我的评价  <br/>
@@ -305,9 +305,9 @@ frame.start()</p>
   
   <entry>
     <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
-    <link href="http://www.changchen.com/blog/20140429/cousera-pong/"/>
+    <link href="http://www.changchen.me/blog/20140429/cousera-pong/"/>
     <updated>2014-04-29T16:27:47+08:00</updated>
-    <id>http://www.changchen.com/blog/20140429/cousera-pong</id>
+    <id>http://www.changchen.me/blog/20140429/cousera-pong</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p>**小游戏~&ldquo;Pong&rdquo; <br/>
@@ -487,9 +487,9 @@ frame.start()
   
   <entry>
     <title type="html"><![CDATA[cousera作业_Guess the number]]></title>
-    <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
+    <link href="http://www.changchen.me/blog/20140413/cousera-python-week3/"/>
     <updated>2014-04-13T21:03:09+08:00</updated>
-    <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
+    <id>http://www.changchen.me/blog/20140413/cousera-python-week3</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p><strong>哎   半夜把第三周的大作业写完了     差点来不及  </strong></p>

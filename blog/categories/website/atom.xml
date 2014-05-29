@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: website | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/website/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: website | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/website/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[topit.me的icon ]]></title>
-    <link href="http://www.changchen.com/blog/20140408/icon-surprise/"/>
+    <link href="http://www.changchen.me/blog/20140408/icon-surprise/"/>
     <updated>2014-04-08T16:10:38+08:00</updated>
-    <id>http://www.changchen.com/blog/20140408/icon-surprise</id>
+    <id>http://www.changchen.me/blog/20140408/icon-surprise</id>
     <content type="html"><![CDATA[<h3>最近想把网页的icon换一下</h3>
 
 <h3>就想偷用<code>topit.me/favicon.ico</code>的那个16*16的粉红色爱心</h3>

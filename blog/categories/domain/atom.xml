@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: domain | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/domain/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: domain | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/domain/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[custom_domain]]></title>
-    <link href="http://www.changchen.com/blog/20140410/custom-domain/"/>
+    <link href="http://www.changchen.me/blog/20140410/custom-domain/"/>
     <updated>2014-04-10T23:38:30+08:00</updated>
-    <id>http://www.changchen.com/blog/20140410/custom-domain</id>
+    <id>http://www.changchen.me/blog/20140410/custom-domain</id>
     <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
 貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
 

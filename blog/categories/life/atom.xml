@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: life | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/life/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: life | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/life/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[diary]]></title>
-    <link href="http://www.changchen.com/blog/20140510/diary/"/>
+    <link href="http://www.changchen.me/blog/20140510/diary/"/>
     <updated>2014-05-10T13:20:20+08:00</updated>
-    <id>http://www.changchen.com/blog/20140510/diary</id>
+    <id>http://www.changchen.me/blog/20140510/diary</id>
     <content type="html"><![CDATA[<blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :)　　　　</p></blockquote>
 
 <!--more-->
@@ -88,9 +88,9 @@ Things get worse before they get better. <br/>
   
   <entry>
     <title type="html"><![CDATA[【探81】很久以前只是家串店]]></title>
-    <link href="http://www.changchen.com/blog/20140508/henjiuyiqian/"/>
+    <link href="http://www.changchen.me/blog/20140508/henjiuyiqian/"/>
     <updated>2014-05-08T23:34:41+08:00</updated>
-    <id>http://www.changchen.com/blog/20140508/henjiuyiqian</id>
+    <id>http://www.changchen.me/blog/20140508/henjiuyiqian</id>
     <content type="html"><![CDATA[<p>烧烤<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e4006.gif?max_age=2592000" alt="" /></p>
 
 <!--more-->
@@ -105,9 +105,9 @@ Things get worse before they get better. <br/>
   
   <entry>
     <title type="html"><![CDATA[【探81】必胜客（麦迪逊物美店）]]></title>
-    <link href="http://www.changchen.com/blog/20140508/huayuan-bishengke/"/>
+    <link href="http://www.changchen.me/blog/20140508/huayuan-bishengke/"/>
     <updated>2014-05-08T23:27:34+08:00</updated>
-    <id>http://www.changchen.com/blog/20140508/huayuan-bishengke</id>
+    <id>http://www.changchen.me/blog/20140508/huayuan-bishengke</id>
     <content type="html"><![CDATA[<p>小船和泡芙哥吃吃喝喝的故事~~<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e121.gif?max_age=2592000" alt="joy" /></p>
 
 <!--more-->
@@ -124,9 +124,9 @@ Things get worse before they get better. <br/>
   
   <entry>
     <title type="html"><![CDATA[【探80】生日小庆之争鲜]]></title>
-    <link href="http://www.changchen.com/blog/20140506/birthday-zhenxian/"/>
+    <link href="http://www.changchen.me/blog/20140506/birthday-zhenxian/"/>
     <updated>2014-05-06T22:26:35+08:00</updated>
-    <id>http://www.changchen.com/blog/20140506/birthday-zhenxian</id>
+    <id>http://www.changchen.me/blog/20140506/birthday-zhenxian</id>
     <content type="html"><![CDATA[<p>生日小庆之争鲜<img src="http://i2.dpfile.com/s/img/editor/Emoticon4.gif"></p>
 
 <!--more-->
@@ -172,9 +172,9 @@ Things get worse before they get better. <br/>
   
   <entry>
     <title type="html"><![CDATA[【探80】生日小庆之澳门味道]]></title>
-    <link href="http://www.changchen.com/blog/20140506/birthday-aomengweidao/"/>
+    <link href="http://www.changchen.me/blog/20140506/birthday-aomengweidao/"/>
     <updated>2014-05-06T22:09:19+08:00</updated>
-    <id>http://www.changchen.com/blog/20140506/birthday-aomengweidao</id>
+    <id>http://www.changchen.me/blog/20140506/birthday-aomengweidao</id>
     <content type="html"><![CDATA[<p>生日小庆之澳门味道<img src="http://i1.dpfile.com/s/img/editor/emoticon60.gif"></p>
 
 <!--more-->

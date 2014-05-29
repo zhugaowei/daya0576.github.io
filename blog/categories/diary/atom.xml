@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: diary | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/diary/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: diary | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/diary/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[蛋蛋的忧伤]]></title>
-    <link href="http://www.changchen.com/blog/20140412/140412-study/"/>
+    <link href="http://www.changchen.me/blog/20140412/140412-study/"/>
     <updated>2014-04-12T22:49:18+08:00</updated>
-    <id>http://www.changchen.com/blog/20140412/140412-study</id>
+    <id>http://www.changchen.me/blog/20140412/140412-study</id>
     <content type="html"><![CDATA[<p>颓颓废废的过了两个星期。 <br/>
 自从买了个显示器 就天天宅在寝室里 <br/>
 每次想背个单词  先看会摩登家庭？、、

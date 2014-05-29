@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: cc | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/cc/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: cc | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/cc/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[【探78】【小船】和幸~~日式调调~呼]]></title>
-    <link href="http://www.changchen.com/blog/20140407/two-year-meeting-day/"/>
+    <link href="http://www.changchen.me/blog/20140407/two-year-meeting-day/"/>
     <updated>2014-04-07T14:52:59+08:00</updated>
-    <id>http://www.changchen.com/blog/20140407/two-year-meeting-day</id>
+    <id>http://www.changchen.me/blog/20140407/two-year-meeting-day</id>
     <content type="html"><![CDATA[<p><a href="http://s.dianping.com/topic/7162596"><strong>&mdash;&ndash;> 原文</strong></a></p>
 
 <p>嘻嘻 清明假期 和幸店小试。</p>

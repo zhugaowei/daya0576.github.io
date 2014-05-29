@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: python | My Octopress Blog]]></title>
-  <link href="http://www.changchen.com/blog/categories/python/atom.xml" rel="self"/>
-  <link href="http://www.changchen.com/"/>
-  <updated>2014-05-28T23:51:43+08:00</updated>
-  <id>http://www.changchen.com/</id>
+  <title><![CDATA[Category: python | My home]]></title>
+  <link href="http://www.changchen.me/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2014-05-29T12:52:41+08:00</updated>
+  <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
     <email><![CDATA[daya0576@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[cousera_comments总和]]></title>
-    <link href="http://www.changchen.com/blog/20140429/cousera-comments/"/>
+    <link href="http://www.changchen.me/blog/20140429/cousera-comments/"/>
     <updated>2014-04-29T17:29:28+08:00</updated>
-    <id>http://www.changchen.com/blog/20140429/cousera-comments</id>
+    <id>http://www.changchen.me/blog/20140429/cousera-comments</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p>突然想去看看之前mini_project别人给我的评价  <br/>
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
-    <link href="http://www.changchen.com/blog/20140429/cousera-pong/"/>
+    <link href="http://www.changchen.me/blog/20140429/cousera-pong/"/>
     <updated>2014-04-29T16:27:47+08:00</updated>
-    <id>http://www.changchen.com/blog/20140429/cousera-pong</id>
+    <id>http://www.changchen.me/blog/20140429/cousera-pong</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p>**小游戏~&ldquo;Pong&rdquo; <br/>
@@ -232,9 +232,9 @@ frame.start()
   
   <entry>
     <title type="html"><![CDATA[linux中安装python的egg包]]></title>
-    <link href="http://www.changchen.com/blog/20140424/linux-python-egg-install/"/>
+    <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
     <updated>2014-04-24T11:28:48+08:00</updated>
-    <id>http://www.changchen.com/blog/20140424/linux-python-egg-install</id>
+    <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
     <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
 
 <p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
@@ -253,9 +253,9 @@ networkx-1.1-py2.6.egg   <br/>
   
   <entry>
     <title type="html"><![CDATA[cousera作业_Guess the number]]></title>
-    <link href="http://www.changchen.com/blog/20140413/cousera-python-week3/"/>
+    <link href="http://www.changchen.me/blog/20140413/cousera-python-week3/"/>
     <updated>2014-04-13T21:03:09+08:00</updated>
-    <id>http://www.changchen.com/blog/20140413/cousera-python-week3</id>
+    <id>http://www.changchen.me/blog/20140413/cousera-python-week3</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
 <p><strong>哎   半夜把第三周的大作业写完了     差点来不及  </strong></p>
@@ -373,9 +373,9 @@ new_game()</p>
   
   <entry>
     <title type="html"><![CDATA[Cousera-学习记录-Week2]]></title>
-    <link href="http://www.changchen.com/blog/20140407/cousera-week2/"/>
+    <link href="http://www.changchen.me/blog/20140407/cousera-week2/"/>
     <updated>2014-04-07T13:44:25+08:00</updated>
-    <id>http://www.changchen.com/blog/20140407/cousera-week2</id>
+    <id>http://www.changchen.me/blog/20140407/cousera-week2</id>
     <content type="html"><![CDATA[<h1>欢迎使用 Cmd &ndash; 在线 Markdown 编辑阅读器</h1>
 
 <hr />
