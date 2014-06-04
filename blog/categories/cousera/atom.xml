@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cousera | My home]]></title>
   <link href="http://www.changchen.me/blog/categories/cousera/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-06-03T17:16:05+08:00</updated>
+  <updated>2014-06-04T11:01:46+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cousera_end]]></title>
+    <link href="http://www.changchen.me/blog/20140604/cousera-end/"/>
+    <updated>2014-06-04T08:48:07+08:00</updated>
+    <id>http://www.changchen.me/blog/20140604/cousera-end</id>
+    <content type="html"><![CDATA[<p>嘿嘿   终于拿到第一门cousera的证书了 <br/>
+昨天做梦竟然梦到学了C++不知道去干嘛 <br/>
+继续加油吧~</p>
+
+<!-- more -->
+
+
+<p><img src="https://www.dropbox.com/s/0rwv32cogpnigwv/end1.jpg?dl=1"  /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
