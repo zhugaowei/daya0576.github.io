@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | My home]]></title>
   <link href="http://www.changchen.me/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-06-15T00:48:46+08:00</updated>
+  <updated>2014-06-16T00:03:14+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[网页修改日志]]></title>
+    <link href="http://www.changchen.me/blog/20140615/custom-web-log/"/>
+    <updated>2014-06-15T00:50:08+08:00</updated>
+    <id>http://www.changchen.me/blog/20140615/custom-web-log</id>
+    <content type="html"><![CDATA[<ul>
+<li>140615 <br/>
+增加前一篇后一篇的样式 <br/>
+增加分享功能（虽然也没有人会分享）</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[octopress测试网站的小技巧【原创】]]></title>
