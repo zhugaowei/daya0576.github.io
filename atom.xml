@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-12T00:34:50+08:00</updated>
+  <updated>2014-07-14T16:20:24+01:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[diary2014_07]]></title>
     <link href="http://www.changchen.me/blog/20140702/dairy2014-07/"/>
-    <updated>2014-07-02T13:24:48+08:00</updated>
+    <updated>2014-07-02T06:24:48+01:00</updated>
     <id>http://www.changchen.me/blog/20140702/dairy2014-07</id>
     <content type="html"><![CDATA[<blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :)</p></blockquote>
 
@@ -124,15 +124,28 @@ _ <br/>
 <br>
 
 
+<blockquote><h3>2014/07/14</h3>
+
+<hr />
+
+<p>宝宝一路顺风~ <br/>
+<img src="http://www.changchen.me/images/blog/diary/IMG_0368.JPG" alt="" /></p></blockquote>
+
+<p>总觉得你怪怪的，或许是我太缠人了吧。。  <br/>
+哎 努力不去打扰你好了。</p>
+
+<br>
+
+
 
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[my web log]]></title>
-    <link href="http://www.changchen.me/blog/20140615/custom-web-log/"/>
-    <updated>2014-06-15T00:50:08+08:00</updated>
-    <id>http://www.changchen.me/blog/20140615/custom-web-log</id>
+    <link href="http://www.changchen.me/blog/20140614/custom-web-log/"/>
+    <updated>2014-06-14T17:50:08+01:00</updated>
+    <id>http://www.changchen.me/blog/20140614/custom-web-log</id>
     <content type="html"><![CDATA[<blockquote><p>修改网页的log ~</p></blockquote>
 
 <br></br>
@@ -244,7 +257,7 @@ ok了  <br/>
   <entry>
     <title type="html"><![CDATA[cousera_end]]></title>
     <link href="http://www.changchen.me/blog/20140604/cousera-end/"/>
-    <updated>2014-06-04T08:48:07+08:00</updated>
+    <updated>2014-06-04T01:48:07+01:00</updated>
     <id>http://www.changchen.me/blog/20140604/cousera-end</id>
     <content type="html"><![CDATA[<p>嘿嘿   终于拿到第一门cousera的证书了 <br/>
 昨天做梦竟然梦到学了C++不知道去干嘛 <br/>
@@ -260,7 +273,7 @@ ok了  <br/>
   <entry>
     <title type="html"><![CDATA[diary2014_06]]></title>
     <link href="http://www.changchen.me/blog/20140601/diary2014-06/"/>
-    <updated>2014-06-01T12:13:34+08:00</updated>
+    <updated>2014-06-01T05:13:34+01:00</updated>
     <id>http://www.changchen.me/blog/20140601/diary2014-06</id>
     <content type="html"><![CDATA[<blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :)</p></blockquote>
 
@@ -504,7 +517,7 @@ _  <br/>
   <entry>
     <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
     <link href="http://www.changchen.me/blog/20140516/mini-project-number-6/"/>
-    <updated>2014-05-16T10:11:18+08:00</updated>
+    <updated>2014-05-16T03:11:18+01:00</updated>
     <id>http://www.changchen.me/blog/20140516/mini-project-number-6</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -942,7 +955,7 @@ T ^ T</p>
   <entry>
     <title type="html"><![CDATA[diary2014_05]]></title>
     <link href="http://www.changchen.me/blog/20140510/diary/"/>
-    <updated>2014-05-10T13:20:20+08:00</updated>
+    <updated>2014-05-10T06:20:20+01:00</updated>
     <id>http://www.changchen.me/blog/20140510/diary</id>
     <content type="html"><![CDATA[<blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :)</p></blockquote>
 
@@ -1038,9 +1051,9 @@ Things get worse before they get better. <br/>
   
   <entry>
     <title type="html"><![CDATA[chrome设置（转）]]></title>
-    <link href="http://www.changchen.me/blog/20140510/chrome-setting/"/>
-    <updated>2014-05-10T00:54:33+08:00</updated>
-    <id>http://www.changchen.me/blog/20140510/chrome-setting</id>
+    <link href="http://www.changchen.me/blog/20140509/chrome-setting/"/>
+    <updated>2014-05-09T17:54:33+01:00</updated>
+    <id>http://www.changchen.me/blog/20140509/chrome-setting</id>
     <content type="html"><![CDATA[<ul>
 <li><p><strong>搜索引擎</strong>: 第一空，填你搜索引擎的名字，第二个关键字任意填，第三个空是重点，填这个 <a href="http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search">http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search</a> 为什么填这个呢，因为这个是直接使用谷歌的ip进行搜索，不会被跳转，而且不用代理也可以快速访问，所以强烈推荐，当然这个也是中文的结果，包括繁体和简体。</p></li>
 <li><p><strong>LastPass</strong>: 浏览器的密码管理器，只需要你设定一个主密码，其它服务的密码就靠软件帮你输入了，也可以生成随机密码，支持跨浏览器，跨平台。点此安装</p></li>
@@ -1053,7 +1066,7 @@ Things get worse before they get better. <br/>
   <entry>
     <title type="html"><![CDATA[【探81】很久以前只是家串店]]></title>
     <link href="http://www.changchen.me/blog/20140508/henjiuyiqian/"/>
-    <updated>2014-05-08T23:34:41+08:00</updated>
+    <updated>2014-05-08T16:34:41+01:00</updated>
     <id>http://www.changchen.me/blog/20140508/henjiuyiqian</id>
     <content type="html"><![CDATA[<p>烧烤<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e4006.gif?max_age=2592000" alt="" /></p>
 
@@ -1070,7 +1083,7 @@ Things get worse before they get better. <br/>
   <entry>
     <title type="html"><![CDATA[【探81】必胜客（麦迪逊物美店）]]></title>
     <link href="http://www.changchen.me/blog/20140508/huayuan-bishengke/"/>
-    <updated>2014-05-08T23:27:34+08:00</updated>
+    <updated>2014-05-08T16:27:34+01:00</updated>
     <id>http://www.changchen.me/blog/20140508/huayuan-bishengke</id>
     <content type="html"><![CDATA[<p>小船和泡芙哥吃吃喝喝的故事~~<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e121.gif?max_age=2592000" alt="joy" /></p>
 
@@ -1089,7 +1102,7 @@ Things get worse before they get better. <br/>
   <entry>
     <title type="html"><![CDATA[【探80】生日小庆之争鲜]]></title>
     <link href="http://www.changchen.me/blog/20140506/birthday-zhenxian/"/>
-    <updated>2014-05-06T22:26:35+08:00</updated>
+    <updated>2014-05-06T15:26:35+01:00</updated>
     <id>http://www.changchen.me/blog/20140506/birthday-zhenxian</id>
     <content type="html"><![CDATA[<p>生日小庆之争鲜<img src="http://i2.dpfile.com/s/img/editor/Emoticon4.gif"></p>
 
@@ -1137,7 +1150,7 @@ Things get worse before they get better. <br/>
   <entry>
     <title type="html"><![CDATA[【探80】生日小庆之澳门味道]]></title>
     <link href="http://www.changchen.me/blog/20140506/birthday-aomengweidao/"/>
-    <updated>2014-05-06T22:09:19+08:00</updated>
+    <updated>2014-05-06T15:09:19+01:00</updated>
     <id>http://www.changchen.me/blog/20140506/birthday-aomengweidao</id>
     <content type="html"><![CDATA[<p>生日小庆之澳门味道<img src="http://i1.dpfile.com/s/img/editor/emoticon60.gif"></p>
 
@@ -1192,7 +1205,7 @@ Things get worse before they get better. <br/>
   <entry>
     <title type="html"><![CDATA[Mini-project#5-Memory]]></title>
     <link href="http://www.changchen.me/blog/20140504/mini-project-number-5-memory/"/>
-    <updated>2014-05-04T14:03:07+08:00</updated>
+    <updated>2014-05-04T07:03:07+01:00</updated>
     <id>http://www.changchen.me/blog/20140504/mini-project-number-5-memory</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -1427,7 +1440,7 @@ deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
   <entry>
     <title type="html"><![CDATA[cousera_comments总和]]></title>
     <link href="http://www.changchen.me/blog/20140429/cousera-comments/"/>
-    <updated>2014-04-29T17:29:28+08:00</updated>
+    <updated>2014-04-29T10:29:28+01:00</updated>
     <id>http://www.changchen.me/blog/20140429/cousera-comments</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -1462,7 +1475,7 @@ deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
   <entry>
     <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
     <link href="http://www.changchen.me/blog/20140429/cousera-pong/"/>
-    <updated>2014-04-29T16:27:47+08:00</updated>
+    <updated>2014-04-29T09:27:47+01:00</updated>
     <id>http://www.changchen.me/blog/20140429/cousera-pong</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -1760,7 +1773,7 @@ code:</p>
   <entry>
     <title type="html"><![CDATA[linux中安装python的egg包]]></title>
     <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
-    <updated>2014-04-24T11:28:48+08:00</updated>
+    <updated>2014-04-24T04:28:48+01:00</updated>
     <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
     <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
 
@@ -1781,7 +1794,7 @@ networkx-1.1-py2.6.egg   <br/>
   <entry>
     <title type="html"><![CDATA[韩罗苑]]></title>
     <link href="http://www.changchen.me/blog/20140417/hanluoyuan/"/>
-    <updated>2014-04-17T21:09:52+08:00</updated>
+    <updated>2014-04-17T14:09:52+01:00</updated>
     <id>http://www.changchen.me/blog/20140417/hanluoyuan</id>
     <content type="html"><![CDATA[<p>烧烤~~</p>
 
@@ -1801,7 +1814,7 @@ networkx-1.1-py2.6.egg   <br/>
   <entry>
     <title type="html"><![CDATA[cousera作业_Guess the number]]></title>
     <link href="http://www.changchen.me/blog/20140413/cousera-python-week3/"/>
-    <updated>2014-04-13T21:03:09+08:00</updated>
+    <updated>2014-04-13T14:03:09+01:00</updated>
     <id>http://www.changchen.me/blog/20140413/cousera-python-week3</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -1993,7 +2006,7 @@ networkx-1.1-py2.6.egg   <br/>
   <entry>
     <title type="html"><![CDATA[蛋蛋的忧伤]]></title>
     <link href="http://www.changchen.me/blog/20140412/140412-study/"/>
-    <updated>2014-04-12T22:49:18+08:00</updated>
+    <updated>2014-04-12T15:49:18+01:00</updated>
     <id>http://www.changchen.me/blog/20140412/140412-study</id>
     <content type="html"><![CDATA[<p>颓颓废废的过了两个星期。 <br/>
 自从买了个显示器 就天天宅在寝室里 <br/>
@@ -2011,7 +2024,7 @@ networkx-1.1-py2.6.egg   <br/>
   <entry>
     <title type="html"><![CDATA[custom_domain]]></title>
     <link href="http://www.changchen.me/blog/20140410/custom-domain/"/>
-    <updated>2014-04-10T23:38:30+08:00</updated>
+    <updated>2014-04-10T16:38:30+01:00</updated>
     <id>http://www.changchen.me/blog/20140410/custom-domain</id>
     <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
 貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
@@ -2043,7 +2056,7 @@ networkx-1.1-py2.6.egg   <br/>
   <entry>
     <title type="html"><![CDATA[topit.me的icon ]]></title>
     <link href="http://www.changchen.me/blog/20140408/icon-surprise/"/>
-    <updated>2014-04-08T16:10:38+08:00</updated>
+    <updated>2014-04-08T09:10:38+01:00</updated>
     <id>http://www.changchen.me/blog/20140408/icon-surprise</id>
     <content type="html"><![CDATA[<h3>最近想把网页的icon换一下</h3>
 

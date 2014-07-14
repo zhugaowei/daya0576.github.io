@@ -4,7 +4,7 @@
   <title><![CDATA[Category: study | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-12T00:34:50+08:00</updated>
+  <updated>2014-07-14T16:20:24+01:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[cousera_end]]></title>
     <link href="http://www.changchen.me/blog/20140604/cousera-end/"/>
-    <updated>2014-06-04T08:48:07+08:00</updated>
+    <updated>2014-06-04T01:48:07+01:00</updated>
     <id>http://www.changchen.me/blog/20140604/cousera-end</id>
     <content type="html"><![CDATA[<p>嘿嘿   终于拿到第一门cousera的证书了 <br/>
 昨天做梦竟然梦到学了C++不知道去干嘛 <br/>
@@ -32,7 +32,7 @@
   <entry>
     <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
     <link href="http://www.changchen.me/blog/20140516/mini-project-number-6/"/>
-    <updated>2014-05-16T10:11:18+08:00</updated>
+    <updated>2014-05-16T03:11:18+01:00</updated>
     <id>http://www.changchen.me/blog/20140516/mini-project-number-6</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -288,7 +288,7 @@ frame.start()</p>
   <entry>
     <title type="html"><![CDATA[cousera_comments总和]]></title>
     <link href="http://www.changchen.me/blog/20140429/cousera-comments/"/>
-    <updated>2014-04-29T17:29:28+08:00</updated>
+    <updated>2014-04-29T10:29:28+01:00</updated>
     <id>http://www.changchen.me/blog/20140429/cousera-comments</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -323,7 +323,7 @@ frame.start()</p>
   <entry>
     <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
     <link href="http://www.changchen.me/blog/20140429/cousera-pong/"/>
-    <updated>2014-04-29T16:27:47+08:00</updated>
+    <updated>2014-04-29T09:27:47+01:00</updated>
     <id>http://www.changchen.me/blog/20140429/cousera-pong</id>
     <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
 
@@ -505,7 +505,7 @@ frame.start()
   <entry>
     <title type="html"><![CDATA[linux中安装python的egg包]]></title>
     <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
-    <updated>2014-04-24T11:28:48+08:00</updated>
+    <updated>2014-04-24T04:28:48+01:00</updated>
     <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
     <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
 
