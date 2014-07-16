@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chrome | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/chrome/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-15T02:16:50+01:00</updated>
+  <updated>2014-07-16T23:29:23+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[chrome设置（转）]]></title>
-    <link href="http://www.changchen.me/blog/20140509/chrome-setting/"/>
-    <updated>2014-05-09T17:54:33+01:00</updated>
-    <id>http://www.changchen.me/blog/20140509/chrome-setting</id>
+    <link href="http://www.changchen.me/blog/20140510/chrome-setting/"/>
+    <updated>2014-05-10T00:54:33+08:00</updated>
+    <id>http://www.changchen.me/blog/20140510/chrome-setting</id>
     <content type="html"><![CDATA[<ul>
 <li><p><strong>搜索引擎</strong>: 第一空，填你搜索引擎的名字，第二个关键字任意填，第三个空是重点，填这个 <a href="http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search">http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search</a> 为什么填这个呢，因为这个是直接使用谷歌的ip进行搜索，不会被跳转，而且不用代理也可以快速访问，所以强烈推荐，当然这个也是中文的结果，包括繁体和简体。</p></li>
 <li><p><strong>LastPass</strong>: 浏览器的密码管理器，只需要你设定一个主密码，其它服务的密码就靠软件帮你输入了，也可以生成随机密码，支持跨浏览器，跨平台。点此安装</p></li>

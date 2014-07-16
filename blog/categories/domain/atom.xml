@@ -4,7 +4,7 @@
   <title><![CDATA[Category: domain | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/domain/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-15T02:16:50+01:00</updated>
+  <updated>2014-07-16T23:29:23+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[custom_domain]]></title>
     <link href="http://www.changchen.me/blog/20140410/custom-domain/"/>
-    <updated>2014-04-10T16:38:30+01:00</updated>
+    <updated>2014-04-10T23:38:30+08:00</updated>
     <id>http://www.changchen.me/blog/20140410/custom-domain</id>
     <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
 貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
