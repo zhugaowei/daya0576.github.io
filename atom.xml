@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-20T21:15:41+08:00</updated>
+  <updated>2014-07-20T21:25:58+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -18,7 +18,8 @@
     <link href="http://www.changchen.me/blog/20140702/dairy2014-07/"/>
     <updated>2014-07-02T13:24:48+08:00</updated>
     <id>http://www.changchen.me/blog/20140702/dairy2014-07</id>
-    <content type="html"><![CDATA[<p><BGSOUND SRC="../images/jay.ogg" LOOP=10></p>
+    <content type="html"><![CDATA[<p><BGSOUND SRC="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga
+" LOOP=10></p>
 
 <blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :)</p></blockquote>
 
@@ -294,6 +295,13 @@ ok了  <br/>
 </span><span class='line'>                <span class="k">break</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<blockquote><p><strong>14/07/20</strong> <br/>
+<em>用html5加入音乐</em> <br/>
+——    <br/>
+bugs <br/>
+游览器兼容 <br/>
+页面跳转</p></blockquote>
 ]]></content>
   </entry>
   

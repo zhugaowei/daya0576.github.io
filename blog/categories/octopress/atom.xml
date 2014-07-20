@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-20T21:15:41+08:00</updated>
+  <updated>2014-07-20T21:25:58+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -101,6 +101,13 @@ if len(lines) &gt; 0:
 </code></pre>
 
 <p>```</p>
+
+<blockquote><p><strong>14/07/20</strong> <br/>
+<em>用html5加入音乐</em> <br/>
+——    <br/>
+bugs <br/>
+游览器兼容 <br/>
+页面跳转</p></blockquote>
 ]]></content>
   </entry>
   
