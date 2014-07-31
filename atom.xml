@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-31T12:43:08+08:00</updated>
+  <updated>2014-08-01T00:29:17+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cal_uni_score]]></title>
+    <link href="http://www.changchen.me/blog/20140801/cal-uni-score/"/>
+    <updated>2014-08-01T00:05:13+08:00</updated>
+    <id>http://www.changchen.me/blog/20140801/cal-uni-score</id>
+    <content type="html"><![CDATA[<p><head>
+  <link rel="import" href="temp.html">
+</head></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[diary2014_07]]></title>
@@ -2183,31 +2194,6 @@ networkx-1.1-py2.6.egg   <br/>
 
 
 <p>github官方文档：<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">https://help.github.com/articles/setting-up-a-custom-domain-with-pages</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[topit.me的icon ]]></title>
-    <link href="http://www.changchen.me/blog/20140408/icon-surprise/"/>
-    <updated>2014-04-08T16:10:38+08:00</updated>
-    <id>http://www.changchen.me/blog/20140408/icon-surprise</id>
-    <content type="html"><![CDATA[<h3>最近想把网页的icon换一下</h3>
-
-<h3>就想偷用<code>topit.me/favicon.ico</code>的那个16*16的粉红色爱心</h3>
-
-<h3>改成背景色的</h3>
-
-<p>结果一打开。。</p>
-
-<!--more-->
-
-
-<p><img src="http://www.changchen.me/images\blog\140408_topitme\1.jpg" alt="ico_topitme" /></p>
-
-<p>边缘的粉色真的是十多种透明度。   也太用心了。</p>
-
-<p>让人改的机会也没有     好吧放过你了    哈哈 <br/>
-再去找一个</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: study | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-07-31T12:43:08+08:00</updated>
+  <updated>2014-08-01T00:29:17+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cal_uni_score]]></title>
+    <link href="http://www.changchen.me/blog/20140801/cal-uni-score/"/>
+    <updated>2014-08-01T00:05:13+08:00</updated>
+    <id>http://www.changchen.me/blog/20140801/cal-uni-score</id>
+    <content type="html"><![CDATA[<p><head>
+  <link rel="import" href="temp.html">
+</head></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[cousera_end]]></title>
@@ -499,27 +510,6 @@ frame.add_button(&lsquo;Reset&rsquo;, button_handler, 60)</p>
 <p>new_game()
 frame.start()
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linux中安装python的egg包]]></title>
-    <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
-    <updated>2014-04-24T11:28:48+08:00</updated>
-    <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
-    <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
-
-<p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
-networkx-1.1-py2.6.egg   <br/>
-然后下载 setuptools:<a href="https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea">setuptools-0.6c11-py2.7.egg (md5)</a></p>
-
-<h3>1. 安装setuptools</h3>
-
-<p><img src="\images\blog\140424_python_egg\1.png" alt="ico_topitme" /></p>
-
-<h3>2. 安装networkx</h3>
-
-<p><img src="\images\blog\140424_python_egg\2.png" alt="ico_topitme" /></p>
 ]]></content>
   </entry>
   
