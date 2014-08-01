@@ -4,7 +4,7 @@
   <title><![CDATA[Category: study | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-08-01T01:56:53+08:00</updated>
+  <updated>2014-08-01T15:01:07+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -18,7 +18,31 @@
     <link href="http://www.changchen.me/blog/20140801/cal-uni-score/"/>
     <updated>2014-08-01T00:05:13+08:00</updated>
     <id>http://www.changchen.me/blog/20140801/cal-uni-score</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<blockquote><p>打包好的exe：<a href="http://pan.baidu.com/s/1nt9eTYh">http://pan.baidu.com/s/1nt9eTYh</a> <br/>
+源代码在github上:<a href="https://github.com/daya0576/140730-Tianji_Polytechnic_uni_cal_score">python代码</a> <br/>
+<a href="https://github.com/daya0576/140730-Tianji_Polytechnic_uni_cal_score.git">https://github.com/daya0576/140730-Tianji_Polytechnic_uni_cal_score.git</a></p></blockquote>
+
+<h2>代码有由3部分组成</h2>
+
+<ol>
+<li>用urllib登陆教务处，返回html</li>
+<li>用beautifulsoup对html的parse</li>
+<li>最后用p2exe打包为可执行文件</li>
+</ol>
+
+
+<!--more-->
+
+
+<p>以前写过一个登陆教务处网站的小程序。 <br/>
+写程序中大部分的时间都用到乱码的处理和beautifulsoup的使用了&hellip; <br/>
+还有py2exe的安装学习 <br/>
+真的是浪费了 好多时间，如果有好的规划，应该会节省更多时间吧、</p>
+
+<h3>&mdash;-最后的结果&mdash;&ndash;###</h3>
+
+<p><img src="/images/blog/diary/console.jpg" alt="" /> <br/>
+<img src="/images/blog/diary/result.jpg" alt="" /></p>
 ]]></content>
   </entry>
   
