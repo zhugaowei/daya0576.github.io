@@ -1,0 +1,252 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>天津工业大学软件园 ubuntu电信网设置。 - 你是我的小呀小苹果~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="天津工业大学软件园 Ubuntu电信网设置。 CSDN以前写的博客 原地址： http://blog.csdn.net/dayadaya/article/details/20144941 天津工业大学软件园 ubuntu电信网设置。 作者：daya0576 &nbsp; &nbsp; &nbsp &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="你是我的小呀小苹果~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://www.changchen.me/blog/20140924/ubuntu-access-telecom/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/libs/jquery.min.js"></script>
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div background="http://www.w3school.com.cn/clouds.gif" class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+	<h1 class="title" itemprop="name">天津工业大学软件园 Ubuntu电信网设置。</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>CSDN以前写的博客 <br/>
+原地址： <a href="http://blog.csdn.net/dayadaya/article/details/20144941" title="http://blog.csdn.net/dayadaya/article/details/20144941">http://blog.csdn.net/dayadaya/article/details/20144941</a></p></blockquote>
+
+<!--more-->
+
+
+
+
+<h1>
+        <span class="link_title"><a href="http://blog.csdn.net/dayadaya/article/details/20144941">
+        天津工业大学软件园 ubuntu电信网设置。
+        </a></span>
+</h1>
+
+
+<p></p>
+
+<div id="article_content" class="article_content">
+
+<p>作者：daya0576 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>首先学校提供了一个drlinuxclient.bin的东西。</p>
+<p>可以上网，但是连上之后用的serverip是10.0.2.5</p>
+<p>但电信网只有10.1.5才能连上。so。。</p>
+<p><br>
+</p>
+<p>下午去办网那问了一下，让他把我的帐号改为网页登陆。</p>
+<p>本以为要卖个萌求他一下才能给我改，没想到左边那个戴眼镜的叔叔爽快的答应了</p>
+<p>（顺便鄙视一下那些 &nbsp; &nbsp;偷用网页帐号上电信的人 ==）</p>
+<p>用网页登陆之后～～～开始正题</p>
+<p></p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+1. 添加PPA</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-add-repository ppa:seriy-pr/network-manager-l2tp</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+2. 刷新软件包缓存</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-get update</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+3. 安装network-manager-l2tp</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-get install network-manager-l2tp-gnome</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+安装完之后不要忘记运行以下命令</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo service xl2tpd stop&nbsp;</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo update-rc.d xl2tpd disable</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+重启机器</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+<br>
+</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+这时候新建VPN就能够选l2tp选项了。 &nbsp;&nbsp;</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+填上221.239.126.9</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+你的帐号和密码</p>
+<p>pppsetting那不用改 &nbsp; &nbsp; &nbsp; &nbsp;那是使用什么协议。</p>
+<p>貌似用的是MSCHAPv2 &nbsp; &nbsp; &nbsp; &nbsp; 管他呢 &nbsp; &nbsp; &nbsp; 全勾上就是了</p>
+<p>然后就开始欢乐的上网了 &nbsp; &nbsp; 哈哈哈～～～～～～～～～</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+
+</div>
+
+
+
+</div>
+
+   
+
+<div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<br>
+<div style="height:50px;margin:20px 0">
+<p style="font-size:180%;float:left; " class="meta">
+ 
+  
+	<a href="/blog/20140924/inspiron7420-touchpad/" style="margin-right:20px ;"  title="Next Post: dell inspiron7420 ubuntu13.04触摸板设置">&laquo; dell inspiron7420 ubuntu13.04触摸板设置  </a>
+  
+   
+	<a href="/blog/20140916/our-children/" style="" title="Previous Post: our_children"> our_children  &raquo;</a>
+  
+</p>
+</div>
+<br></br>
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite"><!-- 多说评论框 start -->
+<div class="ds-thread" data-title=""></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"daya0576"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end --></div>
+  </section>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+
+<!--
+-->
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+</body>
+</html>

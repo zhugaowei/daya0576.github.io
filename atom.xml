@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-09-23T23:41:17+08:00</updated>
+  <updated>2014-09-24T22:03:52+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,394 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[inspiron7420装ubuntu13.04后的设置]]></title>
+    <link href="http://www.changchen.me/blog/20140924/inspiron7420-setting-all/"/>
+    <updated>2014-09-24T21:59:15+08:00</updated>
+    <id>http://www.changchen.me/blog/20140924/inspiron7420-setting-all</id>
+    <content type="html"><![CDATA[<blockquote><p>CSDN以前写的博客 <br/>
+原地址： <a href="http://blog.csdn.net/dayadaya/article/details/20140765" title="http://blog.csdn.net/dayadaya/article/details/20140765">http://blog.csdn.net/dayadaya/article/details/20140765</a></p></blockquote>
+
+<!--more-->
+
+
+
+
+<div id="article_content" class="article_content">
+
+<div>
+<p>（部分代码摘自互联网）</p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><strong>1.修复引导项</strong></span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">如果只是纯粹的装了win7/win8后没有了引导项 可以在win7/win8中用easybcd把/boot添加回来就行了。</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">要是。。完全把引导弄坏了。可以看一下下面这篇文章。</span></p>
+<div><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">Reinstall / Recover GRUB from Ubuntu live CD / USB</span></div>
+<div><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">http://www.howopensource.com/2012/05/reinstall-recover-grub-from-ubuntu-12-04-live-cd-usb/</span></div>
+<div><span style="font-size:12pt; font-family:times new roman,times,serif">用ubuntu live装一个叫做boot-repair的东西&nbsp;&nbsp; 点修复&nbsp; 等运行完点ok就行了</span><br clear="none">
+</div>
+<div>
+<pre style="margin-top:0px; margin-bottom:10px; padding:0px; border:0px; outline:0px; font-size:16px; vertical-align:baseline; background-color:rgb(199,199,184); font-family:'Courier New',monospace; color:rgb(51,51,51); line-height:16px"><span style="font-size:12pt; font-family:times new roman,times,serif">sudo add-apt-repository ppa:yannubuntu/boot-repair</span></pre>
+<pre style="margin-top:0px; margin-bottom:10px; padding:0px; border:0px; outline:0px; font-size:16px; vertical-align:baseline; background-color:rgb(199,199,184); font-family:'Courier New',monospace; color:rgb(51,51,51); line-height:16px"><span style="font-size:12pt; font-family:times new roman,times,serif">sudo apt-get update</span></pre>
+<pre style="margin-top:0px; margin-bottom:10px; padding:0px; border:0px; outline:0px; font-size:16px; vertical-align:baseline; background-color:rgb(199,199,184); font-family:'Courier New',monospace; color:rgb(51,51,51); line-height:16px"><span style="font-size:12pt; font-family:times new roman,times,serif">sudo apt-get install -y boot-repair</span></pre>
+<pre style="margin-top:0px; margin-bottom:10px; padding:0px; border:0px; outline:0px; font-size:16px; vertical-align:baseline; background-color:rgb(199,199,184); font-family:'Courier New',monospace; color:rgb(51,51,51); line-height:16px"><span style="font-size:12pt; font-family:times new roman,times,serif">boot-repair</span></pre>
+</div>
+<div><br clear="none">
+</div>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><strong>2.ctrl + alt + cursor 切换工作区间</strong></span><br clear="none">
+</p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">装了ubuntu13.04后第一个最大的感受就是。。我切换工作区间的快捷键怎么没有用了！！</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">当然先在设置中把workspace打开，还是不行</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">但在快捷键的列表中看到还是有这几个快捷键。。。最后在ubuntuask上看到了这么一个回答</span><br clear="none">
+</p>
+<p><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">“I had this same issue. I enabled workspace from
+<em>Appearance-&gt;Behavior</em>, and also tried using Ubuntu Tweak, but no go on the keyboard shortcuts, even though all the defaults were there.</span></p>
+<p><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">I then opened CCSM to make sure that the Desktop Wall was enabled. In my case it wasn&#8217;t, and as soon as I enabled it, my keyboard shortcuts started working again.”</span></p>
+<p><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif"><span style="color:rgb(51,51,51)">然后我就装了一下CCSM，把</span><span style="color:rgb(51,51,51)">Desktop Wall这个选项勾上。。结果真的完全恢复正常了。</span>
+</span></p>
+<p><br clear="none">
+</p>
+<span style="font-size:12pt; font-family:times new roman,times,serif"><strong>3.更新软件源&nbsp;</strong></span></div>
+<div><span style="font-size:12pt; font-family:times new roman,times,serif">不知道是不是163的源里没有13.04，我直接从12.10升级的时候悲剧了。</span></div>
+<div><span style="font-size:12pt; font-family:times new roman,times,serif">然后现在让它自动检测最快的源，现在就用china的第一个源，貌似也挺好用。</span></div>
+<div><br clear="none">
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><strong>4. 双显卡</strong></span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">一开机笔记本就轰轰轰的掉点&nbsp;&nbsp;&nbsp;&nbsp; 就按以前的方法把独显关了算了&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; intel的独显绝对够用了。</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">cat&nbsp; /sys/kernel/debug/vgaswitcheroo/switch</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">echo &#8220;OFF&#8221; &gt; /sys/kernel/debug/vgaswitcheroo/switch</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">可以前好像出现过在ubuntu中把nvidia禁用了&nbsp;&nbsp; 结果win7中也开不起来了。&nbsp;</span></p>
+<p><br clear="none">
+</p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><strong>5.输入法</strong></span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">以前还装了搜狗的输入法。感觉一般吧</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">这次在ubuntu中用了谷歌的输入法 真的给了我很大的惊喜</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">输入时光标终于能跟着拼音动&nbsp;&nbsp;&nbsp;&nbsp; 感觉和windows的体验也没什么区别了。</span></p>
+<p><br clear="none">
+</p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><strong>6.开机的亮度</strong></span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">这肯定都知道吧 <br clear="none">
+</span></p>
+<table>
+<tbody>
+<tr style="margin:0px; padding:0px; border:0px; font-size:12px; vertical-align:baseline; background-color:transparent">
+<td colspan="1" rowspan="1" style="margin:0px; padding:0px; border:0px; vertical-align:top; background-color:transparent">
+<div style="margin:0px 5px 5px 0px; padding:0px; border:0px; font-size:14px; vertical-align:baseline; background-color:transparent; width:660px; word-wrap:break-word; line-height:1.3">
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">The file /etc/rc.local should look like this:</span></p>
+<pre style="margin-top:0px; margin-bottom:10px; padding:5px; border:0px; vertical-align:baseline; background-color:rgb(238,238,238); overflow:auto; width:auto; max-height:600px; font-family:'Ubuntu Mono','Ubuntu Beta Mono A',Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; word-wrap:normal"><span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif"><code style="margin:0px; padding:0px; border:0px; font-size:14px; vertical-align:baseline; font-family:'Ubuntu Mono','Ubuntu Beta Mono A',Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; color:rgb(34,34,34)">#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+echo 0 &gt; /sys/class/backlight/acpi_video0/brightness
+exit 0
+</code></span></pre>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">Per @zerdo: In my dell studio 1558 the brightness setting is stored in<code style="margin:0px; padding:1px 5px; border:0px; font-size:14px; vertical-align:baseline; background-color:#eeeeee; font-family:'Ubuntu Mono','Ubuntu Beta Mono A',Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; color:#222222">/sys/class/backlight/intel_backlight/brightness</code>.
+ Just change the path if your computer doesn&#8217;t use the acpi_video0 folder.</span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="color:rgb(128,128,128); font-size:12pt; font-family:times new roman,times,serif">Also, per @Nick : If this is the only answer you read, note that the 0 in&nbsp;<code style="margin:0px; padding:1px 5px; border:0px; font-size:14px; vertical-align:baseline; background-color:#eeeeee; font-family:'Ubuntu Mono','Ubuntu Beta Mono A',Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; color:#222222">echo
+ 0</code>&nbsp;is going to be your default brightness setting. I had set this up and it was driving me crazy for a long time : every time I booted up, it would set it to the lowest brightness setting. I prefer mine to start at max brightness, so I used&nbsp;<code style="margin:0px; padding:1px 5px; border:0px; font-size:14px; vertical-align:baseline; background-color:#eeeeee; font-family:'Ubuntu Mono','Ubuntu Beta Mono A',Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; color:#222222">echo
+ 10</code>instead. Your hardware might vary in brightness scale.</span></p>
+<pre><span style="font-size:12pt; font-family:'times new roman',times,serif"><code>sudo gedit <span style="color:rgb(128,128,128)">/etc/rc.local<br clear="none">在exit 0 前加上</span><br clear="none">echo 2 &gt; /sys/class/backlight/acpi_video0/brightness</code></span></pre>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif">0～10代表不同的亮度。</span><br clear="none">
+</p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif"><span style="font-family:'times new roman',times,serif; font-size:14px">作者：daya0576 &nbsp;（天津工大）qq 746058508 &nbsp; &nbsp;欢迎有志同道合的朋友一起学习一起进步</span><br clear="none">
+</span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif">7.截图小工具&nbsp; <br clear="none">
+</span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif">&nbsp;&nbsp;&nbsp; <span style="color:rgb(51,51,51); font-family:tahoma,宋体; font-size:14px; line-height:22px; background-color:rgb(239,239,239)">
+sudo apt-get install ksnapshot</span></span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif"><span style="color:rgb(51,51,51); font-family:tahoma,宋体; font-size:14px; line-height:22px; background-color:rgb(239,239,239)">结果后来发现ubuntu有截图的快捷键 &nbsp;</span><br clear="none">
+</span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif"><span style="color:rgb(51,51,51); font-family:tahoma,宋体; font-size:14px; line-height:22px; background-color:rgb(239,239,239)"><img src="" alt=""><br>
+</span></span></p>
+<p style="margin-top:0px; margin-bottom:1em; padding-top:0px; padding-bottom:0px; border:0px; vertical-align:baseline; background-color:transparent; clear:both">
+<span style="font-size:12pt; font-family:times new roman,times,serif"><span style="color:rgb(51,51,51); font-family:tahoma,宋体; font-size:14px; line-height:22px; background-color:rgb(239,239,239)"><br>
+</span></span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><br clear="none">
+</p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">总之ubuntu还是很棒的&nbsp;&nbsp; 和windows比起来&nbsp;&nbsp; 我更愿意留在ubuntu～</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif"><br>
+</span></p>
+<p><span style="font-size:12pt; font-family:times new roman,times,serif">（小菜一个 &nbsp;学习中 &nbsp; &nbsp; 欢迎大家指出错误 &nbsp;&nbsp;<span style="color:rgb(51,51,51); font-family:Tahoma,Verdana,STHeiTi,simsun,sans-serif; font-size:14px; line-height:19px">&gt;_&lt;|||</span> &nbsp;）</span></p>
+</div>
+
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[dell inspiron7420 ubuntu13.04触摸板设置]]></title>
+    <link href="http://www.changchen.me/blog/20140924/inspiron7420-touchpad/"/>
+    <updated>2014-09-24T21:50:55+08:00</updated>
+    <id>http://www.changchen.me/blog/20140924/inspiron7420-touchpad</id>
+    <content type="html"><![CDATA[<blockquote><p>CSDN以前写的博客 <br/>
+原地址： <a href="http://blog.csdn.net/dayadaya/article/details/20141673" title="http://blog.csdn.net/dayadaya/article/details/20141673">http://blog.csdn.net/dayadaya/article/details/20141673</a></p></blockquote>
+
+<!--more-->
+
+
+
+
+<div id="article_content" class="article_content">
+
+<h3><a name="t0"></a>废话不多说 &nbsp; &nbsp;<br>
+<img src="" alt=""><br>
+就是为了调出 touchpad两只手指滚动的设置<br>
+讽刺的是google了一个晚上还是在一个中文页面上找到了解决的方法</h3>
+<h3><a name="t1"></a>原因：</h3>
+<div>
+<h3 style="margin:0px 0px 0.3em; padding:0.5em 0px 0.17em; border-width:0px; border-bottom-style:none; line-height:19.046875px; font-family:sans-serif; font-size:17px; color:rgb(34,34,34); overflow:hidden"><a name="t2"></a>
+<span style="line-height:1.428571em"><span class="highlight" style="line-height:1.428571em; border:1px solid rgb(212,205,126); background-color:rgb(246,238,150)">Touchpad</span>&nbsp;detected as &#8220;PS/2 Generic Mouse&#8221; or &#8220;Logitech PS/2 mouse&#8221;</span></h3>
+<p style="margin-top:0.4em; margin-bottom:0.5em; padding-top:0px; padding-bottom:0px; border:0px; line-height:19.046875px; font-family:sans-serif; font-size:13px">
+This is caused by a<span style="line-height:1.428571em">&nbsp;</span><a target="_blank" href="https://bugzilla.kernel.org/show_bug.cgi?id=27442" rel="nofollow" shape="rect" style="margin:0px; padding:0px; border:0px; line-height:1.428571em; color:rgb(102,102,102); text-decoration:none; outline:none; font-weight:bold">kernel
+ bug</a><span style="line-height:1.428571em">&nbsp;</span>which was fixed in kernel version 3.3. Wrongly detected touchpads cannot be configured with the Synaptic input driver. To fix this, simply install the<span style="line-height:1.428571em">&nbsp;</span><a target="_blank" title="AUR" href="https://wiki.archlinux.org/index.php/AUR" shape="rect" style="margin:0px; padding:0px; border:0px; line-height:1.428571em; color:rgb(102,102,102); text-decoration:none; outline:none; font-weight:bold">AUR</a><span style="line-height:1.428571em">&nbsp;</span>package<span style="line-height:1.428571em">&nbsp;</span><span style="line-height:1.428571em; font-family:monospace"><a target="_blank" href="https://aur.archlinux.org/packages/psmouse-alps-driver/" rel="nofollow" shape="rect" style="margin:0px; padding:0px; border:0px; line-height:1.428571em; color:rgb(102,102,102); text-decoration:none; outline:none; font-weight:bold">psmouse-alps-driver</a></span>.</p>
+<p style="margin-top:0.4em; margin-bottom:0.5em; padding-top:0px; padding-bottom:0px; border:0px; line-height:19.046875px; font-family:sans-serif; font-size:13px">
+Among the affected notebooks are the following models:</p>
+<ul style="margin:0.3em 0px 0px 1.6em; padding:0px; border:0px; line-height:19.046875px; list-style:square outside none; font-family:sans-serif; font-size:13px">
+<li style="margin:0px 0px 0.1em; padding:0px; border:0px; line-height:1.428571em">
+Acer Aspire 7750G</li><li style="margin:0px 0px 0.1em; padding:0px; border:0px; line-height:1.428571em">
+Dell Latitude E6230, E6520, E6430 and E6530 (ALPS DualPoint&nbsp;<span class="highlight" style="line-height:1.428571em; border:1px solid rgb(212,205,126); background-color:rgb(246,238,150)">TouchPad</span>),<span style="line-height:1.428571em"><span style="line-height:1.428571em; color:rgb(0,0,255)">&nbsp;Inspiron
+ N5110 (ALPS GlidePoint), Inspiron 14R 5420/Turbo SE7420/SE7520 (ALPS GlidePoint)</span></span></li><li style="margin:0px 0px 0.1em; padding:0px; border:0px; line-height:1.428571em">
+Samsung NC110/NF210/QX310/QX410/QX510/SF310/SF410/SF510/RF410/RF510/RF710/RV515</li></ul>
+<p style="margin-top:0.4em; margin-bottom:0.5em; padding-top:0px; padding-bottom:0px; border:0px; line-height:19.046875px; font-family:sans-serif; font-size:13px">
+You can check whether your&nbsp;<span class="highlight" style="line-height:1.428571em; border:1px solid rgb(212,205,126); background-color:rgb(246,238,150)">touchpad</span>&nbsp;is correctly detected by running:</p>
+<pre style="margin-top:0px; margin-bottom:0px; padding:1em; border:1px solid rgb(187,204,221); line-height:1.1em; font-size:14px; color:rgb(34,34,34); background-color:rgb(235,241,245); overflow:auto">$ xinput list
+</pre>
+<p style="margin-top:0.4em; margin-bottom:0.5em; padding-top:0px; padding-bottom:0px; border:0px; line-height:19.046875px; font-family:sans-serif; font-size:13px">
+More information can be found in<span style="line-height:1.428571em">&nbsp;</span><a target="_blank" href="https://bbs.archlinux.org/viewtopic.php?id=117109" rel="nofollow" shape="rect" style="margin:0px; padding:0px; border:0px; line-height:1.428571em; color:rgb(102,102,102); text-decoration:none; outline:none; font-weight:bold">this
+ thread</a>.</p>
+<br>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<div><br>
+</div>
+<h3><a name="t3"></a>google找到这个包 下载</h3>
+<h4><a name="t4"></a><span style="font-family:Consolas,'Bitstream Vera Sans Mono','Courier New',Courier,monospace; font-size:14px; line-height:15.390625px; background-color:rgb(250,250,250)">（psmouse-alps-1.3-alt.tbz）</span></h4>
+<p></p>
+<p>
+</p><table border="0" cellspacing="0" cellpadding="0" style="line-height:21px; font-size:14px; border-collapse:collapse; border-spacing:0px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+<tbody style="line-height:1.428571em">
+</tbody>
+</table>
+<p></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; border:0px; line-height:21px; font-size:14px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+解压：</p>
+<table border="0" cellspacing="0" cellpadding="0" style="line-height:21px; font-size:14px; border-collapse:collapse; border-spacing:0px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+<tbody style="line-height:1.428571em">
+<tr style="line-height:1.428571em">
+<td rowspan="1" colspan="1" style="line-height:1.428571em; padding:0px; margin:0px">
+<div style="margin:0px; padding:0px; border:0px; line-height:1.428571em; font-family:Helvetica,Arial,'Droid Sans',sans-serif; font-size:14px">
+<div style="padding:0px; border:0px; line-height:1.428571em; width:516.46875px; margin:1em 0px!important; font-size:1em!important; position:relative!important">
+<table border="0" cellspacing="0" cellpadding="0" style="">
+<tbody style="line-height:1.428571em">
+<tr style="">
+<td rowspan="1" colspan="1" style="">
+<div style="">1</div>
+</td>
+<td rowspan="1" colspan="1" style="">
+<div style="">
+<div style=""><code style="">tar</code><span style="line-height:1.428571em">&nbsp;</span><code style="">xvf psmouse-alps-1.3-alt.tbz</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+<td rowspan="1" colspan="1" style="line-height:1.428571em; padding:0px; margin:0px">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; border:0px; line-height:21px; font-size:14px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+复制到 /usr/src 目录下：</p>
+<table border="0" cellspacing="0" cellpadding="0" style="line-height:21px; font-size:14px; border-collapse:collapse; border-spacing:0px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+<tbody style="line-height:1.428571em">
+<tr style="line-height:1.428571em">
+<td rowspan="1" colspan="1" style="line-height:1.428571em; padding:0px; margin:0px">
+&nbsp;</td>
+<td rowspan="1" colspan="1" style="line-height:1.428571em; padding:0px; margin:0px">
+<div style="margin:0px; padding:0px; border:0px; line-height:1.428571em; font-family:Helvetica,Arial,'Droid Sans',sans-serif; font-size:14px">
+<div style="padding:0px; border:0px; line-height:1.428571em; width:516.46875px; margin:1em 0px!important; font-size:1em!important; position:relative!important">
+<table border="0" cellspacing="0" cellpadding="0" style="">
+<tbody style="line-height:1.428571em">
+<tr style="">
+<td rowspan="1" colspan="1" style="">
+<div style="">1</div>
+</td>
+<td rowspan="1" colspan="1" style="">
+<div style="">
+<div style=""><code style="">sudo</code><span style="line-height:1.428571em">&nbsp;</span><code style="">cp</code><span style="line-height:1.428571em">&nbsp;</span><code style="">-afr usr</code><code style="">/src/psmouse-alps-1</code><code style="">.3/<span style="line-height:1.428571em">&nbsp;</span></code><code style="">/usr/src/</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px; border:0px; line-height:21px; font-size:14px; color:rgb(69,69,69); font-family:Tahoma,Helvetica,Arial,STHeiti">
+安装：</p>
+<div style="margin:0px; padding:0px; border:0px; line-height:21px; font-family:Tahoma,Helvetica,Arial,STHeiti; font-size:14px; color:rgb(69,69,69)">
+<div style="padding:0px; border:0px; line-height:1.428571em; font-family:Helvetica,Arial,'Droid Sans',sans-serif; width:727.671875px; margin:1em 0px!important; font-size:1em!important; position:relative!important">
+<table border="0" cellspacing="0" cellpadding="0" style="">
+<tbody style="line-height:1.428571em">
+<tr style="">
+<td rowspan="1" colspan="1" style="">
+<div style="">1</div>
+<div style="">2</div>
+<div style="">3</div>
+</td>
+<td rowspan="1" colspan="1" style="">
+<div style="">
+<div style=""><code style="">sudo</code><span style="line-height:1.428571em">&nbsp;</span><code style="">cd</code><span style="line-height:1.428571em">&nbsp;</span><code style="">/usr/src/ppsmouse-alps-1</code><code style="">.3</code></div>
+<div style=""><code style="">sudo</code><span style="line-height:1.428571em">&nbsp;</span><code style="">dkms add .</code></div>
+<div style=""><code style="">.</code><code style="">/alps</code><code style="">.sh dkms_build_alps</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h4><a name="t5"></a>安装完驱动之后，synclient就能识别出触摸板了。</h4>
+<div>但是发现触摸板变得非常不灵敏，有种想删驱动的感觉。。。</div>
+<div><br>
+</div>
+<div>但是man synclient一下，发现syclient的功能真的是强大的可怕，</div>
+<div><br>
+</div>
+<p>之后把</p>
+<p>FingerLow &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; = 12<br>
+FingerHigh &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 15<br>
+</p>
+<p>都调低后 &nbsp; 终于可以正常使用了</p>
+<p><br>
+</p>
+<p>哈哈哈哈哈哈！</p>
+<p><br>
+</p>
+<p><br>
+</p>
+
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[天津工业大学软件园 ubuntu电信网设置。]]></title>
+    <link href="http://www.changchen.me/blog/20140924/ubuntu-access-telecom/"/>
+    <updated>2014-09-24T21:40:01+08:00</updated>
+    <id>http://www.changchen.me/blog/20140924/ubuntu-access-telecom</id>
+    <content type="html"><![CDATA[<blockquote><p>CSDN以前写的博客 <br/>
+原地址： <a href="http://blog.csdn.net/dayadaya/article/details/20144941" title="http://blog.csdn.net/dayadaya/article/details/20144941">http://blog.csdn.net/dayadaya/article/details/20144941</a></p></blockquote>
+
+<!--more-->
+
+
+
+
+<h1>
+        <span class="link_title"><a href="http://blog.csdn.net/dayadaya/article/details/20144941">
+        天津工业大学软件园 ubuntu电信网设置。
+        </a></span>
+</h1>
+
+
+<p></p>
+
+<div id="article_content" class="article_content">
+
+<p>作者：daya0576 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>首先学校提供了一个drlinuxclient.bin的东西。</p>
+<p>可以上网，但是连上之后用的serverip是10.0.2.5</p>
+<p>但电信网只有10.1.5才能连上。so。。</p>
+<p><br>
+</p>
+<p>下午去办网那问了一下，让他把我的帐号改为网页登陆。</p>
+<p>本以为要卖个萌求他一下才能给我改，没想到左边那个戴眼镜的叔叔爽快的答应了</p>
+<p>（顺便鄙视一下那些 &nbsp; &nbsp;偷用网页帐号上电信的人 ==）</p>
+<p>用网页登陆之后～～～开始正题</p>
+<p></p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+1. 添加PPA</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-add-repository ppa:seriy-pr/network-manager-l2tp</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+2. 刷新软件包缓存</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-get update</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+3. 安装network-manager-l2tp</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo apt-get install network-manager-l2tp-gnome</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+安装完之后不要忘记运行以下命令</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo service xl2tpd stop&nbsp;</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+sudo update-rc.d xl2tpd disable</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+重启机器</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+<br>
+</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+这时候新建VPN就能够选l2tp选项了。 &nbsp;&nbsp;</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+填上221.239.126.9</p>
+<p style="margin-top:0px; margin-bottom:0.714285em; padding-top:0px; padding-bottom:0px; border:0px; line-height:22px; font-size:14px; color:rgb(51,51,51); font-family:tahoma,宋体; background-color:rgb(239,239,239)">
+你的帐号和密码</p>
+<p>pppsetting那不用改 &nbsp; &nbsp; &nbsp; &nbsp;那是使用什么协议。</p>
+<p>貌似用的是MSCHAPv2 &nbsp; &nbsp; &nbsp; &nbsp; 管他呢 &nbsp; &nbsp; &nbsp; 全勾上就是了</p>
+<p>然后就开始欢乐的上网了 &nbsp; &nbsp; 哈哈哈～～～～～～～～～</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+
+</div>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[our_children]]></title>
@@ -2401,345 +2789,6 @@ deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
 <h4>&ldquo;:&ndash;) All the best.&rdquo;</h4>
 
 <h4>继续加油   以后改作业也要更认真一点了</h4>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[cousera_Mini-project # 4 - Pong]]></title>
-    <link href="http://www.changchen.me/blog/20140429/cousera-pong/"/>
-    <updated>2014-04-29T16:27:47+08:00</updated>
-    <id>http://www.changchen.me/blog/20140429/cousera-pong</id>
-    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
-
-<p>**小游戏~&ldquo;Pong&rdquo; <br/>
-这次时间还是挺充裕的，但是看英文看的头大，就没按步骤写了 <br/>
-结果花了更多的时间   还写错了一些  <br/>
-下次还是认真按步骤写好了</p>
-
-<p>我做的： <br/>
-<img src="\images\blog\140430_cousera\1.png" alt="ico_topitme" /></p>
-
-<p>改作业改到一个做的好有创意： 评语评了一句碉堡了 <br/>
-不知道看懂看不懂 哈哈 <br/>
-<img src="\images\blog\140430_cousera\2.png" alt="ico_topitme" /></p>
-
-<!--more-->
-
-
-<p>可以在<a href="http://www.codeskulptor.org/">codeskullptor</a>上运行 <br/>
-code:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-<span class='line-number'>119</span>
-<span class='line-number'>120</span>
-<span class='line-number'>121</span>
-<span class='line-number'>122</span>
-<span class='line-number'>123</span>
-<span class='line-number'>124</span>
-<span class='line-number'>125</span>
-<span class='line-number'>126</span>
-<span class='line-number'>127</span>
-<span class='line-number'>128</span>
-<span class='line-number'>129</span>
-<span class='line-number'>130</span>
-<span class='line-number'>131</span>
-<span class='line-number'>132</span>
-<span class='line-number'>133</span>
-<span class='line-number'>134</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># Implementation of classic arcade game Pong</span>
-</span><span class='line'>
-</span><span class='line'><span class="kn">import</span> <span class="nn">simplegui</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">random</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># initialize globals - pos and vel encode vertical info for paddles</span>
-</span><span class='line'><span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
-</span><span class='line'><span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">400</span>
-</span><span class='line'><span class="n">BALL_RADIUS</span> <span class="o">=</span> <span class="mi">20</span>
-</span><span class='line'><span class="n">PAD_WIDTH</span> <span class="o">=</span> <span class="mi">8</span>
-</span><span class='line'><span class="n">PAD_HEIGHT</span> <span class="o">=</span> <span class="mi">80</span>
-</span><span class='line'><span class="n">HALF_PAD_WIDTH</span> <span class="o">=</span> <span class="n">PAD_WIDTH</span> <span class="o">/</span> <span class="mi">2</span>
-</span><span class='line'><span class="n">HALF_PAD_HEIGHT</span> <span class="o">=</span> <span class="n">PAD_HEIGHT</span> <span class="o">/</span> <span class="mi">2</span>
-</span><span class='line'><span class="n">LEFT</span> <span class="o">=</span> <span class="bp">False</span>
-</span><span class='line'><span class="n">RIGHT</span> <span class="o">=</span> <span class="bp">True</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># initialize ball_pos and ball_vel for new bal in middle of table</span>
-</span><span class='line'><span class="c"># if direction is RIGHT, the ball&#39;s velocity is upper right, else upper left</span>
-</span><span class='line'><span class="k">def</span> <span class="nf">spawn_ball</span><span class="p">(</span><span class="n">direction</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">ball_pos</span><span class="p">,</span> <span class="n">ball_vel</span> <span class="c"># these are vectors stored as lists</span>
-</span><span class='line'>    <span class="n">ball_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">ball_vel</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">direction</span> <span class="o">==</span> <span class="s">&quot;LEFT&quot;</span><span class="p">):</span>  <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># define event handlers</span>
-</span><span class='line'><span class="k">def</span> <span class="nf">new_game</span><span class="p">():</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">paddle1_pos</span><span class="p">,</span> <span class="n">paddle2_pos</span><span class="p">,</span> <span class="n">paddle1_vel</span><span class="p">,</span> <span class="n">paddle2_vel</span>  <span class="c"># these are numbers</span>
-</span><span class='line'>    <span class="n">paddle1_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">paddle2_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">score1</span><span class="p">,</span> <span class="n">score2</span>  <span class="c"># these are ints</span>
-</span><span class='line'>    <span class="n">score1</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">score2</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">paddle2_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">paddle1_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="n">spawn_ball</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&quot;LEFT&quot;</span><span class="p">,</span> <span class="s">&quot;RIGHT&quot;</span><span class="p">]))</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">canvas</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">score1</span><span class="p">,</span> <span class="n">score2</span><span class="p">,</span> <span class="n">paddle1_pos</span><span class="p">,</span> <span class="n">paddle2_pos</span><span class="p">,</span> <span class="n">ball_pos</span><span class="p">,</span> <span class="n">ball_vel</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">paddle2_vel</span><span class="p">,</span> <span class="n">paddle1_vel</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># draw mid line and gutters</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_line</span><span class="p">([</span><span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;White&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_line</span><span class="p">([</span><span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;White&quot;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_line</span><span class="p">([</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;White&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># update ball</span>
-</span><span class='line'>    <span class="n">ball_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>    <span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">ball_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># draw ball</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_circle</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">,</span> <span class="n">BALL_RADIUS</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;Red&quot;</span><span class="p">,</span> <span class="s">&quot;White&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># update paddle&#39;s vertical position, keep paddle on the screen</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">BALL_RADIUS</span> <span class="o">&gt;=</span> <span class="n">HEIGHT</span> <span class="ow">or</span> <span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">BALL_RADIUS</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># draw paddles</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polyline</span><span class="p">([[</span><span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">HALF_PAD_HEIGHT</span><span class="p">],</span>
-</span><span class='line'>                          <span class="p">[</span><span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">HALF_PAD_HEIGHT</span><span class="p">]],</span>
-</span><span class='line'>                         <span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="s">&#39;Red&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">paddle1_vel</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polyline</span><span class="p">([[</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">HALF_PAD_HEIGHT</span><span class="p">],</span>
-</span><span class='line'>                          <span class="p">[</span><span class="n">WIDTH</span> <span class="o">-</span> <span class="n">HALF_PAD_WIDTH</span><span class="p">,</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">HALF_PAD_HEIGHT</span><span class="p">]],</span>
-</span><span class='line'>                         <span class="n">PAD_WIDTH</span><span class="p">,</span> <span class="s">&#39;Red&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">paddle2_vel</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="o">&gt;=</span> <span class="n">HEIGHT</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span>
-</span><span class='line'>        <span class="n">paddle1_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">HALF_PAD_HEIGHT</span>
-</span><span class='line'>        <span class="n">paddle1_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="o">&gt;=</span> <span class="n">HEIGHT</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">HEIGHT</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span>
-</span><span class='line'>        <span class="n">paddle2_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
-</span><span class='line'>        <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">HALF_PAD_HEIGHT</span>
-</span><span class='line'>        <span class="n">paddle2_vel</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="ow">and</span>
-</span><span class='line'>       <span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">paddle1_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="ow">and</span>
-</span><span class='line'>       <span class="n">ball_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span>  <span class="n">BALL_RADIUS</span> <span class="o">+</span> <span class="n">PAD_WIDTH</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.2</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.2</span>
-</span><span class='line'>    <span class="k">elif</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span>  <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">BALL_RADIUS</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">score2</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="n">spawn_ball</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&quot;LEFT&quot;</span><span class="p">,</span> <span class="s">&quot;RIGHT&quot;</span><span class="p">]))</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="ow">and</span>
-</span><span class='line'>       <span class="n">ball_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">paddle2_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">HALF_PAD_HEIGHT</span> <span class="ow">and</span>
-</span><span class='line'>       <span class="n">ball_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="n">BALL_RADIUS</span> <span class="o">-</span> <span class="n">PAD_WIDTH</span><span class="p">):</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.2</span>
-</span><span class='line'>        <span class="n">ball_vel</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="mf">1.2</span>
-</span><span class='line'>    <span class="k">elif</span><span class="p">(</span><span class="n">ball_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">WIDTH</span> <span class="o">+</span> <span class="n">BALL_RADIUS</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">score1</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span class='line'>        <span class="n">spawn_ball</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s">&quot;LEFT&quot;</span><span class="p">,</span> <span class="s">&quot;RIGHT&quot;</span><span class="p">]))</span>
-</span><span class='line'>    <span class="c"># draw scores</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score1</span><span class="p">),</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;Blue&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">score2</span><span class="p">),</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;Blue&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">keydown</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">paddle1_vel</span><span class="p">,</span> <span class="n">paddle2_vel</span>
-</span><span class='line'>    <span class="n">acc</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">key</span><span class="o">==</span><span class="n">simplegui</span><span class="o">.</span><span class="n">KEY_MAP</span><span class="p">[</span><span class="s">&quot;s&quot;</span><span class="p">]:</span>
-</span><span class='line'>        <span class="n">paddle1_vel</span> <span class="o">+=</span> <span class="n">acc</span>
-</span><span class='line'>    <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="n">simplegui</span><span class="o">.</span><span class="n">KEY_MAP</span><span class="p">[</span><span class="s">&quot;w&quot;</span><span class="p">]:</span>
-</span><span class='line'>        <span class="n">paddle1_vel</span> <span class="o">-=</span> <span class="n">acc</span>
-</span><span class='line'>    <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="n">simplegui</span><span class="o">.</span><span class="n">KEY_MAP</span><span class="p">[</span><span class="s">&quot;down&quot;</span><span class="p">]:</span>
-</span><span class='line'>        <span class="n">paddle2_vel</span> <span class="o">+=</span> <span class="n">acc</span>
-</span><span class='line'>    <span class="k">elif</span> <span class="n">key</span><span class="o">==</span><span class="n">simplegui</span><span class="o">.</span><span class="n">KEY_MAP</span><span class="p">[</span><span class="s">&quot;up&quot;</span><span class="p">]:</span>
-</span><span class='line'>        <span class="n">paddle2_vel</span> <span class="o">-=</span> <span class="n">acc</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">keyup</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">global</span> <span class="n">paddle1_vel</span><span class="p">,</span> <span class="n">paddle2_vel</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">button_handler</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">new_game</span><span class="p">()</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># create frame</span>
-</span><span class='line'><span class="n">frame</span> <span class="o">=</span> <span class="n">simplegui</span><span class="o">.</span><span class="n">create_frame</span><span class="p">(</span><span class="s">&quot;Pong&quot;</span><span class="p">,</span> <span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">)</span>
-</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_draw_handler</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
-</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_keydown_handler</span><span class="p">(</span><span class="n">keydown</span><span class="p">)</span>
-</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_keyup_handler</span><span class="p">(</span><span class="n">keyup</span><span class="p">)</span>
-</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">add_button</span><span class="p">(</span><span class="s">&#39;Reset&#39;</span><span class="p">,</span> <span class="n">button_handler</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># start frame</span>
-</span><span class='line'><span class="n">new_game</span><span class="p">()</span>
-</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linux中安装python的egg包]]></title>
-    <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
-    <updated>2014-04-24T11:28:48+08:00</updated>
-    <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
-    <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
-
-<p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
-networkx-1.1-py2.6.egg   <br/>
-然后下载 setuptools:<a href="https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea">setuptools-0.6c11-py2.7.egg (md5)</a></p>
-
-<h3>1. 安装setuptools</h3>
-
-<p><img src="\images\blog\140424_python_egg\1.png" alt="ico_topitme" /></p>
-
-<h3>2. 安装networkx</h3>
-
-<p><img src="\images\blog\140424_python_egg\2.png" alt="ico_topitme" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[韩罗苑]]></title>
-    <link href="http://www.changchen.me/blog/20140417/hanluoyuan/"/>
-    <updated>2014-04-17T21:09:52+08:00</updated>
-    <id>http://www.changchen.me/blog/20140417/hanluoyuan</id>
-    <content type="html"><![CDATA[<p>烧烤~~</p>
-
-<!--more-->
-
-
-<div style="width:80%" id="topic-entry"><p>&nbsp; &nbsp; &nbsp; &nbsp;上个周末我和泡芙哥一起去了大悦城的韩罗苑。本来是想去滨江那家的，打电话预约的时候，滨江道那家的团购满了，我们就去了大悦城。<img width="19" height="19" src="http://i3.dpfile.com/s/img/editor/emoticon2.gif"></p><p><span style="font-size: 24.0px;color: rgb(25,25,112);">&nbsp; 韩罗苑（大悦城）</span></p><ul style="margin: 0.0px;padding: 0.0px;border: 0.0px;outline: 0.0px;list-style: none;font-family: Tahoma , sans-serif;font-size: 12.0px;"><li style="color: rgb(17,17,17);margin: 0.0px;padding: 0.0px 0.0px 9.0px 37.0px;border: 0.0px;outline: 0.0px;overflow: hidden;"><span style="color: rgb(153,153,153);text-align: right;float: left;">&nbsp; &nbsp;地址：<a href="http://www.dianping.com/search/category/10/10/r51" rel="nofollow" style="margin: 0.0px;padding: 0.0px;border: 0.0px;outline: 0.0px;color: rgb(51,51,51);text-decoration: none;"><span>和平区</span></a><span style="color: rgb(17,17,17);">&nbsp;</span><span style="color: rgb(17,17,17);">南门外大街2号大悦城北区4楼(近鹿港小镇</span><span style="color: rgb(17,17,17);">)</span></span></li></ul><p><font face="Tahoma, sans-serif"><span style="font-size: 12.0px;">附上我的点评</span></font></p><p><img src="http://i3.s2.dpfile.com/pc/gp/26f3851ac4871d24a013c2c7c61e56de(600x600)/thumb.jpg"></p><p>&nbsp;</p><p><span style="font-size: 20.0px;"><b>一、环境点评</b></span></p><p><span style="color: rgb(204,153,204);"><b><span style="color: rgb(204,153,204);">门口</span></b></span>照一张：门口有一个穿韩服的姐姐，我们一来，她就带我们进去了，我偷偷拍一张哦。</p><p>原来不知道韩罗苑在哪，只知道大致位置啦，后来走的时候都往金逸电影院走了，迷失了方向，幸好有我，泡芙哥是个大路痴，我看了大悦城里的地图，一下子就找到了。</p><p>韩罗苑的对面是聚乐港，就是卖大巴菲的那家，再隔一家店，就是俏江南了。</p><p><img src="http://i1.s2.dpfile.com/pc/gp/34f6a07f4312ba1a326452bcaa70a593(600x600)/thumb.jpg"></p><p>&nbsp;</p><p>里面人不算多，没有坐满，一进去就有位置啦。</p><p>&nbsp;</p><p><b><span style="color: rgb(204,153,204);">桌面</span></b>：看着还算整洁啦。装备比较齐全。</p><p><img src="http://i2.s2.dpfile.com/pc/gp/d775e2f125e4d08b32d95701bcca47d9(600x600)/thumb.jpg"></p><p>&nbsp;</p><p>&nbsp;</p><b><span style="color: rgb(204,153,204);">烤肉工具和壶</span></b>：工具有一个烤肉用的夹子，用起来还算顺手，还有一把剪刀，壶里装着是大麦茶，感觉一般去这样的韩式烧烤店都有，自取，不收费，倒完可以再添，壶挺重。<br><a href="http://i1.s2.dpfile.com/pc/gp/97d05e817e7ff510a02f97d4d44bc0d8(600x600)/thumb.jpg" target="_blank" class="pic"><img width="449" height="600" border="0" src="http://i1.s2.dpfile.com/pc/gp/97d05e817e7ff510a02f97d4d44bc0d8(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a><br><p>&nbsp;</p><p>&nbsp;</p><p><b><span style="color: rgb(204,153,204);">台面</span></b>：有方便抽取的纸巾，纸质还行，不好不坏，还有一个牙签盒。</p><a href="http://i3.s2.dpfile.com/pc/gp/3b4975bdb68cb87262ade5ddce10f725(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i3.s2.dpfile.com/pc/gp/3b4975bdb68cb87262ade5ddce10f725(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a><br><p>&nbsp;</p><p>&nbsp;</p><p><b><span style="color: rgb(204,153,204);">餐具</span></b>：盘子、杯子、勺子、筷子。挺齐全，挺干净的，没有那种拿起了油油的感觉。</p><p><a href="http://i2.s2.dpfile.com/pc/gp/d436299f9cfa27ae42494e7015d7df0d(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i2.s2.dpfile.com/pc/gp/d436299f9cfa27ae42494e7015d7df0d(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p><span style="font-size: 20.0px;"><b><br></b></span></p><p><span style="font-size: 20.0px;"><b><br></b></span></p><p><span style="font-size: 20.0px;"><b>二、美食分享</b></span></p><p>&nbsp;</p><p><span style="font-size: 14.0px;">我们购买的团购券：我将会把实体菜品和团购上的图片进行对比。</span></p><p><img src="http://i3.s2.dpfile.com/pc/gp/272ed2f650c322afb6a51acce227edf6(600x600)/thumb.jpg"></p><p><b><span style="color: rgb(102,102,204);">精美小菜：</span></b></p><p>评价：花生比较香，吃完了，比较脆。其他两个小菜太酸了，我各吃了一口，就没再吃了。</p><p><a href="http://i1.s2.dpfile.com/pc/gp/6fb886982bfe740b679b2f28dfb17e2e(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i1.s2.dpfile.com/pc/gp/6fb886982bfe740b679b2f28dfb17e2e(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p>团购上的图片，跟实际差不多。</p><p>相似度：85%</p><p><a href="http://i1.s2.dpfile.com/pc/gp/0328d16e144b305901ef060004fb1ae9(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="405" border="0" src="http://i1.s2.dpfile.com/pc/gp/0328d16e144b305901ef060004fb1ae9(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p><b><span style="color: rgb(102,102,204);">拌海菜：</span></b></p><p>评价：我们都不怎么吃这个的，所以我就吃了一口，也说不出啥感觉，要是它能换成肉就好了。</p><p><img src="http://i1.s2.dpfile.com/pc/gp/50e07db15798499fff7e266682a3c3f5(600x600)/thumb.jpg"></p><p>&nbsp;</p><p>&nbsp;</p><p>下图是团购的里拌海菜，跟实际也差不多。而且我觉得实际的卖相更好。</p><p>相似度：85%</p><p><a href="http://i1.s2.dpfile.com/pc/gp/b40b79e5c6fde20d5541de900f4f6804(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="418" border="0" src="http://i1.s2.dpfile.com/pc/gp/b40b79e5c6fde20d5541de900f4f6804(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p><b><span style="color: rgb(102,102,204);">大酱汤:</span></b></p><p>评价：有点酸辣的口感，泡芙哥挺喜欢喝的，我就吃了里面的嫩豆腐，还可以，一般般，就是卖相有点不大好。。</p><p><a href="http://i3.s2.dpfile.com/pc/gp/0c727d63adcfd70f5b33a8c71131566a(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i3.s2.dpfile.com/pc/gp/0c727d63adcfd70f5b33a8c71131566a(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p>团购里的图片，小坑，我本来团的时候，看里面很丰盛的样子，虽然想想也不可能这么多贝壳类的东西，但是相差也太远了，我没吃到一个贝壳，豆腐也就两块。实际图是刚上没动过时候拍的。。。。</p><p>相似度：45%</p><p><img src="http://i3.s2.dpfile.com/pc/gp/6316f7e9cf320a8a673ffc90fedb93ad(600x600)/thumb.jpg"></p><p><b><span style="color: rgb(102,102,204);">米饭</span></b></p><p>点评：米饭是热乎的，米饭的味道，哈哈。就着烤出来的肉吃的，好奇怪的说，为啥双人份的团购米饭只有一份，不过够吃，最后我吃了一两口就吃饱了。主要团购套餐肉太少了，呜呜，最后没有肉了，泡芙哥就着汤把米饭吃了，看得我好心疼。<img width="19" height="19" src="http://i2.dpfile.com/s/img/editor/emoticon16.gif"><br><a href="http://i3.s2.dpfile.com/pc/gp/d03e039ba31734870440b72b66bc0aa2(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i3.s2.dpfile.com/pc/gp/d03e039ba31734870440b72b66bc0aa2(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;米饭就不上对比图了，哈哈。</p><p>&nbsp;</p><p><span style="color: rgb(218,112,214);"><b><span style="color: rgb(102,102,204);">烤猪梅肉：</span></b></span></p><p>评价：看起来挺新鲜的样子，还不错。</p><p>
-</p><p>&nbsp;<a href="http://i2.s2.dpfile.com/pc/gp/520f2f3ba5c3320d4b702dce21babc2e(600x600)/thumb.jpg" target="_blank" class="pic"><img width="449" height="600" border="0" src="http://i2.s2.dpfile.com/pc/gp/520f2f3ba5c3320d4b702dce21babc2e(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a><br><b><span style="color: rgb(102,102,204);">烤牛五花肉+烤牛肉+烤鸡肉：</span></b></p><p>评价“三个里面我比较喜欢烤鸡肉和烤牛肉，因为五花肉烤出来太油了，不喜欢那种满是油的感觉，一口吃进去好像都是油，感觉很腻，所以我不太喜欢牛五花肉。</p><p>
-</p><p>
-</p><p>
-</p><p>
-</p><p><img src="http://i3.s2.dpfile.com/pc/gp/a860173a667e7adf2897091727180325(600x600)/thumb.jpg"></p><p>&nbsp;</p><p><b><span style="color: rgb(102,102,204);">&nbsp;</span></b></p><p><b><span style="color: rgb(102,102,204);">&nbsp;烤地瓜片：</span></b></p><p>点评：还不错，挺精致的，没有因为是团购就偷懒，不错。不过烧烤里，相比地瓜片，我还是比较喜欢土豆片，感觉地瓜片厚一些，而且口感里有点甜，甜甜咸咸混在一起不那么喜欢，还是比较喜欢地瓜片，不过还是可以接受的。 &nbsp;&nbsp;<a href="http://i3.s2.dpfile.com/pc/gp/c29a64c029fe98f54810fa80a93d86ce(600x600)/thumb.jpg" target="_blank" class="pic"><img width="449" height="600" border="0" src="http://i3.s2.dpfile.com/pc/gp/c29a64c029fe98f54810fa80a93d86ce(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p>团购里的图：</p><p>相似度：90%</p><p>我觉得实际的更好一些，感觉做的更加用心一些。&nbsp;</p><p><a href="http://i2.s2.dpfile.com/pc/gp/dabc562efddbc7c4329f78c5eb756c8d(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="479" border="0" src="http://i2.s2.dpfile.com/pc/gp/dabc562efddbc7c4329f78c5eb756c8d(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>烤出来的鸡肉香喷喷。。。。<img width="50" height="50" src="http://i2.dpfile.com/s/img/editor/emoticon52.gif"></p><p><a href="http://i2.s2.dpfile.com/pc/gp/33cb16931648c711cabcffe6fb3044b3(600x600)/thumb.jpg" target="_blank" class="pic"><img width="449" height="600" border="0" src="http://i2.s2.dpfile.com/pc/gp/33cb16931648c711cabcffe6fb3044b3(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p>烤的虽然有点小焦，但是看起来让人很有食欲哦，表扬一下泡芙哥的烤肉技术！</p><a href="http://i3.s2.dpfile.com/pc/gp/e3e293a94892c770868822c9aae182f1(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i3.s2.dpfile.com/pc/gp/e3e293a94892c770868822c9aae182f1(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a><br><p>&nbsp;</p><p>吼吼！</p><p>在烤肉的时候，烤盘过一段时间会沾上焦的，服务员很积极地帮忙换，看到的时候就主动问我们要不要换盘，sweet!</p><a href="http://i3.s2.dpfile.com/pc/gp/0aa2219aaba7b4dda1416293168cc7e5(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i3.s2.dpfile.com/pc/gp/0aa2219aaba7b4dda1416293168cc7e5(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a><br><p>&nbsp;</p><p><b><span style="color: rgb(102,102,204);">果盘：</span></b></p><p>点评：感觉不知道应该直接吃它们，还是烤了再吃，纠结了一会儿还是烤了。排的好看，东西不是很多，说好的西瓜呢？</p><p><a href="http://i1.s2.dpfile.com/pc/gp/a390ed70a32d683fba36bd3736d6754e(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="449" border="0" src="http://i1.s2.dpfile.com/pc/gp/a390ed70a32d683fba36bd3736d6754e(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p>&nbsp;</p><p>&nbsp;</p><p>团购上的图片，哦！！说好的西瓜呢，怎么变成各种菜了。噢！！！伤心</p><p>相似度：5%</p><p><a href="http://i1.s2.dpfile.com/pc/gp/d48da0695e3f0341ce2450d671fe2042(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="435" border="0" src="http://i1.s2.dpfile.com/pc/gp/d48da0695e3f0341ce2450d671fe2042(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p><b><span style="color: rgb(102,102,204);">南瓜粥：</span></b></p><p>有一个像倒饮料的机子可以自助倒取南瓜粥，因为我们二人烤肉烤的不亦乐乎，就没有去倒啦。也就不妄加评论了。</p><p>附上团购的图，大致是这样，我取调料的时候看到别人倒取啦。</p><p><a href="http://i3.s2.dpfile.com/pc/gp/1ecbe28274106f218655bbb3cceac69f(600x600)/thumb.jpg" target="_blank" class="pic"><img width="600" height="413" border="0" src="http://i3.s2.dpfile.com/pc/gp/1ecbe28274106f218655bbb3cceac69f(600x600)/thumb.jpg"><span class="btn_img_quote Hide J_btnQuote"> </span></a></p><p><b><span style="color: rgb(102,102,204);">调料：</span></b></p><p>&nbsp; &nbsp; 调料是自取的，有一个专门取调料的台子，里面有各种调料，可以自己搭配，南瓜粥也是在那里倒的。感觉调料味道不是很好，有的太辣有的太咸，我加了麻酱，很是咸呢，感觉不太好吃。上面也有配好的调料，那个调料味道不错，就是香菜太多，我不喜欢吃香菜。</p><p>&nbsp;</p><p><b><span style="font-size: 16.0px;color: rgb(48,128,20);">总体</span></b>感觉还是不错的<img width="19" height="19" src="http://i2.dpfile.com/s/img/editor/emoticon25.gif">，烤肉烤肉，就是烤个肉，感觉他们家的肉还是挺新鲜的，不错，对的起团购那个的价钱，就是其他的项目太多了（什么果盘、海菜之类的）这些不太爱吃。服务也还不错<img width="19" height="19" src="http://i3.dpfile.com/s/img/editor/emoticon5.gif"></p></div>
-
 ]]></content>
   </entry>
   
