@@ -4,7 +4,7 @@
   <title><![CDATA[Category: study | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-11-16T21:41:48+08:00</updated>
+  <updated>2014-11-18T16:23:20+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,78 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[hidden features of Python笔记]]></title>
+    <link href="http://www.changchen.me/blog/20141118/hidden-features-of-python/"/>
+    <updated>2014-11-18T11:30:26+08:00</updated>
+    <id>http://www.changchen.me/blog/20141118/hidden-features-of-python</id>
+    <content type="html"><![CDATA[<h2>最近看了关于python的两个很不错的资料</h2>
+
+<ol>
+<li><p><a href="http://legacy.python.org/dev/peps/pep-0008/#blank-lines" >PEP 8 （Style Guide for Python Code）</a></p></li>
+<li><p><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python">Hidden features of Python [closed]</a></p></li>
+</ol>
+
+
+<h4><a style="background-color:#2783F3;color:#fff">做一下第二个的笔记 加深印象</a></h4>
+
+<!--more-->
+
+
+
+
+<div class="post-text" itemprop="text">
+<h3>Quick links to answers:</h3>
+<ul>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111176">Argument Unpacking</a></li>
+'*' 不就是c语言里取指针的值  
+直接把list和dictionary里的值变成函数的参数了    
+但实际很少用到把
+```python
+def draw_point(x, y):
+    # do some magic
+
+point_foo = (3, 4)
+point_bar = {'y': 3, 'x': 2}
+
+draw_point(*point_foo)
+draw_point(**point_bar)
+```
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112303">Braces</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101945">Chaining Comparison Operators</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101447">Decorators</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113198">Default Argument Gotchas / Dangers of Mutable Default arguments</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102062">Descriptors</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111970">Dictionary default <code>.get</code> value</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102065">Docstring Tests</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python/112316#112316">Ellipsis Slicing Syntax</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#117116">Enumeration</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114420">For/else</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102202">Function as iter() argument</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101310">Generator expressions</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101276"><code>import this</code></a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102037">In Place Value Swapping</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101840">List stepping</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112286"><code>__missing__</code> items</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101537">Multi-line Regex</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113164">Named string formatting</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101549">Nested list/generator comprehensions</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#108297">New types at runtime</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113833"><code>.pth</code> files</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#1024693">ROT13 Encoding</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#143636">Regex Debugging</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101739">Sending to Generators</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#168270">Tab Completion in Interactive Interpreter</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#116480">Ternary Expression</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114157"><code>try/except/else</code></a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#3267903">Unpacking+<code>print()</code> function</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#109182"><code>with</code> statement</a></li>
+</ul>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[inspiron7420装ubuntu13.04后的设置]]></title>
@@ -431,22 +503,6 @@ sudo update-rc.d xl2tpd disable</p>
 
 <p><img src="/images/blog/140801_web_score_log/console.jpg" alt="" /> <br/>
 <img src="/images/blog/140801_web_score_log/result.jpg" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[cousera_end]]></title>
-    <link href="http://www.changchen.me/blog/20140604/cousera-end/"/>
-    <updated>2014-06-04T08:48:07+08:00</updated>
-    <id>http://www.changchen.me/blog/20140604/cousera-end</id>
-    <content type="html"><![CDATA[<p>嘿嘿   终于拿到第一门cousera的证书了 <br/>
-昨天做梦竟然梦到学了C++不知道去干嘛 <br/>
-继续加油吧~</p>
-
-<!-- more -->
-
-
-<p><img src="http://www.changchen.me/images/blog/140604_cousera_end/end1.jpg"  /></p>
 ]]></content>
   </entry>
   
