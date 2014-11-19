@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2014-11-18T23:24:20+08:00</updated>
+  <updated>2014-11-19T16:49:02+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -33,13 +33,14 @@
 
 
 
-<div class="post-text" itemprop="text">
 <h3>Quick links to answers:</h3>
+
+
 <ul>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111176">Argument Unpacking</a></li>
-&#8217;*&#8217; 不就是c语言里取指针的值  
-直接把list和dictionary里的值变成函数的参数了    
-但实际很少用到把
+&#8217;*&#8217; 不就是c语言里取指针的值<br>  
+直接把list和dictionary里的值变成函数的参数了<br>  
+但实际很少用到把<br> 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -57,37 +58,213 @@
 </span><span class='line'><span class="n">draw_point</span><span class="p">(</span><span class="o">*</span><span class="n">point_foo</span><span class="p">)</span>
 </span><span class='line'><span class="n">draw_point</span><span class="p">(</span><span class="o">**</span><span class="n">point_bar</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
+</br>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112303">Braces</a></li>
+运行的结果： <br>    
+from __future__ import braces   <br> 
+SyntaxError: not a chance   <br> 
+貌似是个玩笑， 想要引入c语言style的花括号<br>    
+结果是not a chance、、    <br> 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">braces</span>
+</span></code></pre></td></tr></table></div></figure>
+</br>
+
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101945">Chaining Comparison Operators</a></li>
+连续的比较符吧，实际中还是挺有用的    <br>  
+突然想到的：    <br> 
+if A and B in L: → if (A and B) in L:  <br>   
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span><span class='line'><span class="bp">True</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">20</span>
+</span><span class='line'><span class="bp">False</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">x</span><span class="o">*</span><span class="mi">10</span> <span class="o">&lt;</span> <span class="mi">100</span>
+</span><span class='line'><span class="bp">True</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">9</span>
+</span><span class='line'><span class="bp">True</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">==</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</span><span class='line'><span class="bp">True</span>
+</span></code></pre></td></tr></table></div></figure>
+</br>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101447">Decorators</a></li>
+装饰器，之前也从来没有用过，以后尝试一下    <br>   
+看了一篇装饰器的文章，写的挺好的    <br> 
+大致明白了原理和应用     <br> 
+<a href="http://www.cnblogs.com/coderzh/archive/2010/04/27/python-cookbook33-Decorators.html">http://www.cnblogs.com/coderzh/archive/2010/04/27/python-cookbook33-Decorators.html</a>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">print_args</span><span class="p">(</span><span class="n">function</span><span class="p">):</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span>     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span>         <span class="k">print</span> <span class="s">&#39;Arguments:&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span>         <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span>     <span class="k">return</span> <span class="n">wrapper</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="nd">@print_args</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span>     <span class="k">print</span> <span class="n">text</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">write</span><span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">Arguments</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;foo&#39;</span><span class="p">,)</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">foo</span>
+</span></code></pre></td></tr></table></div></figure>   
+<br>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113198">Default Argument Gotchas / Dangers of Mutable Default arguments</a></li>
+I found this a lot easier to understand when I learned that the default arguments live in a tuple that&#8217;s an attribute of the function,    <br> 
+e.g. foo.func_defaults. Which, being a tuple, is immutable.    <br> 
+还是不太明白    <br> 
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[]):</span>
+</span><span class='line'><span class="o">...</span>     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">print</span> <span class="n">x</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="n">Instead</span><span class="p">,</span> <span class="n">you</span> <span class="n">should</span> <span class="n">use</span> <span class="n">a</span> <span class="n">sentinel</span> <span class="n">value</span> <span class="n">denoting</span> <span class="s">&quot;not given&quot;</span> <span class="ow">and</span> <span class="n">replace</span> <span class="k">with</span> <span class="n">the</span> <span class="n">mutable</span> <span class="n">you</span><span class="s">&#39;d like as default:</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'><span class="o">...</span>         <span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="o">...</span>     <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'><span class="o">...</span>     <span class="k">print</span> <span class="n">x</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">foo</span><span class="p">()</span>
+</span><span class='line'><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+<br>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102062">Descriptors</a></li>
+Python描述符（descriptor）解密<br>
+<a href="http://www.geekfan.net/7862/">http://www.geekfan.net/7862/</a>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111970">Dictionary default <code>.get</code> value</a></li>
+前一种如果不包含键值，会报错，后一种会返回第二个参数的值。
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">sum</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sum</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+<br>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102065">Docstring Tests</a></li>
+不懂啥意思   
+<br>
+
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python/112316#112316">Ellipsis Slicing Syntax</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#117116">Enumeration</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114420">For/else</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102202">Function as iter() argument</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101310">Generator expressions</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101276"><code>import this</code></a></li>
+这个吊。。<br>
+<code><span class="kwd">import</span><span class="pln"> this
+</span><span class="com"># btw look at this module's source :)</span></code>
+<p><a href="http://svn.python.org/view/python/trunk/Lib/this.py?view=markup" rel="nofollow">De-cyphered</a>:</p>
+<blockquote>
+  <p>The Zen of Python, by Tim Peters    </p>
+  
+  <p>Beautiful is better than ugly.<br>
+  Explicit is better than implicit.<br>
+  Simple is better than complex.<br>
+  Complex is better than complicated.<br>
+  Flat is better than nested.<br>
+  Sparse is better than dense.<br>
+  Readability counts.<br>
+  Special cases aren&#8217;t special enough to break the rules.<br>
+  Although practicality beats purity.<br>
+  Errors should never pass silently.<br>
+  Unless explicitly silenced.<br>
+  In the face of ambiguity, refuse the temptation to guess.
+  There should be one&#8211; and preferably only one &#8211;obvious way to do it.<br>
+  Although that way may not be obvious at first unless you&#8217;re Dutch.<br>
+  Now is better than never.<br>
+  Although never is often better than <em>right</em> now.<br>
+  If the implementation is hard to explain, it&#8217;s a bad idea.<br>
+  If the implementation is easy to explain, it may be a good idea.<br>
+  Namespaces are one honking great idea &#8211; let&#8217;s do more of those!  </p>
+</blockquote>
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102037">In Place Value Swapping</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101840">List stepping</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112286"><code>__missing__</code> items</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101537">Multi-line Regex</a></li>
+多行正则表达式<br>
+有机会要学一下
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113164">Named string formatting</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101549">Nested list/generator comprehensions</a></li>
+双重循环生成list<br>
+炫酷。。<br>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="p">[(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">]</span>
+</span><span class='line'><span class="p">((</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#108297">New types at runtime</a></li>
+
+
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113833"><code>.pth</code> files</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#1024693">ROT13 Encoding</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#143636">Regex Debugging</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101739">Sending to Generators</a></li>
+生成器(generator) 有时间要深入学习一下
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#168270">Tab Completion in Interactive Interpreter</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#116480">Ternary Expression</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114157"><code>try/except/else</code></a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#3267903">Unpacking+<code>print()</code> function</a></li>
 <li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#109182"><code>with</code> statement</a></li>
 </ul>
-</div>
+
+
 
 ]]></content>
   </entry>
