@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cc | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/cc/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-01-23T22:26:28+08:00</updated>
+  <updated>2015-01-23T23:30:41+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -22,7 +22,7 @@
 
 <p>嘻嘻 清明假期 和幸店小试。</p>
 
-<p><img src="/images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
+<p>{% img /images\blog\140407_cc_和幸餐厅/thumb(2).jpg %}</p>
 
 <!--more-->
 
