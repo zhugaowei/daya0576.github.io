@@ -554,7 +554,7 @@
         };
     Ya.prototype.s = function (a) {
         if (!(this.$ || 88 < this.ga || 5808 < this.S)) {
-            a.fillStyle = "rgba(240,246,246,0.08)";
+            a.fillStyle = "rgba(240,246,246,0.03)";
             for (var b = 0; 200 > b; b++) {
                 var c = Math.random() * (this.width + 120) - 60,
                     d = Math.random() * (this.height + 120) - 60,
@@ -565,7 +565,7 @@
             for (b = 0; 200 > b; b++) 
                 if (c = Math.random() * (this.width + 120) - 60, d = Math.random() * (this.height + 120) - 60, f = Za(this, c, d), e = this.w[f[1]][f[0]], f = this.G[f[1]][f[0]], e = 2 > e ? Math.max(e, f) : f, e >= Math.random()) 
                 e = 3 * Math.min(1, e) * this.la | 0, c |= 0, d |= 0, f = a.createRadialGradient(c, d, 0, c, d, e), 
-                f.addColorStop(0, "rgba(240,246,246,0.05)"), 
+                f.addColorStop(0, "rgba(240,246,246,0.02)"), 
                 f.addColorStop(1, "rgba(240,246,246,0)"), 
                 a.fillStyle = f, a.fillRect(c - e + 1, d - e + 1, 2 * e - 1, 2 * e - 1), this.S++
         }
