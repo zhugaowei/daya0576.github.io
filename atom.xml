@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-05-11T23:52:17+08:00</updated>
+  <updated>2015-05-12T00:00:58+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -137,8 +137,8 @@
 <p>在微博上看到的一个视频， <br/>
 每次看到这样的活动，心里都会被深深的震撼和感动。  <br/>
 发觉这世界原来还可以这么精彩、 <br/>
-<video height="480" controls="" name="media">
-<source src="http://www.changchen.me/images/blog\150501_diary/move.mp4" type="video/mp4">
+<video width="860" height="480" controls="" name="media" >
+<source src="http://www.changchen.me/images/blog/150501_diary/move.mp4" type="video/mp4">
 </video></p></blockquote>
 
 <br>   
