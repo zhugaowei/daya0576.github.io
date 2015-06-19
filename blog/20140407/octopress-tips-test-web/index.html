@@ -9,6 +9,7 @@
 	<meta name="author" content="Daya">
 	<script src="/javascripts/libs/jquery.min.js"></script>
 	
+	
 	<meta name="description" content="Octopress测试网站的小技巧【原创】 octopress预览网站 的小技巧 之前预览网站的步骤都是rake generate 然后 rake preview 突然有一天想到为什么不开两个控制台。 一个一直&#8221;preview&#8221; 另一个用来&#8221;generate &hellip;">
 	
 
@@ -186,6 +187,22 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 		type="audio/ogg; codecs=vorbis">
 	 <p>Your user agent does not support the HTML5 Audio element.</p>
 </audio> -->
+	
+	<!-- lazyload plugin -->
+	
+
+
+
+<script src="jquery.lazyload.js?v=1.9.1"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	threshold : -30
+     });
+  });
+</script>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 
 </html>
