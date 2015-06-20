@@ -10,7 +10,7 @@
 	<script src="/javascripts/libs/jquery.min.js"></script>
 	
 	
-	<meta name="description" content="Diary2015_06 试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :&ldquo;) 2015/06/01 嘿嘿 转眼都要毕业了，还是好舍不得吧。 却也没有留下很多遗憾吧。 毕业快乐~ <img class="lazy" width="480px" height="640px" &hellip;">
+	<meta name="description" content="Diary2015_06 试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :&ldquo;) 2015/06/01 嘿嘿 转眼都要毕业了，还是好舍不得吧。 却也没有留下很多遗憾吧。 毕业快乐~ <img class="lazy" width="640" height="480" data- &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -112,8 +112,8 @@
 
 <p>嘿嘿 转眼都要毕业了，还是好舍不得吧。  <br/>
 却也没有留下很多遗憾吧。 毕业快乐~ <br/>
-<img class="lazy" width="480px" height="640px"
-data-original="/images/blog\150601_diary/graduate.JPG"></p></blockquote>
+<img class="lazy"  width="640" height="480"
+ data-original="/images/blog\150601_diary/graduate.JP" ></p></blockquote>
 
 <br>
 
@@ -221,7 +221,7 @@ data-original="/images/blog\150601_diary/ppt.jpg"></p></blockquote>
 <p>晚上和晨晨一起拍了几张照片，看了她们理学院的毕业晚会，  <br/>
 好开心，拿着荧光棒就像看演唱会一样。  <br/>
 一起尝试新的事情发现还是挺不错的~  <br/>
-<img class="lazy" width="480px" height="640px"
+<img class="lazy"
 data-original="/images/blog\150601_diary/face.JPG"></p></blockquote>
 
 <br>   
@@ -234,7 +234,7 @@ data-original="/images/blog\150601_diary/face.JPG"></p></blockquote>
 <p>嘻嘻 和晨晨去了北京玩，爬了长城吃了烤鸭。  <br/>
 就算很累也不会对对方发脾气，  <br/>
 两个在一起久了，真的会变得越来越像对方吧。<br/>
-<img class="lazy" width="640px" height="480px"
+<img class="lazy"
 data-original="/images/blog\150601_diary/520.JPG"></p></blockquote>
 
 <br>   
@@ -268,7 +268,7 @@ struggle to live.   <br/>
 但还是要克服自己的惰性，多锻炼自己的意志力。 <br/>
 连自己都搞不定也太差劲了。   <br/>
 要开始掌控自己的生活了，不能再这么一团糟。           <br/>
-<img class="lazy" width="640px" height="480px"
+<img class="lazy"
 data-original="/images/blog\150601_diary/man.JPG"></p></blockquote>
 
 <br>  
@@ -366,7 +366,8 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
   $(function() {
      $("img.lazy").lazyload({
      	effect: 'fadeIn', 
-     	threshold : 300
+     	/*threshold : 300, */
+     	placeholder : "/images/loading_gray.gif", 
      });
   });
 </script>

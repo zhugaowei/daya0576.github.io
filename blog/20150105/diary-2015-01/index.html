@@ -10,8 +10,8 @@
 	<script src="/javascripts/libs/jquery.min.js"></script>
 	
 	
-	<meta name="description" content="Diary2015_01 试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :&ldquo;> 2015/01/01 新年快乐~ 哈哈哈 <img class="lazy" width="480px" height="640px"
-data-original="/images/blog\ &hellip;">
+	<meta name="description" content="Diary2015_01 试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :&ldquo;> 2015/01/01 新年快乐~ 哈哈哈 <img class="lazy"
+data-original="/images/blog\150101_diary/cute.jpg"> 2015/01 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -113,7 +113,7 @@ data-original="/images/blog\ &hellip;">
 
 <p>新年快乐~  <br/>
 哈哈哈 <br/>
-<img class="lazy" width="480px" height="640px"
+<img class="lazy"
 data-original="/images/blog\150101_diary/cute.jpg"></p></blockquote>
 
 <br>
@@ -541,7 +541,8 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
   $(function() {
      $("img.lazy").lazyload({
      	effect: 'fadeIn', 
-     	threshold : 300
+     	/*threshold : 300, */
+     	placeholder : "/images/loading_gray.gif", 
      });
   });
 </script>
