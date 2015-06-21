@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-06-21T02:25:05+08:00</updated>
+  <updated>2015-06-21T11:53:11+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -198,9 +198,36 @@ data-original="/images/blog\150601_diary/man.JPG"></p></blockquote>
 
 <hr />
 
-<p>呼~ 做个图片的lazyloading做了一个晚上。</p></blockquote>
+<p>呼~ 做个图片的lazyloading做了一个晚上。  <br/>
+因为网站一个页面总是有很多的图片，所以每次加载的时候还是有点吃力。   <br/>
+在网上看到有个jQuery的插件叫做lazyloading，  <br/>
+功能就是只有当图片到可视范围的时候，才会去加载图片。  <br/>
+主要应用到自己的博客网页里比较麻烦，因为要修改img标签、   <br/>
+设了一个data-original的属性，还是把之前所有标签都改了一下。  <br/>
+最后src加了一个加载的gif,网速慢的时候效果还是很明显的，  <br/>
+会有等待加载的动画，还是挺不错的，嘿嘿。   <br/>
+```HTML</p></blockquote>
 
-<br>   
+<script src="{{ root_url }}/javascripts/libs/jquery.lazyload.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+        effect: 'fadeIn', 
+        /*threshold : 300, */
+        placeholder : "/images/loading/loading_gray.gif", 
+     });
+  });
+</script>
+
+
+<br>
+
+
+<p>```</p>
+
+<br>
 
 
 <blockquote><h3>2015/06/20</h3>

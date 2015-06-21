@@ -278,9 +278,41 @@ data-original="/images/blog\150601_diary/man.JPG"></p></blockquote>
 
 <hr />
 
-<p>呼~ 做个图片的lazyloading做了一个晚上。</p></blockquote>
+<p>呼~ 做个图片的lazyloading做了一个晚上。  <br/>
+因为网站一个页面总是有很多的图片，所以每次加载的时候还是有点吃力。   <br/>
+在网上看到有个jQuery的插件叫做lazyloading，  <br/>
+功能就是只有当图片到可视范围的时候，才会去加载图片。  <br/>
+主要应用到自己的博客网页里比较麻烦，因为要修改img标签、   <br/>
+设了一个data-original的属性，还是把之前所有标签都改了一下。  <br/>
+最后src加了一个加载的gif,网速慢的时候效果还是很明显的，  <br/>
+会有等待加载的动画，还是挺不错的，嘿嘿。</p></blockquote>
 
-<br>   
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;/javascripts/libs/jquery.lazyload.js&quot;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text/javascript&quot;</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="o">&gt;</span>
+</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;img.lazy&quot;</span><span class="p">).</span><span class="nx">lazyload</span><span class="p">({</span>
+</span><span class='line'>      <span class="nx">effect</span><span class="o">:</span> <span class="s1">&#39;fadeIn&#39;</span><span class="p">,</span>
+</span><span class='line'>      <span class="cm">/*threshold : 300, */</span>
+</span><span class='line'>      <span class="nx">placeholder</span> <span class="o">:</span> <span class="s2">&quot;/images/loading/loading_gray.gif&quot;</span><span class="p">,</span>
+</span><span class='line'>     <span class="p">});</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
 
 
 <blockquote><h3>2015/06/20</h3>
