@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dairy | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/dairy/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-06-22T01:07:20+08:00</updated>
+  <updated>2015-06-22T01:14:26+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -205,27 +205,7 @@ data-original="/images/blog\150601_diary/man.JPG"></p></blockquote>
 主要应用到自己的博客网页里比较麻烦，因为要修改img标签、   <br/>
 设了一个data-original的属性，还是把之前所有标签都改了一下。  <br/>
 最后src加了一个加载的gif,网速慢的时候效果还是很明显的，  <br/>
-会有等待加载的动画，还是挺不错的，嘿嘿。   <br/>
-```HTML</p></blockquote>
-
-<script src="{{ root_url }}/javascripts/libs/jquery.lazyload.js"></script>
-
-
-<script type="text/javascript" charset="utf-8">
-  $(function() {
-     $("img.lazy").lazyload({
-        effect: 'fadeIn', 
-        /*threshold : 300, */
-        placeholder : "/images/loading/loading_gray.gif", 
-     });
-  });
-</script>
-
-
-<br>
-
-
-<p>```</p>
+会有等待加载的动画，还是挺不错的，嘿嘿。</p></blockquote>
 
 <br>
 
@@ -237,8 +217,8 @@ data-original="/images/blog\150601_diary/man.JPG"></p></blockquote>
 <p>sorry 又弄迟了 早上起来写  <br/>
 今天准备做一个瀑布流布局的照片展示。  <br/>
 把去北京玩得所有照片放在一个页面里。  <br/>
- <a href="https://changchen.me/love\beijin\album\mobile.html">点我点我</a>    <br/>
- plus: 只完成了50%，期待进一步的优化和功能的实现。</p></blockquote>
+<a href="https://changchen.me/love\beijin\album\mobile.html">点我点我</a>    <br/>
+plus: 只完成了50%，期待进一步的优化和功能的实现。</p></blockquote>
 
 <br>   
 
