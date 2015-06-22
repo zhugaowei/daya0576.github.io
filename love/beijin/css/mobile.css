@@ -8,9 +8,23 @@ html,body{background-color:#f8f4f0;}
 #content{width:100%;margin:20px auto 0;}
 
 /* 瀑布流基本单元 unit */
-.my-pic .woo{overflow:hidden;width:160px;background-color:#fff;}
-.my-pic .woo img{display:block;}
+.my-pic .woo{
+	overflow:hidden;
+	width:160px;
+	background-color:#cee3f2;
+}
+
+.my-pic .woo img{display:block;-webkit-transition:all 0.15s ease-in;}
 .my-pic .woo .j{position:relative;overflow:hidden;}
+
+.my-pic .woo img:hover, .woo:hover,.j:hover{
+	opacity:0.9;  
+    filter:alpha(opacity=9);  
+
+    -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
 
 /* 隐藏切换区域 */
 .woo-swa{display:none;}
