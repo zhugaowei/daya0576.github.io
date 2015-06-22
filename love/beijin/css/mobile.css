@@ -5,7 +5,7 @@
 html,body{background-color:#f8f4f0;}
 
 /* 移动版宽度设置 */
-#content{width:100%;margin:12px auto 0;}
+#content{width:100%;margin:20px auto 0;}
 
 /* 瀑布流基本单元 unit */
 .my-pic .woo{overflow:hidden;width:160px;background-color:#fff;}
