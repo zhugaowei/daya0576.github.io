@@ -1,0 +1,110 @@
+h1 {
+        font-size:95%;
+        padding: 1%;
+        margin: 0;
+    }
+h2 {font-size:100%;}
+p {font-size:100%;margin: 0;}
+body{
+        margin-top: 10px;
+        margin-bottom: 10px;
+}
+
+li{
+    list-style-type: none;
+}
+a:link {color:#8FBC8F;text-decoration:none;font-weight: bold;background-color: #fff;}		/* 未被访问的链接 */
+a:visited {color:#8FBC8F;text-decoration:none;background-color: #fff;}	/* 已被访问的链接 */
+
+.link_a {color:#00A9E0;}
+.link_a:hover {color:#00A9E0;text-decoration:none;}	/* 鼠标指针移动到链接上 */
+.divmain{
+    color: #333;
+    font: 14px/22px "微软雅黑","宋体",Arial;
+    word-wrap: break-word;
+    margin: 0px auto;
+    width: 720px;
+    height: auto;
+    border:2px solid #ccc;
+    padding-top: 1%;
+    border:2px solid #ccc;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+       -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+            box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+
+}
+table{
+    table-layout: fixed;
+    border-bottom-style:none;
+    border-right-style:none;
+    border-top-style:none;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    width: 90%;
+    background-color: transparent;
+}
+caption{
+    text-align: left;
+    padding-bottom: 3px;
+}
+thead{
+    text-align: left;
+    padding:5% 0 8px 20px;
+    vertical-align: top;
+}
+tbody{
+    padding-left: 8%;
+    vertical-align: top;
+    line-height:140%;
+    padding-left: 5%;
+}
+th{
+    padding-left: 3%;
+}
+td{
+    padding-left: 3%;
+
+}
+.box{
+    padding: 5%;
+    width: 33%;
+    height: 137px;
+    float:left;
+}
+.cell{
+    min-height: 22pt;
+    font-size: 12pt;
+    color: #FFF;
+    background-color: transparent;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 1.75;
+    margin:0;
+}
+.border_box{
+    background-color: #8FBC8F;
+    border-color: #fff;
+    text-align: center ;
+    vertical-align: middle;
+    border-top-style: none;
+    border-bottom-style:none;
+    border-right-style:none;
+    border-left-style:none;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: transparent;
+}
+.title{
+    font-weight:bold;
+}
+.right_blank{
+    padding-right: 50px;
+}
+
+.last{
+    margin-bottom: 12px;
+}

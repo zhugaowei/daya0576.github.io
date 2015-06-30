@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: work | 你是我的小呀小苹果~]]></title>
+  <link href="http://www.changchen.me/blog/categories/work/atom.xml" rel="self"/>
+  <link href="http://www.changchen.me/"/>
+  <updated>2015-06-30T14:59:09+08:00</updated>
+  <id>http://www.changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[简历]]></title>
+    <link href="http://www.changchen.me/blog/20150628/resume/"/>
+    <updated>2015-06-28T00:11:08+08:00</updated>
+    <id>http://www.changchen.me/blog/20150628/resume</id>
+    <content type="html"><![CDATA[<h2>联系方式</h2>
+
+<hr />
+
+<ul>
+<li>手机：13512032098</li>
+<li>Email：<a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#58;&#x64;&#x61;&#x79;&#97;&#48;&#x35;&#55;&#54;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#100;&#97;&#x79;&#x61;&#48;&#53;&#55;&#x36;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></li>
+<li>微信号：daya0576</li>
+</ul>
+
+
+<br>      
+
+
+<!--more-->
+
+
+
+
+<br>
+
+
+
+
+<iframe width="740px" height="1180px" src="http://www.changchen.me/love/resume_html/"></iframe>
+
+
+<h1>致谢</h1>
+
+<p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
+]]></content>
+  </entry>
+  
+</feed>
