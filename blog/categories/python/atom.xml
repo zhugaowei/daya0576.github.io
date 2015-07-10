@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-10T00:50:47+08:00</updated>
+  <updated>2015-07-10T23:37:33+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,110 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[python_mooc笔记-高阶函数]]></title>
+    <link href="http://www.changchen.me/blog/20150710/python-mooc/"/>
+    <updated>2015-07-10T16:15:41+08:00</updated>
+    <id>http://www.changchen.me/blog/20150710/python-mooc</id>
+    <content type="html"><![CDATA[<p>最近看了慕课网上的一个python课程，  <br/>
+感觉还不错，做点笔记，以后忘了看看</p>
+
+<!--more-->
+
+
+<p><strong>将字符串中的大小写转换</strong> <br/>
+strlwr(sStr1) <br/>
+sStr1 = sStr1.upper() <br/>
+sStr1 = sStr1.lower() <br/>
+print &lsquo;JUST TO TEST IT&rsquo;.capitalize() <br/>
+<strong>字符串的首字母转换成大写， 其余转换成小写</strong> <br/>
+Just to test it <br/>
+print &lsquo;JUST TO TEST IT&rsquo;.title() <br/>
+<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
+Just To Test It</p>
+
+<p>把函数作为参数</p>
+
+<p>import math
+def add(x, y, f):</p>
+
+<pre><code>return f(x) + f(y)
+</code></pre>
+
+<p>print add(25, 9, math.sqrt)</p>
+
+<p>map()函数
+输入：[&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;]
+输出：[&lsquo;Adam&rsquo;, &lsquo;Lisa&rsquo;, &lsquo;Bart&rsquo;]
+def format_name(name):</p>
+
+<pre><code>return name.capitalize()
+</code></pre>
+
+<p>print map(format_name, [&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;])</p>
+
+<p>reduce()函数
+输入：[2, 4, 5, 7, 12]
+输出：2<em>4</em>5<em>7</em>12的结果
+def prod(x, y):</p>
+
+<pre><code>return x*y
+</code></pre>
+
+<p>print reduce(prod, [2, 4, 5, 7, 12])</p>
+
+<p>filter()函数
+请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+import math
+def is_sqr(x):</p>
+
+<pre><code>return math.sqrt(x)%1 == 0
+</code></pre>
+
+<p>print filter(is_sqr, range(1, 101))</p>
+
+<p>自定义排序函数
+输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;]
+输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]
+def cmp_ignore_case(s1, s2):</p>
+
+<pre><code>t1=s1.upper()
+t2=s2.upper()
+if t1 &gt; t2:
+    return 1
+if t1 &lt; t2:
+    return -1
+else:
+    return 0
+</code></pre>
+
+<p>print sorted([&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;], cmp_ignore_case)</p>
+
+<p>闭包
+def count():</p>
+
+<pre><code>fs = []
+for i in range(1, 4):
+    def f(i):
+        def g():
+            return i*i
+        return g
+
+    r = f(i)
+    fs.append(r)
+
+return fs
+</code></pre>
+
+<p>f1, f2, f3 = count()
+print f1(), f2(), f3()</p>
+
+<p>匿名函数
+print filter(lambda s:s and len(s.strip()) > 0, [&lsquo;test&rsquo;, None, &lsquo;&rsquo;, &lsquo;str&rsquo;, &lsquo;  &rsquo;, &lsquo;END&rsquo;])</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[hidden features of Python笔记]]></title>
@@ -466,27 +570,6 @@ frame.add_button(&lsquo;Reset&rsquo;, button_handler, 60)</p>
 <p>new_game()
 frame.start()
 ```</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[linux中安装python的egg包]]></title>
-    <link href="http://www.changchen.me/blog/20140424/linux-python-egg-install/"/>
-    <updated>2014-04-24T11:28:48+08:00</updated>
-    <id>http://www.changchen.me/blog/20140424/linux-python-egg-install</id>
-    <content type="html"><![CDATA[<h4>NetworkX的使用:<a href="http://blog.sciencenet.cn/blog-404069-337442.html" title="NetworkX">http://blog.sciencenet.cn/blog-404069-337442.html</a></h4>
-
-<p>首先到<a href="http://pypi.python.org/pypi/networkx/">http://pypi.python.org/pypi/networkx/</a>下载
-networkx-1.1-py2.6.egg   <br/>
-然后下载 setuptools:<a href="https://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11-py2.7.egg#md5=fe1f997bc722265116870bc7919059ea">setuptools-0.6c11-py2.7.egg (md5)</a></p>
-
-<h3>1. 安装setuptools</h3>
-
-<p><img src="\images\blog\140424_python_egg\1.png" alt="ico_topitme" /></p>
-
-<h3>2. 安装networkx</h3>
-
-<p><img src="\images\blog\140424_python_egg\2.png" alt="ico_topitme" /></p>
 ]]></content>
   </entry>
   
