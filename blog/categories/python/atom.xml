@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-10T23:37:33+08:00</updated>
+  <updated>2015-07-11T23:57:54+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -114,6 +114,28 @@ print f1(), f2(), f3()</p>
 
 <p>匿名函数
 print filter(lambda s:s and len(s.strip()) > 0, [&lsquo;test&rsquo;, None, &lsquo;&rsquo;, &lsquo;str&rsquo;, &lsquo;  &rsquo;, &lsquo;END&rsquo;])</p>
+
+<p>decorator注释器<br/>
+import time</p>
+
+<p>def performance(f):</p>
+
+<pre><code>def fn(*args, **kw):
+    t1 = time.time()
+    r = f(*args, **kw)
+    t2 = time.time()
+    print 'call %s() in %fs' % (f.__name__, (t2 - t1))
+    return r
+return fn
+</code></pre>
+
+<p>@performance
+def factorial(n):</p>
+
+<pre><code>return reduce(lambda x,y: x*y, range(1, n+1))
+</code></pre>
+
+<p>print factorial(10)</p>
 ]]></content>
   </entry>
   
