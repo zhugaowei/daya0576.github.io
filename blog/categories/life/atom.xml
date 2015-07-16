@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-16T19:02:47+08:00</updated>
+  <updated>2015-07-17T00:32:51+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -191,7 +191,7 @@ Best wishes to myself~   <br/>
 <br>
 
 
-<blockquote><h3>2015/07/13</h3>
+<blockquote><h3>2015/07/15</h3>
 
 <hr />
 
@@ -199,6 +199,20 @@ Best wishes to myself~   <br/>
 best wishes to myself.  <br/>
 找到一个努力的平台和方向。  <br/>
 <img class="lazy" data-original="/images/blog\150701_diary/monkey_king.gif" ></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>2015/07/16</h3>
+
+<hr />
+
+<p>虽然把域名解析改成dnspod了， <br/>
+但苦于github的服务器在美国，所以网页的访问速度有时候有些堪忧  <br/>
+今天网上看到一个解决方案是<a href="http://blog.devtang.com/blog/2014/06/02/use-gitcafe-to-host-blog/">《将 Octopress 博客从 GitHub 迁移到 GitCafe》</a>  <br/>
+晚上试一下，  <br/>
+要是成功了，下一步的计划是把octopress转到hexo框架下，随便可以看看node.js      <br/>
+毕竟octopress被我改的越来越臃肿了是时候淘汰了。</p></blockquote>
 
 <br>
 

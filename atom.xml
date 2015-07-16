@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-16T19:02:47+08:00</updated>
+  <updated>2015-07-17T00:32:51+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -317,7 +317,7 @@ Best wishes to myself~   <br/>
 <br>
 
 
-<blockquote><h3>2015/07/13</h3>
+<blockquote><h3>2015/07/15</h3>
 
 <hr />
 
@@ -325,6 +325,20 @@ Best wishes to myself~   <br/>
 best wishes to myself.  <br/>
 找到一个努力的平台和方向。  <br/>
 <img class="lazy" data-original="/images/blog\150701_diary/monkey_king.gif" ></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>2015/07/16</h3>
+
+<hr />
+
+<p>虽然把域名解析改成dnspod了， <br/>
+但苦于github的服务器在美国，所以网页的访问速度有时候有些堪忧  <br/>
+今天网上看到一个解决方案是<a href="http://blog.devtang.com/blog/2014/06/02/use-gitcafe-to-host-blog/">《将 Octopress 博客从 GitHub 迁移到 GitCafe》</a>  <br/>
+晚上试一下，  <br/>
+要是成功了，下一步的计划是把octopress转到hexo框架下，随便可以看看node.js      <br/>
+毕竟octopress被我改的越来越臃肿了是时候淘汰了。</p></blockquote>
 
 <br>
 
@@ -344,7 +358,7 @@ best wishes to myself.  <br/>
 
 <ul>
 <li>手机：13512032098</li>
-<li>Email：<a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#100;&#97;&#x79;&#97;&#48;&#53;&#55;&#x36;&#64;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#100;&#x61;&#x79;&#97;&#x30;&#x35;&#x37;&#54;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>Email：<a href="&#109;&#97;&#x69;&#108;&#116;&#x6f;&#58;&#100;&#x61;&#x79;&#97;&#x30;&#53;&#x37;&#x36;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#x64;&#97;&#x79;&#x61;&#48;&#53;&#x37;&#x36;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a></li>
 <li>微信号：daya0576</li>
 </ul>
 
