@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-17T13:06:44+08:00</updated>
+  <updated>2015-07-18T00:15:52+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -24,12 +24,14 @@
 <!--more-->
 
 
-<p><strong>将字符串中的大小写转换</strong> <br/>
-strlwr(sStr1) <br/>
-sStr1 = sStr1.upper() <br/>
-sStr1 = sStr1.lower() <br/>
-print &lsquo;JUST TO TEST IT&rsquo;.capitalize() <br/>
-<strong>字符串的首字母转换成大写， 其余转换成小写</strong> <br/>
+<p><strong> 将字符串中的大小写转换 </strong></p>
+
+<p>strlwr(sStr1)
+sStr1 = sStr1.upper()
+sStr1 = sStr1.lower()
+print &lsquo;JUST TO TEST IT&rsquo;.capitalize()</p>
+
+<p><strong>字符串的首字母转换成大写， 其余转换成小写</strong> <br/>
 Just to test it <br/>
 print &lsquo;JUST TO TEST IT&rsquo;.title() <br/>
 <strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
