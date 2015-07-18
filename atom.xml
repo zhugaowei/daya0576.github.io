@@ -4,7 +4,7 @@
   <title><![CDATA[你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-18T18:24:34+08:00</updated>
+  <updated>2015-07-18T18:28:18+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -24,8 +24,8 @@
 <!--more-->
 
 
-<p>字符串的一些处理：
-<em>将字符串中的大小写转换：</em></p>
+<p>字符串的一些处理： <br/>
+<strong>将字符串中的大小写转换：</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -41,7 +41,7 @@
 <br>
 
 
-<p><em>字符串的首字母转换成大写， 其余转换成小写：</em></p>
+<p><strong>字符串的首字母转换成大写， 其余转换成小写：</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="s">&#39;JUST TO TEST IT&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -49,13 +49,13 @@
 
 
 <p>
-<em>字符串中所有单词的首字母转换成大写， 其余转换成小写</em> <br/>
+<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
 Just to test it >>> Just To Test It</p>
 
 <br>
 
 
-<p>把函数作为参数:</p>
+<p><strong>把函数作为参数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -73,7 +73,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>map()函数:</p>
+<p><strong>map()函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -93,7 +93,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>reduce()函数:</p>
+<p><strong>reduce()函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -113,7 +113,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>filter()函数: <br/>
+<p><strong>filter()函数: </strong><br/>
 请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</p>
 
@@ -133,7 +133,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>自定义排序函数: <br/>
+<p><strong>自定义排序函数:</strong> <br/>
 输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
 输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]</p>
 
@@ -165,7 +165,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>闭包:</p>
+<p><strong>闭包:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -203,14 +203,14 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>匿名函数:</p>
+<p><strong>匿名函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;test&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;, &#39;</span><span class="nb">str</span><span class="s">&#39;, &#39;</span>  <span class="s">&#39;, &#39;</span><span class="n">END</span><span class="s">&#39;])</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>decorator注释器:</p>
+<p><strong>decorator注释器:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -493,7 +493,7 @@ test1  <br/>
     <id>http://www.changchen.me/blog/20150628/resume</id>
     <content type="html"><![CDATA[<blockquote><p><b>联系方式</b> <br/>
  &ndash; 手机：13512032098  <br/>
- &ndash; Email：<a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#58;&#x64;&#97;&#121;&#97;&#48;&#x35;&#x37;&#54;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#109;">&#100;&#x61;&#x79;&#97;&#48;&#x35;&#55;&#x36;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>  <br/>
+ &ndash; Email：<a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#x64;&#x61;&#x79;&#x61;&#48;&#53;&#x37;&#54;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#x6d;">&#100;&#x61;&#x79;&#x61;&#x30;&#x35;&#55;&#x36;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a>  <br/>
  &ndash; 微信号：daya0576</p></blockquote>
 
 <!--more-->

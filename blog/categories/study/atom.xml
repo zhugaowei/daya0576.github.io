@@ -4,7 +4,7 @@
   <title><![CDATA[Category: study | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/study/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-18T18:24:34+08:00</updated>
+  <updated>2015-07-18T18:28:18+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -24,8 +24,8 @@
 <!--more-->
 
 
-<p>字符串的一些处理：
-<em>将字符串中的大小写转换：</em> <br/>
+<p>字符串的一些处理： <br/>
+<strong>将字符串中的大小写转换：</strong> <br/>
 <code>python
 strlwr(sStr1)
 sStr1 = sStr1.upper()
@@ -36,17 +36,17 @@ print 'JUST TO TEST IT'.capitalize()
 <br>
 
 
-<p><em>字符串的首字母转换成大写， 其余转换成小写：</em> <br/>
-<code>python   
+<p><strong>字符串的首字母转换成大写， 其余转换成小写：</strong> <br/>
+<code>python
 print 'JUST TO TEST IT'.title()
 </code><br/>
-<em>字符串中所有单词的首字母转换成大写， 其余转换成小写</em> <br/>
+<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
 Just to test it >>> Just To Test It</p>
 
 <br>
 
 
-<p>把函数作为参数: <br/>
+<p><strong>把函数作为参数:</strong> <br/>
 ``` python
 import math
 def add(x, y, f):</p>
@@ -60,7 +60,7 @@ def add(x, y, f):</p>
 <br>
 
 
-<p>map()函数: <br/>
+<p><strong>map()函数:</strong> <br/>
 ``` python
 输入：[&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;]
 输出：[&lsquo;Adam&rsquo;, &lsquo;Lisa&rsquo;, &lsquo;Bart&rsquo;]
@@ -75,7 +75,7 @@ def format_name(name):</p>
 <br>
 
 
-<p>reduce()函数: <br/>
+<p><strong>reduce()函数:</strong> <br/>
 ``` python
 输入：[2, 4, 5, 7, 12]
 输出：2<em>4</em>5<em>7</em>12的结果
@@ -90,7 +90,7 @@ def prod(x, y):</p>
 <br>
 
 
-<p>filter()函数: <br/>
+<p><strong>filter()函数: </strong><br/>
 请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 ``` python
@@ -106,7 +106,7 @@ def is_sqr(x):</p>
 <br>
 
 
-<p>自定义排序函数: <br/>
+<p><strong>自定义排序函数:</strong> <br/>
 输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
 输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;] <br/>
 ```python
@@ -128,7 +128,7 @@ else:
 <br>
 
 
-<p>闭包: <br/>
+<p><strong>闭包:</strong> <br/>
 ```python
 def count():</p>
 
@@ -152,12 +152,12 @@ print f1(), f2(), f3()
 <br>
 
 
-<p>匿名函数: <br/>
+<p><strong>匿名函数:</strong> <br/>
 <code>python
 print filter(lambda s:s and len(s.strip()) &gt; 0, ['test', None, ', 'str', '  ', 'END'])
 </code></p>
 
-<p>decorator注释器:   <br/>
+<p><strong>decorator注释器:</strong>   <br/>
 ```python
 import time</p>
 

@@ -9,8 +9,7 @@
 	<meta name="author" content="Daya">
 
 	
-	<meta name="description" content="Python_mooc笔记-高阶函数 最近看了慕课网上的一个课程， 感觉还不错，做点笔记，以后忘了看看 字符串的一些处理：
-将字符串中的大小写转换： 1
+	<meta name="description" content="Python_mooc笔记-高阶函数 最近看了慕课网上的一个课程， 感觉还不错，做点笔记，以后忘了看看 字符串的一些处理： 将字符串中的大小写转换： 1
 2
 3
 4
@@ -125,8 +124,8 @@ print &hellip;">
 <!--more-->
 
 
-<p>字符串的一些处理：
-<em>将字符串中的大小写转换：</em></p>
+<p>字符串的一些处理： <br/>
+<strong>将字符串中的大小写转换：</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -142,7 +141,7 @@ print &hellip;">
 <br>
 
 
-<p><em>字符串的首字母转换成大写， 其余转换成小写：</em></p>
+<p><strong>字符串的首字母转换成大写， 其余转换成小写：</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="s">&#39;JUST TO TEST IT&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -150,13 +149,13 @@ print &hellip;">
 
 
 <p>
-<em>字符串中所有单词的首字母转换成大写， 其余转换成小写</em> <br/>
+<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
 Just to test it >>> Just To Test It</p>
 
 <br>
 
 
-<p>把函数作为参数:</p>
+<p><strong>把函数作为参数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -174,7 +173,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>map()函数:</p>
+<p><strong>map()函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -194,7 +193,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>reduce()函数:</p>
+<p><strong>reduce()函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -214,7 +213,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>filter()函数: <br/>
+<p><strong>filter()函数: </strong><br/>
 请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</p>
 
@@ -234,7 +233,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>自定义排序函数: <br/>
+<p><strong>自定义排序函数:</strong> <br/>
 输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
 输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]</p>
 
@@ -266,7 +265,7 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>闭包:</p>
+<p><strong>闭包:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -304,14 +303,14 @@ Just to test it >>> Just To Test It</p>
 <br>
 
 
-<p>匿名函数:</p>
+<p><strong>匿名函数:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;test&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;, &#39;</span><span class="nb">str</span><span class="s">&#39;, &#39;</span>  <span class="s">&#39;, &#39;</span><span class="n">END</span><span class="s">&#39;])</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>decorator注释器:</p>
+<p><strong>decorator注释器:</strong></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
