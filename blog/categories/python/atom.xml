@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-18T00:15:52+08:00</updated>
+  <updated>2015-07-18T18:24:34+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -18,36 +18,50 @@
     <link href="http://www.changchen.me/blog/20150710/python-mooc/"/>
     <updated>2015-07-10T16:15:41+08:00</updated>
     <id>http://www.changchen.me/blog/20150710/python-mooc</id>
-    <content type="html"><![CDATA[<blockquote><p>最近看了慕课网上的一个python课程，  <br/>
+    <content type="html"><![CDATA[<blockquote><p>最近看了慕课网上的一个课程，  <br/>
 感觉还不错，做点笔记，以后忘了看看</p></blockquote>
 
 <!--more-->
 
 
-<p><strong> 将字符串中的大小写转换 </strong></p>
-
-<p>strlwr(sStr1)
+<p>字符串的一些处理：
+<em>将字符串中的大小写转换：</em> <br/>
+<code>python
+strlwr(sStr1)
 sStr1 = sStr1.upper()
 sStr1 = sStr1.lower()
-print &lsquo;JUST TO TEST IT&rsquo;.capitalize()</p>
+print 'JUST TO TEST IT'.capitalize()
+</code></p>
 
-<p><strong>字符串的首字母转换成大写， 其余转换成小写</strong> <br/>
-Just to test it <br/>
-print &lsquo;JUST TO TEST IT&rsquo;.title() <br/>
-<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
-Just To Test It</p>
+<br>
 
-<p>把函数作为参数</p>
 
-<p>import math
+<p><em>字符串的首字母转换成大写， 其余转换成小写：</em> <br/>
+<code>python   
+print 'JUST TO TEST IT'.title()
+</code><br/>
+<em>字符串中所有单词的首字母转换成大写， 其余转换成小写</em> <br/>
+Just to test it >>> Just To Test It</p>
+
+<br>
+
+
+<p>把函数作为参数: <br/>
+``` python
+import math
 def add(x, y, f):</p>
 
 <pre><code>return f(x) + f(y)
 </code></pre>
 
-<p>print add(25, 9, math.sqrt)</p>
+<p>print add(25, 9, math.sqrt)
+```</p>
 
-<p>map()函数
+<br>
+
+
+<p>map()函数: <br/>
+``` python
 输入：[&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;]
 输出：[&lsquo;Adam&rsquo;, &lsquo;Lisa&rsquo;, &lsquo;Bart&rsquo;]
 def format_name(name):</p>
@@ -55,9 +69,14 @@ def format_name(name):</p>
 <pre><code>return name.capitalize()
 </code></pre>
 
-<p>print map(format_name, [&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;])</p>
+<p>print map(format_name, [&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;])
+```</p>
 
-<p>reduce()函数
+<br>
+
+
+<p>reduce()函数: <br/>
+``` python
 输入：[2, 4, 5, 7, 12]
 输出：2<em>4</em>5<em>7</em>12的结果
 def prod(x, y):</p>
@@ -65,22 +84,32 @@ def prod(x, y):</p>
 <pre><code>return x*y
 </code></pre>
 
-<p>print reduce(prod, [2, 4, 5, 7, 12])</p>
+<p>print reduce(prod, [2, 4, 5, 7, 12])
+```</p>
 
-<p>filter()函数
+<br>
+
+
+<p>filter()函数: <br/>
 请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
 [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+``` python
 import math
 def is_sqr(x):</p>
 
 <pre><code>return math.sqrt(x)%1 == 0
 </code></pre>
 
-<p>print filter(is_sqr, range(1, 101))</p>
+<p>print filter(is_sqr, range(1, 101))
+```</p>
 
-<p>自定义排序函数
-输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;]
-输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]
+<br>
+
+
+<p>自定义排序函数: <br/>
+输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
+输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;] <br/>
+```python
 def cmp_ignore_case(s1, s2):</p>
 
 <pre><code>t1=s1.upper()
@@ -93,9 +122,14 @@ else:
     return 0
 </code></pre>
 
-<p>print sorted([&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;], cmp_ignore_case)</p>
+<p>print sorted([&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;], cmp_ignore_case)
+```</p>
 
-<p>闭包
+<br>
+
+
+<p>闭包: <br/>
+```python
 def count():</p>
 
 <pre><code>fs = []
@@ -112,12 +146,19 @@ return fs
 </code></pre>
 
 <p>f1, f2, f3 = count()
-print f1(), f2(), f3()</p>
+print f1(), f2(), f3()
+```</p>
 
-<p>匿名函数
-print filter(lambda s:s and len(s.strip()) > 0, [&lsquo;test&rsquo;, None, &lsquo;&rsquo;, &lsquo;str&rsquo;, &lsquo;  &rsquo;, &lsquo;END&rsquo;])</p>
+<br>
 
-<p>decorator注释器<br/>
+
+<p>匿名函数: <br/>
+<code>python
+print filter(lambda s:s and len(s.strip()) &gt; 0, ['test', None, ', 'str', '  ', 'END'])
+</code></p>
+
+<p>decorator注释器:   <br/>
+```python
 import time</p>
 
 <p>def performance(f):</p>
@@ -137,7 +178,11 @@ def factorial(n):</p>
 <pre><code>return reduce(lambda x,y: x*y, range(1, n+1))
 </code></pre>
 
-<p>print factorial(10)</p>
+<p>print factorial(10)
+```</p>
+
+<br>
+
 ]]></content>
   </entry>
   

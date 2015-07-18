@@ -9,10 +9,15 @@
 	<meta name="author" content="Daya">
 
 	
-	<meta name="description" content="Python_mooc笔记-高阶函数 最近看了慕课网上的一个python课程， 感觉还不错，做点笔记，以后忘了看看 将字符串中的大小写转换 strlwr(sStr1)
+	<meta name="description" content="Python_mooc笔记-高阶函数 最近看了慕课网上的一个课程， 感觉还不错，做点笔记，以后忘了看看 字符串的一些处理：
+将字符串中的大小写转换： 1
+2
+3
+4
+strlwr(sStr1)
 sStr1 = sStr1.upper()
 sStr1 = sStr1.lower()
-print &lsquo;JUST TO &hellip;">
+print &hellip;">
 	
 
 	<!-- http://t.co/dKP3o1e -->
@@ -114,126 +119,237 @@ print &lsquo;JUST TO &hellip;">
 
 
 	<h1 class="title" itemprop="name">Python_mooc笔记-高阶函数</h1>
-	<div class="entry-content" itemprop="articleBody"><blockquote><p>最近看了慕课网上的一个python课程，  <br/>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>最近看了慕课网上的一个课程，  <br/>
 感觉还不错，做点笔记，以后忘了看看</p></blockquote>
 
 <!--more-->
 
 
-<p><strong> 将字符串中的大小写转换 </strong></p>
+<p>字符串的一些处理：
+<em>将字符串中的大小写转换：</em></p>
 
-<p>strlwr(sStr1)
-sStr1 = sStr1.upper()
-sStr1 = sStr1.lower()
-print &lsquo;JUST TO TEST IT&rsquo;.capitalize()</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">strlwr</span><span class="p">(</span><span class="n">sStr1</span><span class="p">)</span>
+</span><span class='line'><span class="n">sStr1</span> <span class="o">=</span> <span class="n">sStr1</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span class='line'><span class="n">sStr1</span> <span class="o">=</span> <span class="n">sStr1</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&#39;JUST TO TEST IT&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p><strong>字符串的首字母转换成大写， 其余转换成小写</strong> <br/>
-Just to test it <br/>
-print &lsquo;JUST TO TEST IT&rsquo;.title() <br/>
-<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
-Just To Test It</p>
 
-<p>把函数作为参数</p>
+<br>
 
-<p>import math
-def add(x, y, f):</p>
 
-<pre><code>return f(x) + f(y)
-</code></pre>
+<p><em>字符串的首字母转换成大写， 其余转换成小写：</em></p>
 
-<p>print add(25, 9, math.sqrt)</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="s">&#39;JUST TO TEST IT&#39;</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>map()函数
-输入：[&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;]
-输出：[&lsquo;Adam&rsquo;, &lsquo;Lisa&rsquo;, &lsquo;Bart&rsquo;]
-def format_name(name):</p>
 
-<pre><code>return name.capitalize()
-</code></pre>
+<p>
+<em>字符串中所有单词的首字母转换成大写， 其余转换成小写</em> <br/>
+Just to test it >>> Just To Test It</p>
 
-<p>print map(format_name, [&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;])</p>
+<br>
 
-<p>reduce()函数
-输入：[2, 4, 5, 7, 12]
-输出：2<em>4</em>5<em>7</em>12的结果
-def prod(x, y):</p>
 
-<pre><code>return x*y
-</code></pre>
+<p>把函数作为参数:</p>
 
-<p>print reduce(prod, [2, 4, 5, 7, 12])</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">math</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">add</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>filter()函数
+
+<br>
+
+
+<p>map()函数:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">输入：</span><span class="p">[</span><span class="s">&#39;adam&#39;</span><span class="p">,</span> <span class="s">&#39;LISA&#39;</span><span class="p">,</span> <span class="s">&#39;barT&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="err">输出：</span><span class="p">[</span><span class="s">&#39;Adam&#39;</span><span class="p">,</span> <span class="s">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s">&#39;Bart&#39;</span><span class="p">]</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">format_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">name</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="nb">map</span><span class="p">(</span><span class="n">format_name</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;adam&#39;</span><span class="p">,</span> <span class="s">&#39;LISA&#39;</span><span class="p">,</span> <span class="s">&#39;barT&#39;</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>reduce()函数:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="err">输入：</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</span><span class='line'><span class="err">输出：</span><span class="mi">2</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="mi">5</span><span class="o">*</span><span class="mi">7</span><span class="o">*</span><span class="mi">12</span><span class="err">的结果</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">prod</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="nb">reduce</span><span class="p">(</span><span class="n">prod</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>filter()函数: <br/>
 请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
-[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
-import math
-def is_sqr(x):</p>
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</p>
 
-<pre><code>return math.sqrt(x)%1 == 0
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">math</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">is_sqr</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">%</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="n">is_sqr</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>print filter(is_sqr, range(1, 101))</p>
 
-<p>自定义排序函数
-输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;]
-输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]
-def cmp_ignore_case(s1, s2):</p>
+<br>
 
-<pre><code>t1=s1.upper()
-t2=s2.upper()
-if t1 &gt; t2:
-    return 1
-if t1 &lt; t2:
-    return -1
-else:
-    return 0
-</code></pre>
 
-<p>print sorted([&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;], cmp_ignore_case)</p>
+<p>自定义排序函数: <br/>
+输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
+输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;]</p>
 
-<p>闭包
-def count():</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">cmp_ignore_case</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">t1</span><span class="o">=</span><span class="n">s1</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">t2</span><span class="o">=</span><span class="n">s2</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">t1</span> <span class="o">&gt;</span> <span class="n">t2</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">t1</span> <span class="o">&lt;</span> <span class="n">t2</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="nb">sorted</span><span class="p">([</span><span class="s">&#39;bob&#39;</span><span class="p">,</span> <span class="s">&#39;about&#39;</span><span class="p">,</span> <span class="s">&#39;Zoo&#39;</span><span class="p">,</span> <span class="s">&#39;Credit&#39;</span><span class="p">],</span> <span class="n">cmp_ignore_case</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>fs = []
-for i in range(1, 4):
-    def f(i):
-        def g():
-            return i*i
-        return g
 
-    r = f(i)
-    fs.append(r)
+<br>
 
-return fs
-</code></pre>
 
-<p>f1, f2, f3 = count()
-print f1(), f2(), f3()</p>
+<p>闭包:</p>
 
-<p>匿名函数
-print filter(lambda s:s and len(s.strip()) > 0, [&lsquo;test&rsquo;, None, &lsquo;&rsquo;, &lsquo;str&rsquo;, &lsquo;  &rsquo;, &lsquo;END&rsquo;])</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">count</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">fs</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+</span><span class='line'>                <span class="k">return</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">g</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="n">fs</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span>
+</span><span class='line'><span class="k">print</span> <span class="n">f1</span><span class="p">(),</span> <span class="n">f2</span><span class="p">(),</span> <span class="n">f3</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>decorator注释器<br/>
-import time</p>
 
-<p>def performance(f):</p>
+<br>
 
-<pre><code>def fn(*args, **kw):
-    t1 = time.time()
-    r = f(*args, **kw)
-    t2 = time.time()
-    print 'call %s() in %fs' % (f.__name__, (t2 - t1))
-    return r
-return fn
-</code></pre>
 
-<p>@performance
-def factorial(n):</p>
+<p>匿名函数:</p>
 
-<pre><code>return reduce(lambda x,y: x*y, range(1, n+1))
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span><span class="n">s</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;test&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="s">&#39;, &#39;</span><span class="nb">str</span><span class="s">&#39;, &#39;</span>  <span class="s">&#39;, &#39;</span><span class="n">END</span><span class="s">&#39;])</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>print factorial(10)</p>
+
+<p>decorator注释器:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">time</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">performance</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span class='line'>        <span class="n">r</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&#39;call </span><span class="si">%s</span><span class="s">() in </span><span class="si">%f</span><span class="s">s&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="p">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">r</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">fn</span>
+</span><span class='line'>
+</span><span class='line'><span class="nd">@performance</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
 </div>
 
    
