@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | 你是我的小呀小苹果~]]></title>
   <link href="http://www.changchen.me/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://www.changchen.me/"/>
-  <updated>2015-07-18T19:02:21+08:00</updated>
+  <updated>2015-07-19T01:10:11+08:00</updated>
   <id>http://www.changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -238,7 +238,26 @@ test1  <br/>
 
 <hr />
 
-<p><a href="https://www.v2ex.com/t/60125">https://www.v2ex.com/t/60125</a></p></blockquote>
+<p>呼~ 早上被一个bug困扰了好久。 <br/>
+我在markdown中添加代码让它高亮显示，generate后再预览时， <br/>
+生成的页面竟然是空白页，想了很多解决方法，  <br/>
+但怎么也解决不了，最后睡了个午觉，然后google了一下   <br/>
+终于看到一个人和我是一样的情况<a href="https://www.v2ex.com/t/60125">https://www.v2ex.com/t/60125</a> <br/>
+终于明白那句话，解决bug的最好方法是:睡一觉明天再说。       <br/>
+今天把代码块的格式修改了一下，  <br/>
+改了各种边距，字体颜色大小，把行数改成灰色，再加个绿色的分割线  <br/>
+反正就是美美哒~看到这样的代码展示，心情都变得美丽了。  <br/>
+在改背景颜色的时候，怎么也改不了，最后发现这个背景颜色是写在table的css里。  <br/>
+修改后的代码高亮（下一步吧高亮颜色改一下，像sublime里的配色那么好看就好了）： <br/>
+``` python
+import math
+def add(x, y, f):</p>
+
+<pre><code>return f(x) + f(y)
+</code></pre></blockquote>
+
+<p>print add(25, 9, math.sqrt)
+```</p>
 
 <br>
 
