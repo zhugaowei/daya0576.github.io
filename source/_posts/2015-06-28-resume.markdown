@@ -1,0 +1,22 @@
+---
+layout: post
+title: "简历"
+date: 2015-06-28 00:11:08 +0800
+comments: true
+categories: [code, work]
+---
+
+> <b>联系方式</b>   
+ - 手机：13512032098    
+ - Email：daya0576@gmail.com    
+ - 微信号：daya0576      
+
+<!--more-->
+
+<br>
+
+<iframe width="740px" height="1180px" src="/love/resume_html/"></iframe>
+
+
+# 致谢
+感谢您花时间阅读我的简历，期待能有机会和您共事。

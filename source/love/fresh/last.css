@@ -1,0 +1,144 @@
+*{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif}
+.underline{text-decoration:underline}
+.bold{font-weight:bold}
+.padding{padding-left:5px}
+.red{color:#C30000;font-weight:bold}
+
+
+.topBox,.navBox,.mainbg{width:1280px;margin:0 auto}
+.welBox,.selectBox,.bsBox{width:980px;margin:0 auto}
+.mainbg{background-image:url(img/mainbg2.gif);background-repeat:no-repeat;height:1130px;border-bottom:4px #AEAEAE solid}
+
+
+.topBox .toplogo dt{font-size:38px;height:50px;font-weight:bold}
+.topBox .toplogo dd{font-size:13px;font-weight:bold}
+.topBox{background:url(img/topBoxbg.gif);position:relative; height:144px}
+.topBox .toplogo{padding-left:150px;padding-top:40px; width:350px; float:left}
+.topBox .toplogo dl a{color:#A12A24}
+ .toplogo dl span{color:#7E3E34}
+.topCenter{width:300px;height:13px;position:absolute;top:20px;left:395px}
+.topCenter .lefta{font-size:13px;line-height:13px;font-weight:700}
+.topCenter .righta{padding-left:150px;font-size:13px;line-height:13px;font-weight:700}
+.topBox .topRight{float:left;width:392px;height:144px;background:url(img/topRight.gif) no-repeat right top; padding-left:235px}
+.topRight dl .bottom{padding-top:15px;padding-left:4px;font-size:11px;border-top:1px solid white}
+.topRight .bottom .left{padding-left:5px;padding-right:12px}
+.topRight .bottom .center{padding-left:5px;padding-right:12px}
+.topRight .bottom .right{padding-left:5px}
+
+.toppa{position:absolute;top:2px;left:351px}
+
+.topRight dt{font-size:18px;padding-top:13px;padding-left:60px}
+.topRight dt .right{padding-left:85px}
+.topRight dt img{padding-left:5px}
+.topRight dd{font-size:11px}
+.topRight .center{padding-top:40px;padding-left:15px;padding-bottom:15px;border-bottom:1px #AF9476 solid}
+
+.topRight dd .third{padding-left:30px}
+
+.navBox{background:url(img/navbg.gif);overflow:hidden;height:100%}
+.navBox li{float:left;list-style-type:none;padding-top: 15px;height:34px}
+.navBox a{color:white;text-decoration:none;font-size:12px;padding-left:8px;padding-right:16px}
+.navBox ul{padding-left:150px}
+.navBox .search{padding-left:90px;padding-top:12px;display:block;line-height:20px;width:500px}
+.navBox .search a{font-size:16px;font-weight:bolder}
+
+.welBox{height:478px}
+.welBox .leftBox{width:193px;height:478px}
+.welBox .leftBox dt{padding-top:20px;margin-bottom:10px;width:183px}
+.welBox .leftBox dt .left{font-weight:bold;color:#666563;font-size:20px}
+.welBox .leftBox dt .right{font-weight:bold;color:#C80503;font-size:20px}
+.welBox .leftBox dd a{padding-left:10px;font-size:11px;line-height:27px}
+.welBox .leftBox dd{display:block;border-bottom:1px solid #D0D0D0;height:27px;width:183px}
+.welBox .leftBox .last{border:none}
+
+.welBox .rightBox{width:758px;padding-left:26px}
+.welBox .rightBox2{height:440px;width:758px;background-image:url(img/rightbg1.gif);background-color:#FFF;background-repeat:no-repeat}
+.welBox .rightBox,.leftBox{float:left}
+.welBox .rightBox1{height:35px;line-height:35px}
+.welBox .rightBox1 a{padding-left:10px;font-size:14px}
+
+.selectBox{height:90px}
+.selectBox .leftBox .dt2{margin-top:28px}
+.selectBox .leftBox dl dt{margin-top:10px;margin-bottom:10px}
+.selectBox .leftBox dt .left{font-weight:bold;color:#666563;font-size:20px}
+.selectBox .leftBox dt .right{font-weight:bold;color:#C80503;font-size:20px}
+.selectBox .leftBox{width:193px;height:80px}
+
+.selectBox .rightBox{margin-left:26px;width:760px;background-color:#FFF}
+.selectBox .rightBox,.leftBox{float:left}
+.selectBox .rightBox img,.seledl{float:left}
+.selectBox .rightBox .seledl{padding-right:25px;padding-left:8px;margin-top:20px;font-weight:bold;line-height}
+.selectBox .rightBox .last{padding-right:0px;padding-left:0px;}
+.selectBox .rightBox dd{font-size:14px;line-height:30px}
+.selectBox .rightBox dt{font-size:18px}
+.selectBox .rightBox .first{padding-left:10px}
+
+
+.bsBox{height:505px;font-family:Arial}
+.bsBox .leftBox{width:203px;height:445px}
+.bsBox .rightBox{float:right}
+.bsBox  dl{margin:10px 0}
+.bsBox  dt .left{font-weight:bold;color:#666563;font-size:20px}
+.bsBox  dt .right{font-weight:bold;color:#C80503;font-size:20px}
+.bsBox .leftBox .leftdaya{width:55px;margin-top:10px}
+.bsBox .leftBox .rightdaya{width:150px;padding-top:10px}
+.bsBox .leftBox .rightdaya,.leftdaya{float:left}
+.bsBox .leftBox1{height:83px;width:206px;border-bottom:1px solid #D0D0D0}
+.bsBox .leftBox1 .p1{font-size:12px}
+.bsBox .leftBox1 .p2{font-weight:bold;font-size:14px;color:#C80503;padding-top:5px}
+
+.bsBox .rightBox{width:763px;margin-left:11px;height:435px;background-image:url(img/bg3.gif);background-repeat:no-repeat;background-color:#FFF}
+.rightBox .top{width:531px;height:53px;line-height:53px;margin:0 15px}
+
+.rightBox .right1{height:53px;line-height:53px;float:right;padding-right:32px;width:100px}
+.rightBox .top .right{font-weight:bold;color:#666563;font-size:20px}
+.rightBox .top .left{font-weight:bold;color:#C80503;font-size:20px}
+.rightBox .middle{width:729px;height:232px;margin:0 15px}
+.rightBox .middle li{list-style-type:none;float:left;padding-right:9px}
+.rightBox ul .last{padding-right:0}
+
+.rightBox .bottom{width:729px;margin:0 15px}
+.rightBox .bottom .one{width:169px;float:left;padding-right:0px;width:182px}
+.rightBox .bottom .one li{list-style-type:none;margin-top:12px;font-size:11px}
+.rightBox .bottom .last{padding-right:0px;}
+.rightBox .bottom .one .two{text-decoration:underline;color:#C30000}
+.rightBox .bottom .one .last{background-image:url(img/redblack.gif);height:24px;width:175px}
+.rightBox .bottom .one .last a{font-size:14px;font-weight:bold;color:#FFF;text-decoration:none;height:24px;line-height:24px}
+
+.bottomBox{height:198px;width:1280px;margin:0 auto;border-bottom:black 1px solid;background-image:url(img/finalbg.gif)}
+
+.bottomBox .bottomMenu{width:980px;margin:0 auto}
+.bottomBox .bottomMenu div{height:197px;width:167px;float:left;padding-left:18px}
+.bottomBox .bottomMenu dt .left{font-weight:bold;color:#CCC;font-size:20px}
+.bottomBox .bottomMenu dt .right{font-weight:bold;color:#C80503;font-size:20px}
+.bottomBox .bottomMenu dt{height:38px;line-height:38px}
+.bottomBox .bottomMenu dd{font-size:11px;line-height:20px;color:white}
+.bottomBox .bottomMenu .two dd{line-height:30px;heigth:20px}
+.bottomBox .bottomMenu .firstdd{margin-top:10px;}
+.bottomBox .bottomMenu span{color:red}
+
+
+.lastBox{width:1280px;height:43px;border-top:1px #2b2b2b solid;margin:0 auto}
+.lastBox a{display:block;float:left;height:34px;color:white;font-size:11px;padding-left:150px;padding-top:10px}
+.lastBox {background-image:url(img/lastbg.gif);background-repeat:no-repeat}
+.lastBox .lastlogo{padding-left:625px;width:90px}
+.lastBox .top{padding-left:5px;font-size:13px;font-weight:bold;color:#c80503;cursor:pointer;padding-top:7px}
+
+.rightBox2 .imgtop1{width:500px;height:20px;padding:15px;padding-bottom:10px;float:left}
+.rightBox2 .imgtop2{width:220px;height:20px;margin:15px 0;margin-bottom:10px;float:left}
+.rightBox2 .imgtop1 .left{font-weight:bold;color:#666563;font-size:20px}
+.rightBox2 .imgtop1 .right{font-weight:bold;color:#C80503;font-size:20px}
+.rightBox2 .number a{display:block;height:20px;width:20px;font-size:12px;line-height:20px;float:left;text-align:center;margin-left:9px;cursor:pointer}
+.three dd{background-image:url(img/lastfour.gif);background-repeat:no-repeat;background-position:1px 9px;padding-left:20px}
+
+
+.hover:hover{background-color:#c80503}
+.heightBox{width:758px;height:48px}
+.rightBox2 .showimg{width:730px;height:390px;margin:0 12px}
+.showimg{position:relative}
+.currentButton{background:#c80503;color:white;font-weight:bold}
+.showimg img{display:none}
+
+.lastlogo,.top{float:left;text-decoration:none}
+
+

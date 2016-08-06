@@ -1,0 +1,21 @@
+
+
+<script src="{{ root_url }}/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
