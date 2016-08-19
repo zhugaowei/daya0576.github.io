@@ -31,3 +31,11 @@ I even submitted a pull request to lecturer :)
 Getting most of the ideas, but totally lost in some math parts,  having not learned math for so many years.       
 <img style="max-height:300px" class="lazy" data-original="/images/blog/160731_comp6714/math.JPG"> 
 <br> 
+
+>### 15/08/2016 ###
+----------
+**week4**    
+I force myself to concentrate on the lecture and followed the lecture quite well.      
+Maybe another reason is that the lecture is much clearer this week.      
+<br>   
+

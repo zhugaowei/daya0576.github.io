@@ -14,24 +14,29 @@ I found an amazing tutotial:[https://www.atlassian.com/git/tutorials](https://ww
 <br>  
 
 ###git log vs git status###
-git log: showing all the comments in this branch    
-git status: showing the overview of this branch   
+`git log`: showing all the comments in this branch    
+`git status`: showing the overview of this branch   
 <br>
 
 ###Show commits in graph###
 draw a graph of all comments:    
+``` 
 git log --graph --decorate --oneline    
-<img style="max-height:430px" class="lazy" data-original="/images/blog/160705_git/graph.png">    
+```
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160705_git/graph.png">    
 <br> 
 
 ###Undoing Changes###
-"git add <file>..." to update what will be committed(stage changes)       
-"git reset <file>" to remove the specified file from the staging area, but **leave the working directory unchanged**.)     
+- **"git add <file>..."** to update what will be committed(stage changes)       
+**"git reset <file>"** to remove the specified file from the staging area, but **leave the working directory unchanged**.)     
 <br>
-"git checkout -- <file>..." to discard changes in working directory.    
-<br>
+- "git revert <commit>" to generate a new commit that undoes all of the changes introduced in <commit>, then apply it to the current branch.    
+
 "Whereas reverting is designed to safely undo a public commit, git reset is designed to undo local changes."     
-"The git reset --hard and git clean -f commands are your best friends after you’ve made some embarrassing developments in your local repository and want to burn the evidence."    
+<img style="max-height:430px" class="lazy" data-original="/images/blog/160705_git/redo.svg">   
+<br>
+
+"The `git reset --hard` and `git clean -f` commands are your best friends after you’ve made some embarrassing developments in your local repository and want to burn the evidence."    
 Example:    
 ``` python
 # Edit some existing files
