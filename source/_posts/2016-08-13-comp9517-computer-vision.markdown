@@ -22,7 +22,7 @@ This blog is sharing my experience of COMP9517 Computer Vision * in 2016s2
 **week1**    
 So hard to understand lecturer's slide content and accent...      
 Choing this course because there are no final exam,,     
-<br> 
+<br>
 
 >### 13/08/2016 ###
 ----------
@@ -36,4 +36,4 @@ task2:
 <img style="max-height:300px" class="lazy" data-original="/images/blog/160813_9517/task2.png">     
 task3:    
 <img style="max-height:300px" class="lazy" data-original="/images/blog/160813_9517/task3.png">     
-<br> 
+<br>
