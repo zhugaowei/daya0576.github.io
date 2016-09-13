@@ -31,3 +31,14 @@ Unfortunately this course is compulsory and not easy to apply exemption.
 A fun moment in lecture...     
 <img style="max-height:350px" class="lazy" data-original="/images/blog/160811_9820/fun.JPG">     
 <br> 
+
+
+>### 03/09/2016 ###
+----------
+So so so boring!!!     
+Some times you even have the illusion that this managment knowledge is somehow useful...     
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160811_9820/illusion.png">     
+
+<br> 
+
+
