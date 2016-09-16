@@ -26,6 +26,11 @@ git log --graph --decorate --oneline
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160705_git/graph.png">    
 <br> 
 
+###git diff###
+- Using "git diff" to compare two commits.
+<img style="max-height:330px" class="lazy" data-original="/images/blog/160705_git/diff.png">   
+<br>
+
 ###Undoing Changes###
 - **"git add <file>..."** to update what will be committed(stage changes)       
 **"git reset <file>"** to remove the specified file from the staging area, but **leave the working directory unchanged**.)     
@@ -70,7 +75,7 @@ git commit --amend --no-edit
 Still a little confused.    
 这篇文章解释的很清楚：[http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657](http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657)    
 'fetch' is updating the remote branch info, then local branch merge to remote branch !!    
-
+<br>
 
 
 
