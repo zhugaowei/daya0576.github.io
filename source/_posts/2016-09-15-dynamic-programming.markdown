@@ -1,21 +1,19 @@
 ---
 layout: post
-title: "Dynamic Programming Notes"
+title: "Fibonacci number(Recursive, DP and Decorator)"
 date: 2016-09-15 10:52:49 +1000
 comments: true
 categories: [dp, dynamic programming]
 ---
 
-> I found a [fatastic video](https://www.youtube.com/watch?v=OQ5jsbhAv_M) about Dynamic Programming, this blog is my note of learning DP.
+> I found a [fatastic video](https://www.youtube.com/watch?v=OQ5jsbhAv_M) about Dynamic Programming, it can be used to solve Fibonacci number problem efficiently. Decorater can also be used to make code elegent ^o^      
 
 <!--more-->
 
-   
-**Video link**: [https://www.youtube.com/watch?v=OQ5jsbhAv_M](https://www.youtube.com/watch?v=OQ5jsbhAv_M)    
-`DP = recursion + memorization + guessing`      
+<br>
 
-
-##Fibonacci number: 1, 1, 2, 3, 5, 8, 13...##
+# Fibonacci number: 1, 1, 2, 3, 5, 8, 13...
+###1. Original recursive implementation   
 ``` python
 def fib(n):
     if n<=2: f = 1
@@ -23,12 +21,12 @@ def fib(n):
 
     return f
 ```
-<br>
+<br><br>
 
-###improvement: 
-- Memorize
+
+###2. Improvement: memoization  
 - Reuse solutions to **sub-problems** to solve the problem    
-- So time = #sub-problems * O(sub-problem)    
+- So time = #sub-problems * O(sub-problem)     
 ``` python
 #!/usr/bin/python3
 from collections import defaultdict
@@ -50,6 +48,7 @@ def fib(n):
     print(f)
     return f
 
+
 def fib_con(n):
     mem = {}
     for k in range(1, 1+n):
@@ -65,6 +64,62 @@ fib(n)
 fib_con(n)
 
 ```
+**Video link**: [https://www.youtube.com/watch?v=OQ5jsbhAv_M](https://www.youtube.com/watch?v=OQ5jsbhAv_M)    
+`DP = recursion + memorization + guessing`   
+<br><br>
+
+###3. Problem of the improvement above: 
+The disadvantage of this method is that the clarity and the beauty of the original recursive implementation is lost.     
+So we use a helper function to handle the fib() function, the idea of .    
+``` python
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:            
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+    
+
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+fib = memoize(fib)
+
+print(fib(40))
+
+```
+That is Decorator: `@memoize`      
+U can check this website for more information:    
+[http://www.python-course.eu/python3_memoization.php](http://www.python-course.eu/python3_memoization.php)   
+``` python
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:            
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+    
+@memoize
+def fib(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+print(fib(40))
+
+```
+
+
 
 ##Shortest Path:
 The answer? guess!   

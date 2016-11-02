@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Notes of atlassian git tutorial"
+title: "Notes of Atlassian git tutorial"
 date: 2016-07-05 14:18:24 +0800
 comments: true
 categories: 
 ---
 
 > Although we have powerful tools such as sourcetree,    
-learning the detal of git is still very necessary.    
-I found an amazing tutotial:[https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials), this is my leaning notes.   
+learning the details of git is still very necessary.    
+I found a fantastic tutorial:[https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials), this is my learning notes.   
 
 <!--more-->
 <br>  
@@ -27,7 +27,7 @@ git log --graph --decorate --oneline
 <br> 
 
 ###git diff###
-- Using "git diff" to compare two commits.
+- Using "git diff" to compare two commits.   
 <img style="max-height:330px" class="lazy" data-original="/images/blog/160705_git/diff.png">   
 <br>
 
@@ -46,7 +46,7 @@ Example:
 ``` python
 # Edit some existing files
 # Add some new files
-# Realize you have no idea what you're doing
+# Realise you have no idea what you're doing
 
 # Undo changes in tracked files
 git reset --hard
@@ -64,7 +64,7 @@ git commit --amend:
 git add hello.py
 git commit
 
-# Realize you forgot to add the changes from main.py
+# Realise you forgot to add the changes from main.py
 git add main.py
 git commit --amend --no-edit
 ```

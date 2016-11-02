@@ -55,7 +55,8 @@ categories: [unsw, cse, course]
 于是我做了第三方登录，去多个途径推广，比如csesoc的主页，专业的微信群。    
 但。。好像还是并没有什么ruan用。     
 写代码还行，对推广marketing什么的真的是毫无头绪。   
-2. ...    
+2. ...     
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160509_unsw_web/analyse.png">    
 <br>
 
 > ### 原则 ###

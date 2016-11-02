@@ -39,7 +39,8 @@ categories: [life, table teniss]
 
 
 > 再后来就是在悉尼读master的故事了，上个学期参加了ITTA的志愿者，转型当了裁判，还是挺有趣的。     
-<img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/sydney.jpg">
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/sydney.jpg">     
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/itta.png">     
 <br>
 
 > 哈哈, 前几天打ITTA Spring比赛的一段视频,有没有小张继科的赶脚~~    

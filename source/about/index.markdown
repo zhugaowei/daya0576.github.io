@@ -10,7 +10,6 @@ footer: true
 
 
 ><h3>`remember the good times.`</h3>
-<img style="border-radius: 5px; max-height:170px" class="lazy" data-original="/images/blog\about/pingpong.jpg" />     
 <br>
 
 > <h3><a target='_blank' href="http://changchen.me/blog/20151225/ten-highlight-in-2015/">15年 《Happy Christmas<i class="fa fa-tree"></i>》</a><br>
@@ -29,7 +28,7 @@ footer: true
 Highlights in 2014》</a></h3>
 <br>
 
-> <h3><a target='_blank' href="http://changchen.me/love/resume_html/">15年 《个人简历》</a>
+> <h3><a target='_blank' href="http://changchen.me/love/resume_html/">14年 《个人简历》</a>
 <br>
 
 

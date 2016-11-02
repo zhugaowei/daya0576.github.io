@@ -6,23 +6,23 @@ comments: true
 categories:  [unsw, comp9041]
 ---
 
->The second term of my master in unsw         
+>The second term of my master in UNSW         
 This blog is sharing my experience of *COMP9041 Software Construction: Techniques and Tools*    
 
 <!--more-->
 <br>
 
 >Write down your experience about this course through this url:     
-[http://www.unsw.co/rango/category/software-construction-techniques-and-tools/](http://www.unsw.co/rango/category/software-construction-techniques-and-tools/)    
+[http://www.unsw.co/rango/category/comp9041/](http://www.unsw.co/rango/category/comp9041/)    
 or    
 [http://www.unsw.co/rango/category/comp2041/](http://www.unsw.co/rango/category/comp2041/)    
 <br>
 
 >### 27/07/2016 ###
 ----------
-**week1**    
-First lecture of this semester, extremely favor of this lecturer, he is so cool and has a strong personality!      
-He mentioned the history of some knowledge and encourage us to learn them because in the past decades, we made so many mistakes, knowing more history helps us avoid mistakes.      
+**week1**     
+The first lecture of this semester, indeed like this lecturer, he is full of passion and has a strong personality!      
+He mentioned some stories in the history and encouraged us to learn them, because, in the past decades, human made so many mistakes. Knowing more history can help us avoid mistakes.      
 So impressive.         
 <br> 
 
@@ -40,12 +40,35 @@ So many exercises are available in the lab to help us learn the shell easily.
 >### 15/08/2016 ###
 ----------
 ** week4 **     
-Shell    
+A fun moment in lecture LOL.     
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160802_9041/fun.jpg">    
 <br> 
 
 >### 03/09/2016 ###
 ----------
 ** week5 **     
 perl & git(only add, commit and push).     
-<img style="max-height:400px" class="lazy" data-original="/images/blog/160802_9041/lg.png">     
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160802_9041/lg.png">     
+<br> 
+
+>### 16/09/2016 ###
+----------
+** week8 **     
+The difficulty of assignment1, quite interesting~~     
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160802_9041/ass1.JPG">     
+<br> 
+
+>### 18/10/2016 ###
+----------
+** assignment2 **     
+The assignment2 is builing a simple social website like facebook.       
+**Flask** is allowed to build the website :)         
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160802_9041/work.png">     
+<br> 
+
+>### 21/10/2016 ###
+----------
+** week12 **     
+At the end of the last lecture, the clapping went on for more than ten seconds, I have the strong feeling students' sincere thanks to Andrew.      
+When studying in UNSW, I did learn a lot of knowledge, but the most precious thing that I learned is how good the education should be.     
 <br> 

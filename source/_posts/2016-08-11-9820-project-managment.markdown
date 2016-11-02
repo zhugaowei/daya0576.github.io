@@ -6,7 +6,7 @@ comments: true
 categories: [unsw, GSOE9820]
 ---
 
-> The second term of my master degree in unsw         
+> The second term of my master degree in UNSW         
 This blog is sharing my experience of GSOE9820 Project Management in 16s2   
 
 <!--more-->
@@ -46,7 +46,7 @@ Some times you even have the illusion that this managment knowledge is somehow u
 Lecturer's feedback of project3~~    
 I'm the PM of that project :)    
 **Kun Dong**   
-Very late on Q1/Q2. All three posts within 21 minutes and all very brief. This points to one thing alone and that is poor preparation and participation.    
+Very late on Q1/Q2. All three posts within 21 minutes and all very brief. This points to one thing alone, and that is poor preparation and participation.    
 Q3 was similar in that 3 of 4 posts were within 28 minutes and all three posts were brief.    
 Q4 – all three posts within 12 minutes and they were even briefer.    
 Feedback on Final Report.    
