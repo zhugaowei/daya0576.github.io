@@ -1,37 +1,65 @@
 ---
 layout: post
-title: "COMP6714 Information Retrieval and Web Search 2016s2"
-date: 2016-07-31 22:02:22 +1000
+title: "Henry's Experience with UNSW COMP6714 16s2"
+date: 2016-07-31 20:02:22 +1000
 comments: true
 categories: [unsw, comp6714]
 ---
 
 >The second term of my master degree in UNSW         
-This blog is sharing my experience of COMP6714 Information Retrieval and Web Search 2016s2     
+This blog is sharing my experience of COMP6714: Information Retrieval and Web Search in 2016s2     
 
 <!--more-->
 <br>
 
->Write down your experience about this course through this url:     
+> ### Other resources: ###
+**Write down your experience about this course through this url (a cse course experience sharing website made by myself):**      
 [http://www.unsw.co/rango/category/comp6714](http://www.unsw.co/rango/category/comp6714)     
+**My Final Revision Summary Google doc link:**     
+[https://docs.google.com/document/d/1GmrqmyfUs-NWY6NwhVFr8ecPtMjeyUIHsfDh0XD6IOA/edit?usp=sharing](https://docs.google.com/document/d/1GmrqmyfUs-NWY6NwhVFr8ecPtMjeyUIHsfDh0XD6IOA/edit?usp=sharing)    
+More than 40 students were online at the same time before the day of exam LOL       
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160731_comp6714/online.png">     
+And thx to everyone contributed to it, didnt expect it at all.    
+<br>  
+
+>### Summary(In the end) ###
+----------
+**Good things**:    
+**1. Well designed labs**(Jupyter Notebook) on Github, they are awesome and indeed helpful: [https://github.com/DBWangGroupUNSW/COMP6714](https://github.com/DBWangGroupUNSW/COMP6714). Looking at the real code makes me understand the concepts and algorithms immediately.      
+**2. Distribution of whole class's marks** is clearly presented.      
+**3. Submitting system.** Although a lot of students were complaining about the submitting system(mainly because they didn't follow the instructions), I think it's excellent, u have **10!!!** chances to improve your highest score. U know in comp9319, u would lose all your mark if u made any small mistake. So the submitting system is relatively kind and generous.    
+**4.** The explanation of algorithms **by hand** is very good and clear.      
+_        
+**Could be improved**:      
+**1. Short comments or feedback** on each student's assignments and the project could be provided.    
+**2. Piazza forum** provides a great way of communication, however, a quicker response or better interactive could be provided. For example, questions could be answered in one day to maintain students' enthusiastic.      
+**3. Things were in a rush.** Due to the high teaching & research loads, I always feel that many things were in a rush and have small problems. For example, when the mark released, I didn't receive an email or get the announcement in the forum. when the solution released, the path is always wrong.          
+**4. The project is too easy**, maybe we could be asked to extract all the other relations.     
+**5. Making the lecture clearer and better organized**(students complain the most):      
+I did learn dozens of brilliant ideas and algorithms from this course, however, if someone asks me now without revision: what did u learn from this course? I even do not know how to answer it. It's because, before and after understanding the algorithm, I always don't know why I need to learn it and what's this algorithm is exactly used for, what's the connection between each part.        
+I admit that it's also mainly because of my problem: lacking of preparing and review for each lecture.     
+**Here are my several pieces of advice:**     
+ 1) The review slides could be released in the introduction part of the first lecture, so the students could easily know what are they exactly learning.     
+ 2) **lecture structure**: a sentence of effective lectures from internet: "a clear structure should always be kept in lecturer's mind and deliver to students, keep showing that we finished with one point and are moving to the next." I have to very very concentrate to follow the lecture and when I look at the slides from the lecture, it was so hard to find the corresponding with the teaching content. I mean the teaching and slides could have a better and clearer structure.              
+  3) And the teaching in the lecture harried a little too, the lecturer could be more relaxed and also create **more interaction** with students. If u asked a very very simple question in lecture but no one can answer it, here is the problem.      
+  4) For the reason of great gap between students, maybe  the amount of material in lecture could be **reduced** to make key concepts totally clear first, and providing other sources of information, such as references, labs, notes to students who want to learn more.         
+**I wrote down all my thoughts straightforward in my mind, ignore some wrong ideas.**     
 <br>
 
->### In the end ###
-----------
-**Summery**     
-**Good things**:    
-1. Well designed lab(Jupyter Notebook) on github are excellent: [https://github.com/DBWangGroupUNSW/COMP6714](https://github.com/DBWangGroupUNSW/COMP6714)     
-2. Distribution of whole class mark are provided.    
-**Should be improved**:     
+> **The greatest harvest from this course**      
+I did enjoy a lot and followed well in some lectures, the feeling of learning new brilliant ideas is awesome.      
+In spite of knowledge from lectures, here are two critical things learned from this course:    
+1. I'm not afraid of math anyone, in the lecture about BIM, I was totally lost, however in the revision, I finally understood it and found it's not hard at all.    
+2.In my bachelor degree, I did some research with a teacher for more than one year, the thing that I regret most is lacking reading papers before writing code. But now, I can read references patiently and solve one problem by myself.    
 <br> 
-
 
 
 >### 27/07/2016 ###
 ----------
 **week1**    
 I missed the first lecture because of the late flight :(    
-But the lab online is **well designed and fun**, it does help me have a deeper understand of the algorithms in lecture.           
+Unfortunately, the class was full but the lecturer is so nice and let me enrolled in.      
+The lab online is **well designed and fun**, it does help me have a deeper understand of the algorithms in lecture.           
 I even submitted a pull request to lecturer :)    
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/L0_fork.jpg">     
 <br> 
@@ -63,10 +91,10 @@ happiest moment in my horrible 9 hours' lecture on Monday!
 >### 12/09/2016 ###
 ----------
 **week7&8 Spelling Correction + Information Extraction**    
-The lecture back to a mess. I was lost again...      
+The lecture was back into a mess. I was lost again...      
 I heard one classmate judging Wang that he alway jump from one point to another, for example, when he was talking about A,  he suddenly remembered B, he would rush to B, then again, jumped to C, finally back to A.      
-The point is that he should make one thing entirely clear before jumping to another thing. He is a good and responsible **teacher**, but he should make more efforts to become a **lecturer** such as Raymond Wong.        
-Of course, another reason is my lacking of preparation, I should spend more time to prepare before the lecture!!!
+The point is that he should make one thing entirely clear before jumping to another thing. He is a nice and patient **teacher**, but he should make more efforts to become a good **lecturer** such as Raymond Wong.        
+Of course, another reason is my **lacking of preparation**, I should spend more time to prepare before the lecture!!!
 <br>   
 
 >### 20/09/2016 ###
@@ -74,7 +102,7 @@ Of course, another reason is my lacking of preparation, I should spend more time
 [Ass1(click me to download)](/images/blog/160731_comp6714/ass1-spec.pdf) is consisted of four questions.     
 Here is my solution: [ass1_solution.pdf](/images/blog/160731_comp6714/ass1.pdf)     
 My mark: Comment: 24 | 14 | 25 | 25 | 1     
-The most awesome part is that, when the mark of ass1 released, lectuer give the overview(mark distribution) of the whole class:    
+The most awesome part is that, when the mark of ass1 released, lectuer gave the overview(mark distribution) of the whole class:    
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/ass1_mark.png">    
 <br>   
 
@@ -88,7 +116,7 @@ It's not hard to get a not bad result, but if you pursue the perfect performance
 **Submitting System**    
 BTW, the submitting system online is awesome!!!      
 U have ten chances to submit and get your mark, it's so nice(compared with 9319...).      
-However, many students complained about this submitting system.. If u spend some time to read the spec carefully and simply follow the steps, nothing should go wrong.     
+However, many students complained about this submitting system.. If these stus spent some time to read the spec carefully and simply follow the steps, nothing would go wrong.     
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/submitting.png">    
 The evaluation measure is also brilliant     
 <br>   
@@ -97,46 +125,53 @@ The evaluation measure is also brilliant
 ----------
 **Project summary**    
 As today is the due date of project, I will summarize my thinkings about this project:     
-I mentioned a lot of things above that I extremely appreciate, here are things have to be improved in my perspective:             
+I mentioned so many things above that I extremely appreciate, here are things have to be improved in my perspective:             
 1. Mistakes in testing and training data:     
 Lecturer's response to this issue:     
 <img style="max-height:344px" class="lazy" data-original="/images/blog/160731_comp6714/explain.png">    
-However, I still feel the testing and training data has to be more correct. It's because there were only 400 sentences, rahter than 4000, and most of the mistakes in training data are easy for human to distinguish.      
-Another critical reason is that these mistakes would make student lose confidence on testing data(highly relevent to their marks..).       
-And I kept thinking that one solution is opening a thread in class forum or github and let students to submit all the possible errors, then keep publishing the latest most correct version of data.     
+However, I still feel the testing and training data has to be more correct. It's because there were only 400 sentences, rather than 4000, and most of the mistakes in training data are easy for human to distinguish.      
+Another critical reason is that these mistakes would make students lose confidence on testing data(highly relevant to their marks..).       
+And I kept thinking that one solution is opening a thread in the class forum or GitHub and let students submit all the possible errors, then keep publishing the latest most correct version of training data.     
 Unfortunately, it's not feasible for testing data(can not be seen by students).     
 2. Late reply in piazza forum    
-I understand that Dr. Wang was extremely busy this semester(as he mentioned many time in lecture.) This forum should be checked everyday although some of the questions quite naive and wasting time to answer.     
+I understand that Dr. Wang was extremely busy this semester(as he mentioned many times in lecture.) This forum should be checked at least every day although some of the questions are quite naive and wasting time to answer.     
 <br>
 
 >### 10/10/2016 ###
 ----------
 ** week11 Evaluation **    
-Really enjoy the first two hours, the evaluation is full of fun and easy.    
+Really enjoy the first two hours, the evaluation part is full of fun and easy.    
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/w11_wei.png">    
-However, in the last one hour, I was lost in math part again @_@ (Probablistic and Language Models)         
-And the lecture ended at 15:01, 6 minutes extended, one critical thing and fact are that this 6 minutes would not be recorded. It was not a big issue, and I can see that Dr. Wang did eager to deliver a great teaching, but he also has to pay more attention to these **details** to improve "user happiness" :)        
+However, in the last one hour, I was lost in math part again @_@ (Probabilistic and Language Models)         
+And the lecture ended at 15:01, 6 minutes extended, one critical thing is that this **6 minutes would not be recorded by echo system**. It was not a huge issue(However in the revision, this 6 minutes is quite critical and I can not see it..updated in 11/11) and I can see that Dr. Wang did eager to deliver a better teaching, but he also has to pay more attention to these **details** to improve "user happiness" :)        
 <br>   
 
 
 >### 31/10/2016 ###
 ----------
-** Assignment2 **    
-So so so interesting, I have been playing it for the whole day.    
-The difficulty of the questions are well controlled, I mean u all the problems are very hard, but it can be solved if u spend some time on it.     
-The pleasure of solving each question is unblievable.    
+** Assignment2 **     
+[Ass2(click me to download)](/images/blog/160731_comp6714/ass2-spec.pdf) is consisted of four questions too.     
+**So so so interesting**, I have been playing it for the whole day.    
+The difficulty of the questions was well controlled. I mean all the problems were very hard to me in the beginning, but if I spend some time on it and think harder, all the problems will be solved smoothly.           
+The **pleasure** of getting the solution to each question is just unblievable.     
 ** Mark for Project **      
-I only spent one day to get this result, but then spend 4 days without improvement.     
-ClassKey: 16s2COMP6714   
-StudentID: 5082423   
-Name: Zhu, Changjian                                    
-Program: 8543    
-Plans: COMPCS COMPDS   
-Login: z5082423   
-ass1: 88/100    
-proj1: 94.2/100    
+Not bad, but it's a pity that I only spent one day to get my final result, but then tried everything in the next 3 days without improvement:     
+Mark overview:      
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark_distribution.png">    
 <br>   
+
+
+>### 11/11/2016 ###
+----------
+** Final Exam **      
+The **cheat sheet** is a good idea because this course mainly examines the way of thinking and  understanding instead of remembering.      
+**The actual problem** in my perspective is that too much content was included in this final exam. I have no time for all the calculations and even do not have time for **thinking**.     
+Another thing I want to share is that actually, there is an 11s2 final exam available online and more than one-third of the content is almost same(of course small and tricky changes were made). And when I published that on my review on google doc(because I feel it's unfair that only I get this), some Chinese students put comments on the top that, "zuo ren liu yi xian and zhuang tm zui diao de", I was quite shocked and the only reason I can think of is that they already got this previous exam paper and so scared that lecturer know it and change the final exam questions, the panic of failing the course is so familiar. In contrast, on the day before final exam, I joined a small study group(all the top students in this major excluded me, I'm a total loser of exam) to do the revision together, these people are so brilliant and both hardworking, that's how a student should be, so admiring. And that's one of biggest troubles of this course, the unequal capabilities of students.      
+** My advice about final exam: **     
+1. release one final exam(or exercises) in advance and make changes in the real exam to examine whether students really understand them or not. because I know the solutions to most of the questions in the final exam, but can not solve them without many exercises before.    
+2. reserve the first part but reduce the next 9 questions to 5 questions, making questions such as how and why and designing, instead of endless calculation.        
+<br>   
+
 
 
 

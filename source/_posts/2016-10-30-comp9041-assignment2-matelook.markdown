@@ -15,8 +15,8 @@ And this website is also the second assignment of UNSW COMP9041 assignment2
 
 > **Technical Details**:    
 Flask + cgi     
-The final demo of my website: [http://m.unsw.co/](http://m.unsw.co/)      
-Github address: 
+**The final demo of my website:** [http://m.unsw.co/](http://m.unsw.co/)      
+**Github address:** (*update after the exam session) 
 <br>
 
 > ##All the features listed by Andrew       
