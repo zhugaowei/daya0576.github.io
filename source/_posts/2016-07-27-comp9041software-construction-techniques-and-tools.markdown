@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "COMP9041 Software Construction: Techniques and Tools 2016s2"
+title: "COMP9041/2041 Software Construction: Techniques and Tools 2016s2"
 date: 2016-07-27 23:31:36 +1000
 comments: true
 categories:  [unsw, comp9041]
 ---
 
->The second term of my master in UNSW         
+>The second semester of my master in UNSW         
 This blog is sharing my experience of *COMP9041 Software Construction: Techniques and Tools*    
 
 <!--more-->
@@ -69,6 +69,17 @@ The assignment2 is builing a simple social website like facebook.
 >### 21/10/2016 ###
 ----------
 ** week12 **     
-At the end of the last lecture, the clapping went on for more than ten seconds, I have the strong feeling students' sincere thanks to Andrew.      
+At the end of the last lecture, the clapping went on for more than ten seconds, I have the strong feeling of students' sincere thanks to Andrew.      
 When studying in UNSW, I did learn a lot of knowledge, but the most precious thing that I learned is how good the education should be.     
+<br> 
+
+>### 16/11/2016 ###
+----------
+** summary **     
+well concluded by Andrew..     
+A lot to learn in this course, and in the later half part, the lectures were not well organized as the lectures of shell and perl.       
+good(students, haha):     
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160802_9041/good.png">     
+bad:     
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160802_9041/bad.png">     
 <br> 

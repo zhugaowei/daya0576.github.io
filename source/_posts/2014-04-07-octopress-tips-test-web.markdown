@@ -3,7 +3,7 @@ layout: post
 title: "octopress测试网站的小技巧【原创】"
 date: 2014-04-07 20:21:46 +0800
 comments: true
-categories: [study, octopress]
+categories: [octopress]
 ---
 
 

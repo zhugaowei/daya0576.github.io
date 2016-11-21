@@ -2,6 +2,8 @@
 layout: default
 ---
 
+
+<!-- First page index -->
 {% assign index = true %}
 <div itemscope itemtype="http://schema.org/Blog">
 {% for post in paginator.posts %}
@@ -19,3 +21,4 @@ layout: default
     {% endif %}
     <div class="center"><a href="{{ root_url }}/blog/archives">Blog Archives</a></div>
 </nav>
+

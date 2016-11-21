@@ -3,7 +3,7 @@ layout: post
 title: "moobox_recode(回忆篇)"
 date: 2015-09-23 13:13:39 +0800
 comments: true
-categories: [回忆]
+categories: [moobox, work]
 ---
 
 

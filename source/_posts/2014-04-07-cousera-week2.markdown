@@ -3,7 +3,7 @@ layout: post
 title: "Cousera-学习记录-Week2"
 date: 2014-04-07 13:44:25 +0800
 comments: true
-categories: [python, study]
+categories: [python]
 ---
 
 # 欢迎使用 Cmd - 在线 Markdown 编辑阅读器

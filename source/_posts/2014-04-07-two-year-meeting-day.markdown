@@ -3,7 +3,7 @@ layout: post
 title: "【探78】【小船】和幸~~日式调调~呼"
 date: 2014-04-07 14:52:59 +0800
 comments: true
-categories: [life, cc]
+categories: [cc]
 ---
 
 [**---> 原文**](http://s.dianping.com/topic/7162596)

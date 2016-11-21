@@ -3,7 +3,7 @@ layout: post
 title: "简历"
 date: 2015-06-28 00:11:08 +0800
 comments: true
-categories: [code, work]
+categories: [work]
 ---
 
 > <b>联系方式</b>   
