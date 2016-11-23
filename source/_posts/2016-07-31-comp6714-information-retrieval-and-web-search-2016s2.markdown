@@ -68,7 +68,7 @@ I even submitted a pull request to lecturer :)
 **week2**     
 Getting most of the ideas, but totally lost in some math parts,  having not learned math for so many years.     
 Another problem is that Wang looked a bit nervous and cannot make some of the teaching content totally clear, speaking hundreds of "**actually**" in the 3 hours lecture.      
-<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/math.JPG"> 
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160731_comp6714/math.JPG"> 
 <br> 
 
 >### 15/08/2016 ###
@@ -116,7 +116,7 @@ It's not hard to get a not bad result, but if you pursue the perfect performance
 BTW, the submitting system online is awesome!!!      
 U have ten chances to submit and get your mark, it's so nice(compared with 9319...).      
 However, many students complained about this submitting system.. If these stus spent some time to read the spec carefully and simply follow the steps, nothing would go wrong.     
-<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/submitting.png">    
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160731_comp6714/submitting.png">    
 The evaluation measure is also brilliant     
 <br>   
 
@@ -134,11 +134,16 @@ And I kept thinking that one solution is opening a thread in the class forum or 
 Unfortunately, it's not feasible for testing data(can not be seen by students).     
 2. Late reply in piazza forum    
 I understand that Dr. Wang was extremely busy this semester(as he mentioned many times in lecture.) This forum should be checked at least every day although some of the questions are quite naive and wasting time to answer.     
+**Mark for Project**      
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark.png">    
+Not bad, but it's a pity that I only spent one day to get my final result, but then tried everything in the next 3 days without improvement:     
+Mark overview:      
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark_distribution.png">    
 <br>
 
 >### 10/10/2016 ###
 ----------
-** week11 Evaluation **    
+**week11 Evaluation**    
 Really enjoy the first two hours, the evaluation part is full of fun and easy.    
 <img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/w11_wei.png">    
 However, in the last one hour, I was lost in math part again @_@ (Probabilistic and Language Models)         
@@ -149,14 +154,15 @@ And the lecture ended at 15:01, 6 minutes extended, one critical thing is that t
 >### 31/10/2016 ###
 ----------
 ** Assignment2 **     
-[Ass2(click me to download)](/images/blog/160731_comp6714/ass2-spec.pdf) is consisted of four questions too.     
+[Ass2(click me to download)](/images/blog/160731_comp6714/ass2-spec.pdf) is consisted of four questions too.      
+Here is my solution: [ass2_solution.pdf](/images/blog/160731_comp6714/ass2.pdf)    
 **So so so interesting**, I have been playing it for the whole day.    
 The difficulty of the questions was well controlled. I mean all the problems were very hard to me in the beginning, but if I spend some time on it and think harder, all the problems will be solved smoothly.           
 The **pleasure** of getting the solution to each question is just unblievable.     
-** Mark for Project **      
-Not bad, but it's a pity that I only spent one day to get my final result, but then tried everything in the next 3 days without improvement:     
-Mark overview:      
-<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark_distribution.png">    
+** Mark for Assignment2 **     
+My mark: Comment: 0 | 23 | 25 | 25 | 25      
+Should get full mark but made a small calculation mistake.       
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/ass2-marks.png">    
 <br>   
 
 
