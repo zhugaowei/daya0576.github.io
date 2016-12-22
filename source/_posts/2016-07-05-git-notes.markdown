@@ -78,4 +78,17 @@ Still a little confused.
 <br>
 
 
+###git set defaul remote to push ###
+Edit your .git/config    
+```
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+```
+<br>
 
+
+### merge conflict ###
+Automatic merge failed; fix conflicts and then commit the result.     
+`Try: git mergetool`
+<br>

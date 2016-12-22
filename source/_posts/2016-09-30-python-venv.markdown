@@ -14,7 +14,7 @@ categories: [python, venv]
 
 reference: [https://gist.github.com/evansneath/4582716](https://gist.github.com/evansneath/4582716)
 
-```bash
+```sh
 To install virtualenv via pip
 $ pip3 install virtualenv
 
@@ -30,6 +30,9 @@ $ virtualenv somewhere/virtualenvs/<project-name> --no-site-packages
 To use the virtual environment
 $ cd somewhere/virtualenvs/<project-name>/bin
 $ source activate
+OR
+$ source ~/.virtualenvs/unswco_test/bin/activate
+
 
 You are now using the virtual environment for <project-name>. To stop:
 $ source deactivate
