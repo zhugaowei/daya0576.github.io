@@ -7,7 +7,7 @@ categories: [comp9041, unsw]
 ---
 
 
-> This blog shares my experience of making a simple "facebook" in two weeks: [http://m.unsw.co/](http://m.unsw.co/)      
+> This blog shares my experience of making a simple "Facebook" in two weeks: [http://m.unsw.co/](http://m.unsw.co/)      
 And this website is also the second assignment of UNSW COMP9041 assignment2
 
 <!--more-->
@@ -16,8 +16,15 @@ And this website is also the second assignment of UNSW COMP9041 assignment2
 > **Technical Details**:    
 Flask + cgi     
 **The final demo of my website:** [http://m.unsw.co/](http://m.unsw.co/)      
-**Github address:** (*update after the exam session) 
+**Github address:** [https://github.com/daya0576/matelook_mini-facebook](https://github.com/daya0576/matelook_mini-facebook)    
 <br>
+
+> **Gracefully Coding**:    
+In this assignment, the most precious thing is not completing all these incredible features, it is doing it `beautifully` and `gracefully`.      
+I used **Scrum** to manage each task to improve my efficacy.    
+I focused on **readability** and tried my best to make my code pythonic.   
+I respect **reusability**, and there is not any repeated code in my project.    
+I attach great importance to **performance**: comments, Pagination, etc.     
 
 > ##All the features listed by Andrew       
 To assist you tackling the assignments requirements have been broken into several levels in approximate order of difficulty. You do not have to follow this implementation order but unless you are confident I'd recommend following this order. You will receive marks for whatever features you have working or partially working (regardless of subset & order).    
@@ -95,5 +102,3 @@ A user should be able to include links, images and videos in a post, comment or 
 A user should be able to make part or all of the content of their matelook page visible only to their mates.    
 ####Advanced Features (Level 4)
 If you wish to obtain over 90% you should consider providing adding features beyond those above. marks will be available for extra features.    
-
-
