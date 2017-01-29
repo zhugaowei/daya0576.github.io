@@ -41,6 +41,7 @@ categories: [life, table tennis]
 > 再后来就是在悉尼读master的故事了，上个学期参加了ITTA的志愿者，转型当了裁判，还是挺有趣的。     
 <img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/sydney.jpg">     
 <img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/itta.png">     
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160718_tt/IMG_6277.jpeg">     
 <br>
 
 > 哈哈, 前几天打ITTA Spring比赛的一段视频,有没有小张继科的赶脚~~    
@@ -53,4 +54,3 @@ categories: [life, table tennis]
 
 > 打了这么多年球还是挺有感悟的:    
 乒乓球真的是一个努力与受益关联不大的运动, 只有正确的训练才能一直提高，所以我很深的理解为什么中国的乒乓球一直这么强。比如说程序员，可以考努力自学到很高的水平，但是一个乒乓球打的好的人99%经历过专业的训练， 只有标准的动作和厚实的基础才能保证击球的质量和命中率。这也是为什么很多人喜欢健身，因为你健身付出了多少就能反映在你的身体上，而乒乓球你要是走错了方向，再怎么努力也很难有什么提高。    
-

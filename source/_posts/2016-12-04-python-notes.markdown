@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Notes"
+title: "Python 准备面试的笔记"
 date: 2016-12-04 13:08:59 +1100
 comments: true
 categories: [python, study]
@@ -26,7 +26,7 @@ except ValueError:
 
 ```
 
-##Generating all possible permutations of a list 
+##Generating all possible permutations of a list
 The feeling of completing an algorithm with only one error, awesome.         
 ```python
 def permutation(ABC, len_fix):

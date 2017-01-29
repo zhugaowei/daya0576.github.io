@@ -21,24 +21,26 @@ $ pip3 install virtualenv
 Note that virtualenv installs to the python3 directory. For me it's:
 $ /usr/local/share/python3/virtualenv
 
-Create a virtualenvs directory to store all virtual environments
-$ mkdir somewhere/virtualenvs
+1. Create a virtualenvs directory to store all virtual environments
+$ mkdir ~/.virtualenvs/<project-name>
 
-Make a new virtual environment with no packages
-$ virtualenv somewhere/virtualenvs/<project-name> --no-site-packages
 
-To use the virtual environment
+2. Make a new virtual environment with no packages
+$ virtualenv ~/.virtualenvs/<project-name> --no-site-packages
+
+
+3. To use the virtual environment
 $ cd somewhere/virtualenvs/<project-name>/bin
 $ source activate
 OR
 $ source ~/.virtualenvs/unswco_test/bin/activate
 
 
-You are now using the virtual environment for <project-name>. To stop:
+4. You are now using the virtual environment for <project-name>. To stop:
 $ source deactivate
 ```
 
-For python3     
+For python3 or python2   
 ```
 virtualenv --python=/usr/bin/python3 <project-name>
 ```
