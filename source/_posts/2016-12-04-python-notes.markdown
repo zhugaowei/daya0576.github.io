@@ -27,7 +27,7 @@ except ValueError:
 ```
 
 ##Generating all possible permutations of a list
-The feeling of completing an algorithm with only one error, awesome.         
+1. The feeling of completing an algorithm with only one error, awesome.         
 ```python
 def permutation(ABC, len_fix):
     if len_fix == len(ABC)-1:
@@ -41,6 +41,20 @@ def permutation(ABC, len_fix):
 ABC = [0, 1, 2, 3]
 permutation(ABC, 0)
 ```
+2. Python buildin method:
+``` python
+>>> horses = [1, 2, 3, 4]
+>>> races = itertools.permutations(horses)
+>>> print(races)
+<itertools.permutations object at 0xb754f1dc>
+>>> print(list(itertools.permutations(horses)))
+[(1, 2, 3, 4),
+ (1, 2, 4, 3),
+...
+ (4, 3, 1, 2),
+ (4, 3, 2, 1)]
+```
+
 
 ##filter
 **filter a list:**
@@ -117,3 +131,6 @@ In [108]: from random import sample
 In [109]: sample(l, 3)
 Out[109]: ['c', 'f', 'a']
 ```
+
+
+##

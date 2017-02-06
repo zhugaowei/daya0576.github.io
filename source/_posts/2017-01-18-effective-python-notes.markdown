@@ -40,6 +40,7 @@ Bad: `value = [len(x) for x in open(‘/tmp/my_file.txt’)]`
 Good: `(len(x) for x in open(‘/tmp/my_file.txt’))`   
 看了这一小章终于明白generator存在的意义了.     
 generator 唯一的缺点就是它只能用一次.    
+stackoverflow上的一个不错的回答: [http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do](http://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)   
 10. `zip`: 唯一要关注的问题就是在Python2中, zip并不是一个generator, 所以它可能会占用很大的内存, 所以要用izip. 而且当zip的两个参数的长度不一样的时候, 一个参数长出来的部分就会消失咯.  
 11. `for`循环后边要尽量不用`else`    
 13. try/except/else/finally的逻辑(异常Python用的不多, 但和以前Java的结构好像并没有什么不同). 例如没有exception的话就会走else.     
@@ -47,14 +48,13 @@ generator 唯一的缺点就是它只能用一次.
 <br>
 
 ###Chapter 2: Functions:   
-- 要使用exception而不是返回`None` ("return" or "return None"), 因为None, 0, [], '' 都会被当成False.   
+1. 要使用exception而不是返回`None` ("return" or "return None"), 因为None, 0, [], '' 都会被当成False.   
 ``` python
 def divide(a, b):
     try:
         return a / b
     except ZeroDivisionError as e:
         raise ValueError('Invalid b') from e
-
 
 if __name__ == '__main__':
     try:
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     else:
         print('result is %.1f' % result)
 ```
-- 用一个helper方法去自定义排序.    
+2. 用一个helper方法去自定义排序.    
 ```python
 def sort_priority(values, group):
     def helper(x):
@@ -83,5 +83,19 @@ print(l)
 能这么做原因: 1.Python支持闭包(closures). 2.方法可以直接当做变量使用. 3.Python有自己的排序规则来自定义key.     
 这一小节还讨论了一些scope的问题, 比如在helper里去改变sort_priority的变量肯定就没有效果, 要加上`nonlocal`, 不禁让人想起了`global`, 他们的作用是刚好相补的.     
 但是作者还是推荐说`nonlocal`有风险, 要谨慎使用. 可以用一个类实现一样的功能或者使用list.    
-为什么list可以无视scope呢, 还是不太明白, 就像上边这个例子, 传的是地址?           
-"The trick is that the value for found is a list, which is `mutable`. "
+为什么list可以无视scope呢, 还是不太明白?           
+"The trick is that the value for found is a list, which is `mutable`. "   
+_   
+查了一下, 意思就是比如`x=y=1`, 改变immutable变量的值的话是会重新创建一个变量.    
+如果是`x=y=[]`, 改变mutable的变量的话, x和y的值就一起变了. 可以理解为C语言中传的地址. y is a copy of x's reference.       
+Stackoverflow上的详细解释: [http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference](http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference)   
+_   
+可以这么写不去改变传入的参数: `list(a)` or `a[:]` 来创建新对象.   
+3.
+
+
+
+
+
+
+<未完待续>
