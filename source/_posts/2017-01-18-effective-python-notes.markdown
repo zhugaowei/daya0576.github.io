@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Note of 《Effective Python》"
+title: "Note of 《Effective Python》(第一章 - 第三章)"
 date: 2017-01-18 21:45:51 +1100
 comments: true
 categories: [python]
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     else:
         print('result is %.1f' % result)
 ```
-2. 用一个helper方法去自定义排序.    
+2.用一个helper方法去自定义排序.    
 ```python
 def sort_priority(values, group):
     def helper(x):
@@ -91,11 +91,111 @@ _
 Stackoverflow上的详细解释: [http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference](http://stackoverflow.com/questions/986006/how-do-i-pass-a-variable-by-reference)   
 _   
 可以这么写不去改变传入的参数: `list(a)` or `a[:]` 来创建新对象.   
-3.
+3.Generator, 防止内存爆掉.    
+```python
+def index_word_iter(text):
+    if text:
+        yield 0
+    for index, letter in enumerate(text):
+        if letter == ' ':
+            yield index + 1
+```
+上边说到过, 一个iterator只能用一次, 比如这个例子:
+```python
+print(list(it))
+print(list(it))  # Already exhausted  <-- XD
+```
+而且你去使用一个被使用过的iterator并不会报错, 所以要格外的小心.     
+可以`numbers = list(it)`提前copy一份, 但我总觉得怪怪的.    
+作者最后说要用__iter__方法, 但不是很懂:    
+Iterator protocol大意就是每次使用这个iterator的时候, __iter__都会创建一个新的iterator.         
+```python
+def normalize(numbers):
+    total = sum(numbers)
+    result = []
+
+    for v in numbers:
+        result.append(v/total)
+
+    return result
 
 
+class ReadVistors(object):
+    def __iter__(self):
+        for i in range(1, 5):
+            yield i
+
+def readVistors():
+    for i in range(1, 5):
+        yield i
+
+v = ReadVistors()
+# v = readVistors() # null
+print(normalize(v))
+```
+可以用这个方法检测iterator是否可以多次使用:    
+```python
+if iter(numbers) is iter(numbers):
+    raise TypeError('must suplly a container')
+```
+4.variable positional ariguments: 如果传入的参数是个未知长度数组的话, 可以这么写:    
+```python
+def log(message, *values):
+    ...
+
+log('My numbers are', 1, 2)
+log('Hi there')
+```
+但是这个巧妙的用法也有一些问题:   
+   * 的话会在传入参数前, 把values变成一个tuple. 所以要是传入的是一个generator的话, 内存就很有可能爆掉.    
+   * 在方法中新增一个参数的话, 很可能造成一些很难发现的bugs.   
+5.在使用Python的默认参数是mutable({}, [])的时候, 要格外小心, 因为这个default argument只有在初始化的时候被evaluated一次.    
+最好的解决方法是用None:   
+```python
+def log(message, when=None):
+    when = datetime.now() is when is None else when
+    ...
+```
+
+<br><br>
+
+###Chapter 3: Classes and Inheritance:   
+- 1) 要避免字典里套字典, 可以用多个类来替换.    
+2) 在考虑用class前, 可以尝试`namedtuple`作为一种轻量级的不可修改的data container.    
+- Python中的方法也是和变量一样是对象, 所以可以传来传去~比如sort的key参数就是接收一个排序的方法    
+- Python允许类中定义一个`__call__`方法,
+```python
+counter = BetterCountMissing()
+result = defaultdict(counter, current) # Relies on __call__
+```
+- @classmethod和@statisticmethod:   
+书中解释了一大堆, 不是特别懂, 大意就是要把相关的方法写到类里边. 摘Stack Overflow上的两个例子:    
+```python
+@classmethod
+def from_string(cls, date_as_string):
+    day, month, year = map(int, date_as_string.split('-'))
+    date1 = cls(day, month, year)
+    return date1
+
+date2 = Date.from_string('11-09-2012')
 
 
+@staticmethod
+def is_date_valid(date_as_string):
+    day, month, year = map(int, date_as_string.split('-'))
+    return day <= 31 and month <= 12 and year <= 3999
+
+# usage:
+is_date = Date.is_date_valid('11-09-2012')
+```
+- Initialize Parent Classes with `super`(看了半天头都晕了)    
+- Item26: 跳过.   
+- Item28: collections.abc
+
+<br><br>
+
+###Chapter 4: Metaclasses and Attributes:
+- Item 29:
 
 
 <未完待续>

@@ -68,18 +68,20 @@ fib_con(n)
 `DP = recursion + memorization + guessing`   
 <br><br>
 
-###3. Problem of the improvement above: 
+###3. Problem of the improvement above:
 The disadvantage of this method is that the clarity and the beauty of the original recursive implementation is lost.     
 So we use a helper function to handle the fib() function, the idea of .    
 ``` python
 def memoize(f):
     memo = {}
+
     def helper(x):
-        if x not in memo:            
+        if x not in memo:
             memo[x] = f(x)
         return memo[x]
+
     return helper
-    
+
 
 def fib(n):
     if n == 0:
@@ -87,43 +89,19 @@ def fib(n):
     elif n == 1:
         return 1
     else:
-        return fib(n-1) + fib(n-2)
+        return fib(n - 1) + fib(n - 2)
+
 
 fib = memoize(fib)
-
 print(fib(40))
-
 ```
 That is Decorator: `@memoize`      
 U can check this website for more information:    
 [http://www.python-course.eu/python3_memoization.php](http://www.python-course.eu/python3_memoization.php)   
 ``` python
-def memoize(f):
-    memo = {}
-    def helper(x):
-        if x not in memo:            
-            memo[x] = f(x)
-        return memo[x]
-    return helper
-    
 @memoize
 def fib(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
-    else:
-        return fib(n-1) + fib(n-2)
+    ...
 
 print(fib(40))
-
 ```
-
-
-
-##Shortest Path:
-The answer? guess!   
-.. try all guesses    
-(& take the best one)    
- 
-

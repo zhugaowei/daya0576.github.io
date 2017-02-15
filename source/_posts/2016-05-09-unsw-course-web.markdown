@@ -57,6 +57,8 @@ categories: [unsw, cse]
 写代码还行，对推广marketing什么的真的是毫无头绪。   
 2. ...     
 <img style="max-height:350px" class="lazy" data-original="/images/blog/160509_unsw_web/analyse.png">    
+但磕磕绊绊这一年也有超过4000的独立访客, 想到帮助了很多人, 也就满足了吧.    
+<img style="max-height:450px" class="lazy" data-original="/images/blog/160509_unsw_web/area_count.png">    
 <br>
 
 > ### 原则 ###
@@ -82,5 +84,3 @@ categories: [unsw, cse]
 **3. 开源：**   
 打算在第二个学期结束，毕业时把项目开源了，现在还放在bitbucket的私人库上。    
 <br>
-
-

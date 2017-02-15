@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python 准备面试的笔记"
+title: "Python Personal Note"
 date: 2016-12-04 13:08:59 +1100
 comments: true
 categories: [python, study]
@@ -26,37 +26,9 @@ except ValueError:
 
 ```
 
-##Generating all possible permutations of a list
-1. The feeling of completing an algorithm with only one error, awesome.         
-```python
-def permutation(ABC, len_fix):
-    if len_fix == len(ABC)-1:
-        print(ABC)
-    else:
-        for i in range(len(ABC)-len_fix):
-            part1, part2 = ABC[:len_fix], ABC[len_fix:]
-            part2[i], part2[0] = part2[0], part2[i]
-            permutation(part1+part2, len_fix+1)
 
-ABC = [0, 1, 2, 3]
-permutation(ABC, 0)
-```
-2. Python buildin method:
-``` python
->>> horses = [1, 2, 3, 4]
->>> races = itertools.permutations(horses)
->>> print(races)
-<itertools.permutations object at 0xb754f1dc>
->>> print(list(itertools.permutations(horses)))
-[(1, 2, 3, 4),
- (1, 2, 4, 3),
-...
- (4, 3, 1, 2),
- (4, 3, 2, 1)]
-```
-
-
-##filter
+##Lambda, filter, reduce and map
+Summary: [http://www.python-course.eu/lambda.php](http://www.python-course.eu/lambda.php)     
 **filter a list:**
 ```python
 In [10]: list(filter(lambda x:x>0, a))
@@ -120,7 +92,7 @@ result = reduce((lambda x, y:x&y), keys_lists)
 doc: [https://docs.python.org/3/library/collections.html?highlight=ordereddict#collections.OrderedDict](https://docs.python.org/3/library/collections.html?highlight=ordereddict#collections.OrderedDict)    
 
 
-## Random:
+## Random-sample:
 random: [https://docs.python.org/3/library/random.html](https://docs.python.org/3/library/random.html)      
 **random.sample:**   
 ```python
@@ -133,4 +105,5 @@ Out[109]: ['c', 'f', 'a']
 ```
 
 
-##
+## Python list implementation
+[http://www.laurentluce.com/posts/python-list-implementation/](http://www.laurentluce.com/posts/python-list-implementation/)   
