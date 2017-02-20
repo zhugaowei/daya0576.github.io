@@ -1,4 +1,4 @@
 #!/bin/sh
 
-./deploy;
+./deploy.sh;
 ./backup.sh;
