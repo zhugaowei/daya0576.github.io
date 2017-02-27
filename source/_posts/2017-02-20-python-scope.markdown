@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python - Variable Scope"
+title: "Python - Note of Variable Scope"
 date: 2017-02-20 09:34:57 +0800
 comments: true
 categories: [scope, python]

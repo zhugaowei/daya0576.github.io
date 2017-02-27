@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python Garbage Collection 笔记"
+title: "Python - Note of Garbage Collection"
 date: 2017-02-14 15:30:18 +1100
 comments: true
 categories: [Python, interview]
