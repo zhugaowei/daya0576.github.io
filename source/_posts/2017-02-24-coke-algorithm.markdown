@@ -40,8 +40,8 @@ def cal_drinks(n):
 ### 2. 递归
 写递归最重要的就是找到那个推倒式.     
 ```python
-# f(n) = n/2 + f(n/2 + n%2)
-# F(n) = n + f(n)
+# n个空瓶: f(n) = n/2 + f(n/2 + n%2)
+# n块钱:  F(n) = n + f(n)
 def cal_drinks_by_empty(n):
     if n <= 1:
         sum_drunk = 0
@@ -54,6 +54,12 @@ def cal_drinks_by_empty(n):
 def cal_drinks(n):
     return n + cal_drinks_by_empty(n)
 ```
+<br>
 
-### 3???
+### 3: ???
 就是为什么结果是n + (n-1), 是因为这个推导式有什么简化的方法吗?     
+<br><br>
+
+
+最后献上一张奶茶图留念:   
+<img style="max-height:330px" class="lazy" data-original="/images/blog/170224_coke/milktea.JPG">   
