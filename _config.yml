@@ -7,7 +7,7 @@ title: Henry Z's blog~
 subtitle: Things get worse before they get better.
 author: Daya
 simple_search: https://www.google.com/search
-description: ^_^; 
+description: ^_^;
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -46,7 +46,7 @@ rdiscount:
     - smart
 
 pygments: false # default python pygments have been replaced by pygments.rb
-excerpt_separator: ""  
+excerpt_separator: ""
 
 paginate: 8          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
@@ -100,7 +100,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name:
-disqus_show_comment_count: false
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
@@ -110,7 +110,7 @@ facebook_like: false
 
 
 # duoshuo comments
-duoshuo_comments: true
+duoshuo_comments: false
 duoshuo_short_name: daya0576
 
 keywords: python, 13512032098, daya0576

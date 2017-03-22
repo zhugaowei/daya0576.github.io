@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Algorithm - $1 Coke Problem"
+title: "面试算法题 - $1 Coke Problem"
 date: 2017-02-24 09:30:51 +0800
 comments: true
 categories: [algorithm]

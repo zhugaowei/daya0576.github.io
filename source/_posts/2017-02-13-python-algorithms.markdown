@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "python 常见面试算法题"
+title: "那些年 用python刷过的面试算法题"
 date: 2017-02-13 15:32:09 +1100
 comments: true
 categories: [python, interview]
@@ -17,7 +17,7 @@ categories: [python, interview]
 
 ##Generating all possible permutations of a list
 生成一个列表的所有组合.    
-1. The feeling of completing an algorithm with only one error, awesome.         
+1.The feeling of completing an algorithm with only one error, awesome.         
 ```python
 def permutation(ABC, len_fix):
     if len_fix == len(ABC)-1:
@@ -31,7 +31,7 @@ def permutation(ABC, len_fix):
 ABC = [0, 1, 2, 3]
 permutation(ABC, 0)
 ```
-2. Python buildin method:
+2.Python buildin method:
 ``` python
 >>> horses = [1, 2, 3, 4]
 >>> races = itertools.permutations(horses)
@@ -44,6 +44,10 @@ permutation(ABC, 0)
  (4, 3, 1, 2),
  (4, 3, 2, 1)]
 ```
+
+
+<br><br>
+
 
 > 本来是想刷一遍leecode, 但算法题有四百多题..刷了三四题就放弃了    
 接下来的一些算法题是剑指offer里的:<br>
@@ -220,7 +224,9 @@ class Solution:
 ```python
 # -*- coding:utf-8 -*-
 
-# 输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）
+# 输入两个整数序列，第一个序列表示栈的压入顺序, 请判断第二个序列是否为该栈的弹出顺序。
+# 假设压入栈的所有数字均不相等。
+# 例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）
 
 class Solution:
     def IsPopOrder(self, pushV, popV):
