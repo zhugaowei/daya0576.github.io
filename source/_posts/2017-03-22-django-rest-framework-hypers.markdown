@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django REST Framework (Hypers week2)"
+title: "Django REST Framework (Hypers week2) (待更新)"
 date: 2017-03-22 21:10:29 +0800
 comments: true
 categories: [django]

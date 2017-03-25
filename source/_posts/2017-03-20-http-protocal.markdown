@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Http协议的笔记"
+title: "Http协议的笔记 (待更新)"
 date: 2017-03-20 21:03:18 +0800
 comments: true
 categories: [django, http]
