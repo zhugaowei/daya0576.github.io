@@ -17,6 +17,60 @@ categories: [work, hypers]
 <br>
 <br>
 
+# 第六周 (17 APR 2017)
+<br>
+### 完成的工作总结(尝试用提前做计划去督促自己):
+1. 周一(计划): 看一下python是如何处理hash table的冲突, docker的系统学习   
+<br>
+### 给下周的自己一些建议
+...   
+<br>
+---
+<br>
+<br>
+
+
+
+# 第五周 (10 APR 2017)
+<br>
+### 完成的工作总结(尝试用提前做计划去督促自己):
+1. 周一: 完成共享界面的接口与前端的对接
+2. 周二(提前定的计划): 1. 测试对ShareAccount表兼容的测试. 2. 完成 account list 页面. 3. 完成campaign list的三个影响.    
+3. 周三到周五: 测试反馈的bug的修复.   
+4. 看了一遍python的内置方法的官方文档.    
+5. 基本学习了docker.    
+<br>
+### 给下周的自己一些建议
+1. 提前做计划这个方法还是挺好的, 提高了自己的效率.     
+2. 这周比较闲, 可以多利用时间去提高自己, 加油~~     
+<br>
+---
+<br>
+<br>
+
+
+
+# 第四周 (3 APR 2017)
+<br>
+### 完成的工作总结:
+1. 修bug
+2. 修bug
+3. 修bug
+<br>
+### 给下周的自己一些建议
+这周只有三天, 忙碌却收获颇少. 原因在工作总结里可以看到:   
+就是把所有时间都花在修复之前写的代码的bug上了, 自己给自己挖了很多坑.      
+给自己的两点建议:   
+
+1. `不要过于消极, 尽力就好:` 明明知道要在写代码前做好设计, 但总是做不好, 是不是其实因为的能力有问题.    
+努力去在每次碰键盘前用一张纸把每个细节都想清楚, 慢慢提高, 不要着急.    
+2. `花一个小时在纸上写清细节:` 出bug是因为需求有些复杂, 光靠凭空想很难考虑到全局. 最好在纸上写下每个细节, 想清楚所有前后关联.      
+3. 不要写太复杂的测试.. 在测试中修复bug也是一个很痛苦的事情, 不要问我是怎么知道的..    
+<br>
+---
+<br>
+<br>
+
 
 
 # 第三周 (27 Mar 2017)
@@ -25,7 +79,7 @@ categories: [work, hypers]
 1. 最主要的就是, 在黄俊的手把手下, 完成了公司逻辑比较复杂的一些新需求, 并完成了测试.   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week3_sharing.png">    
 2. 写了一个自动生产API文档(function的__docstr__)的小程序.
-3. 阅读了一下django的ORM many to many的文档.    
+3. [阅读了一下django的ORM many to many的文档.](/blog/20170405/many-to-many-relation-with-extra-field-django/)    
 因为在公司的逻辑中, 一个用户有多个账号, 一个账号又可以共享给多个用户. 原先的逻辑是用一张表去关联用户和账号的这两张表.    
 我在想能不能用django ORM自带的many to many relation代替, 但把文档读了一下, 发现还是不行.    
 原因是公司的业务逻辑中**用户对账号的关系**还有一个permission的属性, 自带的ORM好像实现不了这个功能.     
@@ -78,15 +132,15 @@ categories: [work, hypers]
 <br>
 ### 完成的工作总结:
 1. Ubuntu工作环境的搭建 和 AFH项目的配置.
-2. Python MRO（Method Resolution Order）
+2. Python MRO（Method Resolution Order）[笔记](/blog/20170320/python-mro/)
 3. 初步了解AFH项目的业务逻辑.    
-4. Django Class-based Views了解
-5. Django REST framework了解
+4. Django Class-based Views了解 [笔记](/blog/20170313/class-based-views-notes/)
+5. Django REST framework了解 [笔记](/blog/20170322/django-rest-framework-hypers/)
 6. Django middleware了解
-7. Django 源码深入阅读, 了解如何创建Server和处理Request的整个过程.    
+7. Django 源码深入阅读, 了解如何创建Server和处理Request的整个过程. [笔记](/blog/20170318/django-source-code-analysis/)    
 <br>
 ### 上班亲身经历总结
-1. **迷惘的开始:** 第一天去报到, 填了资料, 签了协议卖了身, 就屁颠屁颠的去上班了. 刚到的工位时候, 其实是有些小失望的: 办公的设备实在是有些简陋. 配的笔记本和显示器都有三四年了. 不是都是标配MacBook和Dell显示器的吗, 哈哈   
+1. **迷惘的开始:** 第一天去报到, 填了资料, 签了协议卖了身, 就屁颠屁颠的去上班了. 刚到的工位时候, 其实是有些小失望的: 办公的设备实在是有些简陋. 配的笔记本和显示器都有三四年了. 不是都是标配MacBook和Dell 2K显示器的吗, 哈哈   
 2. **友善的同事:** 虽然心里有些迷惘, 但同事人都挺好的. 特别是无所不知黄俊小哥哥, 帮我换了椅子拿了本子, 第一周也是耐心回答了我无数的问题. 感覺自己运气总是很好, 能遇到耐心厉害的老师. 这些也是我在公司能待下去的最重要原因吧.    
 3. **保持效率:** 第一周的效率其实还是可以的(打个85分吧), 感觉学了很多东西. 但今天(第二周的周一)效率就有些雪崩了, 不要因为工作久了就混日子. 要努力保持清醒的头脑, 知道自己在学什么做什么, 多去虚心问问题.     
 <br>

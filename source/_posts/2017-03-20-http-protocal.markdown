@@ -47,6 +47,20 @@ categories: [django, http]
 **504** Gateway Timeout: Proxy or Gateway indicates that it receives a timeout from an upstream server.   
 
 
+##Https
+###非对称加密
+为了防止密钥在传输的过程中泄露, 就发明了这种只传输公钥的加密算法.     
+每个人都有一个公钥+密钥(public and private key).     
+当我们在本地向github请求信息的时候:   
+
+1. Github用我们**上传的公钥**对需要拉取的信息做加密处理.     
+2. 这段**加密信息**, 就只有用到我们自己**本地私钥**才能解密.     
+
+大致就是这个意思, 要是说的不对或者不太懂记得给我留言哦~~   
+
+
+
+
   [1]: https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png
   [2]: https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png
   [3]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html

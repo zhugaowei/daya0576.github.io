@@ -42,8 +42,10 @@ class PermissionSharing(models.Model):
 
 ```
 
-### 用法:
-user --> account[permission]   
+<br>
+
+### 多对多关系的创建:
+**user --> account[permission]**   
 u1 --> a1[1], a2[2]   
 u2 --> a1[2], a3[2]   
 ```python
@@ -66,8 +68,12 @@ PermissionSharing.objects.create(user=u1, account=a1, permission=1)
 PermissionSharing.objects.create(user=u1, account=a2, permission=2)
 PermissionSharing.objects.create(user=u2, account=a1, permission=2)
 PermissionSharing.objects.create(user=u2, account=a3, permission=2)
+```
 
+<br>
 
+### 相互获取对方set的方法和filter方法:
+```python
 # 相互获取对应的set
 print(u1.accounts.all())
 print(a1.user_set.all())
