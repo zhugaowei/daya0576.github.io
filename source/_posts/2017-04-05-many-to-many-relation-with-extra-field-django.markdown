@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "django的多对多关系 (每个关系有附加的属性)"
+title: "Django ORM的多对多关系 (每个关系有附加的属性)"
 date: 2017-04-05 22:44:02 +0800
 comments: true
 categories: [django]
