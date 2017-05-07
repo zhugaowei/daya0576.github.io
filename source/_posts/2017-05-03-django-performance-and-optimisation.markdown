@@ -6,7 +6,7 @@ comments: true
 categories: [django, orm]
 ---
 
-> 最近看了django关于性能优化的文档:     [https://docs.djangoproject.com/en/1.11/topics/performance/](https://docs.djangoproject.com/en/1.11/topics/performance/)
+> 最近看了django关于性能优化的文档:     [https://docs.djangoproject.com/en/1.11/topics/performance/](https://docs.djangoproject.com/en/1.11/topics/performance/)   
 写下几点比较深的感触.  
 <br>
 <!--more-->
@@ -17,7 +17,7 @@ categories: [django, orm]
 <br>
 
 ### 2. 最重要的原则: Work at the appropriate level
-意思就是说要在对应的level(M V C)做对应的事. 例如计算court, 在最低的数据库level里是最快的.
+意思就是说要在对应的level(M V C)做对应的事. eg. 如果计算court, 在最低的数据库level里是最快的.   
 但queryset是lazy的, 所以有时候在higher level(模板)里控制queryset是否真的执行, 说不定会更高效.   
 _   
 下面这段代码很好的解释了不同level的意思:    
@@ -46,7 +46,8 @@ len(my_bicycles)
 5. len
 (Note: If you only need to determine the number of records in the set (and don’t need the actual objects), it’s much more efficient to handle a count at the database level using SQL’s SELECT COUNT(*). Django provides a count() method for precisely this reason.)
 6. list()
-7. bool()
+7. bool()   
+
 以上的情况一旦发生, 就会查询数据库并生成cache.   
 <br>
 
@@ -60,6 +61,8 @@ len(my_bicycles)
 5. bulk(批量)地去insert update和delete数据.     
 6. 在解决性能问题的时候, 要利用工具看看到底执行了哪些sql, 具体的执行速度.    
 以前上一门computer vision的时候, 老师最强调的一点就是你这个性能或效果是如何量化的, 只有这样才能更好的进行比较和针对优化.  
+<br>
+
 
 ### 举个栗子:   
 最近改写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用刚看的一些知识, 把执行时间从100多ms降到了20ms.    

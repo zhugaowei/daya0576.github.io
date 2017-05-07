@@ -7,11 +7,10 @@ categories: [django, http]
 ---
 
 > 后端工程师面试时必问的一个问题就是**Http协议**, 例如 http是建立在 TCP/IP 协议之上的应用层规范, Request和Response的结构, Response状态码的类型.    
-这些基础知识, 在实际的工作中其实还是很有用处的, 有利于自己理解很多**隐藏的细节**.     
+这些基础知识, 其实在实际的工作中其实还是很有用处的, 有利于自己理解很多**隐藏的细节**.     
 这篇日志记录了最近看到的一些不错的资料, 以后可能会持续更新~~    
 <!--more-->
 <br>  
-
 
 
 ## Http request:
@@ -20,9 +19,16 @@ categories: [django, http]
 ## Http response:
 ![Response][2]
 
-##Http response code   
-[https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html][3]   
-**The status code is a 3-digit number:**   
+##Http response code    
+这段真的是返回值的精华总结:    
+**1xx: hold on   
+2xx: here you go   
+3xx: go away   
+4xx: you fucked up   
+5xx: I fucked up   **
+_   
+再下边是具体的常用返回值:   
+# The status code is a 3-digit number:    
 ###1xx (Informational): Request received, server is continuing the process.   
 **100** Continue: The server received the request and in the process of giving the response.   
 ###2xx (Success): The request was successfully received, understood, accepted and serviced.   
