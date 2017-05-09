@@ -13,6 +13,7 @@ categories: [study, dynamic programming]
 <br>
 
 # Fibonacci number: 1, 1, 2, 3, 5, 8, 13...
+<br>
 ###1. Original recursive implementation   
 ``` python
 def fib(n):
@@ -105,6 +106,7 @@ def fib(n):
 
 print(fib(40))
 ```
+<br>
 
 ###4. Generator version   
 ```python
