@@ -18,10 +18,30 @@ categories: [work, hypers]
 <br>
 
 
+# 第九周 (08 May 2017)
+<br>
+### 完成的工作总结:
+1. 主要看了报表的那一部分的代码, 昨天晚上整理了一下上周看的成果和下周的计划, 希望下周可以早点把这部分搞定.    
+临时写在注释里...    
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_plan.png">    
+<br>
+### 给下周的自己一些建议
+1. 今天在网上看到说什么无限零食, 办公环境对程序员都是很肤浅的吸引.    
+真正最核心是吸引力还是 给力的同事 和 给力的项目.    
+希望有一天也能像drinksober一样挑起大梁, 一起把项目打造成自己喜欢满意的样子.   
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_huang.JPG">    
+<br>
+<br>
+---
+<br>
+<br>
+
+
+
 # 第八周 (02 May 2017)
 <br>
 ### 完成的工作总结:
-1. 开始进行下一个版本的迭代了, 了解需求, 慢慢做起来.
+1. 开始进行下一个版本的迭代了, 了解需求, 慢慢做起来.   
 <br>
 ### 给下周的自己一些建议
 1. 不要急于去完成分配的任务, 主要的目的还是熟悉以前的代码和逻辑.

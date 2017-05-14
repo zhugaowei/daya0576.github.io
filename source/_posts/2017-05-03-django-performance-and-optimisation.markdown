@@ -34,7 +34,7 @@ len(my_bicycles)
 # Django template filter
 # slower still, because it will have to count them in Python anyway,
 # and because of template language overheads
-{{ my_bicycles|length }}
+\{\{ my_bicycles|length \}\}
 ```
 
 既然queryset是lazy的, 那么问题来了, queryset什么时候会被evaluate呢?
@@ -43,8 +43,7 @@ len(my_bicycles)
 2. slicing
 3. picling/caching
 4. repr(print)
-5. len
-(Note: If you only need to determine the number of records in the set (and don’t need the actual objects), it’s much more efficient to handle a count at the database level using SQL’s SELECT COUNT(*). Django provides a count() method for precisely this reason.)
+5. len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )
 6. list()
 7. bool()   
 

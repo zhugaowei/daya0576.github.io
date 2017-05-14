@@ -25,10 +25,9 @@ categories: [django, http]
 2xx: here you go   
 3xx: go away   
 4xx: you fucked up   
-5xx: I fucked up   **
-_   
+5xx: I fucked up   **   
+
 再下边是具体的常用返回值:   
-# The status code is a 3-digit number:    
 ###1xx (Informational): Request received, server is continuing the process.   
 **100** Continue: The server received the request and in the process of giving the response.   
 ###2xx (Success): The request was successfully received, understood, accepted and serviced.   
