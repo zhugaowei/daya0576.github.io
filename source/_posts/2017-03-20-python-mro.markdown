@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python MRO（Method Resolution Order）笔记 "
+title: "Python MRO(Method Resolution Order)笔记 "
 date: 2017-03-20 21:16:15 +0800
 comments: true
 categories: [python]

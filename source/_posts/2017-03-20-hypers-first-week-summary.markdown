@@ -18,16 +18,41 @@ categories: [work, hypers]
 <br>
 
 
+# 第九周 (15 May 2017)
+<br>
+### 完成的工作总结:
+1. 在正确的道路上(对各个部分的模块化, 减少耦合度, 从而写出清晰高效简洁的代码).     
+用Pandas把自定义属性报表的EChart和表格部分的写完了, 但当然还是有一些问题, 迫不及待的想去解决了.   
+<br>
+### 给下周的自己一些建议
+1. 报表部分:
+    - queryset_by_register的优化.  
+    - 生成的query_paras, 忘记放到filter了.
+    - 最后生成的seg是pandas Timestamp, 还是需要用sublist 格式显示 --> 在_after处理?
+    - 在sort之后, 返回pagesize大小的row? 竟可能的处理分页的优化.   
+    - 有些地方写的太复杂了, 简化增加可读性.
+    - 单元测试
+2. 有空还是要去仔细看下Numpy和Pandas的官方文档, 对库的多一份了解才能写出更简洁高效的代码.    
+还有就是有吸收才能有
+3. 去django的google group问个问题, 我是应该看算法导论, 还是Expert python, 或者python或django的官方文档.  
+最近的一些事情还是挺让我受刺激, 感觉自己还是要更努力一点把, 只有这样才能掐住命运的喉咙.         
+<br>
+<br>
+---
+<br>
+<br>
+
+
 # 第九周 (08 May 2017)
 <br>
 ### 完成的工作总结:
-1. 主要看了报表的那一部分的代码, 昨天晚上整理了一下上周看的成果和下周的计划, 希望下周可以早点把这部分搞定.    
+1. 主要看了报表那一部分的代码, 昨天晚上整理了一下上周看的成果和下周的计划, 希望下周可以早点把这部分搞定.    
 临时写在注释里...    
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_plan.png">    
 <br>
 ### 给下周的自己一些建议
 1. 今天在网上看到说什么无限零食, 办公环境对程序员都是很肤浅的吸引.    
-真正最核心是吸引力还是 给力的同事 和 给力的项目.    
+真正最核心是吸引力还是 给力的同事 和 给力的项目, 做有意义的事情.    
 希望有一天也能像drinksober一样挑起大梁, 一起把项目打造成自己喜欢满意的样子.   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_huang.JPG">    
 <br>
@@ -158,7 +183,7 @@ categories: [work, hypers]
 <br>
 ### 完成的工作总结:
 1. 把REST框架的tutorial游览了一下, 大致了解了一下.
-2. 周二把RabbitMQ 官方的tutorial读了一遍: [笔记](/blog/20170322/django-rabbit-ms-hypers-slash/)
+2. 周二把RabbitMQ 官方的tutorial读了一遍: [笔记](http://note.youdao.com/share/?id=e992e5f73efb1d9098cd7b4e91672cd3&type=note#/)
 3. 对重构的API那部分写一下单元测试.    
 <br>
 ### 给下周的自己一些建议

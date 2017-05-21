@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "饿了吗 一道面试题的解答分享"
+title: "饿了吗 一道面试题分享和思考~"
 date: 2017-05-14 23:46:27 +0800
 comments: true
 categories: [ele, django, database]
@@ -8,7 +8,7 @@ categories: [ele, django, database]
 
 > 之前在上海面试后端开发的时候, 面试官问了一个数据库相关的问题:   
 有这么一张表: 里边存着所有用户的登录信息, 例如用户名和登录时间.   
-请问如何找出所有用户的最近登录的记录呢?   
+请问如何找出所有用户最近登录的记录呢?   
 <!--more-->
 <br>  
 ### sql:
@@ -18,3 +18,15 @@ categories: [ele, django, database]
 ### orm:
 在django的orm中也是一个道理, 可以用annotate:   
 <img style="max-height:500px" class="lazy" data-original="/images/blog/170515_ele/annotate.png">    
+<br>
+
+### 举个栗子:
+献个丑, 上周写的公司报表部分的代码:   
+```python
+for register, queryset in queryset_by_register.items():
+    # 根据value和次级维度进行groupby, 生成以它们为索引的字典.
+    fields_compute = [Sum(x) for x in self.header.index_action]
+    queryset = queryset.values(*self.groupby).annotate(*fields_compute)
+
+    result[register] = queryset
+```

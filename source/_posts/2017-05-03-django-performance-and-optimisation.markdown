@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django 性能优化(主要针对ORM)"
+title: "Django 性能优化官方文档笔记(主要针对ORM)"
 date: 2017-05-03 21:34:09 +0800
 comments: true
 categories: [django, orm]
@@ -116,6 +116,6 @@ def users(self, add_self=False, add_share=True, select_id=False):
 
     # 大部分情况下只需要id. 用户列表很多时, 可以大幅度提高性能.
     if select_id:
-        return users.values_list('id', flat=True)
+        users = users.values_list('id', flat=True)
     return list(set(users))
 ```

@@ -91,5 +91,11 @@ data-original="/images/blog\150101_highlights_2014/10.jpg">
 </audio>
 
 
-<i id="close_button" style="position:fixed;right:25px;top:25px;z-index: 1300;cursor:pointer" class="fa fa-times fa-4"></i>
+<i id="close_button" onclick="remove_can()" style="position:fixed;right:25px;top:25px;z-index: 1300;cursor:pointer" class="fa fa-times fa-4"></i>
 
+<script>
+	function remove_can(){
+		$("canvas").remove();
+		$("#close_button").hide();
+	}
+</script>

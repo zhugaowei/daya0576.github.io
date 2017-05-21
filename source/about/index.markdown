@@ -7,30 +7,37 @@ sharing: true
 footer: true
 ---
 
-
-
-><h3>Email: `echo ZGF5YTA1NzZAZ21haWwuY29tCg== | base64 -d`</h3>
-><h3>`remember the good times.`</h3>
+> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Basic:</h2>
+**Email:**    
+&nbsp;&nbsp;&nbsp;&nbsp;`echo ZGF5YTA1NzZAZ21haWwuY29tCg== | base64 -d`    
+**Domains:**   
+&nbsp;&nbsp;&nbsp;&nbsp;- [http://changchen.me](http://changchen.me)  
+&nbsp;&nbsp;&nbsp;&nbsp;- [http://unsw.co](http://www.unsw.co/)   
+**Occupation:**   
+&nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 - now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
+**Resume <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>: ** [cv.changchen.me](http://changchen.me/love/resume_html/)
+**Links:**   
+&nbsp;&nbsp;&nbsp;&nbsp;[https://guoxiaoming.com/](郭小铭)
+<br>
 <br>
 
-> <h3><a target='_blank' href="http://changchen.me/blog/20151225/ten-highlight-in-2015/">15年 《Happy Christmas<i class="fa fa-tree"></i>》</a><br>
-<br>
 
-> <h3><a target='_blank' href="http://www.unsw.co">15年 《django收集unsw课程经历: unsw.co》</a><br>
-<br>
+> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Remember the good times, R.I.P:</h2> 
 
-> <h3><a target='_blank' href="http://changchen.me/love/Shanghai2015">15年 《上海生日快乐<i class="fa fa-birthday-cake"></i>》</a><br>
-<br>
+> <a target='_blank' href="http://m.unsw.co">16年 《COMP9041作业, 仿Facebook的社交网站》</a>   
 
-> <h3><a target='_blank' href="http://changchen.me/love/beijin/album/mobile.html">15年 《北京一日游》</a></h3>
-<br>
+> <a target='_blank' href="http://changchen.me/blog/20151225/ten-highlight-in-2015/">16年 《抓取新浪投票数据, 并画出实时趋势图 (Python)》</a>   
 
-> <h3><a target='_blank' href="http://changchen.me/blog/20150106/ten-highlights-in-2014/">14年 《Ten
-Highlights in 2014》</a></h3>
-<br>
+> <a target='_blank' href="http://www.unsw.co/wings">15年 《Happy Christmas<i class="fa fa-tree"></i>》</a>   
 
-> <h3><a target='_blank' href="http://changchen.me/love/resume_html/">14年 《个人简历》</a>
-<br>
+> <a target='_blank' href="http://www.unsw.co">15年 《django收集unsw课程经历: unsw.co》</a>   
 
+> <a target='_blank' href="http://changchen.me/love/Shanghai2015">15年 《上海生日快乐<i class="fa fa-birthday-cake"></i>》</a>    
+
+> <a target='_blank' href="http://changchen.me/love/beijin/album/mobile.html">15年 《北京一日游<i class="fa fa-tripadvisor" aria-hidden="true"></i>》</a>   
+
+> <a target='_blank' href="http://changchen.me/blog/20150106/ten-highlights-in-2014/">14年 《Ten Highlights in 2014》</a>    
+
+> <a target='_blank' href="http://www.changchen.me/love/fresh/">12年 《大一网页前端的实习, 那个切图拼像素的时代》</a>    
 
 <br><br>
