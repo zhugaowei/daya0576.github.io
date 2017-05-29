@@ -50,7 +50,7 @@ article{
 		font-family: $font-mono;
 	}
 	code{
-		font-size: 16px;
+        font-size: 15px;
 		padding: 3px 6px;
 		margin: 5px 0;
 		@include border-radius(3px);
@@ -96,6 +96,7 @@ figure.code{
 		}
 	}
 	code, pre{
+        font-size: 15px;
 		background: none;
 		border: none;
 		margin: 0;
@@ -105,7 +106,7 @@ figure.code{
 		overflow-x: auto;
 	}
 	.line-numbers{
-	    font-size: 16px;
+	    font-size: 15px;
 		border-right: 3px solid #6ce26c !important;
 		font-family: $font-mono;
 		color: #afafaf !important;
@@ -121,7 +122,7 @@ figure.code{
 		}
 	}
 	td.code{
-		width: 100%;
+        width: 100%;
 		padding-left: 15px;
 	}
 }
@@ -171,7 +172,10 @@ figure.code{
 	}
 }
 figure.code, .gist-highlight{
-	.highlight table{background: #2b2b2b; color: #f8f8f2}
+	.highlight table{
+        background: #2b2b2b; 
+        color: #f8f8f2;
+    }
 
 	.highlight .hll { background-color: #49483e }
 	.highlight  { background: #2b2b2b; color: #f8f8f2 }

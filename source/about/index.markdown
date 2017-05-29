@@ -8,21 +8,23 @@ footer: true
 ---
 
 > <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Basic:</h2>
+**Id:** daya0576    
 **Email:**    
 &nbsp;&nbsp;&nbsp;&nbsp;`echo ZGF5YTA1NzZAZ21haWwuY29tCg== | base64 -d`    
 **Domains:**   
 &nbsp;&nbsp;&nbsp;&nbsp;- [http://changchen.me](http://changchen.me)  
 &nbsp;&nbsp;&nbsp;&nbsp;- [http://unsw.co](http://www.unsw.co/)   
 **Occupation:**   
-&nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 - now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
-**Resume <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>: ** [cv.changchen.me](http://changchen.me/love/resume_html/)
+&nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 ~ now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
+**Resume <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>: **    
+&nbsp;&nbsp;&nbsp;&nbsp;[cv.changchen.me](http://changchen.me/love/resume_html/)   
 **Links:**   
 &nbsp;&nbsp;&nbsp;&nbsp;[https://guoxiaoming.com/](郭小铭)
 <br>
 <br>
 
 
-> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Remember the good times, R.I.P:</h2> 
+> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Remember the good times, 和web有关的点点滴滴:</h2>
 
 > <a target='_blank' href="http://m.unsw.co">16年 《COMP9041作业, 仿Facebook的社交网站》</a>   
 

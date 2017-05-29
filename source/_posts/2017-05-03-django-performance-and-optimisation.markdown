@@ -10,10 +10,10 @@ categories: [django, orm]
 写下几点比较深的感触.  
 <br>
 <!--more-->
-<br>  
 
 ### 1. 你的时间才是最宝贵的:
 文档里的这句话还是挺有意思的: Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.
+<br>
 <br>
 
 ### 2. 最重要的原则: Work at the appropriate level
@@ -42,36 +42,102 @@ len(my_bicycles)
 1. Iteration
 2. slicing
 3. picling/caching
-4. repr(print)
+4. __repr__/__str__
 5. len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )
 6. list()
 7. bool()   
-
-以上的情况一旦发生, 就会查询数据库并生成cache.   
+(以上的情况一旦发生, 就会查询数据库并生成cache.)   
+<br>
 <br>
 
-### 数据库层级的优化
+### 3. 数据库层级的优化
 官方的文档介绍了很多, 我写几点最有效的和最常用的:   
 
-1. 利用queryset lazy的特性去优化代码, 尽可能的减少连接数据库的次数.
-2. 用iterator来存Queryset, 以防止占用太多的内存.   
-3. 尽可能把一些数据库层级的工作放到数据库, 例如filter, exclude, F, annotate....
-4. 巧用select_related() 和 values_list().  
-5. bulk(批量)地去insert update和delete数据.     
-6. 在解决性能问题的时候, 要利用工具看看到底执行了哪些sql, 具体的执行速度.    
-以前上一门computer vision的时候, 老师最强调的一点就是你这个性能或效果是如何量化的, 只有这样才能更好的进行比较和针对优化.  
+- 利用queryset lazy的特性去优化代码, 尽可能的减少连接数据库的次数.
+- 如果查出的queryset只用一次, 可以使用迭代去来防止占用太多的内存.   
+- 尽可能把一些数据库层级的工作放到数据库, 例如使用filter, exclude, F, annotate....   
+aggregate: https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet   
+F(): getting the database, rather than Python, to do work
+- 巧用select_related(), prefetch_related() 和 values_list(), values().   
+<div style='margin-left: 20px'>
+```python
+class ModelA(models.Model):
+    pass
+
+class ModelB(models.Model):
+    a = ForeignKey(ModelA)
+
+ModelB.objects.select_related('a').all() # Forward ForeignKey relationship
+ModelA.objects.prefetch_related('modelb_set').all() # Reverse ForeignKey relationship
+```</div>
+- bulk(批量)地去insert update和delete数据.     
+<br>
 <br>
 
 
-### 举个栗子:   
-最近改写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用刚看的一些知识, 把执行时间从100多ms降到了20ms.    
+### 4. 解决性能问题的具体方法:
+- **connection.queries:**   
+可以利用这两两句代码来分析你的代码的sql执行情况和花费时间:
+<div style='margin-left: 20px'>
 ```python
-def users(self, add_self=False, add_share=True, select_id=False):
+from django.db import connection
+connection.queries
+>> [{'sql': 'SELECT polls_polls.id, polls_polls.question, polls_polls.pub_date FROM polls_polls',
+     'time': '0.002'}]
+
+from django.db import reset_queries
+reset_queries()
+```</div>
+- **[django-debug-toolbar](https://github.com/dcramer/django-devserver)**:   
+很棒的一个可视化的工具, 但缺点是无法处理返回值为json的response   
+Solution: 可以再使用这个库: [django-debug-panel](https://github.com/recamshak/django-debug-panel),    
+再配合链接中最后的chrome插件使用, 就可以查看所有请求的处理结果.   
+如图:   
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/IMG_3017.PNG">    
+- **[django-devserver](https://github.com/drinksober/django-devserver)**   
+这个项目好久没有维护了.. 可以试试同事的修改版:   
+[https://github.com/drinksober/django-devserver](https://github.com/drinksober/django-devserver)
+- **line profiler:**    
+其实最好用的还是用line profiler去找程序的瓶颈:    
+效果如图所示, 显示了哪行代码运行的时间最久:    
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_performace/profile_liner.png">    
+使用方法(从同事黄俊那偷来的代码):   
+<div style='margin-left: 20px'>
+```python
+class Line_Profiler(object):
+    """put @profile on ur functions"""
+    def __init__(self, follow=None):
+        self.follow = follow or []
+
+    def __call__(self, func):
+        def profiled_func(*args, **kwargs):
+            line_profiler = LineProfiler()
+            line_profiler.add_function(func)
+            map(lambda x: line_profiler.add_function(x), self.follow)
+            line_profiler.enable_by_count()
+            result = func(*args, **kwargs)
+
+            line_profiler.disable_by_count()
+            line_profiler.print_stats(stripzeros=True)
+            return result
+
+        return functools.wraps(func)(profiled_func)
+
+__builtin__.profile = Line_Profiler()
+```
+</div>
+<br>
+<br>
+
+### 5.举个栗子:   
+最近重新写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用上文说的一些知识, 把执行时间从100多ms降到了20ms.    
+```python
+def users(self, add_self=False, add_share=True, select_id=False, **kwargs):
     """Return 当前用户能看到的所有用户, 返回queryset, 以便做性能优化:
+
     参数:
         1. add_self:  是否添加当前用户(self).
-        2. add_share: 是否添加因为共享(account/campaign)而可见的用户.
-            eg. u2共享a1给u1, u1.users(add_share=True)就能看到u2
+        2. add_share: 是否添加因为共享(account/campaign)而可见的用户. eg. u2共享a1给u1, u1.users(add_share=True)就能看到u2
         3. select_id: 是否只取id字段
     逻辑:
         1. add_share=False 时:
@@ -110,12 +176,17 @@ def users(self, add_self=False, add_share=True, select_id=False):
 
     # 控制是否添加本身, 主要是user1.has_permission(user1)的时候用到
     if not add_self:
-        users.exclude(id=self.id)
+        users = users.exclude(id=self.id)
     else:
         users |= User.objects.filter(id=self.id)
+
+    # 过滤停用的用户:
+    users = users.filter(is_active=True, usergroup__status='ACTIVE')
+    users = users.filter(**kwargs)
 
     # 大部分情况下只需要id. 用户列表很多时, 可以大幅度提高性能.
     if select_id:
         users = users.values_list('id', flat=True)
-    return list(set(users))
+
+    return set(users)
 ```
