@@ -78,9 +78,9 @@ Entry.objects.filter(
 5. len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )
 6. list()
 7. bool()   
-(以上的情况一旦发生, 就会查询数据库并生成cache, 不用再重新连数据库进行查询)   
+(以上的情况一旦发生, 就会查询数据库并生成cache, 之后就不用再重新连数据库进行查询)   
 
-举个栗子:   
+**举个栗子: **  
 ```python
 >>> queryset = Entry.objects.all()
 >>> print([p.headline for p in queryset]) # Evaluate the query set.
@@ -90,7 +90,7 @@ Entry.objects.filter(
 **注意! 不会cache的情况:**   
 Specifically, this means that limiting the queryset using an array slice or an index will not populate the cache.   
 意思就是说queryset[5]和queryset[:5]是不会生成cache的. 还有exists()和iterator()这样的也不会生成cache.    
-举个栗子:   
+**举个栗子:**   
 ```python
 >>> queryset = Entry.objects.all()
 >>> print queryset[5] # Queries the database
@@ -101,6 +101,9 @@ Specifically, this means that limiting the queryset using an array slice or an i
 >>> print queryset[5] # Uses cache
 >>> print queryset[5] # Uses cache
 ```
+
+最近发现`values`和`values_list`这两个方法也会重新查询数据库, 不知道是为什么.    
+TODO: 有空看一下 具体的实现原理.   
 <br>
 <br>
 
