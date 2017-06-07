@@ -7,18 +7,20 @@ categories: [django, orm]
 ---
 
 > 最近看了django关于性能优化的文档:     [https://docs.djangoproject.com/en/1.11/topics/performance/](https://docs.djangoproject.com/en/1.11/topics/performance/)   
-写下几点比较深的感触.  
+[https://docs.djangoproject.com/en/1.8/topics/db/optimization/](https://docs.djangoproject.com/en/1.8/topics/db/optimization/)   
+整理了一下笔记, 并写下几点比较深的感触**和我优化django代码的总结**.  
 <br>
 <!--more-->
+<br>
 
 ### 1. 你的时间才是最宝贵的:
-文档里的这句话还是挺有意思的: Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.
+文档里的这句话还是挺有意思的(自己的时间和性能优化的trade-off): Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.
 <br>
 <br>
 
 ### 2. 最重要的原则: Work at the appropriate level
-意思就是说要在对应的level(M V C)做对应的事. eg. 如果计算court, 在最低的数据库level里是最快的.   
-但queryset是lazy的, 所以有时候在higher level(模板)里控制queryset是否真的执行, 说不定会更高效.   
+意思就是说要在对应的level(M V C)做对应的事. e.g. 如果计算court, 在最低的数据库level里是最快的 (如果只需要知道此记录是否存在的话, 用`exists()`会更快).   
+但要`注意`: queryset是lazy的, 所以有时候在higher level(例如模板)里控制queryset是否真的执行, 说不定会更高效.   
 _   
 下面这段代码很好的解释了不同level的意思:    
 ```python
@@ -36,29 +38,85 @@ len(my_bicycles)
 # and because of template language overheads
 \{\{ my_bicycles|length \}\}
 ```
+<br>
+<br>
 
-既然queryset是lazy的, 那么问题来了, queryset什么时候会被evaluate呢?
 
-1. Iteration
-2. slicing
+### 3. 用database中传统的优化手段
+
+1. 加索引. 对你经常要用的字段进行加索引, 会大大的提升查找数据(filter(), exclude(), order_by(), etc.)的速度
+2. 使用合适的字段类型. 例如你的数据多到几亿条了, 合适的字段也会帮你节省很多的空间.
+<br>
+<br>
+
+
+### 4. 理解Django中的QuerySets
+**对于queryset lazy特性的说明:**   
+这段代码看上去对数据库进行了三次查找, 但其实只在最后一行的时候执行了数据库的操作.   
+```python
+>>> q = Entry.objects.filter(headline__startswith="What")
+>>> q = q.filter(pub_date__lte=datetime.date.today())
+>>> q = q.exclude(body_text__icontains="food")
+>>> print(q)
+
+# ps.上边的这种多条件查询, 官方推荐这种写法:
+Entry.objects.filter(
+    headline__startswith='What'
+).exclude(
+    pub_date__gte=datetime.date.today()
+).filter(
+    pub_date__gte=datetime(2005, 1, 30)
+)
+```
+
+既然queryset是lazy的, 那么问题来了, queryset[什么时候会被evaluate呢](https://docs.djangoproject.com/en/1.8/ref/models/querysets/#when-querysets-are-evaluated)?
+
+1. Iteration, ie. 对Queryset进行For循环的操作.
+2. [slicing](https://docs.djangoproject.com/en/1.8/topics/db/queries/#limiting-querysets), e.g. `Entry.objects.all()[:5]`, 获取queryset中的前五个对象, 相当于sql中的`LIMIT 5`
 3. picling/caching
-4. __repr__/__str__
+4. repr/str
 5. len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )
 6. list()
 7. bool()   
-(以上的情况一旦发生, 就会查询数据库并生成cache.)   
+(以上的情况一旦发生, 就会查询数据库并生成cache, 不用再重新连数据库进行查询)   
+
+举个栗子:   
+```python
+>>> queryset = Entry.objects.all()
+>>> print([p.headline for p in queryset]) # Evaluate the query set.
+>>> print([p.pub_date for p in queryset]) # Re-use the cache from the evaluation.
+```
+
+**注意! 不会cache的情况:**   
+Specifically, this means that limiting the queryset using an array slice or an index will not populate the cache.   
+意思就是说queryset[5]和queryset[:5]是不会生成cache的. 还有exists()和iterator()这样的也不会生成cache.    
+举个栗子:   
+```python
+>>> queryset = Entry.objects.all()
+>>> print queryset[5] # Queries the database
+>>> print queryset[5] # Queries the database again
+
+>>> queryset = Entry.objects.all()
+>>> [entry for entry in queryset] # Queries the database
+>>> print queryset[5] # Uses cache
+>>> print queryset[5] # Uses cache
+```
 <br>
 <br>
 
-### 3. 数据库层级的优化
+### 5. 数据库层级的优化的总结
 官方的文档介绍了很多, 我写几点最有效的和最常用的:   
 
-- 利用queryset lazy的特性去优化代码, 尽可能的减少连接数据库的次数.
-- 如果查出的queryset只用一次, 可以使用迭代去来防止占用太多的内存.   
-- 尽可能把一些数据库层级的工作放到数据库, 例如使用filter, exclude, F, annotate....   
+- 利用[queryset lazy的特性](https://docs.djangoproject.com/en/1.8/topics/performance/#understanding-laziness)去优化代码, 尽可能的减少连接数据库的次数.
+- 如果查出的queryset只用一次, 可以使用iterator()去来防止占用太多的内存, e.g.`for star in star_set.iterator(): print(star.name)`.    
+感兴趣可以看看ModelIterable中重写的`__iter__`方法.   
+- 尽可能把一些数据库层级的工作放到数据库, 例如使用filter/exclude, F, annotate, aggregate, etc.   
 aggregate: https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet   
 F(): getting the database, rather than Python, to do work
-- 巧用select_related(), prefetch_related() 和 values_list(), values().   
+- 一次性拿出所有你要的数据, 不去取那些你不需要的数据.   
+意思就是要巧用select_related(), prefetch_related() 和 values_list(), values().   
+如果不用select_related的话, 去取外键的属性就会连数据再去查找.   
+如果只需要id字段的话, 用values_list('id', flat=True)也能节约很多资源.   
 <div style='margin-left: 20px'>
 ```python
 class ModelA(models.Model):
@@ -71,12 +129,15 @@ ModelB.objects.select_related('a').all() # Forward ForeignKey relationship
 ModelA.objects.prefetch_related('modelb_set').all() # Reverse ForeignKey relationship
 ```</div>
 - bulk(批量)地去insert update和delete数据.     
+- 查找一条数据时, 尽量用有索引的字段去查询, O(1)或O(log n) 和 O(n)差别还是很大的.   
+- 用`count()`代替`len(queryset)`, 用`exists()`代替`if queryset:`   
+
 <br>
 <br>
 
 
-### 4. 解决性能问题的具体方法:
-- **connection.queries:**   
+### 6. 解决性能问题的具体方法:
+- connection.queries:   
 可以利用这两两句代码来分析你的代码的sql执行情况和花费时间:
 <div style='margin-left: 20px'>
 ```python
@@ -87,20 +148,57 @@ connection.queries
 
 from django.db import reset_queries
 reset_queries()
-```</div>
-- **[django-debug-toolbar](https://github.com/dcramer/django-devserver)**:   
-很棒的一个可视化的工具, 但缺点是无法处理返回值为json的response   
-Solution: 可以再使用这个库: [django-debug-panel](https://github.com/recamshak/django-debug-panel),    
-再配合链接中最后的chrome插件使用, 就可以查看所有请求的处理结果.   
+```
+</div>
+
+- **django-debug-toolbar**:   
+一个在github上有四千多个星星的开源项目: [https://github.com/dcramer/django-devserver](https://github.com/dcramer/django-devserver)   
+很棒的一个可视化的工具, 但缺点是只能处理`text/html`类型的response, 因为是通过中间件修改返回的html代码实现的.       
+**解决办法:** 可以再使用这个库: [django-debug-panel](https://github.com/recamshak/django-debug-panel),    
+再配合链接中最后的chrome插件使用, 就可以查看所有异步请求的详细信息!   
 如图:   
 <img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/IMG_3017.PNG">    
-- **[django-devserver](https://github.com/drinksober/django-devserver)**   
-这个项目好久没有维护了.. 可以试试同事的修改版:   
+**优点:**   
+
+    1. 统计了总的SQL查询时间.
+    2. **重复查询的sql的数量, 在每条sql详细信息中显示重复的次数**.
+    3. **执行sql的具体代码位置!!!**
+    4. sql 语句的高亮
+    5. sql 查询到的数据结果.  
+
+<div style='margin-left: 20px'>
+配置参考:   
+```python
+#debug_toolbar settings
+if DEBUG:
+    INTERNAL_IPS = ('127.0.0.1',)
+    MIDDLEWARE_CLASSES = (
+        # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'debug_panel.middleware.DebugPanelMiddleware',
+    ) + MIDDLEWARE_CLASSES
+
+    INSTALLED_APPS += (
+        'debug_toolbar',
+        'debug_panel',
+    )
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
+```
+</div>
+
+- django-devserver   
+项目github主页: [https://github.com/drinksober/django-devserver](https://github.com/drinksober/django-devserver)   
+这个项目好久没有维护了..已经跑不起来了. 可以试试同事的修复版:   
 [https://github.com/drinksober/django-devserver](https://github.com/drinksober/django-devserver)
+
 - **line profiler:**    
 其实最好用的还是用line profiler去找程序的瓶颈:    
-效果如图所示, 显示了哪行代码运行的时间最久:    
-<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_performace/profile_liner.png">    
+效果如图所示, 显示了一个方法内哪行代码运行的时间最久:    
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/profile_liner.png">    
 使用方法(从同事黄俊那偷来的代码):   
 <div style='margin-left: 20px'>
 ```python
@@ -129,7 +227,7 @@ __builtin__.profile = Line_Profiler()
 <br>
 <br>
 
-### 5.举个栗子:   
+### 7.举个栗子:   
 最近重新写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用上文说的一些知识, 把执行时间从100多ms降到了20ms.    
 ```python
 def users(self, add_self=False, add_share=True, select_id=False, **kwargs):
@@ -137,7 +235,7 @@ def users(self, add_self=False, add_share=True, select_id=False, **kwargs):
 
     参数:
         1. add_self:  是否添加当前用户(self).
-        2. add_share: 是否添加因为共享(account/campaign)而可见的用户. eg. u2共享a1给u1, u1.users(add_share=True)就能看到u2
+        2. add_share: 是否添加因为共享(account/campaign)而可见的用户. e.g. u2共享a1给u1, u1.users(add_share=True)就能看到u2
         3. select_id: 是否只取id字段
     逻辑:
         1. add_share=False 时:

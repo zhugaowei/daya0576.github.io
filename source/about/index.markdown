@@ -7,19 +7,15 @@ sharing: true
 footer: true
 ---
 
-> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Basic:</h2>
-**Id:** daya0576    
+> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Profile:</h2>
+**ID:**   
+&nbsp;&nbsp;&nbsp;&nbsp;`daya0576`    
 **Email:**    
 &nbsp;&nbsp;&nbsp;&nbsp;`echo ZGF5YTA1NzZAZ21haWwuY29tCg== | base64 -d`    
-**Domains:**   
-&nbsp;&nbsp;&nbsp;&nbsp;- [http://changchen.me](http://changchen.me)  
-&nbsp;&nbsp;&nbsp;&nbsp;- [http://unsw.co](http://www.unsw.co/)   
 **Occupation:**   
 &nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 ~ now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
-**Resume <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>: **    
-&nbsp;&nbsp;&nbsp;&nbsp;[cv.changchen.me](http://changchen.me/love/resume_html/)   
 **Links:**   
-&nbsp;&nbsp;&nbsp;&nbsp;[https://guoxiaoming.com/](郭小铭)
+&nbsp;&nbsp;&nbsp;&nbsp;[Hypers 陈惠超 超人~](https://www.iamsuperman.cn)   
 <br>
 <br>
 
@@ -28,9 +24,9 @@ footer: true
 
 > <a target='_blank' href="http://m.unsw.co">16年 《COMP9041作业, 仿Facebook的社交网站》</a>   
 
-> <a target='_blank' href="http://changchen.me/blog/20151225/ten-highlight-in-2015/">16年 《抓取新浪投票数据, 并画出实时趋势图 (Python)》</a>   
+> <a target='_blank' href="http://www.unsw.co/wings">16年 《抓取新浪投票数据, 并画出实时趋势图 (Python)》</a>   
 
-> <a target='_blank' href="http://www.unsw.co/wings">15年 《Happy Christmas<i class="fa fa-tree"></i>》</a>   
+> <a target='_blank' href="http://changchen.me/blog/20151225/ten-highlight-in-2015/">15年 《Happy Christmas<i class="fa fa-tree"></i>》</a>   
 
 > <a target='_blank' href="http://www.unsw.co">15年 《django收集unsw课程经历: unsw.co》</a>   
 

@@ -1,0 +1,8 @@
+{
+    "access_key": "xfZ0N5ot6yAxEttAQz_t7EUBVWvC7gipd24bEliS",
+    "secret_key": "Ms0xIfnbONQFirB7JUkzZu82nIHxciRtX4rWAGZe",
+    "bucket": "Bucket name on qiniu resource storage",
+    "sync_dir": "Local directory to upload",
+    "async_ops": "fop1;fop2;fopN",
+    "debug_level": 1
+}
