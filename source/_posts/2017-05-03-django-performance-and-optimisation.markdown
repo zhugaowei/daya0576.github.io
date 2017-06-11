@@ -44,7 +44,7 @@ len(my_bicycles)
 
 ### 3. 用database中传统的优化手段
 
-1. 加索引. 对你经常要用的字段进行加索引, 会大大的提升查找数据(filter(), exclude(), order_by(), etc.)的速度
+1. 加索引. 对你经常要用的字段进行加索引, 会大大的提升查找数据(filter(), exclude(), order_by(), etc.)的速度, 毕竟O(1)或O(logn)对于O(n)相差还是很大的.    
 2. 使用合适的字段类型. 例如你的数据多到几亿条了, 合适的字段也会帮你节省很多的空间.
 <br>
 <br>
@@ -69,7 +69,7 @@ Entry.objects.filter(
 )
 ```
 
-既然queryset是lazy的, 那么问题来了, queryset[什么时候会被evaluate呢](https://docs.djangoproject.com/en/1.8/ref/models/querysets/#when-querysets-are-evaluated)?
+**那么问题来了**, 既然queryset是lazy的, queryset[什么时候会被evaluate呢](https://docs.djangoproject.com/en/1.8/ref/models/querysets/#when-querysets-are-evaluated)?
 
 1. Iteration, ie. 对Queryset进行For循环的操作.
 2. [slicing](https://docs.djangoproject.com/en/1.8/topics/db/queries/#limiting-querysets), e.g. `Entry.objects.all()[:5]`, 获取queryset中的前五个对象, 相当于sql中的`LIMIT 5`
@@ -78,7 +78,9 @@ Entry.objects.filter(
 5. len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )
 6. list()
 7. bool()   
-(以上的情况一旦发生, 就会查询数据库并生成cache, 之后就不用再重新连数据库进行查询)   
+
+以上的情况一旦发生, 就会查询数据库并生成cache(**生成的cache就存在这个queryset对象之内的**),    
+之后再对queryset做以上的操作就就不用再重新hit数据库进行查询了.)   
 
 **举个栗子: **  
 ```python
@@ -104,6 +106,11 @@ Specifically, this means that limiting the queryset using an array slice or an i
 
 最近发现`values`和`values_list`这两个方法也会重新查询数据库, 不知道是为什么.    
 TODO: 有空看一下 具体的实现原理.   
+_   
+**研究的结果:**   
+当调用values或values_list的时候, 会生成一个新的queryset with no cache.    
+也就是说, 除了上边说到的七种会产生cache的情况, 其他都会重新去数据库拿数据.    
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/disqus.png">    
 <br>
 <br>
 

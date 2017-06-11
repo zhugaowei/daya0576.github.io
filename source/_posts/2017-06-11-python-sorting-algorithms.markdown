@@ -14,7 +14,7 @@ categories: [python, algorithm]
 
 ### 各个算法的时间和空间复杂度:
 以前大二的时候, 看到这张图的时候真的头晕, 但现在看起来这个表格真的很精华.   
-理解各个算法后就慢慢明白各个算法三种情况的复杂度, 还有空间复杂度都不一样.    
+理解各个算法后就慢慢明白各个算法三种情况(最优, 平均和最坏)的复杂度, 还有空间复杂度都不一样.    
 所以不同不算法都有各自的优势和应用的场景.    
 <img class="lazy" data-original="/images/blog/170610_sorting/time_complexity.png">       
 <br>
@@ -23,7 +23,7 @@ categories: [python, algorithm]
 ps. 代码是用python3.5写的.
 ```python
 def bubble_sort(l):
-    """冒泡排序
+    """冒泡排序:
 
     哈哈, 这个算法真的是满满的回忆, 记得以前大二开算法课接触的最早的几个算法.
     那时是用C写的, 熟练的直接默写出来了.
@@ -99,7 +99,7 @@ def quick_sort(l):
 
 
 def heap_sort(l):
-    """堆排序
+    """堆排序:
 
     这段代码是摘自Python heapq的官方文档.
     先把所有元素push(O(log n))到heap里, 生成一个min-heap.
