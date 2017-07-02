@@ -256,7 +256,7 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do 
+  cd "#{deploy_dir}" do
     system "git pull"
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
@@ -273,10 +273,10 @@ multitask :push do
     puts "\n## Github Pages deploy complete"
 
     # gitcafe
-    puts "\n## Pushing generated #{deploy_dir} website" # 此行为新增代码
-    system "git remote add coding 'git@git.coding.net:daya0576/daya0576.git'"
-    system "git push -u coding"
-    puts "\n## Coding Pages deploy complete" # 此行为新增代码
+    # puts "\n## Pushing generated #{deploy_dir} website" # 此行为新增代码
+    # system "git remote add coding 'git@git.coding.net:daya0576/daya0576.git'"
+    # system "git push -u coding"
+    # puts "\n## Coding Pages deploy complete" # 此行为新增代码
   end
 end
 

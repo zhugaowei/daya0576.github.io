@@ -1,7 +1,11 @@
 #!/bin/sh
 
-sudo timedatectl set-timezone Australia/Sydney
+rvm use 1.9.3 --defaults
+
+sudo systemsetup -settimezone Australia/Sydney
+# sudo timedatectl set-timezone Australia/Sydney
 
 rake generate; rake deploy
 
-sudo timedatectl set-timezone Asia/Shanghai
+# sudo timedatectl set-timezone Asia/Shanghai
+sudo systemsetup -settimezone Asia/Shanghai
