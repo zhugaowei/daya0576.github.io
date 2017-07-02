@@ -15,7 +15,7 @@ footer: true
 **Occupation:**   
 &nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 ~ now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
 **Links:**   
-&nbsp;&nbsp;&nbsp;&nbsp;[Hypers 陈惠超 超人~](https://www.iamsuperman.cn)   
+&nbsp;&nbsp;&nbsp;&nbsp;[Hypers 陈惠超 超人~](https://chenhuichao.com/)   
 <br>
 <br>
 
