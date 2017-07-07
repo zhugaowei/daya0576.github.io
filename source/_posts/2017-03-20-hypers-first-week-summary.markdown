@@ -18,30 +18,64 @@ categories: [work, hypers]
 <br>
 
 
-# v1.15 开发结束:   
-我完成的任务:   
-<img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/v1.15.png">    
-这个开发周期做了好多任务, 主要还是熟悉报表的流程, 并主导了用pandas做报表的新逻辑:   
-<img style="max-height:350px" class="lazy" data-original="/images/blog/170325_hypers_summary/1.15_run.png">    
-但感觉慢慢的变成一个增删改查的熟练工, Ahh, 不知道自己的优势到底在哪了.    
-还是要多去学习吧, 不断获取新知识, 追求更好的代码质量和   
+# 第十七周 (03 July 2017)
+<p></p>
+### 完成的工作总结:
+1. **周一/周二:** 哎，请了两天假，因为得了急性肠胃炎，吐得快怀疑人生了。慢慢的开始思考身体的重要性和工作的意义。     
+2. **周三：** 开始做oauth2的开发，今天做了的工作就是把原来对外接口的token验证， 换成统一的拿access token去auth拿用户的方式。  
+希望这周能把剩下的工作做完。   
+3. **周四周五：** 还不错， 把OAuth2.0 sdk写完了，打包传到PyPI上了: `pip install hypers-oauth2`。    
+从README.md截的图:   
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week17_auth2.jpg">    
+
+### 给下周的自己一些建议
+1. 最近有一个明显的发现， 就是自己更博的速度急速下降， 侧面说明学习的脚步渐渐的放缓了。        
+所以还是要在课余多学习提高自己， 充分吸收营养， 才能拉出饱满的屎。   
+
+<br>
 <br>
 ---
 <br>
 <br>
 
 
-# 第十三周 (05 Jun 2017)
+# 第十五周 (19 June 2017)   
+请假了一周多一天回学校， 参加了毕业典礼，带爸妈去澳洲玩了八天。    
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week15_g.jpg">    
 <br>
+<br>
+---
+<br>
+<br>
+
+
+# adtracker v1.15 开发结束:   
+我完成的任务:   
+<img style="max-height:100px" class="lazy" data-original="/images/blog/170325_hypers_summary/v1.15.png">    
+
+这个开发周期做了好多任务, 主要还是熟悉报表的流程, 并参与了设计用pandas做报表的新逻辑:   
+<img style="max-height:220px" class="lazy" data-original="/images/blog/170325_hypers_summary/1.15_run.png">    
+但感觉慢慢的沦陷为一个增删改查的熟练工, Ahh, 不知道自己的优势到底在哪了.    
+还是要多去学习吧, 不断获取新知识, 追求更好的代码质量。   
+<br>
+<br>
+---
+<br>
+<br>
+
+
+# 第十三周 (05 June 2017)
+<p></p>
 ### 完成的工作总结:
 1. 周一: 完成了关键词报表用pandas的重写, 写过一个报表后, 再写新的报表会轻松很多.   
 2. 周二: 关键词报表的大致完成, 抓紧测试.
 3. 周三周四周五: 修复了一些bug
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 慢慢的每天陷在赶需求, 补bug的泥ze里, 还是要在平时多去学习新知识吧, 不然只会变得越来越平庸.    
 2. 买了一本<算法导论>慢慢看, 因为看了一下目录, 每一章都接触过, 但却都没有完全掌握.     
-打算用Python把里边的算法都实现一遍, 打打基本功, 第一章关于排序的[笔记](/blog/20170611/python-sorting-algorithms/).   
+打算用Python把里边的算法都实现一遍, 打打基本功, 第一章关于[排序的笔记](/blog/20170611/python-sorting-algorithms/).   
+<br>
 <br>
 ---
 <br>
@@ -51,12 +85,14 @@ categories: [work, hypers]
 # 第十二周 (30 May 2017)
 (只有三天, 略..)
 <br>
+<br>
 ---
+<br>
 <br>
 
 
 # 第十一周 (22 May 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 前端升级新框架了, 一直配合weiwei做对接, 写一些新的接口, 改一下老接口的输入输出格式.   
 当去看一些老接口的代码的时候, 有一种打开一个十年没动的箱子一样, 满满的一种历史尘土的味道. 会发现其中有一些写的很坑的地方, 但又不敢大改:   
@@ -64,11 +100,12 @@ categories: [work, hypers]
 写代码完成需求其实是最最基本的要求, 代码的可读性, 健壮性, 扩展性, 可维护性, 还有性能等等都是要仔细考虑, 尽力去追求的地方.   
 像我写第一个需求的时候, 我知道我写的不好, 让黄俊给我一起看了三四遍, 要是像这样**虚心求教态度和基本沟通的能力**也没有的话, 在同一个团队里, 真的会让其他人很头疼.      
 2. 学了一下ipdb, pycharm的debug模式, 重新加载的时候确实有一点慢, 如果只是简单调试的话, ipdb也是挺方便的(cai guai)   
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 之前就有想法, 趁前后端分离的机会, 重写项目中不科学的那些代码, 但上两周实在有点忙, 就没有做起来.    
 下周碰到之前的坑代码, 还是要尽力去重写的好一些.
 2. 学习学习学习~~ 有吸收才能有进步!
+<br>
 <br>
 ---
 <br>
@@ -76,13 +113,13 @@ categories: [work, hypers]
 
 
 # 第十周 (15 May 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 在正确的道路上   
 1) 对各个部分模块化, 减少耦合度. 从而将报表重复逻辑的地方抽出来写成基类, 写出清晰简洁的代码.   
 2) 利用pandas处理数据的优势, 配合queryset处理数据.      
 自定义属性报表的EChart和表格部分的写完了, 但当然还是有一些问题, 迫不及待的想去解决了.   
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 报表部分:
     - queryset_by_register的优化.  
@@ -95,23 +132,25 @@ categories: [work, hypers]
 3. 去django的google group问个问题, 我是应该看算法导论, 还是Expert python, 或者python或django的官方文档.  
 最近的一些事情还是挺让我受刺激, 感觉自己还是要更努力一点把, 只有这样才能掐住命运的喉咙.         
 <br>
+<br>
 ---
 <br>
 <br>
 
 
 # 第九周 (08 May 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 主要看了报表那一部分的代码, 昨天晚上整理了一下上周看的成果和下周的计划, 希望下周可以早点把这部分搞定.    
 临时写在注释里...    
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_plan.png">    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 今天在网上看到说什么无限零食, 办公环境对程序员都是很肤浅的吸引.    
 真正最核心是吸引力还是 给力的同事 和 给力的项目, 做有意义的事情.    
 希望有一天也能像drinksober一样挑起大梁, 一起把项目打造成自己喜欢满意的样子.   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_huang.JPG">    
+<br>
 <br>
 ---
 <br>
@@ -120,13 +159,14 @@ categories: [work, hypers]
 
 
 # 第八周 (02 May 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 开始进行下一个版本的迭代了, 了解需求, 慢慢做起来.    
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week8-jira.png">    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 在课余时间还是要再努力一些, 例如和黄俊一起看看asyncio, 或者去跑跑步, 出去走走参加活动认识新朋友, 都比在家躺在床上刷微博来的好.   
+<br>
 <br>
 ---
 <br>
@@ -134,14 +174,15 @@ categories: [work, hypers]
 
 
 # 第七周 (24 APR 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1.主要研究了一下django performance and optimization\[[笔记](/blog/20170503/django-performance-and-optimisation/)\], 然后利用这些技巧把一个用的很频繁的方法, 从100多ms降到了20ms.    
 结果看到别人写的代码, 一下子就把数据库的三四万条数据拉出来放到内存里, 然后逻辑还有问题, 我的内心是奔溃的.    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 之前刚接触项目的时候, 代码看起来也是很困难的, 但慢慢啃下来也没有那么可怕了. 还是要跳出自己的舒适区, 积极地去接触自己对于项目不熟悉的地方, 快速的提高自己.    
 其实阅读源码也是一种能力把.   
+<br>
 <br>
 ---
 <br>
@@ -149,14 +190,15 @@ categories: [work, hypers]
 
 
 # 第六周 (17 APR 2017)
-<br>
+<p></p>
 ### 完成的工作总结(尝试用提前做计划去督促自己):
 1. 周一(计划): 看一下python是如何处理hash table的冲突(散列表), docker的系统学习
 2. 周二到周五: ><
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 自己做了共享campaign的需求, 改写了一些权限判断的代码, 打算写一下文档.
 2. 专研一下Django orm那块的performance 和 optimization.  
+<br>
 <br>
 ---
 <br>
@@ -166,22 +208,24 @@ categories: [work, hypers]
 我完成的任务:   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/v1.14.png">    
 <br>
+<br>
 ---
 <br>
 <br>
 
 # 第五周 (10 APR 2017)
-<br>
+<p></p>
 ### 完成的工作总结(尝试用提前做计划去督促自己):
 1. 周一: 完成共享界面的接口与前端的对接
 2. 周二(提前定的计划): 1. 测试对ShareAccount表兼容的测试. 2. 完成 account list 页面. 3. 完成campaign list的三个影响.    
 3. 周三到周五: 测试反馈的bug的修复.   
 4. 看了一遍python的内置方法的官方文档. [笔记](http://note.youdao.com/noteshare?id=a924458d86c4506f5d2a304e5c754133)    
 5. 学习了一下docker的基本操作.    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 提前做计划这个方法还是挺好的, 提高了自己的效率.     
 2. 这周比较闲, 可以多利用时间去提高自己, 加油~~     
+<br>
 <br>
 ---
 <br>
@@ -190,13 +234,12 @@ categories: [work, hypers]
 
 
 # 第四周 (3 APR 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 修bug
 2. 修bug
 3. 修bug
-
-<br>
+<p></p>
 ### 给下周的自己一些建议
 这周只有三天, 忙碌却收获颇少. 原因在工作总结里可以看到:   
 就是把所有时间都花在修复之前写的代码的bug上了, 自己给自己挖了很多坑.      
@@ -207,6 +250,7 @@ categories: [work, hypers]
 2. `花一个小时在纸上写清细节:` 出bug是因为需求有些复杂, 光靠凭空想很难考虑到全局. 最好在纸上写下每个细节, 想清楚所有前后关联.      
 3. 不要写太复杂的测试.. 在测试中修复bug也是一个很痛苦的事情, 不要问我是怎么知道的..    
 <br>
+<br>
 ---
 <br>
 <br>
@@ -214,7 +258,7 @@ categories: [work, hypers]
 
 
 # 第三周 (27 Mar 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 最主要的就是, 在黄俊的手把手下, 完成了公司逻辑比较复杂的一些新需求, 并完成了测试.   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week3_sharing.png">    
@@ -224,7 +268,7 @@ categories: [work, hypers]
 我在想能不能用django ORM自带的many to many relation代替, 但把文档读了一下, 发现还是不行.    
 原因是公司的业务逻辑中**用户对账号的关系**还有一个permission的属性, 自带的ORM好像实现不了这个功能.     
 虽然这个想法最后作罢了, 但这种思考和尝试还是很棒的, 应该在编码前多去做这样的思考.    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. `测试的正确姿势`: 测试是很重要的, 但还是要去了解专业的测试逻辑应该是怎么样的, 多去学习而不是一味的埋头写代码.    
 规范的测试和文档对于软件开发来说还是很重要的.   
@@ -236,6 +280,7 @@ categories: [work, hypers]
 躺倒床上只会让人越躺越累. 在上海一个这样的大都市, 要珍惜提高自己的每个机会.     
 这是我下周**最需要做出的改变**.    
 <br>
+<br>
 ---
 <br>
 <br>
@@ -243,12 +288,12 @@ categories: [work, hypers]
 
 
 #第二周 (20 Mar 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. 把REST框架的tutorial游览了一下, 大致了解了一下.
 2. 周二把RabbitMQ 官方的tutorial读了一遍: [笔记](http://note.youdao.com/share/?id=e992e5f73efb1d9098cd7b4e91672cd3&type=note#/)
 3. 对重构的API那部分写一下单元测试.    
-<br>
+<p></p>
 ### 给下周的自己一些建议
 1. 这周慢慢开始写一些公司业务部分的代码了, 但还是要时刻提醒自己, 要**多花点重心在学习上**, 而不是着急者想把任务尽快完成。    
 例如**需求是写django的一些测试用例:**   
@@ -263,13 +308,14 @@ categories: [work, hypers]
 但和我的性格也有关系吧, 太敏感了, 有些社交恐惧症. 不太喜欢人与人之间的那种压力, 所以我常常更愿意去选择逃避和独处.     
 当然有些地方还是需要做出一些改变滴, 例如是自己要变得更加positive和open一些, 和别人相处的时候可以稍微找找话题, 遇到同组的同事, 主动打打招呼。 至少不要让别人觉得你是一个很难相处的人.
 <br>
+<br>
 ---
 <br>
 <br>
 
 
 # 第一周 (13 Mar 2017)
-<br>
+<p></p>
 ### 完成的工作总结:
 1. Ubuntu工作环境的搭建 和 HFA项目的配置.
 2. Python MRO（Method Resolution Order）[笔记](/blog/20170320/python-mro/)
@@ -278,7 +324,7 @@ categories: [work, hypers]
 5. Django REST framework了解 [笔记](/blog/20170322/django-rest-framework-hypers/)
 6. Django middleware了解
 7. Django 源码深入阅读, 了解如何创建Server和处理Request的整个过程. [笔记](/blog/20170318/django-source-code-analysis/)    
-<br>
+<p></p>
 ### 上班亲身经历总结
 1. **迷惘的开始:** 第一天去报到, 填了资料, 签了协议卖了身, 就屁颠屁颠的去上班了. 刚到的工位时候, 其实是有些小失望的: 办公的设备实在是有些简陋. 配的笔记本和显示器都有些旧了. 不是都是标配MacBook和Dell 2K显示器的吗, 哈哈   
 2. **友善的同事:** 虽然心里有些迷惘, 但同事人都挺好的. 特别是无所不知黄俊小哥哥, 帮我换了椅子拿了本子, 第一周也是耐心回答了我无数的问题. 感覺自己运气总是很好, 能遇到耐心厉害的老师. 这些也是我在公司能待下去的最重要原因吧.    

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-rvm use 1.9.3 --defaults
-
+rvm use 1.9.3
+ 
 sudo systemsetup -settimezone Australia/Sydney
 # sudo timedatectl set-timezone Australia/Sydney
 
