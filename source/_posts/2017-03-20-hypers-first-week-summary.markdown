@@ -26,7 +26,7 @@ categories: [work, hypers]
 希望这周能把剩下的工作做完。   
 3. **周四周五：** 还不错， 把OAuth2.0 sdk写完了，打包传到PyPI上了: `pip install hypers-oauth2`。    
 从README.md截的图:   
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week17_auth2.jpg">    
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week17_auth2.png">    
 
 ### 给下周的自己一些建议
 1. 最近有一个明显的发现， 就是自己更博的速度急速下降， 侧面说明学习的脚步渐渐的放缓了。        
