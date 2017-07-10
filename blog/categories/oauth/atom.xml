@@ -4,7 +4,7 @@
   <title><![CDATA[Category: oauth | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/oauth/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[django social auth插件实践]]></title>
     <link href="http://changchen.me/blog/20160215/django-social-auth-own/"/>
-    <updated>2016-02-15T14:50:22+08:00</updated>
+    <updated>2016-02-15T17:50:22+11:00</updated>
     <id>http://changchen.me/blog/20160215/django-social-auth-own</id>
     <content type="html"><![CDATA[<blockquote><p>一群懒人，连注册都不愿意。  <br/>
 折腾了一天终于把自己的网站加上了第三方登录。  <br/>

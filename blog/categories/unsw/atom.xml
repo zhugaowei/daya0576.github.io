@@ -4,7 +4,7 @@
   <title><![CDATA[Category: unsw | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/unsw/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[comp9041 Assignment2 Matelook Implementation]]></title>
-    <link href="http://changchen.me/blog/20161029/comp9041-assignment2-matelook/"/>
-    <updated>2016-10-29T21:20:49+08:00</updated>
-    <id>http://changchen.me/blog/20161029/comp9041-assignment2-matelook</id>
+    <link href="http://changchen.me/blog/20161030/comp9041-assignment2-matelook/"/>
+    <updated>2016-10-30T00:20:49+11:00</updated>
+    <id>http://changchen.me/blog/20161030/comp9041-assignment2-matelook</id>
     <content type="html"><![CDATA[<blockquote><p>This blog shares my experience of making a simple &ldquo;Facebook&rdquo; in two weeks: <a href="http://m.unsw.co/">http://m.unsw.co/</a>    <br/>
 And this website is also the second assignment of UNSW COMP9041 assignment2</p></blockquote>
 
@@ -173,7 +173,7 @@ they get a mate request</p>
   <entry>
     <title type="html"><![CDATA[Henry's Awesome Summary of Perl]]></title>
     <link href="http://changchen.me/blog/20160920/perl-summery/"/>
-    <updated>2016-09-20T07:52:18+08:00</updated>
+    <updated>2016-09-20T09:52:18+10:00</updated>
     <id>http://changchen.me/blog/20160920/perl-summery</id>
     <content type="html"><![CDATA[<blockquote><p>My summary of Perl in semester 16s2 of (COMP2041|COMP9041) in UNSW.</p></blockquote>
 
@@ -406,7 +406,7 @@ $result = eval $string;
   <entry>
     <title type="html"><![CDATA[SSH to UNSW CSE Server Without Password]]></title>
     <link href="http://changchen.me/blog/20160819/cse-ssh/"/>
-    <updated>2016-08-19T19:56:56+08:00</updated>
+    <updated>2016-08-19T21:56:56+10:00</updated>
     <id>http://changchen.me/blog/20160819/cse-ssh</id>
     <content type="html"><![CDATA[<blockquote><p>It&rsquo;s so painful to input password every time login to cse server, so this article will show u how to ssh cse server without password.</p></blockquote>
 
@@ -448,7 +448,7 @@ alias zsshfs='sshfs z5082423@login.cse.unsw.edu.au:/import/adams/2/z5082423 /tmp
   <entry>
     <title type="html"><![CDATA[COMP9517 Computer Vision 16s2]]></title>
     <link href="http://changchen.me/blog/20160813/comp9517-computer-vision/"/>
-    <updated>2016-08-13T16:43:28+08:00</updated>
+    <updated>2016-08-13T18:43:28+10:00</updated>
     <id>http://changchen.me/blog/20160813/comp9517-computer-vision</id>
     <content type="html"><![CDATA[<blockquote><p>The second term of my master degree in unsw.       <br/>
 This blog is sharing my experience of COMP9517 Computer Vision * in 2016s2</p></blockquote>
@@ -538,7 +538,7 @@ less than 20 students come to the lectue, because no final exam exists.</p></blo
   <entry>
     <title type="html"><![CDATA[GSOE9820 Project Management 16s2]]></title>
     <link href="http://changchen.me/blog/20160811/9820-project-managment/"/>
-    <updated>2016-08-11T09:30:39+08:00</updated>
+    <updated>2016-08-11T11:30:39+10:00</updated>
     <id>http://changchen.me/blog/20160811/9820-project-managment</id>
     <content type="html"><![CDATA[<blockquote><p>The second term of my master degree in UNSW       <br/>
 This blog is sharing my experience of GSOE9820 Project Management in 16s2</p></blockquote>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: http | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/http/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Http协议的笔记 (待更新)]]></title>
-    <link href="http://changchen.me/blog/20170320/http-protocal/"/>
-    <updated>2017-03-20T21:03:18+08:00</updated>
-    <id>http://changchen.me/blog/20170320/http-protocal</id>
+    <link href="http://changchen.me/blog/20170321/http-protocal/"/>
+    <updated>2017-03-21T00:03:18+11:00</updated>
+    <id>http://changchen.me/blog/20170321/http-protocal</id>
     <content type="html"><![CDATA[<blockquote><p>后端工程师面试时必问的一个问题就是<strong>Http协议</strong>, 例如 http是建立在 TCP/IP 协议之上的应用层规范, Request和Response的结构, Response状态码的类型.  <br/>
 这些基础知识, 其实在实际的工作中其实还是很有用处的, 有利于自己理解很多<strong>隐藏的细节</strong>.   <br/>
 这篇日志记录了最近看到的一些不错的资料, 以后可能会持续更新~~</p></blockquote>

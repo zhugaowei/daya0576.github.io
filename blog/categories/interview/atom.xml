@@ -4,7 +4,7 @@
   <title><![CDATA[Category: interview | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[面试算法题 - 出栈次序问题 (Catalan Number)]]></title>
-    <link href="http://changchen.me/blog/20170308/catalan-number-interview/"/>
-    <updated>2017-03-08T21:38:32+08:00</updated>
-    <id>http://changchen.me/blog/20170308/catalan-number-interview</id>
+    <link href="http://changchen.me/blog/20170309/catalan-number-interview/"/>
+    <updated>2017-03-09T00:38:32+11:00</updated>
+    <id>http://changchen.me/blog/20170309/catalan-number-interview</id>
     <content type="html"><![CDATA[<blockquote><p>之前去方付通面试的时候的时候, 问了我<code>N个数依次入栈，出栈顺序有多少种？</code>的算法题, 其实是卡特兰数(Catalan)的应用.  <br/>
 当时没有答出来(这要是之前没有接触过, 谁答的出来).  <br/>
 现在用这篇日志重新整理记录一下.</p></blockquote>
@@ -60,7 +60,7 @@
   <entry>
     <title type="html"><![CDATA[Python - Note of Garbage Collection]]></title>
     <link href="http://changchen.me/blog/20170214/python-garbage-collection/"/>
-    <updated>2017-02-14T12:30:18+08:00</updated>
+    <updated>2017-02-14T15:30:18+11:00</updated>
     <id>http://changchen.me/blog/20170214/python-garbage-collection</id>
     <content type="html"><![CDATA[<blockquote><p>阅读了一篇Python垃圾回收的文章, 用这篇日志记录一下. 原文地址:<br> <a href="http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection">http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection</a></p></blockquote>
 
@@ -192,7 +192,7 @@ _ <br/>
   <entry>
     <title type="html"><![CDATA[那些年 用python刷过的面试算法题]]></title>
     <link href="http://changchen.me/blog/20170213/python-algorithms/"/>
-    <updated>2017-02-13T12:32:09+08:00</updated>
+    <updated>2017-02-13T15:32:09+11:00</updated>
     <id>http://changchen.me/blog/20170213/python-algorithms</id>
     <content type="html"><![CDATA[<blockquote><p>准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下.</p></blockquote>
 

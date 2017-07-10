@@ -4,7 +4,7 @@
   <title><![CDATA[Category: django | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/django/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[饿了吗 一道面试题分享和思考~]]></title>
-    <link href="http://changchen.me/blog/20170514/ele-interview-solution/"/>
-    <updated>2017-05-14T23:46:27+08:00</updated>
-    <id>http://changchen.me/blog/20170514/ele-interview-solution</id>
+    <link href="http://changchen.me/blog/20170515/ele-interview-solution/"/>
+    <updated>2017-05-15T01:46:27+10:00</updated>
+    <id>http://changchen.me/blog/20170515/ele-interview-solution</id>
     <content type="html"><![CDATA[<blockquote><p>之前在上海面试后端开发的时候, 面试官问了一个数据库相关的问题: <br/>
 有这么一张表: 里边存着所有用户的登录信息, 例如用户名和登录时间. <br/>
 请问如何找出<strong>所有用户最近登录</strong>的记录呢?</p></blockquote>
@@ -62,9 +62,9 @@ result[register] = queryset
   
   <entry>
     <title type="html"><![CDATA[Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)]]></title>
-    <link href="http://changchen.me/blog/20170503/django-filter-trick/"/>
-    <updated>2017-05-03T23:40:57+08:00</updated>
-    <id>http://changchen.me/blog/20170503/django-filter-trick</id>
+    <link href="http://changchen.me/blog/20170504/django-filter-trick/"/>
+    <updated>2017-05-04T01:40:57+10:00</updated>
+    <id>http://changchen.me/blog/20170504/django-filter-trick</id>
     <content type="html"><![CDATA[<blockquote><p>最近在看django的官方文档的时候, 看到filter()需要注意的地方: <br/>
 <code>Blog.objects.filter(cond1, cond2)</code> <br/>
 和 <br/>
@@ -131,7 +131,7 @@ pub_year = models.IntegerField()
   <entry>
     <title type="html"><![CDATA[Django 性能优化官方文档笔记(主要针对ORM)]]></title>
     <link href="http://changchen.me/blog/20170503/django-performance-and-optimisation/"/>
-    <updated>2017-05-03T21:34:09+08:00</updated>
+    <updated>2017-05-03T23:34:09+10:00</updated>
     <id>http://changchen.me/blog/20170503/django-performance-and-optimisation</id>
     <content type="html"><![CDATA[<blockquote><p>最近看了django关于性能优化的文档:     <a href="https://docs.djangoproject.com/en/1.11/topics/performance/">https://docs.djangoproject.com/en/1.11/topics/performance/</a> <br/>
 <a href="https://docs.djangoproject.com/en/1.8/topics/db/optimization/">https://docs.djangoproject.com/en/1.8/topics/db/optimization/</a> <br/>
@@ -184,7 +184,7 @@ _ <br/>
 
 <h1>and because of template language overheads</h1>
 
-<p>{{ my_bicycles|length }}
+<p>
 ```</p>
 
 <br>
@@ -518,9 +518,9 @@ return set(users)
   
   <entry>
     <title type="html"><![CDATA[Django ORM的多对多关系 (每个关系有附加的属性)]]></title>
-    <link href="http://changchen.me/blog/20170405/many-to-many-relation-with-extra-field-django/"/>
-    <updated>2017-04-05T22:44:02+08:00</updated>
-    <id>http://changchen.me/blog/20170405/many-to-many-relation-with-extra-field-django</id>
+    <link href="http://changchen.me/blog/20170406/many-to-many-relation-with-extra-field-django/"/>
+    <updated>2017-04-06T00:44:02+10:00</updated>
+    <id>http://changchen.me/blog/20170406/many-to-many-relation-with-extra-field-django</id>
     <content type="html"><![CDATA[<blockquote><p>最近写公司的业务代码, 碰到这么一个问题:    <br/>
 <strong>一个User对应多个Account, 而每个Account又可以分享给多个user</strong>, 典型的多对多的关系.  <br/>
 但问题在于每个关系, 都有一个permissionsharing的属性: 0: 只读 / 1: 读写 / 2: 自身创建.  <br/>
@@ -638,9 +638,9 @@ PermissionSharing.objects.all().delete()
   
   <entry>
     <title type="html"><![CDATA[Http协议的笔记 (待更新)]]></title>
-    <link href="http://changchen.me/blog/20170320/http-protocal/"/>
-    <updated>2017-03-20T21:03:18+08:00</updated>
-    <id>http://changchen.me/blog/20170320/http-protocal</id>
+    <link href="http://changchen.me/blog/20170321/http-protocal/"/>
+    <updated>2017-03-21T00:03:18+11:00</updated>
+    <id>http://changchen.me/blog/20170321/http-protocal</id>
     <content type="html"><![CDATA[<blockquote><p>后端工程师面试时必问的一个问题就是<strong>Http协议</strong>, 例如 http是建立在 TCP/IP 协议之上的应用层规范, Request和Response的结构, Response状态码的类型.  <br/>
 这些基础知识, 其实在实际的工作中其实还是很有用处的, 有利于自己理解很多<strong>隐藏的细节</strong>.   <br/>
 这篇日志记录了最近看到的一些不错的资料, 以后可能会持续更新~~</p></blockquote>

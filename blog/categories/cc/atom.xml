@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cc | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/cc/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,13 +16,13 @@
   <entry>
     <title type="html"><![CDATA[【探78】【小船】和幸~~日式调调~呼]]></title>
     <link href="http://changchen.me/blog/20140407/two-year-meeting-day/"/>
-    <updated>2014-04-07T14:52:59+08:00</updated>
+    <updated>2014-04-07T16:52:59+10:00</updated>
     <id>http://changchen.me/blog/20140407/two-year-meeting-day</id>
     <content type="html"><![CDATA[<p><a href="http://s.dianping.com/topic/7162596"><strong>&mdash;&ndash;> 原文</strong></a></p>
 
 <p>嘻嘻 清明假期 和幸店小试。</p>
 
-<p>{% img /images\blog\140407_cc_和幸餐厅/thumb(2).jpg %}</p>
+<p><img src="/images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
 
 <!--more-->
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: flask | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/flask/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[flask安装配置遇到的问题]]></title>
     <link href="http://changchen.me/blog/20151005/falsk-initial/"/>
-    <updated>2015-10-05T13:34:24+08:00</updated>
+    <updated>2015-10-05T16:34:24+11:00</updated>
     <id>http://changchen.me/blog/20151005/falsk-initial</id>
     <content type="html"><![CDATA[<blockquote><p>最近开始看一看flask开发，结果出师不利，一开始就碰到了问题。  <br/>
 在运行 virtualenv venv 创建一个虚拟环境的时候报错了。  <br/>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: domain | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/domain/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[custom_domain]]></title>
-    <link href="http://changchen.me/blog/20140410/custom-domain/"/>
-    <updated>2014-04-10T23:38:30+08:00</updated>
-    <id>http://changchen.me/blog/20140410/custom-domain</id>
+    <link href="http://changchen.me/blog/20140411/custom-domain/"/>
+    <updated>2014-04-11T01:38:30+10:00</updated>
+    <id>http://changchen.me/blog/20140411/custom-domain</id>
     <content type="html"><![CDATA[<p>哎   弄个域名绑定也弄了一天。    <br/>
 貌似绑定A级域名要用<code>192.30.252.153</code>才行了</p>
 

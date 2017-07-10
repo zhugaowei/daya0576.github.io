@@ -4,7 +4,7 @@
   <title><![CDATA[Category: comp9041 | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/comp9041/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[comp9041 Assignment2 Matelook Implementation]]></title>
-    <link href="http://changchen.me/blog/20161029/comp9041-assignment2-matelook/"/>
-    <updated>2016-10-29T21:20:49+08:00</updated>
-    <id>http://changchen.me/blog/20161029/comp9041-assignment2-matelook</id>
+    <link href="http://changchen.me/blog/20161030/comp9041-assignment2-matelook/"/>
+    <updated>2016-10-30T00:20:49+11:00</updated>
+    <id>http://changchen.me/blog/20161030/comp9041-assignment2-matelook</id>
     <content type="html"><![CDATA[<blockquote><p>This blog shares my experience of making a simple &ldquo;Facebook&rdquo; in two weeks: <a href="http://m.unsw.co/">http://m.unsw.co/</a>    <br/>
 And this website is also the second assignment of UNSW COMP9041 assignment2</p></blockquote>
 
@@ -173,7 +173,7 @@ they get a mate request</p>
   <entry>
     <title type="html"><![CDATA[Henry's Awesome Summary of Perl]]></title>
     <link href="http://changchen.me/blog/20160920/perl-summery/"/>
-    <updated>2016-09-20T07:52:18+08:00</updated>
+    <updated>2016-09-20T09:52:18+10:00</updated>
     <id>http://changchen.me/blog/20160920/perl-summery</id>
     <content type="html"><![CDATA[<blockquote><p>My summary of Perl in semester 16s2 of (COMP2041|COMP9041) in UNSW.</p></blockquote>
 
@@ -406,7 +406,7 @@ $result = eval $string;
   <entry>
     <title type="html"><![CDATA[COMP9041/2041 Software Construction: Techniques and Tools 2016s2]]></title>
     <link href="http://changchen.me/blog/20160727/comp9041software-construction-techniques-and-tools/"/>
-    <updated>2016-07-27T21:31:36+08:00</updated>
+    <updated>2016-07-27T23:31:36+10:00</updated>
     <id>http://changchen.me/blog/20160727/comp9041software-construction-techniques-and-tools</id>
     <content type="html"><![CDATA[<blockquote><p>The second semester of my master in UNSW       <br/>
 This blog is sharing my experience of <em>COMP9041 Software Construction: Techniques and Tools</em></p></blockquote>

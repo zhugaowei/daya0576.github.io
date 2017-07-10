@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Octopress,jekyll多说分享插件设置]]></title>
     <link href="http://changchen.me/blog/20151016/duoshuo-sharing/"/>
-    <updated>2015-10-16T19:56:06+08:00</updated>
+    <updated>2015-10-16T22:56:06+11:00</updated>
     <id>http://changchen.me/blog/20151016/duoshuo-sharing</id>
     <content type="html"><![CDATA[<blockquote><p>偶然看到多说也推出了自家的分享插件，原来我用的是百度的分享插件，但它自带了一个对网站中所有图片鼠标划过时显示分享的效果，感觉有些鸡肋。换用多说的分享插件试试，感觉还不错。           <br/>
 官方链接：<a href="http://dev.duoshuo.com/threads/549a781ff07c81f20daba426">“期待已久分享插件上线”</a></p></blockquote>
@@ -50,7 +50,7 @@
   <entry>
     <title type="html"><![CDATA[my web log]]></title>
     <link href="http://changchen.me/blog/20140615/custom-web-log/"/>
-    <updated>2014-06-15T00:50:08+08:00</updated>
+    <updated>2014-06-15T02:50:08+10:00</updated>
     <id>http://changchen.me/blog/20140615/custom-web-log</id>
     <content type="html"><![CDATA[<blockquote><p>修改网页的log ~</p></blockquote>
 
@@ -148,7 +148,7 @@ bugs <br/>
   <entry>
     <title type="html"><![CDATA[octopress测试网站的小技巧【原创】]]></title>
     <link href="http://changchen.me/blog/20140407/octopress-tips-test-web/"/>
-    <updated>2014-04-07T20:21:46+08:00</updated>
+    <updated>2014-04-07T22:21:46+10:00</updated>
     <id>http://changchen.me/blog/20140407/octopress-tips-test-web</id>
     <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
 

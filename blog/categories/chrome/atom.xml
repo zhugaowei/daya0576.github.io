@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chrome | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/chrome/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[chrome设置（转）]]></title>
     <link href="http://changchen.me/blog/20140510/chrome-setting/"/>
-    <updated>2014-05-10T00:54:33+08:00</updated>
+    <updated>2014-05-10T02:54:33+10:00</updated>
     <id>http://changchen.me/blog/20140510/chrome-setting</id>
     <content type="html"><![CDATA[<ul>
 <li><p><strong>搜索引擎</strong>: 第一空，填你搜索引擎的名字，第二个关键字任意填，第三个空是重点，填这个 <a href="http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search">http://203.208.46.148/search?q=%s&amp;hl=zh-CN&amp;btnG=Google+Search</a> 为什么填这个呢，因为这个是直接使用谷歌的ip进行搜索，不会被跳转，而且不用代理也可以快速访问，所以强烈推荐，当然这个也是中文的结果，包括繁体和简体。</p></li>

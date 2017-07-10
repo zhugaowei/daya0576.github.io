@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[排序算法总结]]></title>
     <link href="http://changchen.me/blog/20170611/python-sorting-algorithms/"/>
-    <updated>2017-06-11T00:04:35+08:00</updated>
+    <updated>2017-06-11T02:04:35+10:00</updated>
     <id>http://changchen.me/blog/20170611/python-sorting-algorithms</id>
     <content type="html"><![CDATA[<blockquote><p>最近开始看&lt;算法导论>, 一开始就是讲的就是插入排序和merge sort,  <br/>
 之前面试的时候, 也被问起过排序算法, 一紧张只想到了两三个,  <br/>
@@ -162,7 +162,7 @@ print("Quick sort:      {} --&gt; {}".format(a, quick_sort(list(a))))
   <entry>
     <title type="html"><![CDATA[数组分割(编程之美) HyperS面试题 思考与分享]]></title>
     <link href="http://changchen.me/blog/20170525/partition-problem/"/>
-    <updated>2017-05-25T00:34:57+08:00</updated>
+    <updated>2017-05-25T02:34:57+10:00</updated>
     <id>http://changchen.me/blog/20170525/partition-problem</id>
     <content type="html"><![CDATA[<blockquote><p><code>问题描述:</code> <strong>有一个无序, 元素个数为2n的正整数数组. 要求: 如何能把这个数组分割为元素个数为n的两个数组, 并使两个子数组的和最接近.</strong>  <br/>
 当时面试的时候, 看完描述想了十秒钟, 只能想到C(2n, n)把所有情况遍历一遍, 想不到特别简单的算法, 就直接放弃了.. 面试官问我应该怎么做呢, 我只能靠直觉说用动态规划吧.  <br/>
@@ -384,9 +384,9 @@ method3(isOk)
   
   <entry>
     <title type="html"><![CDATA[面试算法题 - 出栈次序问题 (Catalan Number)]]></title>
-    <link href="http://changchen.me/blog/20170308/catalan-number-interview/"/>
-    <updated>2017-03-08T21:38:32+08:00</updated>
-    <id>http://changchen.me/blog/20170308/catalan-number-interview</id>
+    <link href="http://changchen.me/blog/20170309/catalan-number-interview/"/>
+    <updated>2017-03-09T00:38:32+11:00</updated>
+    <id>http://changchen.me/blog/20170309/catalan-number-interview</id>
     <content type="html"><![CDATA[<blockquote><p>之前去方付通面试的时候的时候, 问了我<code>N个数依次入栈，出栈顺序有多少种？</code>的算法题, 其实是卡特兰数(Catalan)的应用.  <br/>
 当时没有答出来(这要是之前没有接触过, 谁答的出来).  <br/>
 现在用这篇日志重新整理记录一下.</p></blockquote>
@@ -429,7 +429,7 @@ method3(isOk)
   <entry>
     <title type="html"><![CDATA[面试算法题 - $1 Coke Problem]]></title>
     <link href="http://changchen.me/blog/20170224/coke-algorithm/"/>
-    <updated>2017-02-24T09:30:51+08:00</updated>
+    <updated>2017-02-24T12:30:51+11:00</updated>
     <id>http://changchen.me/blog/20170224/coke-algorithm</id>
     <content type="html"><![CDATA[<blockquote><p>今天面试问到一个算法: 一个汽水是$1, 两个汽水的<strong>空瓶</strong>换一瓶可乐, 请问给一些钱, 最多能喝几瓶呢?   <br/>
 当时思路有些乱, 算法没写清楚, 面试结束去个奶茶店, 重新写了一下.</p></blockquote>
@@ -519,7 +519,7 @@ return sum_drunk
   <entry>
     <title type="html"><![CDATA[Algorithms, Part I - coursera]]></title>
     <link href="http://changchen.me/blog/20160205/algorithm-1-coursera/"/>
-    <updated>2016-02-05T20:22:14+08:00</updated>
+    <updated>2016-02-05T23:22:14+11:00</updated>
     <id>http://changchen.me/blog/20160205/algorithm-1-coursera</id>
     <content type="html"><![CDATA[<blockquote><p>新学了一门Coursera的课叫做《Algorithms, Part I》 from Princeton University  <br/>
 这门课还是挺有难度的，可能我听力不太好吧、、、  <br/>

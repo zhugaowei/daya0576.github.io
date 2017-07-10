@@ -4,7 +4,7 @@
   <title><![CDATA[Category: filter | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/filter/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)]]></title>
-    <link href="http://changchen.me/blog/20170503/django-filter-trick/"/>
-    <updated>2017-05-03T23:40:57+08:00</updated>
-    <id>http://changchen.me/blog/20170503/django-filter-trick</id>
+    <link href="http://changchen.me/blog/20170504/django-filter-trick/"/>
+    <updated>2017-05-04T01:40:57+10:00</updated>
+    <id>http://changchen.me/blog/20170504/django-filter-trick</id>
     <content type="html"><![CDATA[<blockquote><p>最近在看django的官方文档的时候, 看到filter()需要注意的地方: <br/>
 <code>Blog.objects.filter(cond1, cond2)</code> <br/>
 和 <br/>

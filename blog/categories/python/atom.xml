@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Python - Note of Garbage Collection]]></title>
     <link href="http://changchen.me/blog/20170214/python-garbage-collection/"/>
-    <updated>2017-02-14T12:30:18+08:00</updated>
+    <updated>2017-02-14T15:30:18+11:00</updated>
     <id>http://changchen.me/blog/20170214/python-garbage-collection</id>
     <content type="html"><![CDATA[<blockquote><p>阅读了一篇Python垃圾回收的文章, 用这篇日志记录一下. 原文地址:<br> <a href="http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection">http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection</a></p></blockquote>
 

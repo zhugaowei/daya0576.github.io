@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dynamic programming | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/dynamic-programming/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-10T23:40:08+08:00</updated>
+  <updated>2017-07-11T03:03:11+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Fibonacci number(Recursive, DP and Decorator)]]></title>
     <link href="http://changchen.me/blog/20160915/dynamic-programming/"/>
-    <updated>2016-09-15T08:52:49+08:00</updated>
+    <updated>2016-09-15T10:52:49+10:00</updated>
     <id>http://changchen.me/blog/20160915/dynamic-programming</id>
     <content type="html"><![CDATA[<blockquote><p>I found a <a href="https://www.youtube.com/watch?v=OQ5jsbhAv_M">fatastic video</a> about Dynamic Programming, it can be used to solve Fibonacci number problem efficiently. Decorater can also be used to make code elegent ^o^</p></blockquote>
 
