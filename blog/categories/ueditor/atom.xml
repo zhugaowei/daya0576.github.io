@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ueditor | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/ueditor/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[设置百度 ueditor默认字体]]></title>
+    <link href="http://changchen.me/blog/20160625/ueditor-default-font/"/>
+    <updated>2016-06-25T16:11:17+08:00</updated>
+    <id>http://changchen.me/blog/20160625/ueditor-default-font</id>
+    <content type="html"><![CDATA[<blockquote><p>想把编辑器的默认字体设成微软雅黑，但找了好久都没找到解决的方法。  <br/>
+终于成功了，小激动，纪念一下。  <br/>
+感谢这位博主：<a href="http://m.blog.csdn.net/article/details?id=46697997">http://m.blog.csdn.net/article/details?id=46697997</a></p></blockquote>
+
+<!--more-->
+
+
+<br>   
+
+
+<p>在<code>ueditor.config.js</code>中，关键是要加p定义段落的字体就可以了，  <br/>
+这是我的设置：  <br/>
+<code>css
+initialStyle:'p{line-height:1em; font-size: 14px;font-family:Microsoft YaHei;'   
+//编辑器层级的基数,可以用来改变字体等
+</code></p>
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>

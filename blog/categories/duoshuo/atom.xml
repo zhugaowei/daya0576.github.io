@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: duoshuo | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/duoshuo/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress,jekyll多说分享插件设置]]></title>
+    <link href="http://changchen.me/blog/20151016/duoshuo-sharing/"/>
+    <updated>2015-10-16T19:56:06+08:00</updated>
+    <id>http://changchen.me/blog/20151016/duoshuo-sharing</id>
+    <content type="html"><![CDATA[<blockquote><p>偶然看到多说也推出了自家的分享插件，原来我用的是百度的分享插件，但它自带了一个对网站中所有图片鼠标划过时显示分享的效果，感觉有些鸡肋。换用多说的分享插件试试，感觉还不错。           <br/>
+官方链接：<a href="http://dev.duoshuo.com/threads/549a781ff07c81f20daba426">“期待已久分享插件上线”</a></p></blockquote>
+
+<!--more-->
+
+
+<br> 
+
+
+<p>代码(注释的是原来百度的分享代码):  <br/>
+还是直接截图好了，不然一些参数直接显示了。  <br/>
+<img class="lazy" data-original="/images/blog/151014_diary/bsharing.png"></p>
+
+<p><i class="fa fa-bug"></i><strong>其中碰到一个困难：</strong> <br/>
+就是在配置data-url的时候需要的是完整的页面url  <br/>
+原来是想拼接一下字符串，但感觉有些麻烦， <br/>
+后来看到了这个回答：<a href="http://stackoverflow.com/questions/10100565/how-to-get-absolute-path-of-jekyll-bootstrap-page">http://stackoverflow.com/questions/10100565/how-to-get-absolute-path-of-jekyll-bootstrap-page</a>  <br/>
+于是就可以这么写：<img class="lazy" data-original="/images/blog/151014_diary/bsharing_part.png">（site开头的是_config.yml中自定义配置的参数）</p>
+
+<br>
+
+
+<p><i class="fa fa-hand-spock-o"></i>附jekyll中的参数说明：<a href="http://jekyllrb.com/docs/variables/">http://jekyllrb.com/docs/variables/</a></p>
+
+<br><br>
+
+]]></content>
+  </entry>
+  
+</feed>

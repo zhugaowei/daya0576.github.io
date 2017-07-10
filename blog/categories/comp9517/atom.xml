@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: comp9517 | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/comp9517/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[COMP9517 Computer Vision 16s2]]></title>
+    <link href="http://changchen.me/blog/20160813/comp9517-computer-vision/"/>
+    <updated>2016-08-13T16:43:28+08:00</updated>
+    <id>http://changchen.me/blog/20160813/comp9517-computer-vision</id>
+    <content type="html"><![CDATA[<blockquote><p>The second term of my master degree in unsw.       <br/>
+This blog is sharing my experience of COMP9517 Computer Vision * in 2016s2</p></blockquote>
+
+<!--more-->
+
+
+<br>
+
+
+<blockquote><p>Share your experience about this course through this url:   <br/>
+<a href="http://www.unsw.co/rango/category/comp9517/">http://www.unsw.co/rango/category/comp9517/</a></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>27/07/2016</h3>
+
+<hr />
+
+<p><strong>week1</strong>  <br/>
+So hard to understand lecturer&rsquo;s slide content and accent&hellip;    <br/>
+Choosing this course because there is no final exam.</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>13/08/2016</h3>
+
+<hr />
+
+<p><strong>Assignment 1</strong>  <br/>
+Quite fun and not hard because the instructions are so clear..   <br/>
+My original image:  <br/>
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160813_9517/flowers-3.png">   <br/>
+task1: <br/>
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160813_9517/task1.png">   <br/>
+task2:  <br/>
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160813_9517/task2.png">   <br/>
+task3:  <br/>
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160813_9517/task3.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>03/09/2016</h3>
+
+<hr />
+
+<p><strong>Project part1</strong>  <br/>
+Implementing panograph:   <br/>
+Finally get the not bad result.   <br/>
+<img style="max-height:280px" class="lazy" data-original="/images/blog/160813_9517/project1_1.png">   <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160813_9517/project1_2.png">   <br/>
+Test images in demo:   <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160813_9517/project1_3.png">   <br/>
+Our group&rsquo;s result for the demo&rsquo;s pictures(released until demo time) was perfect, but the tutors asked us a lot of question about how the SIFT work, how do you judge the accuracy of final result&hellip;. At least they had to lease the marking details in advance, because <strong>in the project part1 spec, we only were asked to achieve the effect of panograph</strong>.    <br/>
+My partner&rsquo;s words: &ldquo;In the spec, we don&rsquo;t have enough details to follow to get full marks in final demo. And we use some provided APIs to implement some functions so that we do not go deep into the algorithm. If the spec mentions that we should know everything about our algorithm, we are willing to learn it as deep as possible. So can you provide more detailed spec afterwards (I know it is too late to say this)? Or simply provide the form used by tutors for us early so that we can follow it better. After all, it is not fair that we have done everything well but lost marks due to not knowing marking details.&rdquo;</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>16/09/2016</h3>
+
+<hr />
+
+<p><strong>Mid-term test</strong>   <br/>
+No idea what will be examed in that test, feeling sad :(     <br/>
+Sharing my understanding of Histogram equalization:  <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160813_9517/histogram.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>10/10/2016</h3>
+
+<hr />
+
+<p><strong>Week 11</strong>   <br/>
+less than 20 students come to the lectue, because no final exam exists.</p></blockquote>
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>

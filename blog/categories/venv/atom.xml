@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: venv | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/venv/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Python Virtual Environments Note]]></title>
+    <link href="http://changchen.me/blog/20160929/python-venv/"/>
+    <updated>2016-09-29T23:27:57+08:00</updated>
+    <id>http://changchen.me/blog/20160929/python-venv</id>
+    <content type="html"><![CDATA[<blockquote><p>写程序写久了, 你会发现前人留下来的道理总是有那么几分道理的, which will make ur life much easier, 比如每次稍微花点时间建个python的虚拟环境, 会对以后的管理有很大的方便, 节约未来无数的时间~~</p></blockquote>
+
+<!--more-->
+
+
+<br>   
+
+
+<p>reference: <a href="https://gist.github.com/evansneath/4582716">https://gist.github.com/evansneath/4582716</a></p>
+
+<p>```sh
+To install virtualenv via pip
+$ pip3 install virtualenv</p>
+
+<p>Note that virtualenv installs to the python3 directory. For me it&rsquo;s:
+$ /usr/local/share/python3/virtualenv</p>
+
+<ol>
+<li><p>Create a virtualenvs directory to store all virtual environments
+$ mkdir ~/.virtualenvs/&lt;project-name></p></li>
+<li><p>Make a new virtual environment with no packages
+$ virtualenv ~/.virtualenvs/&lt;project-name> &mdash;no-site-packages</p></li>
+<li><p>To use the virtual environment
+$ cd somewhere/virtualenvs/&lt;project-name>/bin
+$ source activate
+OR
+$ source ~/.virtualenvs/unswco_test/bin/activate</p></li>
+<li><p>You are now using the virtual environment for &lt;project-name>. To stop:
+$ source deactivate
+```</p></li>
+</ol>
+
+
+<p>For python3 or python2 <br/>
+<code>
+virtualenv --python=/usr/bin/python3 &lt;project-name&gt;
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

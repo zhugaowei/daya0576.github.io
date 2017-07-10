@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: oauth | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/oauth/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[django social auth插件实践]]></title>
+    <link href="http://changchen.me/blog/20160215/django-social-auth-own/"/>
+    <updated>2016-02-15T14:50:22+08:00</updated>
+    <id>http://changchen.me/blog/20160215/django-social-auth-own</id>
+    <content type="html"><![CDATA[<blockquote><p>一群懒人，连注册都不愿意。  <br/>
+折腾了一天终于把自己的网站加上了第三方登录。  <br/>
+<a href="http://u.changchen.me/accounts/login">http://u.changchen.me/accounts/login</a></p></blockquote>
+
+<!--more-->
+
+
+<p>Facebook github和Google都搞定了，就差最后一个微博了，因为要等审核身份。。  <br/>
+<img  style="max-height:300px" class="lazy" data-original="/images/blog/160215_django_social_auth/title.jpg"></p>
+
+<br>
+
+
+<p>最后的效果，放弃微博登陆了，因为审核完身份，
+网站没有在中国备案还不能用。。也是@#￥%&amp;*%……   <br/>
+用twitter替代了，图标是用<code>Fortawesome</code>的图标，真是方便快捷。<br/>
+<img  style="max-height:350px" class="lazy" data-original="/images/blog/160215_django_social_auth/final_django_social.jpg"></p>
+
+<br>
+
+
+<p>整个效果是用<a href="https://github.com/omab/django-social-auth">django-social-auth</a>这个插件实现的。  <br/>
+文档在这：<a href="http://django-social-auth.readthedocs.org/en/latest/">http://django-social-auth.readthedocs.org/en/latest/</a></p>
+
+<p>需要注意的几点（被各种问题折腾了一天一夜）： <br/>
+1. 要是遇到最后一步登录失败，一定要加<code>http://your.domain/complete/××××××/</code>到各个api的<code>Authorized redirect URIs</code>里。  <br/>
+所以登录后跳转最后无法登陆。  <br/>
+2. 一定要在本地调试好再发布到网上，用localhost替代127.0.0.1，放到<code>Authorized redirect URIs</code>就可以了。 <br/>
+适用于window（stackoverflow上的一个回答）：<a href="http://stackoverflow.com/questions/8798016/how-to-locally-debug-facebook-php-apps">How to locally debug Facebook App</a> <br/>
+3. 最后的时候我遇到一个bug折磨了我一个下午，就是Facebook logining works perfectly locally, but redirecting to login error page in the remote.   <br/>
+Google这个也没有什么好的回答，最可怕的bug就是没有提示的bug把、、 <br/>
+最后新建了一个Facebook App，把remote和local App分开，竟然就可以了，也不知道是为什么。   <br/>
+4. 还有一个问题就是如何获取邮箱，文档上说是在setting里加上参数<code>FACEBOOK_EXTENDED_PERMISSIONS = ['email']</code>, 然而好像并没有什么ruan用。再研究一下。</p>
+]]></content>
+  </entry>
+  
+</feed>

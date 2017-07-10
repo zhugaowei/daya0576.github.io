@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: django | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/django/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[饿了吗 一道面试题分享和思考~]]></title>
+    <link href="http://changchen.me/blog/20170514/ele-interview-solution/"/>
+    <updated>2017-05-14T23:46:27+08:00</updated>
+    <id>http://changchen.me/blog/20170514/ele-interview-solution</id>
+    <content type="html"><![CDATA[<blockquote><p>之前在上海面试后端开发的时候, 面试官问了一个数据库相关的问题: <br/>
+有这么一张表: 里边存着所有用户的登录信息, 例如用户名和登录时间. <br/>
+请问如何找出<strong>所有用户最近登录</strong>的记录呢?</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h3>sql:</h3>
+
+<p>用sql其实很简单, 就是先按时间排个序, 再按用户id groupby一下就行了.</p>
+
+<br>
+
+
+<h3>orm:</h3>
+
+<p>在django的orm中也是一个道理, 可以用annotate: <br/>
+<img style="max-height:500px" class="lazy" data-original="/images/blog/170515_ele/annotate.png"></p>
+
+<br>
+
+
+<h3>举个栗子:</h3>
+
+<p>献个丑, 上周写的公司报表部分的代码: <br/>
+```python
+for register, queryset in queryset_by_register.items():</p>
+
+<pre><code># 根据value和次级维度进行groupby, 生成以它们为索引的字典.
+fields_compute = [Sum(x) for x in self.header.index_action]
+queryset = queryset.values(*self.groupby).annotate(*fields_compute)
+
+result[register] = queryset
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)]]></title>
+    <link href="http://changchen.me/blog/20170503/django-filter-trick/"/>
+    <updated>2017-05-03T23:40:57+08:00</updated>
+    <id>http://changchen.me/blog/20170503/django-filter-trick</id>
+    <content type="html"><![CDATA[<blockquote><p>最近在看django的官方文档的时候, 看到filter()需要注意的地方: <br/>
+<code>Blog.objects.filter(cond1, cond2)</code> <br/>
+和 <br/>
+<code>Blog.objects.filter(cond1).filter(cond2))</code>的结果竟然不同.  <br/>
+仔细看了许久才明白其中的差异, 特写下这篇日志来分享一下.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<p>关于这个topic的官方的文档: <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#spanning-multi-valued-relationships">https://docs.djangoproject.com/en/1.11/topics/db/queries/#spanning-multi-valued-relationships</a>
+我简化了一下, 让它变得更加简单明了: <br/>
+笔记在线连接: <a href="http://note.youdao.com/noteshare?id=6df5d321962c781353aa3a87dea7c215">http://note.youdao.com/noteshare?id=6df5d321962c781353aa3a87dea7c215</a></p>
+
+<br>
+
+
+<h3>Model:</h3>
+
+<p>```python
+from django.db import models</p>
+
+<p>class Blog(models.Model):</p>
+
+<pre><code>name = models.CharField(max_length=100)
+</code></pre>
+
+<p>class Entry(models.Model):</p>
+
+<pre><code>blog = models.ForeignKey(Blog)
+headline = models.CharField(max_length=255)
+pub_year = models.IntegerField()
+</code></pre>
+
+<p>```</p>
+
+<br>
+
+
+<h3>populate的一些数据:</h3>
+
+<p>Entry: <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/1.png"></p>
+
+<p>Blog:  <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/2.png"></p>
+
+<br>
+
+
+<h3>执行结构:</h3>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/3.png"></p>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/4.png"></p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Django 性能优化官方文档笔记(主要针对ORM)]]></title>
+    <link href="http://changchen.me/blog/20170503/django-performance-and-optimisation/"/>
+    <updated>2017-05-03T21:34:09+08:00</updated>
+    <id>http://changchen.me/blog/20170503/django-performance-and-optimisation</id>
+    <content type="html"><![CDATA[<blockquote><p>最近看了django关于性能优化的文档:     <a href="https://docs.djangoproject.com/en/1.11/topics/performance/">https://docs.djangoproject.com/en/1.11/topics/performance/</a> <br/>
+<a href="https://docs.djangoproject.com/en/1.8/topics/db/optimization/">https://docs.djangoproject.com/en/1.8/topics/db/optimization/</a> <br/>
+整理了一下笔记, 并写下几点比较深的感触<strong>和我优化django代码的总结</strong>.</p></blockquote>
+
+<br>
+
+
+<!--more-->
+
+
+<br>
+
+
+<h3>1. 你的时间才是最宝贵的:</h3>
+
+<p>文档里的这句话还是挺有意思的(自己的时间和性能优化的trade-off): Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.</p>
+
+<br>
+
+
+<br>
+
+
+<h3>2. 最重要的原则: Work at the appropriate level</h3>
+
+<p>意思就是说要在对应的level(M V C)做对应的事. e.g. 如果计算court, 在最低的数据库level里是最快的 (如果只需要知道此记录是否存在的话, 用<code>exists()</code>会更快). <br/>
+但要<code>注意</code>: queryset是lazy的, 所以有时候在higher level(例如模板)里控制queryset是否真的执行, 说不定会更高效. <br/>
+_ <br/>
+下面这段代码很好的解释了不同level的意思:  <br/>
+```python</p>
+
+<h1>QuerySet operation on the database</h1>
+
+<h1>fast, because that&rsquo;s what databases are good at</h1>
+
+<p>my_bicycles.count()</p>
+
+<h1>counting Python objects</h1>
+
+<h1>slower, because it requires a database query anyway, and processing</h1>
+
+<h1>of the Python objects</h1>
+
+<p>len(my_bicycles)</p>
+
+<h1>Django template filter</h1>
+
+<h1>slower still, because it will have to count them in Python anyway,</h1>
+
+<h1>and because of template language overheads</h1>
+
+<p>{{ my_bicycles|length }}
+```</p>
+
+<br>
+
+
+<br>
+
+
+<h3>3. 用database中传统的优化手段</h3>
+
+<ol>
+<li>加索引. 对你经常要用的字段进行加索引, 会大大的提升查找数据(filter(), exclude(), order_by(), etc.)的速度, 毕竟O(1)或O(logn)对于O(n)相差还是很大的.</li>
+<li>使用合适的字段类型. 例如你的数据多到几亿条了, 合适的字段也会帮你节省很多的空间.</li>
+</ol>
+
+
+<br>
+
+
+<br>
+
+
+<h3>4. 理解Django中的QuerySets</h3>
+
+<p><strong>对于queryset lazy特性的说明:</strong> <br/>
+这段代码看上去对数据库进行了三次查找, 但其实只在最后一行的时候执行了数据库的操作. <br/>
+```python</p>
+
+<blockquote><blockquote><blockquote><p>q = Entry.objects.filter(headline<strong>startswith=&ldquo;What&rdquo;)
+q = q.filter(pub_date</strong>lte=datetime.date.today())
+q = q.exclude(body_text__icontains=&ldquo;food&rdquo;)
+print(q)</p></blockquote></blockquote></blockquote>
+
+<h1>ps.上边的这种多条件查询, 官方推荐这种写法:</h1>
+
+<p>Entry.objects.filter(</p>
+
+<pre><code>headline__startswith='What'
+</code></pre>
+
+<p>).exclude(</p>
+
+<pre><code>pub_date__gte=datetime.date.today()
+</code></pre>
+
+<p>).filter(</p>
+
+<pre><code>pub_date__gte=datetime(2005, 1, 30)
+</code></pre>
+
+<p>)
+```</p>
+
+<p><strong>那么问题来了</strong>, 既然queryset是lazy的, queryset<a href="https://docs.djangoproject.com/en/1.8/ref/models/querysets/#when-querysets-are-evaluated">什么时候会被evaluate呢</a>?</p>
+
+<ol>
+<li>Iteration, ie. 对Queryset进行For循环的操作.</li>
+<li><a href="https://docs.djangoproject.com/en/1.8/topics/db/queries/#limiting-querysets">slicing</a>, e.g. <code>Entry.objects.all()[:5]</code>, 获取queryset中的前五个对象, 相当于sql中的<code>LIMIT 5</code></li>
+<li>picling/caching</li>
+<li>repr/str</li>
+<li>len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )</li>
+<li>list()</li>
+<li>bool()</li>
+</ol>
+
+
+<p>以上的情况一旦发生, 就会查询数据库并生成cache(<strong>生成的cache就存在这个queryset对象之内的</strong>),  <br/>
+之后再对queryset做以上的操作就就不用再重新hit数据库进行查询了.)</p>
+
+<p><strong>举个栗子: </strong><br/>
+```python</p>
+
+<blockquote><blockquote><blockquote><p>queryset = Entry.objects.all()
+print([p.headline for p in queryset]) # Evaluate the query set.
+print([p.pub_date for p in queryset]) # Re-use the cache from the evaluation.
+```</p></blockquote></blockquote></blockquote>
+
+<p><strong>注意! 不会cache的情况:</strong> <br/>
+Specifically, this means that limiting the queryset using an array slice or an index will not populate the cache. <br/>
+意思就是说queryset[5]和queryset[:5]是不会生成cache的. 还有exists()和iterator()这样的也不会生成cache.  <br/>
+<strong>举个栗子:</strong> <br/>
+```python</p>
+
+<blockquote><blockquote><blockquote><p>queryset = Entry.objects.all()
+print queryset[5] # Queries the database
+print queryset[5] # Queries the database again</p>
+
+<p>queryset = Entry.objects.all()
+[entry for entry in queryset] # Queries the database
+print queryset[5] # Uses cache
+print queryset[5] # Uses cache
+```</p></blockquote></blockquote></blockquote>
+
+<p>最近发现<code>values</code>和<code>values_list</code>这两个方法也会重新查询数据库, 不知道是为什么.  <br/>
+TODO: 有空看一下 具体的实现原理. <br/>
+_ <br/>
+<strong>研究的结果:</strong> <br/>
+当调用values或values_list的时候, 会生成一个新的queryset with no cache.  <br/>
+也就是说, 除了上边说到的七种会产生cache的情况, 其他都会重新去数据库拿数据.  <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/disqus.png"></p>
+
+<br>
+
+
+<br>
+
+
+<h3>5. 数据库层级的优化的总结</h3>
+
+<p>官方的文档介绍了很多, 我写几点最有效的和最常用的:</p>
+
+<ul>
+<li>利用<a href="https://docs.djangoproject.com/en/1.8/topics/performance/#understanding-laziness">queryset lazy的特性</a>去优化代码, 尽可能的减少连接数据库的次数.</li>
+<li>如果查出的queryset只用一次, 可以使用iterator()去来防止占用太多的内存, e.g.<code>for star in star_set.iterator(): print(star.name)</code>.  <br/>
+感兴趣可以看看ModelIterable中重写的<code>__iter__</code>方法.</li>
+<li>尽可能把一些数据库层级的工作放到数据库, 例如使用filter/exclude, F, annotate, aggregate, etc. <br/>
+aggregate: <a href="https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet">https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet</a> <br/>
+F(): getting the database, rather than Python, to do work</li>
+<li>一次性拿出所有你要的数据, 不去取那些你不需要的数据. <br/>
+意思就是要巧用select_related(), prefetch_related() 和 values_list(), values(). <br/>
+如果不用select_related的话, 去取外键的属性就会连数据再去查找. <br/>
+如果只需要id字段的话, 用values_list(&lsquo;id&rsquo;, flat=True)也能节约很多资源.</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+```python
+class ModelA(models.Model):
+    pass
+
+class ModelB(models.Model):
+    a = ForeignKey(ModelA)
+
+ModelB.objects.select_related('a').all() # Forward ForeignKey relationship
+ModelA.objects.prefetch_related('modelb_set').all() # Reverse ForeignKey relationship
+```</div>
+
+
+<ul>
+<li>bulk(批量)地去insert update和delete数据.</li>
+<li>查找一条数据时, 尽量用有索引的字段去查询, O(1)或O(log n) 和 O(n)差别还是很大的.</li>
+<li>用<code>count()</code>代替<code>len(queryset)</code>, 用<code>exists()</code>代替<code>if queryset:</code></li>
+</ul>
+
+
+<br>
+
+
+<br>
+
+
+<h3>6. 解决性能问题的具体方法:</h3>
+
+<ul>
+<li>connection.queries: <br/>
+可以利用这两两句代码来分析你的代码的sql执行情况和花费时间:</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+```python
+from django.db import connection
+connection.queries
+>> [{'sql': 'SELECT polls_polls.id, polls_polls.question, polls_polls.pub_date FROM polls_polls',
+     'time': '0.002'}]
+
+from django.db import reset_queries
+reset_queries()
+```
+</div>
+
+
+<ul>
+<li><p><strong>django-debug-toolbar</strong>: <br/>
+一个在github上有四千多个星星的开源项目: <a href="https://github.com/dcramer/django-devserver">https://github.com/dcramer/django-devserver</a> <br/>
+很棒的一个可视化的工具, 但缺点是只能处理<code>text/html</code>类型的response, 因为是通过中间件修改返回的html代码实现的.     <br/>
+<strong>解决办法:</strong> 可以再使用这个库: <a href="https://github.com/recamshak/django-debug-panel">django-debug-panel</a>,  <br/>
+再配合链接中最后的chrome插件使用, 就可以查看所有异步请求的详细信息! <br/>
+如图: <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/IMG_3017.PNG">  <br/>
+<strong>优点:</strong></p>
+
+<ol>
+<li> 统计了总的SQL查询时间.</li>
+<li> <strong>重复查询的sql的数量, 在每条sql详细信息中显示重复的次数</strong>.</li>
+<li> <strong>执行sql的具体代码位置!!!</strong></li>
+<li> sql 语句的高亮</li>
+<li> sql 查询到的数据结果.</li>
+</ol>
+</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+配置参考:   
+```python
+#debug_toolbar settings
+if DEBUG:
+    INTERNAL_IPS = ('127.0.0.1',)
+    MIDDLEWARE_CLASSES = (
+        # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'debug_panel.middleware.DebugPanelMiddleware',
+    ) + MIDDLEWARE_CLASSES
+
+    INSTALLED_APPS += (
+        'debug_toolbar',
+        'debug_panel',
+    )
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns
+```
+</div>
+
+
+<ul>
+<li><p>django-devserver <br/>
+项目github主页: <a href="https://github.com/drinksober/django-devserver">https://github.com/drinksober/django-devserver</a> <br/>
+这个项目好久没有维护了..已经跑不起来了. 可以试试同事的修复版: <br/>
+<a href="https://github.com/drinksober/django-devserver">https://github.com/drinksober/django-devserver</a></p></li>
+<li><p><strong>line profiler:</strong>  <br/>
+其实最好用的还是用line profiler去找程序的瓶颈:  <br/>
+效果如图所示, 显示了一个方法内哪行代码运行的时间最久:  <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/profile_liner.png">  <br/>
+使用方法(从同事黄俊那偷来的代码):</p></li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+```python
+class Line_Profiler(object):
+    """put @profile on ur functions"""
+    def __init__(self, follow=None):
+        self.follow = follow or []
+
+    def __call__(self, func):
+        def profiled_func(*args, **kwargs):
+            line_profiler = LineProfiler()
+            line_profiler.add_function(func)
+            map(lambda x: line_profiler.add_function(x), self.follow)
+            line_profiler.enable_by_count()
+            result = func(*args, **kwargs)
+
+            line_profiler.disable_by_count()
+            line_profiler.print_stats(stripzeros=True)
+            return result
+
+        return functools.wraps(func)(profiled_func)
+
+__builtin__.profile = Line_Profiler()
+```
+</div>
+
+
+<br>
+
+
+<br>
+
+
+<h3>7.举个栗子:</h3>
+
+<p>最近重新写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用上文说的一些知识, 把执行时间从100多ms降到了20ms.  <br/>
+```python
+def users(self, add_self=False, add_share=True, select_id=False, **kwargs):</p>
+
+<pre><code>"""Return 当前用户能看到的所有用户, 返回queryset, 以便做性能优化:
+
+参数:
+    1. add_self:  是否添加当前用户(self).
+    2. add_share: 是否添加因为共享(account/campaign)而可见的用户. e.g. u2共享a1给u1, u1.users(add_share=True)就能看到u2
+    3. select_id: 是否只取id字段
+逻辑:
+    1. add_share=False 时:
+        +----------+-------------------------------------+
+        | Type     | 可见的用户集合                        |
+        +----------+-------------------------------------+
+        | Root     | 所有 [Advanced, Member] - blacklist |
+        +----------+-------------------------------------+
+        | Admin    | 同组 [Advanced, Member] - blacklist |
+        +----------+-------------------------------------+
+        | other    | []                                  |
+        +----------+-------------------------------------+
+    2. add_share=True 时:
+        利用当前用户能看到的所有accounts, 获取创建它们的用户(permission=2)
+"""
+# 1. users_shared
+if add_share:
+    # 共享给该用户的account的主人们
+    aps = AccountPermission.objects.filter(
+        account__status='ACTIVE', permission='2', account__in=self.accounts()
+    ).select_related('share_user').values_list('share_user__id', flat=True)
+    users_shared = User.objects.filter(id__in=aps)
+else:
+    users_shared = User.objects.none()
+
+# 2. users
+if self.score &lt;= 2:
+    query_dict = dict(role__in=['ADVANCED', 'MEMBER'])
+    # Admin
+    self.score == 2 and query_dict.update(usergroup=self.usergroup)
+    users = User.objects.filter(**query_dict).exclude(id__in=self.blacklist)
+else:
+    users = User.objects.filter(id=self.id)
+
+users = users | users_shared
+
+# 控制是否添加本身, 主要是user1.has_permission(user1)的时候用到
+if not add_self:
+    users = users.exclude(id=self.id)
+else:
+    users |= User.objects.filter(id=self.id)
+
+# 过滤停用的用户:
+users = users.filter(is_active=True, usergroup__status='ACTIVE')
+users = users.filter(**kwargs)
+
+# 大部分情况下只需要id. 用户列表很多时, 可以大幅度提高性能.
+if select_id:
+    users = users.values_list('id', flat=True)
+
+return set(users)
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Django ORM的多对多关系 (每个关系有附加的属性)]]></title>
+    <link href="http://changchen.me/blog/20170405/many-to-many-relation-with-extra-field-django/"/>
+    <updated>2017-04-05T22:44:02+08:00</updated>
+    <id>http://changchen.me/blog/20170405/many-to-many-relation-with-extra-field-django</id>
+    <content type="html"><![CDATA[<blockquote><p>最近写公司的业务代码, 碰到这么一个问题:    <br/>
+<strong>一个User对应多个Account, 而每个Account又可以分享给多个user</strong>, 典型的多对多的关系.  <br/>
+但问题在于每个关系, 都有一个permissionsharing的属性: 0: 只读 / 1: 读写 / 2: 自身创建.  <br/>
+晚上我尝试着用django的orm来实现这个需求.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h3>Model的定义:</h3>
+
+<p>```python
+from django.db import models</p>
+
+<p>from django.db import models</p>
+
+<p>class Account(models.Model):</p>
+
+<pre><code>name = models.CharField(max_length=128)
+
+def __str__(self):
+    return self.name
+</code></pre>
+
+<p>class User(models.Model):</p>
+
+<pre><code>name = models.CharField(max_length=128)
+accounts = models.ManyToManyField(Account, through='PermissionSharing')
+
+def __str__(self):
+    return self.name
+</code></pre>
+
+<p>class PermissionSharing(models.Model):</p>
+
+<pre><code>account = models.ForeignKey(Account, on_delete=models.CASCADE)
+user = models.ForeignKey(User, on_delete=models.CASCADE)
+permission = models.SmallIntegerField()
+</code></pre>
+
+<p>```</p>
+
+<br>
+
+
+<h3>多对多关系的创建:</h3>
+
+<p><strong>user &mdash;> account[permission]</strong> <br/>
+u1 &mdash;> a1[1], a2[2] <br/>
+u2 &mdash;> a1[2], a3[2] <br/>
+```python
+import os
+os.environ.setdefault(&lsquo;DJANGO_SETTINGS_MODULE&rsquo;, &lsquo;manytomany.settings&rsquo;)</p>
+
+<p>import django
+django.setup()</p>
+
+<p>from a1.models import Account, User, PermissionSharing</p>
+
+<p>a1 = Account.objects.create(name=&lsquo;a1&rsquo;)
+a2 = Account.objects.create(name=&lsquo;a2&rsquo;)
+a3 = Account.objects.create(name=&lsquo;a3&rsquo;)</p>
+
+<p>u1 = User.objects.create(name=&lsquo;u1&rsquo;)
+u2 = User.objects.create(name=&lsquo;u2&rsquo;)</p>
+
+<p>PermissionSharing.objects.create(user=u1, account=a1, permission=1)
+PermissionSharing.objects.create(user=u1, account=a2, permission=2)
+PermissionSharing.objects.create(user=u2, account=a1, permission=2)
+PermissionSharing.objects.create(user=u2, account=a3, permission=2)
+```</p>
+
+<br>
+
+
+<h3>相互获取对方set的方法和filter方法:</h3>
+
+<p>```python</p>
+
+<h1>相互获取对应的set</h1>
+
+<p>print(u1.accounts.all())
+print(a1.user_set.all())</p>
+
+<h1>filter</h1>
+
+<p>print(User.objects.filter(accounts<strong>name=&lsquo;a1&rsquo;, permissionsharing</strong>permission=1))
+print(Account.objects.filter(user=u1, permissionsharing__permission=1))</p>
+
+<h1>获取relation的属性(extra field: permission)</h1>
+
+<h1>1)</h1>
+
+<p>ps = PermissionSharing.objects.get(user=u1, account=a1)
+print(ps.permission)</p>
+
+<h1>2)</h1>
+
+<p>ps = a1.permissionsharing_set.get(user=u1)
+ps = u1.permissionsharing_set.get(account=a1)
+print(ps.permission)</p>
+
+<h1>clear</h1>
+
+<p>u1.accounts.clear()</p>
+
+<p>Account.objects.all().delete()
+User.objects.all().delete()
+PermissionSharing.objects.all().delete()
+```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Http协议的笔记 (待更新)]]></title>
+    <link href="http://changchen.me/blog/20170320/http-protocal/"/>
+    <updated>2017-03-20T21:03:18+08:00</updated>
+    <id>http://changchen.me/blog/20170320/http-protocal</id>
+    <content type="html"><![CDATA[<blockquote><p>后端工程师面试时必问的一个问题就是<strong>Http协议</strong>, 例如 http是建立在 TCP/IP 协议之上的应用层规范, Request和Response的结构, Response状态码的类型.  <br/>
+这些基础知识, 其实在实际的工作中其实还是很有用处的, 有利于自己理解很多<strong>隐藏的细节</strong>.   <br/>
+这篇日志记录了最近看到的一些不错的资料, 以后可能会持续更新~~</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>Http request:</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" alt="Request" /></p>
+
+<h2>Http response:</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png" alt="Response" /></p>
+
+<h2>Http response code</h2>
+
+<p>这段真的是返回值的精华总结:  <br/>
+<strong>1xx: hold on <br/>
+2xx: here you go <br/>
+3xx: go away <br/>
+4xx: you fucked up <br/>
+5xx: I fucked up   </strong></p>
+
+<p>再下边是具体的常用返回值:</p>
+
+<h3>1xx (Informational): Request received, server is continuing the process.</h3>
+
+<p><strong>100</strong> Continue: The server received the request and in the process of giving the response.</p>
+
+<h3>2xx (Success): The request was successfully received, understood, accepted and serviced.</h3>
+
+<p><strong>200</strong> OK: The request is fulfilled.</p>
+
+<h3>3xx (Redirection): Further action must be taken in order to complete the request.</h3>
+
+<p><strong>301</strong> Move Permanently: The resource requested for has been permanently moved to a new location. The URL of the new location is given in the response header called Location. The client should issue a new request to the new location. Application should update all references to this new location. <br/>
+<strong>302</strong> Found &amp; Redirect (or Move Temporarily): Same as 301, but the new location is temporarily in nature. The client should issue a new request, but applications need not update the references. <br/>
+<strong>304</strong> Not Modified: In response to the If-Modified-Since conditional GET request, the server notifies that the resource requested has not been modified.</p>
+
+<h3>4xx (Client Error): The request contains bad syntax or cannot be understood.</h3>
+
+<p><strong>400</strong> Bad Request: Server could not interpret or understand the request, probably syntax error in the request message. <br/>
+<strong>401</strong> Authentication Required: The requested resource is protected, and require client’s credential (username/password). The client should re-submit the request with his credential (username/password). <br/>
+<strong>403</strong> Forbidden: Server refuses to supply the resource, regardless of identity of client. <br/>
+<strong>404</strong> Not Found: The requested resource cannot be found in the server. <br/>
+<strong>405</strong> Method Not Allowed: The request method used, e.g., POST, PUT, DELETE, is a valid method. However, the server does not allow that method for the resource requested. <br/>
+<strong>408</strong> Request Timeout: <br/>
+<strong>414</strong> Request URI too Large:</p>
+
+<h3>5xx (Server Error): The server failed to fulfill an apparently valid request.</h3>
+
+<p><strong>500</strong> Internal Server Error: Server is confused, often caused by an error in the server-side program responding to the request. <br/>
+<strong>501</strong> Method Not Implemented: The request method used is invalid (could be caused by a typing error, e.g., &ldquo;GET&rdquo; misspell as &ldquo;Get&rdquo;). <br/>
+<strong>502</strong> Bad Gateway: Proxy or Gateway indicates that it receives a bad response from the upstream server. <br/>
+<strong>503</strong> Service Unavailable: Server cannot response due to overloading or maintenance. The client can try again later. <br/>
+<strong>504</strong> Gateway Timeout: Proxy or Gateway indicates that it receives a timeout from an upstream server.</p>
+
+<h2>Https</h2>
+
+<h3>非对称加密</h3>
+
+<p>为了防止密钥在传输的过程中泄露, 就发明了这种只传输公钥的加密算法.   <br/>
+每个人都有一个公钥+密钥(public and private key).   <br/>
+当我们在本地向github请求信息的时候:</p>
+
+<ol>
+<li>Github用我们<strong>上传的公钥</strong>对需要拉取的信息做加密处理.</li>
+<li>这段<strong>加密信息</strong>, 就只有用到我们自己<strong>本地私钥</strong>才能解密.</li>
+</ol>
+
+
+<p>大致就是这个意思, 要是说的不对或者不太懂记得给我留言哦~~</p>
+]]></content>
+  </entry>
+  
+</feed>

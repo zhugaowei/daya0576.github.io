@@ -1,0 +1,607 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>记录moobox的点滴(技术篇) - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="记录moobox的点滴(技术篇) 在moobox工作了两个月，用这篇日志记录这段日子的技术点滴。 ps.虽然一直有这个计划，平时也会作笔记，但是到头来还是记得不太全， 就粗略的写一下好了。 Mysql 公司用的数据库是mysql，可惜自己对数据库的知识忘得差不多了， &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20150926/moobox-knowledge/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">记录moobox的点滴(技术篇)</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>在moobox工作了两个月，用这篇日志记录这段日子的技术点滴。  <br/>
+ps.虽然一直有这个计划，平时也会作笔记，但是到头来还是记得不太全， <br/>
+就粗略的写一下好了。</p></blockquote>
+
+<!--more-->
+
+
+<h2>Mysql</h2>
+
+<p>公司用的数据库是mysql，可惜自己对数据库的知识忘得差不多了，下面记录一些后来回忆起的sql用法。<br/>
+有个软件叫做 MySQL Workbanch，还是挺方便的。       <br/>
+1.增删改查就不说了，还是要熟练，总不能写一次去看一下语法吧。  <br/>
+2.desc也是必备，以前上学的时候老是记不清，但工作中还是desc用的比较多，asc是默认的升序。 <br/>
+3.left和inner join，关联多表的时候的必备，还是要保持清醒。  <br/>
+4.group by后边可以加限制条件，叫做group by having (&hellip;), 学数据库的时候学过，小小鸟提起的时候才如梦初醒 <br/>
+group by的时候可以根据两个条件进行group by， 例如：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="o">//</span><span class="err">获取每个地推人员的每天数据</span>
+</span><span class='line'><span class="o">//</span><span class="err">计算录入</span>
+</span><span class='line'><span class="k">select</span> <span class="nb">date</span><span class="p">(</span><span class="n">from_unixtime</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">CreatedDate</span><span class="o">+</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">8</span><span class="p">)),</span> <span class="k">count</span><span class="p">(</span><span class="k">distinct</span> <span class="n">a</span><span class="p">.</span><span class="n">UID</span><span class="p">),</span><span class="n">b</span><span class="p">.</span><span class="n">CreatedBy</span> <span class="k">from</span> <span class="n">ParkingRawData</span> <span class="n">a</span>
+</span><span class='line'><span class="k">inner</span> <span class="k">join</span> <span class="n">Customer</span> <span class="n">b</span> <span class="k">on</span> <span class="n">a</span><span class="p">.</span><span class="n">UID</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">ParkingUID</span> <span class="k">where</span> <span class="k">Source</span> <span class="o">=</span> <span class="s1">&#39;tuhu&#39;</span> <span class="k">and</span> <span class="n">b</span><span class="p">.</span><span class="n">CreatedBy</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span>
+</span><span class='line'><span class="k">group</span> <span class="k">by</span> <span class="nb">date</span><span class="p">(</span><span class="n">from_unixtime</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">CreatedDate</span><span class="o">+</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">8</span><span class="p">)),</span> <span class="n">b</span><span class="p">.</span><span class="n">CreatedBy</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.insert的妙用：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ParkingRawDataHistory</span><span class="p">(</span><span class="n">RawID</span><span class="p">,</span><span class="n">UID</span><span class="p">,</span><span class="n">Name</span><span class="p">)</span>
+</span><span class='line'><span class="k">select</span> <span class="n">ID</span><span class="p">,</span><span class="n">UID</span><span class="p">,</span><span class="n">Name</span> <span class="k">from</span> <span class="n">ParkingRawData</span>
+</span><span class='line'><span class="k">where</span> <span class="n">UID</span> <span class="o">=</span>  <span class="s1">&#39;e4d1701c-4185-11e5-af26-3c15c2bca022&#39;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.sql 时间戳</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">FROM_UNIXTIME</span><span class="p">(</span> <span class="mi">1440015345</span><span class="p">,</span> <span class="s1">&#39;%Y年%m月%d日&#39;</span> <span class="p">)</span>
+</span><span class='line'><span class="k">SELECT</span> <span class="n">UNIX_TIMESTAMP</span><span class="p">()</span>
+</span><span class='line'><span class="k">SELECT</span> <span class="n">UNIX_TIMESTAMP</span><span class="p">(</span><span class="k">Current_TimeStamp</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.模糊查找</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">ParkingRawData</span> <span class="k">where</span> <span class="n">name</span> <span class="k">like</span> <span class="ss">&quot;%虹景公寓酒店%&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>总结：学好sql语句也是很重要的，一句好的sql语句能很好的简化代码的复杂度，   <br/>
+并且提高接口的效率，只恨自己数据库忘得太快。</p>
+
+<br> 
+
+
+<h2>Python</h2>
+
+<p>1.每次在django中添加接口，我都要检查的问题：     <br/>
+* &ndash; &ndash; -数据库中api和page的权限。 <br/>
+* &ndash; setting中数据库变量的配置 和 接口url的配置是否正确。 <br/>
+* WebInterfaceBase修改跨越问题（后台和前端没有放在一个项目里）。 <br/>
+* 测试接口时json格式是否正确（可以去网上好多在线检测的网站）。 <br/>
+2.python list去除重复元素</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">all_workers</span><span class="p">))</span>
+</span><span class='line'><span class="p">{}</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">workers</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.django端口占用的问题 <br/>
+查看端口占用</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">I</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Daya</span><span class="o">&gt;</span><span class="n">netstat</span> <span class="o">-</span><span class="n">aon</span><span class="o">|</span><span class="n">findstr</span> <span class="s">&quot;8000&quot;</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">8000</span>           <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">0</span>              <span class="n">LISTENING</span>       <span class="mi">5664</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49640</span>        <span class="n">ESTABLISHED</span>     <span class="mi">5664</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49851</span>        <span class="n">ESTABLISHED</span>     <span class="mi">5664</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49852</span>        <span class="n">ESTABLISHED</span>     <span class="mi">5664</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49640</span>        <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="n">ESTABLISHED</span>     <span class="mi">3716</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49851</span>        <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="n">ESTABLISHED</span>     <span class="mi">3716</span>
+</span><span class='line'>  <span class="n">TCP</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">49852</span>        <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">8000</span>         <span class="n">ESTABLISHED</span>     <span class="mi">3716</span>
+</span><span class='line'><span class="n">I</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Daya</span><span class="o">&gt;</span><span class="n">tasklist</span><span class="o">|</span><span class="n">findstr</span> <span class="s">&quot;5664&quot;</span>
+</span><span class='line'><span class="n">pycharm</span><span class="o">.</span><span class="n">exe</span>                   <span class="mi">5664</span> <span class="n">Console</span>                    <span class="mi">1</span>    <span class="mi">372</span><span class="p">,</span><span class="mi">204</span> <span class="n">K</span>
+</span><span class='line'><span class="n">I</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Daya</span><span class="o">&gt;</span><span class="n">tasklist</span><span class="o">|</span><span class="n">findstr</span> <span class="s">&quot;3716&quot;</span>
+</span><span class='line'><span class="n">chrome</span><span class="o">.</span><span class="n">exe</span>                    <span class="mi">3716</span> <span class="n">Console</span>                    <span class="mi">1</span>    <span class="mi">196</span><span class="p">,</span><span class="mi">444</span> <span class="n">K</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.遇到过一个问题就是django的问题就是明明有这个文件夹，却报错说找不到。  <br/>
+因为这个文件夹里没有init的空文件，django是通过URL和这个标示来找的。 <br/>
+5.时间戳的一些操作</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># 时间的转换，python的包都很完善了。</span>
+</span><span class='line'><span class="k">print</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="s">&quot;20140903131540&quot;</span><span class="p">,</span> <span class="s">&#39;%Y%m</span><span class="si">%d</span><span class="s">%H%M%S&#39;</span><span class="p">)))</span>
+</span><span class='line'><span class="c"># 时间戳，统一0时区的时间戳。</span>
+</span><span class='line'><span class="n">vtimestamp</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcnow</span><span class="p">()</span><span class="o">.</span><span class="n">timetuple</span><span class="p">()))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.后来加的分页操作，注意limit后边两个参数的意义。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_count</span><span class="p">)</span>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span><span class='line'><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">pagecount</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">pagesize</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">pagecount</span> <span class="o">=</span> <span class="n">pagecount</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">start</span> <span class="o">=</span> <span class="p">(</span><span class="n">pagenumber</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">pagesize</span>
+</span><span class='line'><span class="n">sql</span> <span class="o">+=</span> <span class="s">&quot; limit </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">pagesize</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>先说这这些吧，其实还有好多，不细说了。  <br/>
+<em>说一点感悟吧，写代码就是生活中做事一样，一个好的计划是最重要的， 每一步做什么理清楚后，</em>   <br/>
+<em>写起代码来就事半功倍了，所以不要埋头苦写，做点草稿，有好的规划才行。</em></p>
+
+<h2>JS+HTML5</h2>
+
+<p>做后台的话，有时候写完接口，还要迫不得已要把前台的东西都包了、 <br/>
+但说实话，之前对js真的是完全没有实战过，所以写起来还是很吃力。  <br/>
+有力发不出的感觉，总是被一些小错误困扰很久，把一些简单的问题搞复杂。  <br/>
+记录一些前端方面的新知识吧。  <br/>
+1.自适应布局：<a href="http://nec.netease.com/library/101023">http://nec.netease.com/library/101023</a> <br/>
+之前大一学过css布局，但现在都是html5了还要手机适配，原来的样式已经用不了了。  <br/>
+上面这个网址还不错，有一些自适应的例子，但感觉还是好复杂，应该有更简单的解决方法吧。  <br/>
+2.jquery的show()和hide()其实就是改变dispay:none
+3.设置a标签的超链接</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>//以前的超链接
+</span><span class='line'><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+</span><span class='line'>//现在的写法，防止出错。
+</span><span class='line'><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;javascript:;&quot;</span><span class="nt">&gt;&lt;/a&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>      <br/>
+4.确认按钮   弹出是否提交？</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;确认信息无误？&quot;</span><span class="p">))</span> <span class="p">{}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.动画  旋转</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">transform</span><span class="nd">:rotate</span><span class="o">(</span><span class="nt">90deg</span><span class="o">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">transform</span><span class="nd">:rotate</span><span class="o">(</span><span class="nt">0deg</span><span class="o">);</span>
+</span><span class='line'><span class="nt">transition</span><span class="o">:</span> <span class="nt">transform</span> <span class="nt">0</span><span class="nc">.3s</span><span class="o">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.滚动条的自动定位</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.div-fixed-height&#39;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">scrollTop</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#reportdetail&#39;</span><span class="p">).</span><span class="nx">height</span><span class="p">()},</span> <span class="mi">300</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>7.遍历所有td</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#nearparkingscontent&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;:checkbox:checked&quot;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">7</span><span class="p">).</span><span class="nx">text</span><span class="p">();</span>
+</span><span class='line'>  <span class="nx">parking_uids</span> <span class="o">+=</span> <span class="nx">val</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>8.js str去除最后一位</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">type</span><span class="p">.</span><span class="nx">parkingtype</span> <span class="o">=</span> <span class="nx">parkingtypestr</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">parkingtypestr</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>9.checkbox 的onchange事件</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">alertMerge</span><span class="p">(</span><span class="nx">check1</span><span class="p">){</span>
+</span><span class='line'><span class="k">if</span><span class="p">(</span><span class="nx">check1</span><span class="p">.</span><span class="nx">checked</span><span class="o">==</span><span class="kc">true</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;确认合并此停车场？&quot;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">//</span>
+</span><span class='line'>  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span><span class='line'>      <span class="nx">check1</span><span class="p">.</span><span class="nx">checked</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+</span><span class='line'>      <span class="c1">//check1.attr(&quot;checked&quot;, &quot;checked&quot;);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>10.jquery   移除样式。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.syzx &gt; span:first&quot;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+<em>总结</em>：js不会的多，记的笔记也多点，但总的来说，个人觉得js是一个很灵活的语言，  <br/>
+有时间还是要多掌握一些基础的特性，才能写出一些精炼高效的代码。</p>
+
+<h2>参与的所有项目大合照</h2>
+
+<p><img class="lazy" href="javascript:;" data-original="/images/blog\150923_moobox/sourcetree.png" >  <br/>
+从上往下简单介绍一下。  <br/>
+1.</p>
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20150926/moobox-knowledge"
+            data-title="记录moobox的点滴(技术篇)"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20150926/moobox-knowledge/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20151005/falsk-initial/" style="margin-right:20px ;"  title="Next Post: flask安装配置遇到的问题">&laquo; flask安装配置遇到的问题  </a>
+      
+      
+    	<a href="/blog/20150923/moobox-recode/" style="" title="Previous Post: moobox_recode(回忆篇)"> moobox_recode(回忆篇)  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20150926/moobox-knowledge/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

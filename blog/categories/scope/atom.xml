@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: scope | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/scope/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Python - Note of Variable Scope]]></title>
+    <link href="http://changchen.me/blog/20170220/python-scope/"/>
+    <updated>2017-02-20T09:34:57+08:00</updated>
+    <id>http://changchen.me/blog/20170220/python-scope</id>
+    <content type="html"><![CDATA[<blockquote><p>Watched an awesome video about python scope: <br>
+<a href="https://www.youtube.com/watch?v=QVdf0LgmICw">https://www.youtube.com/watch?v=QVdf0LgmICw</a></p></blockquote>
+
+<!--more-->
+
+
+<br>   
+
+
+<p>My clear summery of the video: <br/>
+`&ldquo;python
+&rdquo;&lsquo; LEGB:
+Local, Enclosing, Global, Built-in
+&rsquo;&lsquo;&rsquo;</p>
+
+<p>&lsquo;&rsquo;&lsquo; Build-in variables &rsquo;&lsquo;&rsquo;</p>
+
+<h1>import builtins</h1>
+
+<h1>print(dir(builtins))</h1>
+
+<p>x = &lsquo;global x&rsquo;</p>
+
+<p>def outer():</p>
+
+<pre><code>x = 'outer x'
+
+def inner():
+    x = 'inner x'
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

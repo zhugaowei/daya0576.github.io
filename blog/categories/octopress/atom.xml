@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress,jekyll多说分享插件设置]]></title>
+    <link href="http://changchen.me/blog/20151016/duoshuo-sharing/"/>
+    <updated>2015-10-16T19:56:06+08:00</updated>
+    <id>http://changchen.me/blog/20151016/duoshuo-sharing</id>
+    <content type="html"><![CDATA[<blockquote><p>偶然看到多说也推出了自家的分享插件，原来我用的是百度的分享插件，但它自带了一个对网站中所有图片鼠标划过时显示分享的效果，感觉有些鸡肋。换用多说的分享插件试试，感觉还不错。           <br/>
+官方链接：<a href="http://dev.duoshuo.com/threads/549a781ff07c81f20daba426">“期待已久分享插件上线”</a></p></blockquote>
+
+<!--more-->
+
+
+<br> 
+
+
+<p>代码(注释的是原来百度的分享代码):  <br/>
+还是直接截图好了，不然一些参数直接显示了。  <br/>
+<img class="lazy" data-original="/images/blog/151014_diary/bsharing.png"></p>
+
+<p><i class="fa fa-bug"></i><strong>其中碰到一个困难：</strong> <br/>
+就是在配置data-url的时候需要的是完整的页面url  <br/>
+原来是想拼接一下字符串，但感觉有些麻烦， <br/>
+后来看到了这个回答：<a href="http://stackoverflow.com/questions/10100565/how-to-get-absolute-path-of-jekyll-bootstrap-page">http://stackoverflow.com/questions/10100565/how-to-get-absolute-path-of-jekyll-bootstrap-page</a>  <br/>
+于是就可以这么写：<img class="lazy" data-original="/images/blog/151014_diary/bsharing_part.png">（site开头的是_config.yml中自定义配置的参数）</p>
+
+<br>
+
+
+<p><i class="fa fa-hand-spock-o"></i>附jekyll中的参数说明：<a href="http://jekyllrb.com/docs/variables/">http://jekyllrb.com/docs/variables/</a></p>
+
+<br><br>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[my web log]]></title>
+    <link href="http://changchen.me/blog/20140615/custom-web-log/"/>
+    <updated>2014-06-15T00:50:08+08:00</updated>
+    <id>http://changchen.me/blog/20140615/custom-web-log</id>
+    <content type="html"><![CDATA[<blockquote><p>修改网页的log ~</p></blockquote>
+
+<br></br>
+
+
+<p>为了避免各种不可用的说明，先说明一下，<mark style="color: #9d261d;"> 本博客只支持 Google Chrome, Mozilla Firefox, Apple Safari,Opera等现代浏览器</mark>。</p>
+
+
+
+
+<!--more-->
+
+
+<blockquote><p><strong>long long ago</strong> <br/>
+<em>在<a href="http://blog.alex-oberhauser.com/">http://blog.alex-oberhauser.com/</a>  中学到了网页中间的那一条bar  很好看 </em><br/>
+——  <br/>
+*full-article （read on）那个按钮的修改 也挺简单就是用了渐变和圆边框两个属性。   *</p></blockquote>
+
+<br>
+
+
+<blockquote><p><strong>14/06/14 </strong><br/>
+<em>增加前一篇后一篇的样式</em> <br/>
+——    <br/>
+<em>增加分享功能（虽然也没有人会分享）</em></p></blockquote>
+
+<br>
+
+
+<blockquote><p><strong>14/06/16</strong> <br/>
+<em>优化打开速度</em> <br/>
+——    <br/>
+都是在自己电脑上打开网页   <br/>
+已经有了缓存 所以特别快就打开了。 <br/>
+有一天在机房打开网站 半天才打开  <br/>
+一看原来是jquery和google font 的文件没有响应 <br/>
+都是request google网址中的文件   404了（应该是万恶的qiang吧）<br/>
+——    <br/>
+写了个搜索小程序查看哪里调用这两个文件 <br/>
+——    <br/>
+在head中 删掉了 google font 但是删掉jquery的话头像就出不来了<br/>
+就调用了本地的jquery1.91
+ok了  <br/>
+搜索目录下所有文件内容的小代码</p></blockquote>
+
+<p>``` python
+import os
+path = &ldquo;F:\git\octopress\source&rdquo;</p>
+
+<p>def search_files(path):</p>
+
+<pre><code>all_files = []
+for root, dirs, files in os.walk( path ):
+    for file in files:
+        all_files.append(root + "/" + file)
+
+return all_files        
+</code></pre>
+
+<p>all_files = search_files(path)</p>
+
+<p>def read_lines_from_file(filename):</p>
+
+<pre><code>file_object = open(filename)
+lines = 0
+try:
+    lines = file_object.readlines()
+finally:
+    file_object.close()
+return lines
+</code></pre>
+
+<p>for file in all_files:</p>
+
+<pre><code>lines = read_lines_from_file(file)
+if len(lines) &gt; 0:
+    for line in lines:
+        if "min.map" in line:
+            print file
+            break
+</code></pre>
+
+<p>```</p>
+
+<blockquote><p><strong>14/07/20</strong> <br/>
+<em>用html5加入音乐</em> <br/>
+——    <br/>
+bugs <br/>
+游览器兼容 <br/>
+页面跳转</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[octopress测试网站的小技巧【原创】]]></title>
+    <link href="http://changchen.me/blog/20140407/octopress-tips-test-web/"/>
+    <updated>2014-04-07T20:21:46+08:00</updated>
+    <id>http://changchen.me/blog/20140407/octopress-tips-test-web</id>
+    <content type="html"><![CDATA[<h3>octopress预览网站 的小技巧</h3>
+
+<p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
+
+<p>突然有一天想到为什么不开两个控制台。 <br/>
+一个一直"preview" 另一个用来"generate"</p>
+
+<p>然后又突然想到，<code>rake generate</code>如果不用是不是也可以。  <br/>
+结果真的只要保存了， 网页上就能直接反馈出来这样就真的方便多了，哈哈</p>
+
+<p><code>rake generate</code>：</p>
+
+<p>作者 <a href="http://weibo.com/2478163907">@daya0576</a>   <br/>
+于 2014 年 04月 07日  <br/>
+天津</p>
+]]></content>
+  </entry>
+  
+</feed>

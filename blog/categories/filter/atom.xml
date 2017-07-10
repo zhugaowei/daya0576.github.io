@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: filter | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/filter/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)]]></title>
+    <link href="http://changchen.me/blog/20170503/django-filter-trick/"/>
+    <updated>2017-05-03T23:40:57+08:00</updated>
+    <id>http://changchen.me/blog/20170503/django-filter-trick</id>
+    <content type="html"><![CDATA[<blockquote><p>最近在看django的官方文档的时候, 看到filter()需要注意的地方: <br/>
+<code>Blog.objects.filter(cond1, cond2)</code> <br/>
+和 <br/>
+<code>Blog.objects.filter(cond1).filter(cond2))</code>的结果竟然不同.  <br/>
+仔细看了许久才明白其中的差异, 特写下这篇日志来分享一下.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<p>关于这个topic的官方的文档: <a href="https://docs.djangoproject.com/en/1.11/topics/db/queries/#spanning-multi-valued-relationships">https://docs.djangoproject.com/en/1.11/topics/db/queries/#spanning-multi-valued-relationships</a>
+我简化了一下, 让它变得更加简单明了: <br/>
+笔记在线连接: <a href="http://note.youdao.com/noteshare?id=6df5d321962c781353aa3a87dea7c215">http://note.youdao.com/noteshare?id=6df5d321962c781353aa3a87dea7c215</a></p>
+
+<br>
+
+
+<h3>Model:</h3>
+
+<p>```python
+from django.db import models</p>
+
+<p>class Blog(models.Model):</p>
+
+<pre><code>name = models.CharField(max_length=100)
+</code></pre>
+
+<p>class Entry(models.Model):</p>
+
+<pre><code>blog = models.ForeignKey(Blog)
+headline = models.CharField(max_length=255)
+pub_year = models.IntegerField()
+</code></pre>
+
+<p>```</p>
+
+<br>
+
+
+<h3>populate的一些数据:</h3>
+
+<p>Entry: <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/1.png"></p>
+
+<p>Blog:  <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/2.png"></p>
+
+<br>
+
+
+<h3>执行结构:</h3>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/3.png"></p>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170503_django_filter/4.png"></p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>

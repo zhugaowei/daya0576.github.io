@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dynamic programming | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/dynamic-programming/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fibonacci number(Recursive, DP and Decorator)]]></title>
+    <link href="http://changchen.me/blog/20160915/dynamic-programming/"/>
+    <updated>2016-09-15T08:52:49+08:00</updated>
+    <id>http://changchen.me/blog/20160915/dynamic-programming</id>
+    <content type="html"><![CDATA[<blockquote><p>I found a <a href="https://www.youtube.com/watch?v=OQ5jsbhAv_M">fatastic video</a> about Dynamic Programming, it can be used to solve Fibonacci number problem efficiently. Decorater can also be used to make code elegent ^o^</p></blockquote>
+
+<!--more-->
+
+
+
+
+<br>
+
+
+<h1>Fibonacci number: 1, 1, 2, 3, 5, 8, 13&hellip;</h1>
+
+<br>
+
+
+<h3>1. Original recursive implementation</h3>
+
+<p>``` python
+def fib(n):</p>
+
+<pre><code>if n&lt;=2: f = 1
+else: f = fib(n-1) + fib(n-2)
+
+return f
+</code></pre>
+
+<p>```</p>
+
+<br><br>
+
+
+<h3>2. Improvement: memoization</h3>
+
+<ul>
+<li>Reuse solutions to <strong>sub-problems</strong> to solve the problem</li>
+<li>So time = #sub-problems * O(sub-problem)   <br/>
+``` python
+
+<h1>!/usr/bin/python3</h1>
+
+<p>from collections import defaultdict
+import sys</p></li>
+</ul>
+
+
+<p>n = int(sys.argv[1])
+mem = defaultdict(lambda: 0)</p>
+
+<p>def fib(n):</p>
+
+<pre><code>global mem
+# print(n)
+if mem[n]:
+    return mem[n]
+
+if n&lt;=2: f = 1
+else: f = fib(n-1) + fib(n-2)
+
+mem[n] = f
+print(f)
+return f
+</code></pre>
+
+<p>def fib_con(n):</p>
+
+<pre><code>mem = {}
+for k in range(1, 1+n):
+    if k&lt;=2:
+        mem[k] = 1
+    else:
+        mem[k] = mem[k-1] + mem[k-2]
+
+    print(mem[k])
+return mem[n]
+</code></pre>
+
+<p>fib(n)
+fib_con(n)</p>
+
+<p><code>``
+**Video link**: [https://www.youtube.com/watch?v=OQ5jsbhAv_M](https://www.youtube.com/watch?v=OQ5jsbhAv_M)    
+</code>DP = recursion + memorization + guessing`</p>
+
+<br><br>
+
+
+<h3>3. Problem of the improvement above:</h3>
+
+<p>The disadvantage of this method is that the clarity and the beauty of the original recursive implementation is lost.   <br/>
+So we use a helper function to handle the fib() function, the idea of .  <br/>
+``` python
+def memoize(f):</p>
+
+<pre><code>memo = {}
+
+def helper(x):
+    if x not in memo:
+        memo[x] = f(x)
+    return memo[x]
+
+return helper
+</code></pre>
+
+<p>def fib(n):</p>
+
+<pre><code>if n == 0:
+    return 0
+elif n == 1:
+    return 1
+else:
+    return fib(n - 1) + fib(n - 2)
+</code></pre>
+
+<p>fib = memoize(fib)
+print(fib(40))
+<code>
+That is Decorator: `@memoize`      
+U can check this website for more information:    
+[http://www.python-course.eu/python3_memoization.php](http://www.python-course.eu/python3_memoization.php)   
+</code> python
+@memoize
+def fib(n):</p>
+
+<pre><code>...
+</code></pre>
+
+<p>print(fib(40))
+```</p>
+
+<br>
+
+
+<h3>4. Generator version</h3>
+
+<p>```python
+def fib(n):</p>
+
+<pre><code>a, b = 0, 1
+for _ in range(n):
+    yield a
+    a, b = b, a+b
+</code></pre>
+
+<p>for i in fib(10):</p>
+
+<pre><code>print(i)
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

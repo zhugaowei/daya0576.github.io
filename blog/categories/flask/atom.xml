@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: flask | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/flask/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[flask安装配置遇到的问题]]></title>
+    <link href="http://changchen.me/blog/20151005/falsk-initial/"/>
+    <updated>2015-10-05T13:34:24+08:00</updated>
+    <id>http://changchen.me/blog/20151005/falsk-initial</id>
+    <content type="html"><![CDATA[<blockquote><p>最近开始看一看flask开发，结果出师不利，一开始就碰到了问题。  <br/>
+在运行 virtualenv venv 创建一个虚拟环境的时候报错了。  <br/>
+（我的python是2.7的。）</p></blockquote>
+
+<!--more-->
+
+
+<p>错误信息： <br/>
+```
+F:\git\flask\myproject>virtualenv wtf
+New python executable in wtf\Scripts\python.exe
+Installing setuptools, pip, wheel&hellip;
+  Complete output from command F:\git\flask\myproject\wtf\Scripts\python.exe -c &ldquo;import sys, pip; sys&hellip;d\&rdquo;] + sys.argv[1:]))&ldquo; setuptools pip wheel:
+  Ignoring indexes: <a href="https://pypi.python.org/simple">https://pypi.python.org/simple</a>
+Collecting setuptools
+  &hellip;
+warning and allow it anyways with &lsquo;&mdash;trusted-host None&rsquo;.
+  Could not find a version that satisfies the requirement setuptools (from versions: )</p>
+
+<h2>No matching distribution found for setuptools</h2>
+
+<p>&hellip;Installing setuptools, pip, wheel&hellip;done.
+Traceback (most recent call last):
+  File &ldquo;I:\Program Files (x86)\python27\Scripts\virtualenv-script.py&rdquo;, line 9, in <module></p>
+
+<pre><code>load_entry_point('virtualenv==13.1.2', 'console_scripts', 'virtualenv')()
+</code></pre>
+
+<p>  File &ldquo;I:\Program Files (x86)\python27\lib\site-packages\virtualenv-13.1.2-py2.7.egg\virtualenv.py&rdquo;, line 832, in main</p>
+
+<pre><code>symlink=options.symlink)
+</code></pre>
+
+<p>  File &ldquo;I:\Program Files (x86)\python27\lib\site-packages\virtualenv-13.1.2-py2.7.egg\virtualenv.py&rdquo;, line 1004, in create_environment</p>
+
+<pre><code>install_wheel(to_install, py_executable, search_dirs)
+</code></pre>
+
+<p>  File &ldquo;I:\Program Files (x86)\python27\lib\site-packages\virtualenv-13.1.2-py2.7.egg\virtualenv.py&rdquo;, line 969, in install_wheel</p>
+
+<pre><code>'PIP_NO_INDEX': '1'
+</code></pre>
+
+<p>  File &ldquo;I:\Program Files (x86)\python27\lib\site-packages\virtualenv-13.1.2-py2.7.egg\virtualenv.py&rdquo;, line 910, in call_subprocess</p>
+
+<pre><code>% (cmd_desc, proc.returncode))
+</code></pre>
+
+<p>OSError: Command F:\git\flask\myproject\wtf\Scripts\python.exe -c &ldquo;import sys, pip; sys&hellip;d\&rdquo;] + sys.argv[1:]))&ldquo; setuptools pip wheel failed with error code 1
+```</p>
+
+<p>注意最后一行: <br/>
+<a style="color:red">&ldquo;OSError: Command F:\git\flask\myproject\wtf\Scripts\python.exe -c "import sys, pip; sys&hellip;d\&rdquo;] + sys.argv[1:]))&ldquo; setuptools pip wheel failed with error code 1&rdquo;</a><br></p>
+
+<p>在网上找到了别人的一个解决方法: <br/>
+<a href="http://stackoverflow.com/questions/21826859/setting-up-a-virtualenv-no-module-named-pip">http://stackoverflow.com/questions/21826859/setting-up-a-virtualenv-no-module-named-pip</a>：
+和我的错误一样，但是python3.3的一个bug，不知道为什么我会出现这个错误。  <br/>
+但总算解决了，希望接下来不会有问题。</p>
+
+<h2>解决方法</h2>
+
+<ul>
+<li>Run virtualenv venv &mdash;no-setuptools</li>
+<li>Activate that virtualenv (venv\Scripts\activate)</li>
+<li>Download and run <a href="/images/blog/151005_flask_init/get-pip.py">get-pip.py</a> to manually install pip &amp; setuptools into this virtualenv</li>
+<li>Continue as normal</li>
+</ul>
+
+
+<p><strong>总结：</strong>遇到问题的时候要找到关键的错误信息，在最短时间搜到解决方法。  <br/>
+不要浪费时间在漫无目的寻找答案上。</p>
+]]></content>
+  </entry>
+  
+</feed>

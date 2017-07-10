@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cousera | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/cousera/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Algorithms, Part I - coursera]]></title>
+    <link href="http://changchen.me/blog/20160205/algorithm-1-coursera/"/>
+    <updated>2016-02-05T20:22:14+08:00</updated>
+    <id>http://changchen.me/blog/20160205/algorithm-1-coursera</id>
+    <content type="html"><![CDATA[<blockquote><p>新学了一门Coursera的课叫做《Algorithms, Part I》 from Princeton University  <br/>
+这门课还是挺有难度的，可能我听力不太好吧、、、  <br/>
+写下这篇日志记录一下心路历程</p></blockquote>
+
+<!--more-->
+
+
+<p>我写了一份作业用到的python代码，  <br/>
+放到github上了：<a href="https://github.com/daya0576/Algorithms-Part-I-Princeton-University-Python-">https://github.com/daya0576/Algorithms-Part-I-Princeton-University-Python-</a>  <br/>
+git@github.com:daya0576/Algorithms-Part-I-Princeton-University-Python-.git</p>
+
+<blockquote><p>Week 1: Union-Find (50:54)  <br/>
+讲的其实是图的union和connected，  <br/>
+印象最深的是这个简单的代码有很多很广的应用，比如Facebook各个人的关系和图形处理。</p></blockquote>
+
+<br>
+
+
+<blockquote><p>Week 1: Analysis of Algorithms (65:32)  <br/>
+讲的是时间复杂度和空间复杂度，看到这个题也是醉了，这个课后练习确实有点坑，幸好可以尝试十遍。  <br/>
+还有一个印象深刻的地方就是课程的设计者用算法随机生成了课后练习，但每个题考的知识点是一样的，  <br/>
+无论你尝试几次只有把这个问题真正弄明白才能把题答对。 <br/>
+<img  style="max-height:430px" class="lazy" data-original="/images/blog/160205_algorithm_coursera/algorithm.jpg"></p></blockquote>
+
+<br> 
+
+
+<blockquote><p>Week 2: Stacks and Queues (61:00) <br/>
+Python的官方文档上就说明了怎么用list模拟stack和queue   <br/>
+`&ldquo; python
+&rdquo;&lsquo; stack &rsquo;&lsquo;&rsquo;
+stack = [3, 4, 5]
+stack.append(6)
+stack.pop()</p></blockquote>
+
+<p>&lsquo;&rsquo;&lsquo; queue &rsquo;&lsquo;&rsquo;
+queue = [3, 4, 5]
+queue.append(6)
+queue.poplfet()
+```</p>
+
+<br> 
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[cousera_end]]></title>
+    <link href="http://changchen.me/blog/20140604/cousera-end/"/>
+    <updated>2014-06-04T08:48:07+08:00</updated>
+    <id>http://changchen.me/blog/20140604/cousera-end</id>
+    <content type="html"><![CDATA[<p>嘿嘿   终于拿到第一门cousera的证书了 <br/>
+昨天做梦竟然梦到学了C++不知道去干嘛 <br/>
+继续加油吧~</p>
+
+<!-- more -->
+
+
+<p><img src="http://changchen.me/images/blog/140604_cousera_end/end1.jpg"  /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mini-project # 6 - Blackjack]]></title>
+    <link href="http://changchen.me/blog/20140516/mini-project-number-6/"/>
+    <updated>2014-05-16T10:11:18+08:00</updated>
+    <id>http://changchen.me/blog/20140516/mini-project-number-6</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>眼泪都要调出来了~~    <br/>
+图片没加载出来。。
+T ^ T</p>
+
+<!--more-->
+
+
+<p><img src="\images\blog\140516_cousera\2014-05-16_212319.jpg" alt="ico_topitme" /> <br/>
+刚看到的时候还是很郁闷的，毕竟付出了好多的心血，结果因为一个不是自身的原因毁掉了。。   <br/>
+现在还是看开了吧 :) 过去就过去了  无所谓了。</p>
+
+<p>我做的~ <br/>
+<img src="\images\blog\140516_cousera\2014-05-16_211654.jpg" alt="ico_topitme" /></p>
+
+<p>code: <br/>
+``` python</p>
+
+<h1>Mini-project #6 &ndash; Blackjack</h1>
+
+<p>import simplegui
+import random</p>
+
+<h1>load card sprite &ndash; 949x392 &ndash; source: jfitz.com</h1>
+
+<p>CARD_SIZE = (73, 98)
+CARD_CENTER = (36.5, 49)
+card_images = simplegui.load_image(&ldquo;<a href="http://g.hiphotos.baidu.com/album/pic/item/8b82b9014a90f6039500b4ce3b12b31bb151ed83.jpg?psign=9500b4ce3b12b31bb051f8198618367adbb44aed2f73c9bb">http://g.hiphotos.baidu.com/album/pic/item/8b82b9014a90f6039500b4ce3b12b31bb151ed83.jpg?psign=9500b4ce3b12b31bb051f8198618367adbb44aed2f73c9bb</a>&rdquo;)
+CARD_BACK_SIZE = (71, 96)
+CARD_BACK_CENTER = (35.5, 48)
+card_back = simplegui.load_image(&ldquo;<a href="http://f.hiphotos.baidu.com/album/pic/item/d833c895d143ad4b1c4e6e4980025aafa50f06d2.jpg?psign=1c4e6e4980025aafa40f4bfbfbedab64024f78f0f63622ea">http://f.hiphotos.baidu.com/album/pic/item/d833c895d143ad4b1c4e6e4980025aafa50f06d2.jpg?psign=1c4e6e4980025aafa40f4bfbfbedab64024f78f0f63622ea</a>&rdquo;)</p>
+
+<h1>initialize some useful global variables</h1>
+
+<p>in_play = False
+outcome = &ldquo;&rdquo;
+score = 0
+deck_cards = None
+player_hands = None
+deck_hands = None</p>
+
+<h1>define globals for cards</h1>
+
+<p>SUITS = (&lsquo;C&rsquo;, &rsquo;S', &lsquo;H&rsquo;, &rsquo;D')
+RANKS = (&lsquo;A&rsquo;, &lsquo;2&rsquo;, &lsquo;3&rsquo;, &lsquo;4&rsquo;, &lsquo;5&rsquo;, &lsquo;6&rsquo;, &lsquo;7&rsquo;, &lsquo;8&rsquo;, &lsquo;9&rsquo;, &rsquo;T', &lsquo;J&rsquo;, &lsquo;Q&rsquo;, &lsquo;K&rsquo;)
+VALUES = {&lsquo;A&rsquo;:1, &lsquo;2&rsquo;:2, &lsquo;3&rsquo;:3, &lsquo;4&rsquo;:4, &lsquo;5&rsquo;:5, &lsquo;6&rsquo;:6, &lsquo;7&rsquo;:7, &lsquo;8&rsquo;:8, &lsquo;9&rsquo;:9, &rsquo;T':10, &lsquo;J&rsquo;:10, &lsquo;Q&rsquo;:10, &lsquo;K&rsquo;:10}</p>
+
+<h1>define card class</h1>
+
+<p>class Card:</p>
+
+<pre><code>def __init__(self, suit, rank):
+    if (suit in SUITS) and (rank in RANKS):
+        self.suit = suit
+        self.rank = rank
+    else:
+        self.suit = None
+        self.rank = None
+        print "Invalid card: ", suit, rank
+
+def __str__(self):
+    return self.suit + self.rank
+
+def get_suit(self):
+    return self.suit
+
+def get_rank(self):
+    return self.rank
+
+def draw(self, canvas, pos):
+    card_loc = (CARD_CENTER[0] + CARD_SIZE[0] * RANKS.index(self.rank), 
+                CARD_CENTER[1] + CARD_SIZE[1] * SUITS.index(self.suit))
+    canvas.draw_image(card_images, card_loc, CARD_SIZE, [pos[0] + CARD_CENTER[0], pos[1] + CARD_CENTER[1]], CARD_SIZE)
+</code></pre>
+
+<h1>define hand class</h1>
+
+<p>class Hand:</p>
+
+<pre><code>def __init__(self):
+    self.hand_cards = []
+    self.value_card = 0
+
+def __str__(self):
+    hand_str = "Hand contains "
+    for card in self.hand_cards:
+        hand_str = hand_str + str(card) + " "
+    return hand_str
+
+def add_card(self, card):
+    self.hand_cards.append(card)
+
+def get_value(self):
+    value_sum = 0
+    Ace_in = False
+    # count aces as 1, if the hand has an ace, then add 10 to hand value if it doesn't bust
+    for card in self.hand_cards:
+        self.value_card = VALUES[card.get_rank()] 
+        value_sum += self.value_card
+        if self.value_card == 1:
+            Ace_in = True
+
+    if Ace_in == False:
+        return value_sum
+    else:
+        if value_sum + 10 &lt; 21:
+            return value_sum + 10
+        else:
+            return value_sum
+
+def draw(self, canvas, pos):
+    for card in self.hand_cards:  
+        index = self.hand_cards.index(card)
+        card.draw(canvas, pos)
+        pos[0] += CARD_SIZE[0] + 10
+</code></pre>
+
+<h1>define deck class</h1>
+
+<p>class Deck:</p>
+
+<pre><code>def __init__(self):
+    self.deck_cards = []
+    for suit in SUITS:
+        for rank in RANKS:
+            self.deck_cards.append(Card(suit, rank))
+
+def shuffle(self):
+    random.shuffle(self.deck_cards)
+
+def deal_card(self):
+    card = self.deck_cards[-1]
+    self.deck_cards.remove(card)
+    return card
+
+def __str__(self):
+    deck_str = "Deck contains"
+    for card in self.deck_cards:
+        deck_str += str(card) + " "       
+    return deck_str
+</code></pre>
+
+<h1>define event handlers for buttons</h1>
+
+<p>def deal():</p>
+
+<pre><code>global outcome, in_play, deck_cards, player_hands, deck_hands, score
+if in_play == True:
+    score -= 1
+
+deck_cards = Deck()
+deck_cards.shuffle()
+
+player_hands = Hand()
+player_hands.add_card(deck_cards.deal_card())
+player_hands.add_card(deck_cards.deal_card())
+print str(player_hands)
+
+deck_hands = Hand()
+deck_hands.add_card(deck_cards.deal_card())
+deck_hands.add_card(deck_cards.deal_card())
+print str(deck_hands)
+in_play = True
+</code></pre>
+
+<p>def hit():</p>
+
+<pre><code>global outcome, in_play, score, player_hands
+# if the hand is in play, hit the player
+if in_play == True:
+    player_hands.add_card(deck_cards.deal_card())
+    print "deck_hands.get_value()", deck_hands.get_value()
+    if(player_hands.get_value() &gt; 21):
+        print  "You have busted"
+        outcome = "Busted, you lose~~"
+        in_play = False
+        score -= 1
+
+print  str(player_hands)
+</code></pre>
+
+<p>def stand():</p>
+
+<pre><code>global outcome, in_play, score, deck_hands
+# if hand is in play, repeatedly hit dealer until his hand has value 17 or more
+if in_play == True:
+    while deck_hands.get_value() &lt; 17:
+        deck_hands.add_card(deck_cards.deal_card())
+        if(deck_hands.get_value() &gt; 21):
+            outcome = "Dealer busted, you wine~~"
+            in_play = False
+            score += 1
+    print "deck_hands.get_value()", deck_hands.get_value()
+
+    if in_play == True:
+        if player_hands.get_value() &gt; deck_hands.get_value():
+            outcome = "bigger You win!!!"
+            score += 1
+        else:
+            outcome = "smaller lose~~"
+            score -= 1
+        in_play = False
+# assign a message to outcome, update in_play and score
+</code></pre>
+
+<h1>draw handler</h1>
+
+<p>def draw(canvas):</p>
+
+<pre><code>global outcome
+canvas.draw_text('Blackjack', (40, 80), 50, 'Gray', 'serif')
+
+canvas.draw_text("Dealer", (50, 140), 30, 'black', 'serif')
+canvas.draw_text("Player", (50, 290), 30, 'black', 'serif')
+
+canvas.draw_text("score: " + str(score), (450, 90), 30, 'Gray', 'serif')
+
+player_hands.draw(canvas, [50, 300])
+deck_hands.draw(canvas, [50, 150])
+if in_play == True:
+    canvas.draw_text("Hit or stand?", (200, 290), 30, 'Gray', 'serif')
+    canvas.draw_image(card_back, CARD_BACK_CENTER, CARD_BACK_SIZE, (50+CARD_BACK_CENTER[0], 150+CARD_BACK_CENTER[1]), CARD_BACK_SIZE)
+else:
+    canvas.draw_text(outcome, (200, 140), 30, 'Gray', 'serif')
+    canvas.draw_text("New deal?", (200, 290), 30, 'Gray', 'serif')
+</code></pre>
+
+<h1>initialization frame</h1>
+
+<p>frame = simplegui.create_frame(&ldquo;Blackjack~&rdquo;, 600, 600)
+frame.set_canvas_background(&ldquo;Green&rdquo;)</p>
+
+<h1>create buttons and canvas callback</h1>
+
+<p>frame.add_button(&ldquo;Deal&rdquo;, deal, 200)
+frame.add_button(&ldquo;Hit&rdquo;,  hit, 200)
+frame.add_button(&ldquo;Stand&rdquo;, stand, 200)
+frame.set_draw_handler(draw)</p>
+
+<h1>get things rolling</h1>
+
+<p>deal()
+frame.start()</p>
+
+<h1>remember to review the gradic rubric</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Mini-project#5-Memory]]></title>
+    <link href="http://changchen.me/blog/20140504/mini-project-number-5-memory/"/>
+    <updated>2014-05-04T14:03:07+08:00</updated>
+    <id>http://changchen.me/blog/20140504/mini-project-number-5-memory</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>差点来不及了   心都碎了  <br/>
+deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
+但是偷偷把本地的时间改早了40分钟，竟然成功地把deadlin延迟了 <br/>
+好开心  哈哈哈哈哈哈<img src="http://i3.dpfile.com/s/img/editor/Emoticon68.gif" alt="哈哈" /></p>
+
+<p>一个翻牌的游戏 考记忆力 直戳我的软肋呀 哈哈  <br/>
+我做的： <br/>
+（一看以为是女生做的一定会多给分吧 直戳程序员的软肋<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e151.gif?max_age=2592000" alt="阴笑" />）
+<img src="\images\blog\140504_cousera\1.png" alt="ico_topitme" /></p>
+
+<p>TT吃饭去了   饿的手指都颤抖了<img src="http://i3.dpfile.com/s/img/editor/Emoticon89.gif" alt="饿" /></p>
+
+<!--more-->
+
+
+<p>code：<a href="http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py">http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py</a>
+```python</p>
+
+<h1>implementation of card game &ndash; Memory</h1>
+
+<p>import simplegui
+import random</p>
+
+<p>state = 0
+tures = 0
+before1 = -1
+before2 = -1
+list_word = range(8)
+list_word = list_word + list_word</p>
+
+<p>list_word_exposed = []
+for i in range(16):</p>
+
+<pre><code>list_word_exposed.append(False)
+</code></pre>
+
+<p>def clear_exposion():</p>
+
+<pre><code>global list_word_exposed
+for i in range(16):
+    list_word_exposed[i] = False
+</code></pre>
+
+<p>def win():</p>
+
+<pre><code>win = 0
+for i in range(16):
+    if list_word_exposed[i] == True:
+        win += 1
+if win &gt;= 16:
+    return True
+else:
+    return False
+</code></pre>
+
+<h1>helper function to initialize globals</h1>
+
+<p>def new_game():</p>
+
+<pre><code>global state, list_word
+random.shuffle(list_word)
+clear_exposion()
+state = 0
+before = None
+tures = 0
+</code></pre>
+
+<h1>define event handlers</h1>
+
+<p>def mouseclick(pos):</p>
+
+<pre><code>global state, tures, list_word_exposed, before
+click = pos[0] // 50
+global state
+
+if list_word_exposed[click] == False:
+    global before1, before2
+    if state == 0:
+        before1 = click
+        print "before1", before1
+        state = 1
+    elif state == 1:
+        before2 = click
+        print "before2", before2
+        state = 2
+    else:
+        tures += 1
+        if not list_word[before1] == list_word[before2]:
+            list_word_exposed[before2] = False
+            list_word_exposed[before1] = False
+
+        before1 = click
+        print "before1", before1
+        label.set_text("Tures = " + str(tures))
+        state = 1
+    list_word_exposed[click] = True
+</code></pre>
+
+<h1>cards are logically 50x100 pixels in size</h1>
+
+<p>def draw(canvas):</p>
+
+<pre><code>if win() and not state == 0:
+    canvas.draw_text("YOU WIN!!!! haha :)", (5, 80), 80, 'white', 'serif')
+else:  
+    for index, word in enumerate(list_word):
+        canvas.draw_text(str(word), (index * 50 + 5, 80), 80, 'white', 'serif')
+    for index, exposed in enumerate(list_word_exposed):
+        if(not exposed and index % 2 == 0):
+            canvas.draw_polygon([[index * 50 + 30, 3], [index * 50 + 20, 95]], 50, 'pink')
+        elif(not exposed and index % 2 == 1):
+            canvas.draw_polygon([[index * 50 + 30, 3], [index * 50 + 20, 95]], 50, 'white')
+</code></pre>
+
+<p>def button_handler():</p>
+
+<pre><code>new_game()
+</code></pre>
+
+<h1>create frame and add a button and labels</h1>
+
+<p>frame = simplegui.create_frame(&ldquo;Memory&rdquo;, 800, 100)
+frame.add_button(&ldquo;Reset&rdquo;, new_game)
+label = frame.add_label(&ldquo;Turns = 0&rdquo;)</p>
+
+<h1>register event handlers</h1>
+
+<p>frame.set_mouseclick_handler(mouseclick)
+frame.set_draw_handler(draw)</p>
+
+<h1>get things rolling</h1>
+
+<p>new_game()
+frame.start()</p>
+
+<h1>Always remember to review the grading rubric</h1>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[cousera_comments总和]]></title>
+    <link href="http://changchen.me/blog/20140429/cousera-comments/"/>
+    <updated>2014-04-29T17:29:28+08:00</updated>
+    <id>http://changchen.me/blog/20140429/cousera-comments</id>
+    <content type="html"><![CDATA[<blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>突然想去看看之前mini_project别人给我的评价  <br/>
+不看不知道  一看吓一跳  <br/>
+感动的都要哭了 T ^ T <br/>
+敢不敢再负责一点</p>
+
+<!--more-->
+
+
+<ul>
+<li><p>Mini-project # 1 &ndash; Rock-paper-scissors-lizard-Spock <br/>
+<img src="\images\blog\140430_cousera\3.png" alt="ico_topitme" /> <br/>
+<img src="\images\blog\140430_cousera\4.png" alt="ico_topitme" /></p></li>
+<li><p>Mini-project # 2 &ndash; &ldquo;Guess the number&rdquo; game" <br/>
+<img src="\images\blog\140430_cousera\5.png" alt="ico_topitme" />   <br/>
+<img src="\images\blog\140430_cousera\6.png" alt="ico_topitme" /> <br/>
+<img src="\images\blog\140430_cousera\7.png" alt="ico_topitme" /></p></li>
+<li><p>Mini-project # 4 &ndash; &ldquo;Pong&rdquo; <br/>
+<img src="\images\blog\140430_cousera\4_1.png" alt="ico_topitme" />   <br/>
+<img src="\images\blog\140430_cousera\4_2.png" alt="ico_topitme" /></p></li>
+</ul>
+
+
+<h4>&ldquo;:&ndash;) All the best.&rdquo;</h4>
+
+<h4>继续加油   以后改作业也要更认真一点了</h4>
+]]></content>
+  </entry>
+  
+</feed>

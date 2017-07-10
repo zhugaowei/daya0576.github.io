@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: comp6714 | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/comp6714/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Henry's Feedback of UNSW COMP6714 16s2]]></title>
+    <link href="http://changchen.me/blog/20160731/comp6714-information-retrieval-and-web-search-2016s2/"/>
+    <updated>2016-07-31T18:02:22+08:00</updated>
+    <id>http://changchen.me/blog/20160731/comp6714-information-retrieval-and-web-search-2016s2</id>
+    <content type="html"><![CDATA[<blockquote><p>The second term of my master degree in UNSW       <br/>
+This blog is sharing my experience of COMP6714: Information Retrieval and Web Search in 2016s2</p></blockquote>
+
+<!--more-->
+
+
+<br>
+
+
+<blockquote><h3>Other resources:</h3>
+
+<p><strong>Write down your experience about this course through this url (a cse courses' experience sharing website made by myself):</strong>    <br/>
+<a href="http://www.unsw.co/rango/category/comp6714">http://www.unsw.co/rango/category/comp6714</a>   <br/>
+<strong>My Final Revision Summary Google doc link:</strong>   <br/>
+<a href="https://docs.google.com/document/d/1GmrqmyfUs-NWY6NwhVFr8ecPtMjeyUIHsfDh0XD6IOA/edit?usp=sharing">https://docs.google.com/document/d/1GmrqmyfUs-NWY6NwhVFr8ecPtMjeyUIHsfDh0XD6IOA/edit?usp=sharing</a>  <br/>
+More than 40 students were online at the same time before the day of exam LOL     <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/160731_comp6714/online.png">   <br/>
+And thx to everyone contributed to it, didnt expect it at all.</p></blockquote>
+
+<br>  
+
+
+<blockquote><h3>Summary(In the end)</h3>
+
+<hr />
+
+<p><strong>Good things</strong>:  <br/>
+<strong>1. Well designed labs</strong>(Jupyter Notebook) on Github, they are clear and indeed helpful: <a href="https://github.com/DBWangGroupUNSW/COMP6714">https://github.com/DBWangGroupUNSW/COMP6714</a>. Looking at the real code makes me understand the concepts and algorithms immediately.    <br/>
+<strong>2. Distribution of whole class&rsquo;s marks</strong> is clearly presented.    <br/>
+<strong>3. Submitting system.</strong> Although a lot of students were complaining about the submitting system(mainly because they didn&rsquo;t follow the instructions), I think it&rsquo;s excellent, u have <strong>10!!!</strong> chances to improve your highest score. U know in comp9319, u would lose all your mark if u made any small mistake. So the submitting system is relatively kind and generous.  <br/>
+<strong>4.</strong> The explanation of algorithms in lecture <strong>by hand</strong> is pretty good and clear.    <br/>
+_      <br/>
+<strong>Could be improved</strong>:    <br/>
+<strong>1. Short comments or feedback</strong> on each student&rsquo;s assignments and the project could be provided.  <br/>
+<strong>2. Piazza forum</strong> provides a great way of communication, however, a quicker response or better interactive could be provided. For example, questions could be answered in one day to maintain students' enthusiastic.    <br/>
+<strong>3. Things were in a rush.</strong> Due to the high teaching &amp; research loads, I always feel that many things were in a rush and have small problems. For example, when the mark released, I didn&rsquo;t receive an email or get the announcement in the forum. when the solution released, the path is always wrong.        <br/>
+<strong>4. The project is too easy</strong>, maybe we could be asked to extract all the other relations.   <br/>
+<strong>5. Making the lecture clearer and better organized(students complained the most)</strong>:    <br/>
+I did learn dozens of brilliant ideas and algorithms from this course, however, if someone asks me now without revision: what did u learn from this course? I even do not know how to answer it. It&rsquo;s because, before and after understanding the algorithm, I always don&rsquo;t know why I need to learn it and what&rsquo;s this algorithm is exactly used for, what&rsquo;s the <strong>connection</strong> between each part.      <br/>
+I admit that it&rsquo;s also mainly because of my problem: lacking of preparing and review for each lecture.     <br/>
+<strong>Here are my several pieces of advice:</strong>   <br/>
+1) The <strong>review slides</strong> could be released in the introduction part of the first lecture, it would be a very good guide for students to easily find out what are they exactly learning in different lectures.    <br/>
+2) The teaching in the lecture harried a little too, the lecturer could be more relaxed and also create <strong>more interaction</strong> with students. If u asked a very very simple question in lecture but no one can answer it, here is the problem.    <br/>
+3) For the reason of great gap between students, maybe  the total amount of material in lecture could be <strong>reduced</strong> to make key concepts totally clear first, then providing other sources of information, such as references of harder parts, labs, notes, to students who want to learn more.       <br/>
+<strong>I wrote down all my thoughts straightforward in my mind, ignore some incorrect ideas.</strong></p></blockquote>
+
+<br>
+
+
+<blockquote><p><strong>The greatest harvest from this course</strong>    <br/>
+I did enjoy a lot and followed well in some lectures, the feeling of learning new brilliant ideas is awesome.    <br/>
+In spite of the knowledge, here are two critical things learned from this course:  <br/>
+1). I&rsquo;m not afraid of math anyone, in the lecture about BIM, I was totally lost, however in the revision, I finally understood it and found it&rsquo;s not hard at all.  <br/>
+2). In my bachelor degree, I did some research with a teacher for more than one year, the thing that I regret most is lacking reading papers before writing code. But now, I can read references patiently and solve one problem by myself.</p></blockquote>
+
+<br> 
+
+
+<blockquote><h3>27/07/2016</h3>
+
+<hr />
+
+<p><strong>week1</strong>  <br/>
+I missed the first lecture because of the late flight :(  <br/>
+Unfortunately, the class was full but the lecturer is so nice and let me enrolled in.    <br/>
+The lab online is <strong>well designed and fun</strong>, it does help me have a deeper understand of the algorithms in lecture.         <br/>
+I even submitted a pull request to lecturer :)  <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/L0_fork.jpg"></p></blockquote>
+
+<br> 
+
+
+<blockquote><h3>01/08/2016</h3>
+
+<hr />
+
+<p><strong>week2</strong>   <br/>
+Getting most of the ideas, but totally lost in some math parts,  having not learned math for so many years.   <br/>
+Another problem is that Wang looked a bit nervous and cannot make some of the teaching content totally clear, speaking hundreds of &ldquo;<strong>actually</strong>&rdquo; in the 3 hours lecture.    <br/>
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160731_comp6714/math.JPG"></p></blockquote>
+
+<br> 
+
+
+<blockquote><h3>15/08/2016</h3>
+
+<hr />
+
+<p><strong>week4</strong>  <br/>
+I forced myself to concentrate and followed the lecture quite well.    <br/>
+Maybe another reason is that the lecture is much clearer this week.    <br/>
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160731_comp6714/expert.png"></p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>03/09/2016</h3>
+
+<hr />
+
+<p><strong>week6 Compression</strong>  <br/>
+Can not wait to learn knowledge from this course!   <br/>
+happiest moment in my horrible 9 hours' lecture on Monday!    <br/>
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160731_comp6714/9hours.png"></p></blockquote>
+
+<br>     
+
+
+<blockquote><h3>12/09/2016</h3>
+
+<hr />
+
+<p><strong>week7&amp;8 Spelling Correction + Information Extraction</strong>  <br/>
+The lecture was back into a mess. I was lost again&hellip;    <br/>
+I heard one classmate judging Wang that he alway jump from one point to another, for example, when he was talking about A,  he suddenly remembered B, he would rush to B, then again, jumped to C, finally back to A.    <br/>
+The point is that he should make one thing entirely clear before jumping to another. He is a nice person and great <strong>researcher</strong>, but he should put more efforts to think about how to be an excellent <strong>lecturer</strong>.      <br/>
+Of course, another reason is my <strong>lacking of preparation</strong>, I should spend more time to prepare before the lecture!!!</p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>20/09/2016</h3>
+
+<p><strong>Assignment1</strong>  <br/>
+<a href="/images/blog/160731_comp6714/ass1-spec.pdf">Ass1(click me to download)</a> is consisted of four questions.   <br/>
+Here is my solution: <a href="/images/blog/160731_comp6714/ass1.pdf">ass1_solution.pdf</a>   <br/>
+My mark: Comment: 24 | 14 | 25 | 25 | 1   <br/>
+The most awesome part is that, when the mark of ass1 released, lectuer gave the overview(mark distribution) of the whole class:  <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/ass1_mark.png"></p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>29/09/2016</h3>
+
+<hr />
+
+<p><strong>Project</strong>   <br/>
+<a href="/images/blog/160731_comp6714/proj1-spec.pdf">A copy of project spec</a>   <br/>
+Quite interesting, extracting birthday and parents in sentences such as:   <br/>
+<code>Waite, the eldest of five children, was born in White Plains, New York on June 22, 1928, to Ralph H. Waite, a construction engineer, and Esther (nee Mitchell) Waite.</code>  <br/>
+It&rsquo;s not hard to get a not bad result, but if you pursue the perfect performance, you need a smarter way to deal with the data, such as parsing the sentence to dependency tree and analyze the syntax.   <br/>
+<strong>Submitting System</strong>  <br/>
+BTW, the submitting system online is awesome!!!    <br/>
+U have ten chances to submit and get your mark, it&rsquo;s so nice(compared with 9319&hellip;).    <br/>
+However, many students complained about this submitting system.. If these stus spent some time to read the spec carefully and simply follow the steps, nothing would go wrong.   <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160731_comp6714/submitting.png">  <br/>
+The evaluation measure is also brilliant</p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>10/10/2016</h3>
+
+<hr />
+
+<p><strong>Project summary</strong>  <br/>
+As today is the due date of project, I will summarize my thinkings about this project:   <br/>
+I mentioned so many things above that I extremely appreciate, here are things have to be improved in my perspective:           <br/>
+1. Mistakes in testing and training data:   <br/>
+Lecturer&rsquo;s response to this issue:   <br/>
+<img style="max-height:344px" class="lazy" data-original="/images/blog/160731_comp6714/explain.png">  <br/>
+However, I still feel the testing and training data has to be more correct. It&rsquo;s because there were only 400 sentences, rather than 4000, and most of the mistakes in training data are easy for human to distinguish.    <br/>
+Another critical reason is that these mistakes would make students lose confidence on testing data(highly relevant to their marks..).     <br/>
+And I kept thinking that one solution is opening a thread in the class forum or GitHub and let students submit all the possible errors, then keep publishing the latest most correct version of training data.   <br/>
+Unfortunately, it&rsquo;s not feasible for testing data(can not be seen by students).   <br/>
+2. Late reply in piazza forum  <br/>
+I understand that Dr. Wang was extremely busy this semester(as he mentioned many times in lecture.) This forum should be checked at least every day although some of the questions are quite naive and wasting time to answer.   <br/>
+<strong>Mark for Project</strong>    <br/>
+<img style="max-height:200px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark.png">  <br/>
+Not bad, but it&rsquo;s a pity that I only spent one day to get my final result, but then tried everything in the next 3 days without improvement:   <br/>
+Mark overview:    <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/proj_mark_distribution.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>10/10/2016</h3>
+
+<hr />
+
+<p><strong>week11 Evaluation</strong>  <br/>
+Really enjoy the first two hours, the evaluation part is full of fun and easy.  <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/w11_wei.png">  <br/>
+However, in the last one hour, I was lost in math part again @_@ (Probabilistic and Language Models)       <br/>
+And the lecture ended at 15:01, 6 minutes extended, one critical thing is that this <strong>6 minutes would not be recorded by echo system</strong>. It was not a huge issue(However in the revision, this 6 minutes is quite critical and I can not see it..updated in 11/11) and I can see that Dr. Wang did eager to deliver a better teaching, but he also has to pay more attention to these <strong>details</strong> to improve &ldquo;user happiness&rdquo; :)</p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>31/10/2016</h3>
+
+<hr />
+
+<p><strong> Assignment2 </strong>   <br/>
+<a href="/images/blog/160731_comp6714/ass2-spec.pdf">Ass2(click me to download)</a> is consisted of four questions too.    <br/>
+Here is my solution: <a href="/images/blog/160731_comp6714/ass2.pdf">ass2_solution.pdf</a>  <br/>
+<strong>So so so interesting</strong>, I have been playing it for the whole day.  <br/>
+The difficulty of the questions was well controlled. I mean all the problems were very hard to me in the beginning, but if I spend some time on it and think harder, all the problems will be solved smoothly.         <br/>
+The <strong>pleasure</strong> of getting the solution to each question is just unblievable.   <br/>
+<strong> Mark for Assignment2 </strong>   <br/>
+My mark: Comment: 0 | 23 | 25 | 25 | 25    <br/>
+Should get full mark but made a small calculation mistake.     <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160731_comp6714/ass2-marks.png"></p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>11/11/2016</h3>
+
+<hr />
+
+<p><strong> Final Exam </strong>    <br/>
+The <strong>cheat sheet</strong> is a good idea because this course mainly examines the way of thinking and  understanding instead of remembering.    <br/>
+<strong>The actual problem</strong> in my perspective is that too much content was included in this final exam. I have no time for all the calculations and even do not have time for <strong>thinking</strong>.   <br/>
+Another thing I want to share is that actually, there is an 11s2 final exam available online and more than one-third of the content is almost same(of course small and tricky changes were made). And when I published that on my review on google doc(because I feel it&rsquo;s unfair that a few students do not know it), some Chinese students put comments on the top that, &ldquo;zuo ren liu yi xian, rang xia yi jie zen me ban and zhuang tm zui diao de&rdquo;, I was quite shocked and the only reason I can think of is that they already got this previous exam paper and so scared that lecturer knows it and change the final exam questions, the panic of failing the course is so familiar. In contrast, on the day before final exam, I joined a small study group(all the top students in this major excluded me, I&rsquo;m a total loser of exam) to do the revision together, these people are so brilliant and both hardworking, that&rsquo;s how a student should be, so admiring. And that&rsquo;s one of biggest troubles of this course, the unequal capabilities of students, many students just want to pass this course instead of learning knowledge&hellip;    <br/>
+<img style="max-height:100px" class="lazy" data-original="/images/blog/160731_comp6714/comments.JPG"> <br/>
+<strong> My advice about final exam: </strong>   <br/>
+1. release one final exam(or exercises) in advance and make changes in the real exam to examine whether students really understand them or not. because I know the solutions to most of the questions in the final exam, but can not solve them without enough exercises before.  <br/>
+2. reserve the first part but reduce the number of total questions, making more questions such as how and why and designing, instead of endless calculation.</p></blockquote>
+
+<br>   
+
+
+<blockquote><h3>END</h3></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: perl | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/perl/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Henry's Awesome Summary of Perl]]></title>
+    <link href="http://changchen.me/blog/20160920/perl-summery/"/>
+    <updated>2016-09-20T07:52:18+08:00</updated>
+    <id>http://changchen.me/blog/20160920/perl-summery</id>
+    <content type="html"><![CDATA[<blockquote><p>My summary of Perl in semester 16s2 of (COMP2041|COMP9041) in UNSW.</p></blockquote>
+
+<!--more-->
+
+
+<br><br>   
+
+
+<blockquote><p>My note of lectures, it was a mess and not well organized.  <br/>
+So I decided to write this blog to make things clear(I need time to modify).     <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160920_perl/note.JPG"></p></blockquote>
+
+<br><br>
+
+
+<blockquote><p>Perl = <strong>P</strong>ractical <strong>E</strong>xtraction and <strong>R</strong>eport <strong>L</strong>anguage</p></blockquote>
+
+<br><br>
+
+
+<h1>Running Perl code in the command line</h1>
+
+<p><code>perl -e ’print "Hello, world\n";</code></p>
+
+<br><br>
+
+
+<h1>#!/usr/bin/perl -w</h1>
+
+<p>Adding this line at the beginning of the file, which will let the operating system know that this file is Perl program so that it can be executed in this way:  <br/>
+<code>chmod 755 PerlCodeFile;./PerlCodeFile.pl</code> <br/>
+<code>-w</code> means warnings.</p>
+
+<br><br>
+
+
+<h1>Arithmetic &amp; Logical Operators</h1>
+
+<p>Numeric: <code>== != &lt; &lt;= &gt; &gt;= &lt;=&gt;</code> <br/>
+String: <code>eq ne lt le gt ge cmp</code></p>
+
+<br><br>
+
+
+<h1>Input/Output</h1>
+
+<p>Andrew always gives us advice to make our life easier, and one thing is always remembering to check the file is correctly opened.    <br/>
+<strong>Elegant usage of die:</strong>     <br/>
+```pl</p>
+
+<h1>$0 is the perl filename, and $! is the error msg.</h1>
+
+<p>open BOOK, &ldquo;hp1.txt&rdquo; or die &ldquo;$0: open &lsquo;$file&rsquo; failed: $!&rdquo;
+<code>
+**Sample implementation of `cat`**     
+</code>pl
+while ($line = <STDIN>){</p>
+
+<pre><code>print $line;
+</code></pre>
+
+<p>}
+<code>
+**read,  write and append**   
+</code>pl
+open(DATA, &ldquo;&lt;&lt; data&rdquo;); # read from file &ldquo;data&rdquo;</p>
+
+<p>open(RES, &ldquo;>> results&rdquo;); # write to file &ldquo;results&rdquo;
+print RES @array;</p>
+
+<p>open(XTRA, &ldquo;>>> stuff&rdquo;); # append to file &ldquo;stuff&rdquo;
+<code>
+**Read content of web page through url:**   
+</code>pl
+open F, &ldquo;wget -q -O- $url|&rdquo; or die;
+while ($line = <F>) {}
+<code>
+**Saving lines of file content to array**   
+</code>pl
+@lines = <STDIN>;
+```</p>
+
+<br><br>
+
+
+<h1>Control Structures</h1>
+
+<p><strong>For loop</strong>
+```pl
+foreach $arg (@ARGV){}</p>
+
+<p>foreach $num (1..10){}</p>
+
+<p>print &ldquo;$_\n&rdquo; foreach @list;</p>
+
+<p>foreach $file (glob *.txt){};
+<code>
+**If**     
+Testing the line's content, `=~` is so useful in perl.     
+</code>pl
+if ($line =~ /($course_prefix[0-9]{4})&lt;\/a>/){</p>
+
+<pre><code># print $line;
+print "$1\n";
+</code></pre>
+
+<p>}</p>
+
+<h1>checking ctrl &ndash; D</h1>
+
+<p>last if (! $line)</p>
+
+<p>```</p>
+
+<br><br>
+
+
+<h1>Data structure</h1>
+
+<p><strong>String:</strong>  <br/>
+```pl</p>
+
+<h1>&ldquo;Henry\n&rdquo; &mdash;> &ldquo;Henry&rdquo;</h1>
+
+<p>chmod $line;</p>
+
+<p>$len = length $line;</p>
+
+<p>$name.$no == &ldquo;$name$no&rdquo;
+<code>
+**split a string**:    
+</code>pl
+@field = split /,/, $line;
+@words = split /\s+/, $line;
+<code>
+**Array**
+</code>pl
+$a[4] = 42;  # @a = (,,,,42)</p>
+
+<h1>print array:</h1>
+
+<h1>@array = (&ldquo;Henry&rdquo;, &ldquo;is&rdquo;, &ldquo;so&rdquo;, &ldquo;cool&rdquo;);</h1>
+
+<p>@array = qw/Henry is so cool/;
+print @array; # Henryissocool
+print &ldquo;@array&rdquo;; # Henry is so cool</p>
+
+<p>join(&ldquo;,&rdquo;, @array)</p>
+
+<p>push &lt;&mdash;> pop
+shift  &lt;&mdash;> unshift</p>
+
+<h1>shift(only one word) can be used to shift element in ARGV.</h1>
+
+<p>shift;
+$opt = shift @ARGV;</p>
+
+<h1>get the length of the array</h1>
+
+<p>len = @array
+<code>
+**Hash**    
+Here is a useful example from my lab code:    
+we can also see how sed work in perl:     
+</code>pl
+foreach $input (sort keys %total_p_of){</p>
+
+<pre><code># %poem_e = $total_p_of{$input};
+@poem_e_sort = sort { $total_p_of{$input}{$a} &lt;=&gt; $total_p_of{$input}{$b} } keys %{$total_p_of{$input}};
+
+$p_e = $poem_e_sort[-1];
+$p_e =~ s|poems/||;
+$p_e =~ s/.txt//;
+$p_e =~ s/_/ /g;
+
+$p_sum = $total_p_of{$input}{$poem_e_sort[-1]};
+
+print sprintf("%s most resembles the work of %s (log-probability=%0.1f)\n",
+              $input, $p_e, $p_sum);
+</code></pre>
+
+<p>}
+```</p>
+
+<br><br>
+
+
+<h1>SHELL Command in Perl</h1>
+
+<p>Perl is shell-like in the ease of invoking other commands/programs.
+Several ways of interacting with external commands/programs:  <br/>
+<code>pl
+`cmd`; # capture entire output of cmd as single string
+system("cmd"); # execute cmd and capture its exit status only
+open(F,"cmd|");  # collect cmd output by reading from a stream
+</code></p>
+
+<br><br>
+
+
+<h1>Reference</h1>
+
+<p>This exaple explains this concept so well:
+<code>pl
+$henry = 42;
+$fred = "henry";
+$c = $$fred;  # =&gt; 42
+</code></p>
+
+<br><br>
+
+
+<h1>Math</h1>
+
+<p><strong>Square root</strong>: <code>sqrt $x*$x + $y*$y</code> <br/>
+<strong>Calculation of string</strong>:   <br/>
+<code>pl
+$string = "1+2+3+4+5";
+$result = eval $string;
+</code></p>
+
+<br><br>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

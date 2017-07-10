@@ -1,0 +1,849 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Django 性能优化官方文档笔记(主要针对ORM) - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="Django 性能优化官方文档笔记(主要针对ORM) 最近看了django关于性能优化的文档: https://docs.djangoproject.com/en/1.11/topics/performance/ https://docs.djangoproject.com/en/1.8/ &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20170503/django-performance-and-optimisation/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">Django 性能优化官方文档笔记(主要针对ORM)</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>最近看了django关于性能优化的文档:     <a href="https://docs.djangoproject.com/en/1.11/topics/performance/">https://docs.djangoproject.com/en/1.11/topics/performance/</a> <br/>
+<a href="https://docs.djangoproject.com/en/1.8/topics/db/optimization/">https://docs.djangoproject.com/en/1.8/topics/db/optimization/</a> <br/>
+整理了一下笔记, 并写下几点比较深的感触<strong>和我优化django代码的总结</strong>.</p></blockquote>
+
+<br>
+
+
+<!--more-->
+
+
+<br>
+
+
+<h3>1. 你的时间才是最宝贵的:</h3>
+
+<p>文档里的这句话还是挺有意思的(自己的时间和性能优化的trade-off): Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.</p>
+
+<br>
+
+
+<br>
+
+
+<h3>2. 最重要的原则: Work at the appropriate level</h3>
+
+<p>意思就是说要在对应的level(M V C)做对应的事. e.g. 如果计算court, 在最低的数据库level里是最快的 (如果只需要知道此记录是否存在的话, 用<code>exists()</code>会更快). <br/>
+但要<code>注意</code>: queryset是lazy的, 所以有时候在higher level(例如模板)里控制queryset是否真的执行, 说不定会更高效. <br/>
+_ <br/>
+下面这段代码很好的解释了不同level的意思:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># QuerySet operation on the database</span>
+</span><span class='line'><span class="c"># fast, because that&#39;s what databases are good at</span>
+</span><span class='line'><span class="n">my_bicycles</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># counting Python objects</span>
+</span><span class='line'><span class="c"># slower, because it requires a database query anyway, and processing</span>
+</span><span class='line'><span class="c"># of the Python objects</span>
+</span><span class='line'><span class="nb">len</span><span class="p">(</span><span class="n">my_bicycles</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Django template filter</span>
+</span><span class='line'><span class="c"># slower still, because it will have to count them in Python anyway,</span>
+</span><span class='line'><span class="c"># and because of template language overheads</span>
+</span><span class='line'>\<span class="p">{</span>\<span class="p">{</span> <span class="n">my_bicycles</span><span class="o">|</span><span class="n">length</span> \<span class="p">}</span>\<span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<br>
+
+
+<h3>3. 用database中传统的优化手段</h3>
+
+<ol>
+<li>加索引. 对你经常要用的字段进行加索引, 会大大的提升查找数据(filter(), exclude(), order_by(), etc.)的速度, 毕竟O(1)或O(logn)对于O(n)相差还是很大的.</li>
+<li>使用合适的字段类型. 例如你的数据多到几亿条了, 合适的字段也会帮你节省很多的空间.</li>
+</ol>
+
+
+<br>
+
+
+<br>
+
+
+<h3>4. 理解Django中的QuerySets</h3>
+
+<p><strong>对于queryset lazy特性的说明:</strong> <br/>
+这段代码看上去对数据库进行了三次查找, 但其实只在最后一行的时候执行了数据库的操作.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">headline__startswith</span><span class="o">=</span><span class="s">&quot;What&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pub_date__lte</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">())</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="n">q</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">body_text__icontains</span><span class="o">=</span><span class="s">&quot;food&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># ps.上边的这种多条件查询, 官方推荐这种写法:</span>
+</span><span class='line'><span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">headline__startswith</span><span class="o">=</span><span class="s">&#39;What&#39;</span>
+</span><span class='line'><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">pub_date__gte</span><span class="o">=</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</span><span class='line'><span class="p">)</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+</span><span class='line'>    <span class="n">pub_date__gte</span><span class="o">=</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2005</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+</span><span class='line'><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>那么问题来了</strong>, 既然queryset是lazy的, queryset<a href="https://docs.djangoproject.com/en/1.8/ref/models/querysets/#when-querysets-are-evaluated">什么时候会被evaluate呢</a>?</p>
+
+<ol>
+<li>Iteration, ie. 对Queryset进行For循环的操作.</li>
+<li><a href="https://docs.djangoproject.com/en/1.8/topics/db/queries/#limiting-querysets">slicing</a>, e.g. <code>Entry.objects.all()[:5]</code>, 获取queryset中的前五个对象, 相当于sql中的<code>LIMIT 5</code></li>
+<li>picling/caching</li>
+<li>repr/str</li>
+<li>len (Note: 如果你只想知道这个queryset结果的长度的话, 最高效的还是在数据库的层级调用count()方法, 也就是sql中的COUNT(). )</li>
+<li>list()</li>
+<li>bool()</li>
+</ol>
+
+
+<p>以上的情况一旦发生, 就会查询数据库并生成cache(<strong>生成的cache就存在这个queryset对象之内的</strong>),  <br/>
+之后再对queryset做以上的操作就就不用再重新hit数据库进行查询了.)</p>
+
+<p><strong>举个栗子: </strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">queryset</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">headline</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">])</span> <span class="c"># Evaluate the query set.</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">pub_date</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">])</span> <span class="c"># Re-use the cache from the evaluation.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>注意! 不会cache的情况:</strong> <br/>
+Specifically, this means that limiting the queryset using an array slice or an index will not populate the cache. <br/>
+意思就是说queryset[5]和queryset[:5]是不会生成cache的. 还有exists()和iterator()这样的也不会生成cache.  <br/>
+<strong>举个栗子:</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">queryset</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">queryset</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c"># Queries the database</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">queryset</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c"># Queries the database again</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">queryset</span> <span class="o">=</span> <span class="n">Entry</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">entry</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">queryset</span><span class="p">]</span> <span class="c"># Queries the database</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">queryset</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c"># Uses cache</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span> <span class="n">queryset</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="c"># Uses cache</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最近发现<code>values</code>和<code>values_list</code>这两个方法也会重新查询数据库, 不知道是为什么.  <br/>
+TODO: 有空看一下 具体的实现原理. <br/>
+_ <br/>
+<strong>研究的结果:</strong> <br/>
+当调用values或values_list的时候, 会生成一个新的queryset with no cache.  <br/>
+也就是说, 除了上边说到的七种会产生cache的情况, 其他都会重新去数据库拿数据.  <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/disqus.png"></p>
+
+<br>
+
+
+<br>
+
+
+<h3>5. 数据库层级的优化的总结</h3>
+
+<p>官方的文档介绍了很多, 我写几点最有效的和最常用的:</p>
+
+<ul>
+<li>利用<a href="https://docs.djangoproject.com/en/1.8/topics/performance/#understanding-laziness">queryset lazy的特性</a>去优化代码, 尽可能的减少连接数据库的次数.</li>
+<li>如果查出的queryset只用一次, 可以使用iterator()去来防止占用太多的内存, e.g.<code>for star in star_set.iterator(): print(star.name)</code>.  <br/>
+感兴趣可以看看ModelIterable中重写的<code>__iter__</code>方法.</li>
+<li>尽可能把一些数据库层级的工作放到数据库, 例如使用filter/exclude, F, annotate, aggregate, etc. <br/>
+aggregate: <a href="https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet">https://docs.djangoproject.com/en/1.11/topics/db/aggregation/#cheat-sheet</a> <br/>
+F(): getting the database, rather than Python, to do work</li>
+<li>一次性拿出所有你要的数据, 不去取那些你不需要的数据. <br/>
+意思就是要巧用select_related(), prefetch_related() 和 values_list(), values(). <br/>
+如果不用select_related的话, 去取外键的属性就会连数据再去查找. <br/>
+如果只需要id字段的话, 用values_list(&lsquo;id&rsquo;, flat=True)也能节约很多资源.</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">ModelA</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">pass</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">ModelB</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">a</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">ModelA</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ModelB</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c"># Forward ForeignKey relationship</span>
+</span><span class='line'><span class="n">ModelA</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">prefetch_related</span><span class="p">(</span><span class="s">&#39;modelb_set&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c"># Reverse ForeignKey relationship</span>
+</span></code></pre></td></tr></table></div></figure></div>
+
+
+<ul>
+<li>bulk(批量)地去insert update和delete数据.</li>
+<li>查找一条数据时, 尽量用有索引的字段去查询, O(1)或O(log n) 和 O(n)差别还是很大的.</li>
+<li>用<code>count()</code>代替<code>len(queryset)</code>, 用<code>exists()</code>代替<code>if queryset:</code></li>
+</ul>
+
+
+<br>
+
+
+<br>
+
+
+<h3>6. 解决性能问题的具体方法:</h3>
+
+<ul>
+<li>connection.queries: <br/>
+可以利用这两两句代码来分析你的代码的sql执行情况和花费时间:</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">connection</span>
+</span><span class='line'><span class="n">connection</span><span class="o">.</span><span class="n">queries</span>
+</span><span class='line'><span class="o">&gt;&gt;</span> <span class="p">[{</span><span class="s">&#39;sql&#39;</span><span class="p">:</span> <span class="s">&#39;SELECT polls_polls.id, polls_polls.question, polls_polls.pub_date FROM polls_polls&#39;</span><span class="p">,</span>
+</span><span class='line'>     <span class="s">&#39;time&#39;</span><span class="p">:</span> <span class="s">&#39;0.002&#39;</span><span class="p">}]</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">reset_queries</span>
+</span><span class='line'><span class="n">reset_queries</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<ul>
+<li><p><strong>django-debug-toolbar</strong>: <br/>
+一个在github上有四千多个星星的开源项目: <a href="https://github.com/dcramer/django-devserver">https://github.com/dcramer/django-devserver</a> <br/>
+很棒的一个可视化的工具, 但缺点是只能处理<code>text/html</code>类型的response, 因为是通过中间件修改返回的html代码实现的.     <br/>
+<strong>解决办法:</strong> 可以再使用这个库: <a href="https://github.com/recamshak/django-debug-panel">django-debug-panel</a>,  <br/>
+再配合链接中最后的chrome插件使用, 就可以查看所有异步请求的详细信息! <br/>
+如图: <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/IMG_3017.PNG">  <br/>
+<strong>优点:</strong></p>
+
+<ol>
+<li> 统计了总的SQL查询时间.</li>
+<li> <strong>重复查询的sql的数量, 在每条sql详细信息中显示重复的次数</strong>.</li>
+<li> <strong>执行sql的具体代码位置!!!</strong></li>
+<li> sql 语句的高亮</li>
+<li> sql 查询到的数据结果.</li>
+</ol>
+</li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+配置参考:   
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#debug_toolbar settings</span>
+</span><span class='line'><span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">INTERNAL_IPS</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">,)</span>
+</span><span class='line'>    <span class="n">MIDDLEWARE_CLASSES</span> <span class="o">=</span> <span class="p">(</span>
+</span><span class='line'>        <span class="c"># &#39;debug_toolbar.middleware.DebugToolbarMiddleware&#39;,</span>
+</span><span class='line'>        <span class="s">&#39;debug_panel.middleware.DebugPanelMiddleware&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">)</span> <span class="o">+</span> <span class="n">MIDDLEWARE_CLASSES</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">INSTALLED_APPS</span> <span class="o">+=</span> <span class="p">(</span>
+</span><span class='line'>        <span class="s">&#39;debug_toolbar&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s">&#39;debug_panel&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">:</span>
+</span><span class='line'>    <span class="kn">import</span> <span class="nn">debug_toolbar</span>
+</span><span class='line'>    <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span><span class='line'>        <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^__debug__/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">debug_toolbar</span><span class="o">.</span><span class="n">urls</span><span class="p">)),</span>
+</span><span class='line'>    <span class="p">]</span> <span class="o">+</span> <span class="n">urlpatterns</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<ul>
+<li><p>django-devserver <br/>
+项目github主页: <a href="https://github.com/drinksober/django-devserver">https://github.com/drinksober/django-devserver</a> <br/>
+这个项目好久没有维护了..已经跑不起来了. 可以试试同事的修复版: <br/>
+<a href="https://github.com/drinksober/django-devserver">https://github.com/drinksober/django-devserver</a></p></li>
+<li><p><strong>line profiler:</strong>  <br/>
+其实最好用的还是用line profiler去找程序的瓶颈:  <br/>
+效果如图所示, 显示了一个方法内哪行代码运行的时间最久:  <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/170503_django_performace/profile_liner.png">  <br/>
+使用方法(从同事黄俊那偷来的代码):</p></li>
+</ul>
+
+
+<div style='margin-left: 20px'>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Line_Profiler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span><span class='line'>    <span class="sd">&quot;&quot;&quot;put @profile on ur functions&quot;&quot;&quot;</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">follow</span> <span class="o">=</span> <span class="n">follow</span> <span class="ow">or</span> <span class="p">[]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">def</span> <span class="nf">profiled_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">line_profiler</span> <span class="o">=</span> <span class="n">LineProfiler</span><span class="p">()</span>
+</span><span class='line'>            <span class="n">line_profiler</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</span><span class='line'>            <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">line_profiler</span><span class="o">.</span><span class="n">add_function</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">follow</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">line_profiler</span><span class="o">.</span><span class="n">enable_by_count</span><span class="p">()</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">line_profiler</span><span class="o">.</span><span class="n">disable_by_count</span><span class="p">()</span>
+</span><span class='line'>            <span class="n">line_profiler</span><span class="o">.</span><span class="n">print_stats</span><span class="p">(</span><span class="n">stripzeros</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)(</span><span class="n">profiled_func</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">__builtin__</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="n">Line_Profiler</span><span class="p">()</span>
+</span></code></pre></td></tr></table></div></figure>
+</div>
+
+
+<br>
+
+
+<br>
+
+
+<h3>7.举个栗子:</h3>
+
+<p>最近重新写了一个项目里很常用的方法(之前也是我写的, 但感觉稍微有些慢), 利用上文说的一些知识, 把执行时间从100多ms降到了20ms.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">users</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">add_self</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">add_share</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">select_id</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span class='line'>    <span class="sd">&quot;&quot;&quot;Return 当前用户能看到的所有用户, 返回queryset, 以便做性能优化:</span>
+</span><span class='line'>
+</span><span class='line'><span class="sd">    参数:</span>
+</span><span class='line'><span class="sd">        1. add_self:  是否添加当前用户(self).</span>
+</span><span class='line'><span class="sd">        2. add_share: 是否添加因为共享(account/campaign)而可见的用户. e.g. u2共享a1给u1, u1.users(add_share=True)就能看到u2</span>
+</span><span class='line'><span class="sd">        3. select_id: 是否只取id字段</span>
+</span><span class='line'><span class="sd">    逻辑:</span>
+</span><span class='line'><span class="sd">        1. add_share=False 时:</span>
+</span><span class='line'><span class="sd">            +----------+-------------------------------------+</span>
+</span><span class='line'><span class="sd">            | Type     | 可见的用户集合                        |</span>
+</span><span class='line'><span class="sd">            +----------+-------------------------------------+</span>
+</span><span class='line'><span class="sd">            | Root     | 所有 [Advanced, Member] - blacklist |</span>
+</span><span class='line'><span class="sd">            +----------+-------------------------------------+</span>
+</span><span class='line'><span class="sd">            | Admin    | 同组 [Advanced, Member] - blacklist |</span>
+</span><span class='line'><span class="sd">            +----------+-------------------------------------+</span>
+</span><span class='line'><span class="sd">            | other    | []                                  |</span>
+</span><span class='line'><span class="sd">            +----------+-------------------------------------+</span>
+</span><span class='line'><span class="sd">        2. add_share=True 时:</span>
+</span><span class='line'><span class="sd">            利用当前用户能看到的所有accounts, 获取创建它们的用户(permission=2)</span>
+</span><span class='line'><span class="sd">    &quot;&quot;&quot;</span>
+</span><span class='line'>    <span class="c"># 1. users_shared</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">add_share</span><span class="p">:</span>
+</span><span class='line'>        <span class="c"># 共享给该用户的account的主人们</span>
+</span><span class='line'>        <span class="n">aps</span> <span class="o">=</span> <span class="n">AccountPermission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+</span><span class='line'>            <span class="n">account__status</span><span class="o">=</span><span class="s">&#39;ACTIVE&#39;</span><span class="p">,</span> <span class="n">permission</span><span class="o">=</span><span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="n">account__in</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">accounts</span><span class="p">()</span>
+</span><span class='line'>        <span class="p">)</span><span class="o">.</span><span class="n">select_related</span><span class="p">(</span><span class="s">&#39;share_user&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">&#39;share_user__id&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">users_shared</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="n">aps</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">users_shared</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">none</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 2. users</span>
+</span><span class='line'>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">query_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">role__in</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;ADVANCED&#39;</span><span class="p">,</span> <span class="s">&#39;MEMBER&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="c"># Admin</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">query_dict</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">usergroup</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">usergroup</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">**</span><span class="n">query_dict</span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">blacklist</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">users</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">users</span> <span class="o">=</span> <span class="n">users</span> <span class="o">|</span> <span class="n">users_shared</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 控制是否添加本身, 主要是user1.has_permission(user1)的时候用到</span>
+</span><span class='line'>    <span class="k">if</span> <span class="ow">not</span> <span class="n">add_self</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">users</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">users</span> <span class="o">|=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 过滤停用的用户:</span>
+</span><span class='line'>    <span class="n">users</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">is_active</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">usergroup__status</span><span class="o">=</span><span class="s">&#39;ACTIVE&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">users</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># 大部分情况下只需要id. 用户列表很多时, 可以大幅度提高性能.</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">select_id</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">users</span> <span class="o">=</span> <span class="n">users</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="n">flat</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">users</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20170503/django-performance-and-optimisation"
+            data-title="Django 性能优化官方文档笔记(主要针对ORM)"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20170503/django-performance-and-optimisation/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20170503/django-filter-trick/" style="margin-right:20px ;"  title="Next Post: Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)">&laquo; Django filter 的一个令人震惊的小细节, 不转不是中国人!(逃..)  </a>
+      
+      
+    	<a href="/blog/20170405/many-to-many-relation-with-extra-field-django/" style="" title="Previous Post: Django ORM的多对多关系 (每个关系有附加的属性)"> Django ORM的多对多关系 (每个关系有附加的属性)  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20170503/django-performance-and-optimisation/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

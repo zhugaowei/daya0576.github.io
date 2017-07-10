@@ -1,0 +1,629 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>数组分割(编程之美) HyperS面试题 思考与分享 - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="数组分割(编程之美) HyperS面试题 思考与分享 问题描述: 有一个无序, 元素个数为2n的正整数数组. 要求: 如何能把这个数组分割为元素个数为n的两个数组, 并使两个子数组的和最接近. 当时面试的时候, 看完描述想了十秒钟, 只能想到C(2n, n)把所有情况遍历一遍, &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20170525/partition-problem/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">数组分割(编程之美) HyperS面试题 思考与分享</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p><code>问题描述:</code> <strong>有一个无序, 元素个数为2n的正整数数组. 要求: 如何能把这个数组分割为元素个数为n的两个数组, 并使两个子数组的和最接近.</strong>  <br/>
+当时面试的时候, 看完描述想了十秒钟, 只能想到C(2n, n)把所有情况遍历一遍, 想不到特别简单的算法, 就直接放弃了.. 面试官问我应该怎么做呢, 我只能靠直觉说用动态规划吧.  <br/>
+虽然现在早就入职了, 但终于有时间重新思考这个问题, 并用这篇日志记录下来.</p></blockquote>
+
+<!--more-->
+
+
+<p></p>
+
+<br>  
+
+
+<blockquote><p>这道面试题其实来自 <code>编程之美 2.18 数组分割</code>, 讽刺的是我以前很早买过这本书, 却没有仔细阅读~~</p></blockquote>
+
+<br>
+
+
+<h3>方法一:</h3>
+
+<p>Simple greedy algorithm:</p>
+
+<p>Step1: 将这个数组进行排序. <br/>
+Step2: 按奇偶划分为两个数组: l1: [a1, a3, a5, ..] 和 l2: [a2, a4, a6, ..]  <br/>
+Step3: 遍历这两个数组, 找出一对数进行交换, 使得<code>Sum(l1)</code>和<code>Sum(l2)</code>的差值最小. <br/>
+Step4: 重复Step3操作, 直到找不到可以让差值更小的交换.</p>
+
+<p><strong>缺点: </strong> 这样找到的两个子数组并不能保证是最优解. <br/>
+我自己简单写了一下Python代码, 供更好的理解.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+</span><span class='line'>    <span class="c"># 先将所有元素排序, 按奇偶划分为两个数组:</span>
+</span><span class='line'>    <span class="c"># [a1, a3, a5, ..] 和 [a2, a4, a6, ..]</span>
+</span><span class='line'>    <span class="n">l</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">l1</span><span class="p">,</span> <span class="n">l2</span> <span class="o">=</span> <span class="n">l</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;sum(l1) - sum(l2):&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l2</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">swp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">sub</span> <span class="o">=</span> <span class="n">sub_tmp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l1</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l2</span><span class="p">):</span>
+</span><span class='line'>                <span class="c"># x与y交换之后, SUM(l1) - SUM(l2):</span>
+</span><span class='line'>                <span class="c">#   new_sum1 = sum(l1) - x + y</span>
+</span><span class='line'>                <span class="c">#   new_sum2 = sum(l2) - y + x</span>
+</span><span class='line'>                <span class="c">#   new_sub = new_sum1 - new_sum2 = sum(l1) - sum(l2) - 2x + 2y</span>
+</span><span class='line'>                <span class="n">new_sub</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">sub</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">new_sub</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sub_tmp</span><span class="p">):</span>
+</span><span class='line'>                    <span class="n">swp</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</span><span class='line'>                    <span class="n">sub_tmp</span> <span class="o">=</span> <span class="n">new_sub</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sub_tmp</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">swp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">swp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span class='line'>            <span class="n">l1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">l2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">l2</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">l1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">swapping l1[{}] and l2[{}]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&#39;sum(l1) - sum(l2):&#39;</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">sum</span><span class="p">(</span><span class="n">l2</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">break</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">method1</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<br>
+
+
+<h3>方法二:</h3>
+
+<p>分割为两个数组, 并使他们的和最接近 == 从2n个数中挑出n个数, 使他们的和最接近与所有整数的之和的一半. <br/>
+书中对这个方法二的描述也是很令人费解, 我总结了一下:</p>
+
+<p><strong>定义:</strong> <br/>
+sum_set(k, i): 从k个整数中找出i个元素的和 的集合. <br/>
+令L为输入的数组, 令2N为数组长度:</p>
+
+<ol>
+<li><strong>sum_set(2N, 1):</strong> 从2N个元素中取一个元素, 得到的和的集合</li>
+<li><strong>sum_set(2N, 2N):</strong> 从2N个元素中取2N个元素, 得到的和的集合</li>
+<li><strong>sum_set(2N, i):</strong> S(2N-1, i) | {x+L[k-1] for x in S(2N-1, i-1)}   <br/>
+<strong>大致意思就是sum_set(2N, i)可以分解为 第k个元素 选或者不选 的情况</strong></li>
+</ol>
+
+
+<p><strong>举个例子!!!</strong> <br/>
+L = [1, 2, 3, 4]</p>
+
+<ol>
+<li>sum_set(4, 1) = {1, 2, 3, 4}</li>
+<li>sum_set(4, 4) = {1+2+3+4} = {10}</li>
+<li>sum_set(4, 2) <br/>
+= sum_set(3, 2) | {x+4 for x in sum_set(3, 1)}  <br/>
+= (sum_set(2, 2) | {x+3 for x in sum_set(2, 1)}) | {1+4, 2+4, 3+4}  <br/>
+= ({1+2} | {1+3, 2+3}}) | {5, 6, 7}     <br/>
+= {3, 4, 5, 6, 7}</li>
+</ol>
+
+
+<p>书中是用for循环来写的, 但我感觉这种DP一般用递归会更加清晰, 就写了这个版本(当然可以加cache做优化, 但我主要是为了展示思路就懒得写了, 可以参考我<a href="/blog/20160915/dynamic-programming/">关于动态规划的这篇日志</a>)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">method2</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="n">k</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="p">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">L</span><span class="p">[:</span><span class="n">k</span><span class="p">])}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># S(k, i) = S(k-1, i) U {A[k] + x | x属于S(k-1, i-1) }</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">method2</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">|</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">method2</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">print</span><span class="p">(</span><span class="n">method2</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为每一步都拆成了两种情况(第k个元素 被选中|没被选中)进行递归，所以<strong>时间复杂度为O(2<sup>N</sup>)</strong>. <br/>
+要是加cache了话(把计算过的结果放在字典里), 时间复杂度是O(max(k)*max(i))=O(N<sup>2</sup>)?</p>
+
+<p>但我总觉得<code>{i+L[k-1] for i in method2(k-1, i-1)}</code>的时间复杂度是不是没有考虑进去???</p>
+
+<p>原书中的写法, 测试过了, 和递归的结果是一模一样的:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">method2_o</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">Heap</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">i_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i_max</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">Heap</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span><span class='line'>                <span class="n">Heap</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<br>
+
+
+<h3>方法三:</h3>
+
+<p>方法二的时间复杂度是指数级的, 肯定是不能接受的. <br/>
+按照书上写了第三种方法, <strong>时间复杂度为O(N<sup>2</sup>*Sum)</strong>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">method3</span><span class="p">(</span><span class="n">isOk</span><span class="p">):</span>
+</span><span class='line'>    <span class="c"># isOk[i][v]: bool(从数组中取i个数, 得到sum为v)</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
+</span><span class='line'>                <span class="n">sub</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span><span class='line'>                <span class="k">if</span> <span class="n">sub</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">isOk</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">sub</span><span class="p">]:</span>
+</span><span class='line'>                    <span class="n">isOk</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+</span><span class='line'>    <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+</span><span class='line'>    <span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">isOk</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+</span><span class='line'>    <span class="n">isOk</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span class='line'>    <span class="n">method3</span><span class="p">(</span><span class="n">isOk</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">[</span><span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">isOk</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<br>
+
+
+<h3>总结(TODO):</h3>
+
+<ol>
+<li>不知道在看这篇博客的你有没有发现一个很尴尬的问题:<br/>
+书中的解法二得到的是 取值和的集合, 解法三得到的是是否能找到答案的boolean值. <br/>
+那如何利用解法二, 解法三得到具体的子数组(最优解)呢?</li>
+<li>解法二的我用递归的方式写的时间复杂度? <br/>
+如果我递归时, 把计算结果保存到字典里, 不去做重复计算, 那么它的时间复杂度又是多少呢?</li>
+</ol>
+
+
+<p>在知乎提的问题: <a href="https://www.zhihu.com/question/60472041">https://www.zhihu.com/question/60472041</a>  <br/>
+希望有好心人帮我回答, 23333</p>
+
+<h3>关于P, NP, NP-complete</h3>
+
+<h3>References:</h3>
+
+<ol>
+<li>&lt;编程之美> 2.18 数组分割</li>
+<li><a href="http://www.americanscientist.org/issues/pub/2002/3/the-easiest-hard-problem/2">http://www.americanscientist.org/issues/pub/2002/3/the-easiest-hard-problem/2</a></li>
+</ol>
+
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20170525/partition-problem"
+            data-title="数组分割(编程之美) HyperS面试题 思考与分享"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20170525/partition-problem/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20170606/pycharm-shortcut/" style="margin-right:20px ;"  title="Next Post: PyCharm 收藏多年快捷键分享~">&laquo; PyCharm 收藏多年快捷键分享~  </a>
+      
+      
+    	<a href="/blog/20170514/ele-interview-solution/" style="" title="Previous Post: 饿了吗 一道面试题分享和思考~"> 饿了吗 一道面试题分享和思考~  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20170525/partition-problem/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

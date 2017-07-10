@@ -1,0 +1,651 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Henry's Awesome Summary of Perl - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="Henry's Awesome Summary of Perl My summary of Perl in semester 16s2 of (COMP2041|COMP9041) in UNSW. My note of lectures, it was a mess and not well &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20160920/perl-summery/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">Henry's Awesome Summary of Perl</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>My summary of Perl in semester 16s2 of (COMP2041|COMP9041) in UNSW.</p></blockquote>
+
+<!--more-->
+
+
+<br><br>   
+
+
+<blockquote><p>My note of lectures, it was a mess and not well organized.  <br/>
+So I decided to write this blog to make things clear(I need time to modify).     <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160920_perl/note.JPG"></p></blockquote>
+
+<br><br>
+
+
+<blockquote><p>Perl = <strong>P</strong>ractical <strong>E</strong>xtraction and <strong>R</strong>eport <strong>L</strong>anguage</p></blockquote>
+
+<br><br>
+
+
+<h1>Running Perl code in the command line</h1>
+
+<p><code>perl -e ’print "Hello, world\n";</code></p>
+
+<br><br>
+
+
+<h1>#!/usr/bin/perl -w</h1>
+
+<p>Adding this line at the beginning of the file, which will let the operating system know that this file is Perl program so that it can be executed in this way:  <br/>
+<code>chmod 755 PerlCodeFile;./PerlCodeFile.pl</code> <br/>
+<code>-w</code> means warnings.</p>
+
+<br><br>
+
+
+<h1>Arithmetic &amp; Logical Operators</h1>
+
+<p>Numeric: <code>== != &lt; &lt;= &gt; &gt;= &lt;=&gt;</code> <br/>
+String: <code>eq ne lt le gt ge cmp</code></p>
+
+<br><br>
+
+
+<h1>Input/Output</h1>
+
+<p>Andrew always gives us advice to make our life easier, and one thing is always remembering to check the file is correctly opened.    <br/>
+<strong>Elegant usage of die:</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1"># $0 is the perl filename, and $! is the error msg.     </span>
+</span><span class='line'><span class="nb">open</span> <span class="n">BOOK</span><span class="p">,</span> <span class="s">&quot;hp1.txt&quot;</span> <span class="ow">or</span> <span class="nb">die</span> <span class="s">&quot;$0: open &#39;$file&#39; failed: $!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Sample implementation of <code>cat</code></strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">while</span> <span class="p">(</span><span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;STDIN&gt;</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">print</span> <span class="nv">$line</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>read,  write and append</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nb">open</span><span class="p">(</span><span class="n">DATA</span><span class="p">,</span> <span class="s">&quot;&lt;&lt; data&quot;</span><span class="p">);</span> <span class="c1"># read from file &quot;data&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">open</span><span class="p">(</span><span class="n">RES</span><span class="p">,</span> <span class="s">&quot;&gt;&gt; results&quot;</span><span class="p">);</span> <span class="c1"># write to file &quot;results&quot;</span>
+</span><span class='line'><span class="k">print</span> <span class="n">RES</span> <span class="nv">@array</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">open</span><span class="p">(</span><span class="n">XTRA</span><span class="p">,</span> <span class="s">&quot;&gt;&gt;&gt; stuff&quot;</span><span class="p">);</span> <span class="c1"># append to file &quot;stuff&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Read content of web page through url:</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nb">open</span> <span class="n">F</span><span class="p">,</span> <span class="s">&quot;wget -q -O- $url|&quot;</span> <span class="ow">or</span> <span class="nb">die</span><span class="p">;</span>
+</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="nv">$line</span> <span class="o">=</span> <span class="sr">&lt;F&gt;</span><span class="p">)</span> <span class="p">{}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Saving lines of file content to array</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">@lines</span> <span class="o">=</span> <span class="sr">&lt;STDIN&gt;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<h1>Control Structures</h1>
+
+<p><strong>For loop</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">foreach</span> <span class="nv">$arg</span> <span class="p">(</span><span class="nv">@ARGV</span><span class="p">){}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">foreach</span> <span class="nv">$num</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">10</span><span class="p">){}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;$_\n&quot;</span> <span class="k">foreach</span> <span class="nv">@list</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">foreach</span> <span class="nv">$file</span> <span class="p">(</span><span class="nb">glob</span> <span class="o">*.</span><span class="n">txt</span><span class="p">){};</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>If</strong>   <br/>
+Testing the line&rsquo;s content, <code>=~</code> is so useful in perl.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$line</span> <span class="o">=~</span><span class="sr"> /($course_prefix[0-9]{4})&lt;\/a&gt;/</span><span class="p">){</span>
+</span><span class='line'>    <span class="c1"># print $line;</span>
+</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;$1\n&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># checking ctrl - D</span>
+</span><span class='line'><span class="k">last</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$line</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<h1>Data structure</h1>
+
+<p><strong>String:</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1"># &quot;Henry\n&quot; --&gt; &quot;Henry&quot;</span>
+</span><span class='line'><span class="nb">chmod</span> <span class="nv">$line</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$len</span> <span class="o">=</span> <span class="nb">length</span> <span class="nv">$line</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$name</span><span class="o">.</span><span class="nv">$no</span> <span class="o">==</span> <span class="s">&quot;$name$no&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>split a string</strong>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">@field</span> <span class="o">=</span> <span class="nb">split</span> <span class="sr">/,/</span><span class="p">,</span> <span class="nv">$line</span><span class="p">;</span>
+</span><span class='line'><span class="nv">@words</span> <span class="o">=</span> <span class="nb">split</span> <span class="sr">/\s+/</span><span class="p">,</span> <span class="nv">$line</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Array</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$a</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>  <span class="c1"># @a = (,,,,42)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># print array:</span>
+</span><span class='line'><span class="c1"># @array = (&quot;Henry&quot;, &quot;is&quot;, &quot;so&quot;, &quot;cool&quot;);</span>
+</span><span class='line'><span class="nv">@array</span> <span class="o">=</span> <span class="sx">qw/Henry is so cool/</span><span class="p">;</span>
+</span><span class='line'><span class="k">print</span> <span class="nv">@array</span><span class="p">;</span> <span class="c1"># Henryissocool</span>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;@array&quot;</span><span class="p">;</span> <span class="c1"># Henry is so cool</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">join</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">,</span> <span class="nv">@array</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">push</span> <span class="sr">&lt;--&gt;</span> <span class="nb">pop</span>
+</span><span class='line'><span class="nb">shift</span>  <span class="sr">&lt;--&gt;</span> <span class="nb">unshift</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># shift(only one word) can be used to shift element in ARGV.</span>
+</span><span class='line'><span class="nb">shift</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$opt</span> <span class="o">=</span> <span class="nb">shift</span> <span class="nv">@ARGV</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># get the length of the array </span>
+</span><span class='line'><span class="n">len</span> <span class="o">=</span> <span class="nv">@array</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Hash</strong>  <br/>
+Here is a useful example from my lab code:  <br/>
+we can also see how sed work in perl:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">foreach</span> <span class="nv">$input</span> <span class="p">(</span><span class="nb">sort</span> <span class="nb">keys</span> <span class="nv">%total_p_of</span><span class="p">){</span>
+</span><span class='line'>    <span class="c1"># %poem_e = $total_p_of{$input};</span>
+</span><span class='line'>    <span class="nv">@poem_e_sort</span> <span class="o">=</span> <span class="nb">sort</span> <span class="p">{</span> <span class="nv">$total_p_of</span><span class="p">{</span><span class="nv">$input</span><span class="p">}{</span><span class="nv">$a</span><span class="p">}</span> <span class="sr">&lt;=&gt;</span> <span class="nv">$total_p_of</span><span class="p">{</span><span class="nv">$input</span><span class="p">}{</span><span class="nv">$b</span><span class="p">}</span> <span class="p">}</span> <span class="nb">keys</span> <span class="nv">%</span><span class="p">{</span><span class="nv">$total_p_of</span><span class="p">{</span><span class="nv">$input</span><span class="p">}};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nv">$p_e</span> <span class="o">=</span> <span class="nv">$poem_e_sort</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>    <span class="nv">$p_e</span> <span class="o">=~</span> <span class="n">s</span><span class="o">|</span><span class="n">poems</span><span class="o">/||</span><span class="p">;</span>
+</span><span class='line'>    <span class="nv">$p_e</span> <span class="o">=~</span> <span class="sr">s/.txt//</span><span class="p">;</span>
+</span><span class='line'>    <span class="nv">$p_e</span> <span class="o">=~</span> <span class="sr">s/_/ /g</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nv">$p_sum</span> <span class="o">=</span> <span class="nv">$total_p_of</span><span class="p">{</span><span class="nv">$input</span><span class="p">}{</span><span class="nv">$poem_e_sort</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]};</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">print</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s">&quot;%s most resembles the work of %s (log-probability=%0.1f)\n&quot;</span><span class="p">,</span>
+</span><span class='line'>                  <span class="nv">$input</span><span class="p">,</span> <span class="nv">$p_e</span><span class="p">,</span> <span class="nv">$p_sum</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<h1>SHELL Command in Perl</h1>
+
+<p>Perl is shell-like in the ease of invoking other commands/programs.
+Several ways of interacting with external commands/programs:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="sb">`cmd`</span><span class="p">;</span> <span class="c1"># capture entire output of cmd as single string</span>
+</span><span class='line'><span class="nb">system</span><span class="p">(</span><span class="s">&quot;cmd&quot;</span><span class="p">);</span> <span class="c1"># execute cmd and capture its exit status only</span>
+</span><span class='line'><span class="nb">open</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="s">&quot;cmd|&quot;</span><span class="p">);</span>  <span class="c1"># collect cmd output by reading from a stream</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<h1>Reference</h1>
+
+<p>This exaple explains this concept so well:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$henry</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$fred</span> <span class="o">=</span> <span class="s">&quot;henry&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$c</span> <span class="o">=</span> <span class="nv">$$fred</span><span class="p">;</span>  <span class="c1"># =&gt; 42</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+<h1>Math</h1>
+
+<p><strong>Square root</strong>: <code>sqrt $x*$x + $y*$y</code> <br/>
+<strong>Calculation of string</strong>:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="nv">$string</span> <span class="o">=</span> <span class="s">&quot;1+2+3+4+5&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$result</span> <span class="o">=</span> <span class="nb">eval</span> <span class="nv">$string</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br><br>
+
+
+
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20160920/perl-summery"
+            data-title="Henry's Awesome Summary of Perl"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20160920/perl-summery/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20160929/python-venv/" style="margin-right:20px ;"  title="Next Post: Python Virtual Environments Note">&laquo; Python Virtual Environments Note  </a>
+      
+      
+    	<a href="/blog/20160915/dynamic-programming/" style="" title="Previous Post: Fibonacci number(Recursive, DP and Decorator)"> Fibonacci number(Recursive, DP and Decorator)  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20160920/perl-summery/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

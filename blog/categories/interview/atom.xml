@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: interview | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/interview/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[面试算法题 - 出栈次序问题 (Catalan Number)]]></title>
+    <link href="http://changchen.me/blog/20170308/catalan-number-interview/"/>
+    <updated>2017-03-08T21:38:32+08:00</updated>
+    <id>http://changchen.me/blog/20170308/catalan-number-interview</id>
+    <content type="html"><![CDATA[<blockquote><p>之前去方付通面试的时候的时候, 问了我<code>N个数依次入栈，出栈顺序有多少种？</code>的算法题, 其实是卡特兰数(Catalan)的应用.  <br/>
+当时没有答出来(这要是之前没有接触过, 谁答的出来).  <br/>
+现在用这篇日志重新整理记录一下.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>问题的定义</h2>
+
+<p>一个栈(无穷大)的进栈序列为1，2，3，…，n，有多少个不同的出栈序列?</p>
+
+<h2>解题思路</h2>
+
+<ol>
+<li>假设进栈序列为[1, 2, 3, 4, 5, 6]</li>
+<li>因为每个数字都可能是最后一个出栈的(独立的事件), 所以先单独分析<strong>当k为最后一个出栈数字</strong>的情况.</li>
+<li>1) 当<code>k进栈</code>时, [1, 2]肯定已经出栈了, 所以他们([1, 2])的出栈序列总数为<code>f(k-1)</code> <br/>
+2) 当<code>k出栈</code>时, 因为3为最后一个出栈, [4, 5, 6]肯定也已经出栈了, 所以他们[4, 5, 6]的出栈序列总数为<code>f(n-k)</code></li>
+<li>所以当k为出栈序列的最后一个数字时, 可能序列的总和为<code>f(k-1)*f(n-k)</code></li>
+<li>又因为第二条中, 每个事件为独立的, 所以最后得到了这么一个推导式:  <br/>
+<code>f(0) = f(1) = 1</code> <br/>
+<code>f(n) = f(0)*f(n-1)+f(1)*f(n-2) + ... + f(n-1)*f(0) (n&gt;=2)</code></li>
+</ol>
+
+
+<h2>Reference</h2>
+
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Catalan_number">https://en.wikipedia.org/wiki/Catalan_number</a></li>
+<li><a href="http://www.acmerblog.com/catalan-5196.html">http://www.acmerblog.com/catalan-5196.html</a></li>
+<li><a href="http://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0#4">http://baike.baidu.com/item/%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0#4</a></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python - Note of Garbage Collection]]></title>
+    <link href="http://changchen.me/blog/20170214/python-garbage-collection/"/>
+    <updated>2017-02-14T12:30:18+08:00</updated>
+    <id>http://changchen.me/blog/20170214/python-garbage-collection</id>
+    <content type="html"><![CDATA[<blockquote><p>阅读了一篇Python垃圾回收的文章, 用这篇日志记录一下. 原文地址:<br> <a href="http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection">http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection</a></p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h3>Introduction to Python Memory Management</h3>
+
+<p>不像c和c艹, Python的内存分配和释放是完全自动的.</p>
+
+<br>
+
+
+<p>Python的两个内存管理策略:
+1. reference counting
+2. garbage collection
+在Python 2.0之前, 只用reference counting作为内存管理. <br/>
+原理: 记录一个对象被其他对象引用的次数. 当对这个对象的引用移除了, 引用计数也减小了. 要是减到0了, 这个对象也就被释放了.</p>
+
+<br>
+
+
+<p>这种方法很高效, 但也有一些caveat(警告, 缺点的意思吧). 例如它无法解决reference circle的问题(有种死锁的味道): <br/>
+```python
+def make_cycle():</p>
+
+<pre><code>l = [ ]
+l.append(l)
+</code></pre>
+
+<p>make_cycle()
+```</p>
+
+<br>
+
+
+<h3>Automatic Garbage Collection of Cycles</h3>
+
+<p>由于有上边这个reference circle的问题, 所以需要scheduled activity去自动收集垃圾. <br/>
+原理: 当 <code>分配的值 - 释放的值 &gt; 阈值</code> 的话: the garbage collector就会自动运行了. 它会运行gc模块去查找阈值.      <br/>
+```python
+import gc
+print &ldquo;Garbage collection thresholds: %r&rdquo; % gc.get_threshold()</p>
+
+<h1>Garbage collection thresholds: (700, 10, 10)</h1>
+
+<h1>我们可以看到这里默认的阈值是700</h1>
+
+<p>`&ldquo;
+但要<strong>注意</strong>的是如果Python已经把内存爆了的话, automatic garbage collection是不会执行的. 这时候你需要去处理抛出的异常, 或者程序已经崩溃了.  <br/>
+&rdquo;&lsquo;This is aggravated by the fact that the automatic garbage collection places high weight upon the NUMBER of free objects, not on how large they are. Thus any portion of your code which frees up large blocks of memory is a good candidate for running manual garbage collection.
+&rsquo;&lsquo;&rsquo;</p>
+
+<br>
+
+
+<h3>Manual Garbage Collection</h3>
+
+<p>对于一些长时间运行的服务器应用或者嵌入式应用, 自动的垃圾回收可能就有局限性了.   <br/>
+虽然在编码中reference cycle是要尽量去避免的, 但还是要有怎么去解决他们的办法.  <br/>
+手动地回收垃圾是个释放reference cycle垃圾内存的好方法.   <br/>
+手动回收垃圾的方法:  <br/>
+<code>python
+import gc
+gc.collect()
+</code>
+<code>gc.collect()</code>返回所有被回收的对象:  <br/>
+<code>python
+import gc
+collected = gc.collect()
+print "Garbage collector: collected %d objects." % (collected)
+</code>
+创建了几个reference cycle的实例:  <br/>
+```python
+import sys, gc</p>
+
+<p>def make_cycle():</p>
+
+<pre><code>l = { }
+l[0] = l
+</code></pre>
+
+<p>def main():</p>
+
+<pre><code>collected = gc.collect()
+print "Garbage collector: collected %d objects." % (collected)
+print "Creating cycles..."
+for i in range(10):
+    make_cycle()
+collected = gc.collect()
+print "Garbage collector: collected %d objects." % (collected)
+</code></pre>
+
+<p>if <strong>name</strong> == &ldquo;<strong>main</strong>&rdquo;:</p>
+
+<pre><code>ret = main()
+sys.exit(ret)
+</code></pre>
+
+<p>```
+有两种调用手动回收垃圾的策略(很好理解就不解释了):  <br/>
+1. Time-based
+2. Event-based:  For example, when a user disconnects from the application or when the application is known to enter an idle state.</p>
+
+<br>
+
+
+<h3>几点建议</h3>
+
+<ol>
+<li>不要太随意地去进行垃圾回收, 会严重影响性能(因为要去evalute每一个memory object).</li>
+<li>在你的应用启动并趋于稳定后, 再进行手动地垃圾回收.</li>
+<li>Run manual garbage collection after infrequently run sections of code which use and then free large blocks of memory. 最好在这时运行手动的垃圾回收: 当一段不常用的代码使用并释放了大量内存的是时候.</li>
+<li>当一段代码对timing很敏感的时候, 手动回收垃圾最好在它之前或之后运行.
+_ <br/>
+原版的描述: <br/>
+1.Do not run garbage collection too freely, as it can take considerable time to evaluate every memory object within a large system. For example, one team having memory issues tried calling gc.collect() between every step of a complex start-up process, increasing the boot time by 20 times (2000%). Running it more than a few times per day &ndash; without specific design reasons &ndash; is likely a waste of device resources. <br/>
+2.Run manual garbage collection after your application has completed start up and moves into steady-state operation. This frees potentially huge blocks of memory used to open and parse file, to build and modify object lists, and even code modules never to be used again. For example, one application reading XML configuration files was consuming about 1.5MB of temporary memory during the process. Without manual garbage collection, there is no way to predict when that 1.5MB of memory will be returned to the python memory pools for reuse. <br/>
+3.Run manual garbage collection after infrequently run sections of code which use and then free large blocks of memory. For example, consider running garbage collection after a once-per-day task which evaluates thousands of data points, creates an XML &lsquo;report&rsquo;, and then sends that report to a central office via FTP or SMTP/email. One application doing such daily reports was creating over 800K worth of temporary sorted lists of historical data. Piggy-backing gc.collect() on such daily chores has the nice side-effect of running it once per day for &lsquo;free&rsquo;. <br/>
+4.Consider manually running garbage collection either before or after timing-critical sections of code to prevent garbage collection from disturbing the timing. As example, an irrigation application might sit idle for 10 minutes, then evaluate the status of all field devices and make adjustments. Since delays during system adjustment might affect field device battery life, it makes sense to manually run garbage collection as the gateway is entering the idle period AFTER the adjustment process &ndash; or run it every sixth or tenth idle period. This insures that garbage collection won&rsquo;t be triggered automatically during the next timing-sensitive period.</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[那些年 用python刷过的面试算法题]]></title>
+    <link href="http://changchen.me/blog/20170213/python-algorithms/"/>
+    <updated>2017-02-13T12:32:09+08:00</updated>
+    <id>http://changchen.me/blog/20170213/python-algorithms</id>
+    <content type="html"><![CDATA[<blockquote><p>准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>fibonacci数组:</h2>
+
+<p><a href="/blog/20160915/dynamic-programming/">/blog/20160915/dynamic-programming/</a></p>
+
+<h2>Generating all possible permutations of a list</h2>
+
+<p>生成一个列表的所有组合.  <br/>
+1.The feeling of completing an algorithm with only one error, awesome.       <br/>
+```python
+def permutation(ABC, len_fix):</p>
+
+<pre><code>if len_fix == len(ABC)-1:
+    print(ABC)
+else:
+    for i in range(len(ABC)-len_fix):
+        part1, part2 = ABC[:len_fix], ABC[len_fix:]
+        part2[i], part2[0] = part2[0], part2[i]
+        permutation(part1+part2, len_fix+1)
+</code></pre>
+
+<p>ABC = [0, 1, 2, 3]
+permutation(ABC, 0)
+<code>
+2.Python buildin method:
+</code> python</p>
+
+<blockquote><blockquote><blockquote><p>horses = [1, 2, 3, 4]
+races = itertools.permutations(horses)
+print(races)
+&lt;itertools.permutations object at 0xb754f1dc>
+print(list(itertools.permutations(horses)))
+[(1, 2, 3, 4),
+ (1, 2, 4, 3),
+&hellip;
+ (4, 3, 1, 2),
+ (4, 3, 2, 1)]
+```</p></blockquote></blockquote></blockquote>
+
+<br><br>
+
+
+<blockquote><p>本来是想刷一遍leecode, 但算法题有四百多题..刷了三四题就放弃了  <br/>
+接下来的一些算法题是剑指offer里的:<br>
+<a href="https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1">https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1</a></p></blockquote>
+
+<br>
+
+
+<h2>输入一个链表，从尾到头打印链表每个节点的值.</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>class ListNode:</h1>
+
+<h1>def <strong>init</strong>(self, x):</h1>
+
+<h1>self.val = x</h1>
+
+<h1>self.next = None</h1>
+
+<p>class Solution:</p>
+
+<pre><code># 返回从尾部到头部的列表值序列，例如[1,2,3]
+def printListFromTailToHead(self, listNode):
+    # write code here
+
+    if listNode is None:
+        return []
+    else:
+        result = [listNode.val]
+
+    while listNode.next:
+        result.append(listNode.next.val)
+        listNode = listNode.next
+
+    return result[::-1]
+</code></pre>
+
+<p>```</p>
+
+<h2>反转链表</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>class ListNode:</h1>
+
+<h1>def <strong>init</strong>(self, x):</h1>
+
+<h1>self.val = x</h1>
+
+<h1>self.next = None</h1>
+
+<p>class Solution:</p>
+
+<pre><code>def ReverseList(self, pHead):
+    if pHead is None or pHead.next is None:
+        return pHead
+
+    h = self.ReverseList(pHead.next)
+
+    # reverse the linked list, except last one(because of return).
+    pHead.next.next = pHead
+    # head set null
+    pHead.next = None
+
+    return h
+</code></pre>
+
+<p>```</p>
+
+<h2>合并两个有序的链表</h2>
+
+<p>```python
+class Solution:</p>
+
+<pre><code>def Merge(self, pHead1, pHead2):
+    if pHead1 is None: return pHead2
+    if pHead2 is None: return pHead1
+
+    if pHead1.val &lt; pHead2.val:
+        pHead1.next = self.Merge(pHead1.next, pHead2)
+        head = pHead1
+    else:
+        pHead2.next = self.Merge(pHead1, pHead2.next)
+        head = pHead2
+
+    return head
+</code></pre>
+
+<p>```</p>
+
+<h2>生成二叉树的镜像</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>class TreeNode:</h1>
+
+<h1>def <strong>init</strong>(self, x):</h1>
+
+<h1>self.val = x</h1>
+
+<h1>self.left = None</h1>
+
+<h1>self.right = None</h1>
+
+<p>class Solution:</p>
+
+<pre><code># 返回镜像树的根节点
+def Mirror(self, root):
+
+    if root:
+        root.left, root.right = self.Mirror(root.right), self.Mirror(root.left)
+
+    return root
+</code></pre>
+
+<p>```</p>
+
+<h2>输入两棵二叉树A，B，判断B是不是A的子结构。</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>class TreeNode:</h1>
+
+<h1>def <strong>init</strong>(self, x):</h1>
+
+<h1>self.val = x</h1>
+
+<h1>self.left = None</h1>
+
+<h1>self.right = None</h1>
+
+<p>class Solution:</p>
+
+<pre><code>def HasSubtree(self, pRoot1, pRoot2):
+    if pRoot1 is None or pRoot2 is None:
+        return False
+    elif self.is_subtree(pRoot1, pRoot2):
+        return True
+    else:
+        return self.HasSubtree(pRoot1.left, pRoot2) or self.HasSubtree(pRoot1.right, pRoot2)
+
+def is_subtree(self, pRoot1, pRoot2):
+    if pRoot2 is None:
+        return True
+
+    elif pRoot1 and pRoot2 and pRoot1.val == pRoot2.val:
+        return self.is_subtree(pRoot1.left, pRoot2.left) and self.is_subtree(pRoot1.right, pRoot2.right)
+    else:
+        return False
+</code></pre>
+
+<h1>t1 = TreeNode(1)</h1>
+
+<h1>t1.left = TreeNode(1)</h1>
+
+<h1>t1.left.right = TreeNode(3)</h1>
+
+<h1>t1.left.left = TreeNode(2)</h1>
+
+<p>#
+#</p>
+
+<h1>t2 = TreeNode(1)</h1>
+
+<h1>t2.left = TreeNode(2)</h1>
+
+<h1>t2.right = TreeNode(3)</h1>
+
+<h1># t2.left.left = TreeNode(4)</h1>
+
+<p>#
+#</p>
+
+<h1>print(Solution().is_sametree(t1, t2))</h1>
+
+<h1>print(Solution().HasSubtree(t1, t2))</h1>
+
+<p>```</p>
+
+<h2>一层一层打印二叉树</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>class TreeNode:</h1>
+
+<h1>def <strong>init</strong>(self, x):</h1>
+
+<h1>self.val = x</h1>
+
+<h1>self.left = None</h1>
+
+<h1>self.right = None</h1>
+
+<p>class Solution:</p>
+
+<pre><code># 返回从上到下每个节点值列表，例：[1,2,3]
+def PrintFromTopToBottom(self, root):
+    result = []
+
+    nodes_in_level = [root] if root else []
+    while nodes_in_level:
+        nodes_in_next_level = []
+        for node in nodes_in_level:
+            result.append(node.val)
+            nodes_in_next_level.append(node.left)
+            nodes_in_next_level.append(node.right)
+
+        nodes_in_level = [node for node in nodes_in_next_level if node]
+
+    return result
+</code></pre>
+
+<h1>t1 = TreeNode(1)</h1>
+
+<h1>t1.left = TreeNode(1)</h1>
+
+<h1>t1.left.right = TreeNode(3)</h1>
+
+<h1>t1.left.left = TreeNode(2)</h1>
+
+<p>#</p>
+
+<h1>print(Solution().PrintFromTopToBottom(t1))</h1>
+
+<p>```</p>
+
+<h2>栈的压入弹出序列</h2>
+
+<p>```python</p>
+
+<h1>&ndash;<em>&ndash; coding:utf-8 &ndash;</em>&ndash;</h1>
+
+<h1>输入两个整数序列，第一个序列表示栈的压入顺序, 请判断第二个序列是否为该栈的弹出顺序。</h1>
+
+<h1>假设压入栈的所有数字均不相等。</h1>
+
+<h1>例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</h1>
+
+<p>class Solution:</p>
+
+<pre><code>def IsPopOrder(self, pushV, popV):
+    if pushV and popV and set(pushV) == set(popV):
+        l = [pushV.pop(0)]
+
+        while popV:
+            # False
+            if popV[0] in l[:-1]:
+                return False
+
+            # 1. push
+            elif pushV and l[-1] != popV[0]:
+                l.append(pushV.pop(0))
+
+            # 2. pull
+            else:
+                l.pop()
+                popV.pop(0)
+
+        return True
+    else:
+        return False
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+</feed>

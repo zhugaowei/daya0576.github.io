@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Notes of Atlassian git tutorial]]></title>
+    <link href="http://changchen.me/blog/20160705/git-notes/"/>
+    <updated>2016-07-05T14:18:24+08:00</updated>
+    <id>http://changchen.me/blog/20160705/git-notes</id>
+    <content type="html"><![CDATA[<blockquote><p>Although we have powerful tools such as sourcetree,  <br/>
+learning the details of git is still very necessary.  <br/>
+I found a fantastic tutorial:<a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a>, this is my learning notes.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h3>git log vs git status</h3>
+
+<p><code>git log</code>: showing all the comments in this branch  <br/>
+<code>git status</code>: showing the overview of this branch</p>
+
+<br>
+
+
+<h3>Show commits in graph</h3>
+
+<p>draw a graph of all comments:  <br/>
+<code>
+git log --graph --decorate --oneline    
+</code>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160705_git/graph.png"></p>
+
+<br> 
+
+
+<h3>git diff</h3>
+
+<ul>
+<li>Using &ldquo;git diff&rdquo; to compare two commits. <br/>
+<img style="max-height:330px" class="lazy" data-original="/images/blog/160705_git/diff.png"></li>
+</ul>
+
+
+<br>
+
+
+<h3>Undoing Changes</h3>
+
+<ul>
+<li><strong>&ldquo;git add <file>&hellip;&rdquo;</strong> to update what will be committed(stage changes)     <br/>
+<strong>&ldquo;git reset <file>&rdquo;</strong> to remove the specified file from the staging area, but <strong>leave the working directory unchanged</strong>.)</li>
+</ul>
+
+
+<br>
+
+
+<ul>
+<li>&ldquo;git revert <commit>&rdquo; to generate a new commit that undoes all of the changes introduced in <commit>, then apply it to the current branch.</li>
+</ul>
+
+
+<p>&ldquo;Whereas reverting is designed to safely undo a public commit, git reset is designed to undo local changes.&rdquo;   <br/>
+<img style="max-height:430px" class="lazy" data-original="/images/blog/160705_git/redo.svg"></p>
+
+<br>
+
+
+<p>&ldquo;The <code>git reset --hard</code> and <code>git clean -f</code> commands are your best friends after you’ve made some embarrassing developments in your local repository and want to burn the evidence.&rdquo;  <br/>
+Example:  <br/>
+``` python</p>
+
+<h1>Edit some existing files</h1>
+
+<h1>Add some new files</h1>
+
+<h1>Realise you have no idea what you&rsquo;re doing</h1>
+
+<h1>Undo changes in tracked files</h1>
+
+<p>git reset &mdash;hard</p>
+
+<h1>Remove untracked files</h1>
+
+<p>git clean -df
+```</p>
+
+<br>
+
+
+<h3>Rewriting history</h3>
+
+<p>git commit &mdash;amend: <br/>
+``` python</p>
+
+<h1>Edit hello.py and main.py</h1>
+
+<p>git add hello.py
+git commit</p>
+
+<h1>Realise you forgot to add the changes from main.py</h1>
+
+<p>git add main.py
+git commit &mdash;amend &mdash;no-edit
+```</p>
+
+<br>
+
+
+<h3>Difference of git fetch and git pull</h3>
+
+<p><code>git pull</code> = <code>git fetch</code> followed by a <code>git merge</code>(remote branch).  <br/>
+Still a little confused.  <br/>
+这篇文章解释的很清楚：<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657">http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657</a>  <br/>
+&lsquo;fetch&rsquo; is updating the remote branch info, then local branch merge to remote branch !!</p>
+
+<br>
+
+
+<h3>git set defaul remote to push</h3>
+
+<p>Edit your .git/config  <br/>
+<code>
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+</code></p>
+
+<br>
+
+
+<h3>merge conflict</h3>
+
+<p>Automatic merge failed; fix conflicts and then commit the result.   <br/>
+<code>Try: git mergetool</code></p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>

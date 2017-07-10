@@ -1,0 +1,573 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Mini-project#5-Memory - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="Mini-project#5-Memory 《An Introduction to Interactive Programming in Python》 差点来不及了 心都碎了 deadline是一点钟。。 还没写完就交了个半成品 心都碎了 但是偷偷把本地的时间改早了40分钟， &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20140504/mini-project-number-5-memory/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">Mini-project#5-Memory</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p> 《An Introduction to Interactive Programming in Python》</p></blockquote>
+
+<p>差点来不及了   心都碎了  <br/>
+deadline是一点钟。。 还没写完就交了个半成品 心都碎了  <br/>
+但是偷偷把本地的时间改早了40分钟，竟然成功地把deadlin延迟了 <br/>
+好开心  哈哈哈哈哈哈<img src="http://i3.dpfile.com/s/img/editor/Emoticon68.gif" alt="哈哈" /></p>
+
+<p>一个翻牌的游戏 考记忆力 直戳我的软肋呀 哈哈  <br/>
+我做的： <br/>
+（一看以为是女生做的一定会多给分吧 直戳程序员的软肋<img src="http://ctc.qzonestyle.gtimg.cn/qzone/em/e151.gif?max_age=2592000" alt="阴笑" />）
+<img src="\images\blog\140504_cousera\1.png" alt="ico_topitme" /></p>
+
+<p>TT吃饭去了   饿的手指都颤抖了<img src="http://i3.dpfile.com/s/img/editor/Emoticon89.gif" alt="饿" /></p>
+
+<!--more-->
+
+
+<p>code：<a href="http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py">http://www.codeskulptor.org/#user31_5R1CHSudUHFWeJg.py</a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># implementation of card game - Memory</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">simplegui</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">random</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">tures</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="n">before1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">before2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">list_word</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</span><span class='line'><span class="n">list_word</span> <span class="o">=</span> <span class="n">list_word</span> <span class="o">+</span> <span class="n">list_word</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="n">list_word_exposed</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>    <span class="n">list_word_exposed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">clear_exposion</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">list_word_exposed</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">win</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">win</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">win</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">win</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># helper function to initialize globals</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">new_game</span><span class="p">():</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">list_word</span>
+</span><span class='line'>    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">list_word</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">clear_exposion</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>    <span class="n">before</span> <span class="o">=</span> <span class="bp">None</span>
+</span><span class='line'>    <span class="n">tures</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># define event handlers</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">mouseclick</span><span class="p">(</span><span class="n">pos</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span><span class="p">,</span> <span class="n">tures</span><span class="p">,</span> <span class="n">list_word_exposed</span><span class="p">,</span> <span class="n">before</span>
+</span><span class='line'>    <span class="n">click</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">50</span>
+</span><span class='line'>    <span class="k">global</span> <span class="n">state</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">if</span> <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">click</span><span class="p">]</span> <span class="o">==</span> <span class="bp">False</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">global</span> <span class="n">before1</span><span class="p">,</span> <span class="n">before2</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">before1</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before1&quot;</span><span class="p">,</span> <span class="n">before1</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">before2</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before2&quot;</span><span class="p">,</span> <span class="n">before2</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">tures</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>            <span class="k">if</span> <span class="ow">not</span> <span class="n">list_word</span><span class="p">[</span><span class="n">before1</span><span class="p">]</span> <span class="o">==</span> <span class="n">list_word</span><span class="p">[</span><span class="n">before2</span><span class="p">]:</span>
+</span><span class='line'>                <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">before2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>                <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">before1</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">before1</span> <span class="o">=</span> <span class="n">click</span>
+</span><span class='line'>            <span class="k">print</span> <span class="s">&quot;before1&quot;</span><span class="p">,</span> <span class="n">before1</span>
+</span><span class='line'>            <span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s">&quot;Tures = &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tures</span><span class="p">))</span>
+</span><span class='line'>            <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="n">list_word_exposed</span><span class="p">[</span><span class="n">click</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># cards are logically 50x100 pixels in size    </span>
+</span><span class='line'><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="n">canvas</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">win</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="s">&quot;YOU WIN!!!! haha :)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="mi">80</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_word</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">canvas</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="p">),</span> <span class="p">(</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="mi">80</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">,</span> <span class="s">&#39;serif&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">exposed</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">list_word_exposed</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">exposed</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polygon</span><span class="p">([[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">]],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;pink&#39;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">elif</span><span class="p">(</span><span class="ow">not</span> <span class="n">exposed</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+</span><span class='line'>                <span class="n">canvas</span><span class="o">.</span><span class="n">draw_polygon</span><span class="p">([[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="n">index</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">95</span><span class="p">]],</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;white&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">button_handler</span><span class="p">():</span>
+</span><span class='line'>    <span class="n">new_game</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># create frame and add a button and labels</span>
+</span><span class='line'><span class="n">frame</span> <span class="o">=</span> <span class="n">simplegui</span><span class="o">.</span><span class="n">create_frame</span><span class="p">(</span><span class="s">&quot;Memory&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">add_button</span><span class="p">(</span><span class="s">&quot;Reset&quot;</span><span class="p">,</span> <span class="n">new_game</span><span class="p">)</span>
+</span><span class='line'><span class="n">label</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">add_label</span><span class="p">(</span><span class="s">&quot;Turns = 0&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># register event handlers</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_mouseclick_handler</span><span class="p">(</span><span class="n">mouseclick</span><span class="p">)</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">set_draw_handler</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># get things rolling</span>
+</span><span class='line'><span class="n">new_game</span><span class="p">()</span>
+</span><span class='line'><span class="n">frame</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Always remember to review the grading rubric</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20140504/mini-project-number-5-memory"
+            data-title="Mini-project#5-Memory"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20140504/mini-project-number-5-memory/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20140506/birthday-aomengweidao/" style="margin-right:20px ;"  title="Next Post: 【探80】生日小庆之澳门味道">&laquo; 【探80】生日小庆之澳门味道  </a>
+      
+      
+    	<a href="/blog/20140429/cousera-comments/" style="" title="Previous Post: cousera_comments总和"> cousera_comments总和  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20140504/mini-project-number-5-memory/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

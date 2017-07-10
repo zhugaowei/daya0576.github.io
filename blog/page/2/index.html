@@ -1,0 +1,645 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="Mar 18th, 2017 django, hypers Django 阅读源码笔记 - Hypers第一周 来Hypers上班的第一周, 在看Django的middleware的时候, 对process request, view, template和response的四个过程有些疑惑, &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/page/2/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><!-- First page index -->
+
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-18T23:17:07+08:00" data-updated="true" itemprop="datePublished">Mar 18<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/django/'>django</a>, <a class='category' href='/blog/categories/hypers/'>hypers</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170318/django-source-code-analysis/" itemprop="url">Django 阅读源码笔记 - Hypers第一周</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>来Hypers上班的第一周, 在看Django的middleware的时候, 对process <code>request, view, template和response</code>的四个过程有些疑惑, 俊哥建议我读一下django的源码.   <br/>
+在这篇日志中, 我整理了django从<strong>启动server</strong> &mdash;> <strong>处理Request</strong> &mdash;> <strong>返回response</strong> 的整个<strong>代码流程</strong>.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170318/django-source-code-analysis/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-13T21:35:25+08:00" data-updated="true" itemprop="datePublished">Mar 13<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/django/'>django</a>, <a class='category' href='/blog/categories/hypers/'>hypers</a>, <a class='category' href='/blog/categories/python/'>python</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170313/class-based-views-notes/" itemprop="url">Django Class-based Views Notes (Hypers第一天)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>今天第一天到Hypers上班, 看代码才发现django有一个东西叫做<strong>CBV(Class-based views)</strong>. 晚上仔细看看官方的文档, 做一下笔记.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170313/class-based-views-notes/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-08T21:38:32+08:00" data-updated="true" itemprop="datePublished">Mar 8<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>, <a class='category' href='/blog/categories/interview/'>interview</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170308/catalan-number-interview/" itemprop="url">面试算法题 - 出栈次序问题 (Catalan Number)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>之前去方付通面试的时候的时候, 问了我<code>N个数依次入栈，出栈顺序有多少种？</code>的算法题, 其实是卡特兰数(Catalan)的应用.  <br/>
+当时没有答出来(这要是之前没有接触过, 谁答的出来).  <br/>
+现在用这篇日志重新整理记录一下.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170308/catalan-number-interview/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-03-06T12:45:09+08:00" data-updated="true" itemprop="datePublished">Mar 6<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/binary-search/'>binary search</a>, <a class='category' href='/blog/categories/inteview/'>inteview</a>, <a class='category' href='/blog/categories/zaihui/'>zaihui</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170306/binary-search/" itemprop="url">面试算法题 - 二分查找的变种题</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>去再惠面试的时候, 问了我一道二分查找的变种题, 我当时答的并不是特别清楚, 用这篇日志整理记录一下.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170306/binary-search/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-24T09:30:51+08:00" data-updated="true" itemprop="datePublished">Feb 24<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/algorithm/'>algorithm</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170224/coke-algorithm/" itemprop="url">面试算法题 - $1 Coke Problem</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>今天面试问到一个算法: 一个汽水是$1, 两个汽水的<strong>空瓶</strong>换一瓶可乐, 请问给一些钱, 最多能喝几瓶呢?   <br/>
+当时思路有些乱, 算法没写清楚, 面试结束去个奶茶店, 重新写了一下.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170224/coke-algorithm/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-23T23:57:18+08:00" data-updated="true" itemprop="datePublished">Feb 23<span>rd</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/diary/'>diary</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170223/diary-2017/" itemprop="url">随笔 2017</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>试着去写写日记吧。 或许可以让你看到一个不一样的我吧 :&ldquo;)</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170223/diary-2017/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-23T08:04:32+08:00" data-updated="true" itemprop="datePublished">Feb 23<span>rd</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/inteview/'>inteview</a>, <a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/shanghai/'>shanghai</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170223/python-backend-inteview-summery/" itemprop="url">2017 上海后端(python)面试经历分享</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>这篇文章主要有两个目的:  <br/>
+1) 总结自己回国一周, 在上海找工作的经历. <br/>
+2) 为准备在上海寻找Python工作的小伙伴的一些参考和建议.   <br/>
+ps. 本人渣渣, 文中也都是主观的观点, 看看开心就好, 不喜勿喷.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170223/python-backend-inteview-summery/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-20T09:34:57+08:00" data-updated="true" itemprop="datePublished">Feb 20<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/scope/'>scope</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170220/python-scope/" itemprop="url">Python - Note of Variable Scope</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>Watched an awesome video about python scope: <br>
+<a href="https://www.youtube.com/watch?v=QVdf0LgmICw">https://www.youtube.com/watch?v=QVdf0LgmICw</a></p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170220/python-scope/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-14T12:30:18+08:00" data-updated="true" itemprop="datePublished">Feb 14<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/interview/'>interview</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170214/python-garbage-collection/" itemprop="url">Python - Note of Garbage Collection</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>阅读了一篇Python垃圾回收的文章, 用这篇日志记录一下. 原文地址:<br> <a href="http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection">http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection</a></p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170214/python-garbage-collection/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta" >
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-02-13T12:32:09+08:00" data-updated="true" itemprop="datePublished">Feb 13<span>th</span>, 2017</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/interview/'>interview</a>, <a class='category' href='/blog/categories/python/'>python</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/20170213/python-algorithms/" itemprop="url">那些年 用python刷过的面试算法题</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<blockquote><p>准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下.</p></blockquote>
+
+
+		
+		<a  rel="full-article"  href="/blog/20170213/python-algorithms/" >  阅读全文  </a>
+	</div>
+
+</article>
+
+</div>
+
+<nav id="pagenavi">
+    
+        <a href="/" class="prev">Prev</a>
+    
+    
+        <a href="/blog/page/3/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav>
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

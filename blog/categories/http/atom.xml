@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: http | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/http/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Http协议的笔记 (待更新)]]></title>
+    <link href="http://changchen.me/blog/20170320/http-protocal/"/>
+    <updated>2017-03-20T21:03:18+08:00</updated>
+    <id>http://changchen.me/blog/20170320/http-protocal</id>
+    <content type="html"><![CDATA[<blockquote><p>后端工程师面试时必问的一个问题就是<strong>Http协议</strong>, 例如 http是建立在 TCP/IP 协议之上的应用层规范, Request和Response的结构, Response状态码的类型.  <br/>
+这些基础知识, 其实在实际的工作中其实还是很有用处的, 有利于自己理解很多<strong>隐藏的细节</strong>.   <br/>
+这篇日志记录了最近看到的一些不错的资料, 以后可能会持续更新~~</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>Http request:</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_RequestMessageExample.png" alt="Request" /></p>
+
+<h2>Http response:</h2>
+
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png" alt="Response" /></p>
+
+<h2>Http response code</h2>
+
+<p>这段真的是返回值的精华总结:  <br/>
+<strong>1xx: hold on <br/>
+2xx: here you go <br/>
+3xx: go away <br/>
+4xx: you fucked up <br/>
+5xx: I fucked up   </strong></p>
+
+<p>再下边是具体的常用返回值:</p>
+
+<h3>1xx (Informational): Request received, server is continuing the process.</h3>
+
+<p><strong>100</strong> Continue: The server received the request and in the process of giving the response.</p>
+
+<h3>2xx (Success): The request was successfully received, understood, accepted and serviced.</h3>
+
+<p><strong>200</strong> OK: The request is fulfilled.</p>
+
+<h3>3xx (Redirection): Further action must be taken in order to complete the request.</h3>
+
+<p><strong>301</strong> Move Permanently: The resource requested for has been permanently moved to a new location. The URL of the new location is given in the response header called Location. The client should issue a new request to the new location. Application should update all references to this new location. <br/>
+<strong>302</strong> Found &amp; Redirect (or Move Temporarily): Same as 301, but the new location is temporarily in nature. The client should issue a new request, but applications need not update the references. <br/>
+<strong>304</strong> Not Modified: In response to the If-Modified-Since conditional GET request, the server notifies that the resource requested has not been modified.</p>
+
+<h3>4xx (Client Error): The request contains bad syntax or cannot be understood.</h3>
+
+<p><strong>400</strong> Bad Request: Server could not interpret or understand the request, probably syntax error in the request message. <br/>
+<strong>401</strong> Authentication Required: The requested resource is protected, and require client’s credential (username/password). The client should re-submit the request with his credential (username/password). <br/>
+<strong>403</strong> Forbidden: Server refuses to supply the resource, regardless of identity of client. <br/>
+<strong>404</strong> Not Found: The requested resource cannot be found in the server. <br/>
+<strong>405</strong> Method Not Allowed: The request method used, e.g., POST, PUT, DELETE, is a valid method. However, the server does not allow that method for the resource requested. <br/>
+<strong>408</strong> Request Timeout: <br/>
+<strong>414</strong> Request URI too Large:</p>
+
+<h3>5xx (Server Error): The server failed to fulfill an apparently valid request.</h3>
+
+<p><strong>500</strong> Internal Server Error: Server is confused, often caused by an error in the server-side program responding to the request. <br/>
+<strong>501</strong> Method Not Implemented: The request method used is invalid (could be caused by a typing error, e.g., &ldquo;GET&rdquo; misspell as &ldquo;Get&rdquo;). <br/>
+<strong>502</strong> Bad Gateway: Proxy or Gateway indicates that it receives a bad response from the upstream server. <br/>
+<strong>503</strong> Service Unavailable: Server cannot response due to overloading or maintenance. The client can try again later. <br/>
+<strong>504</strong> Gateway Timeout: Proxy or Gateway indicates that it receives a timeout from an upstream server.</p>
+
+<h2>Https</h2>
+
+<h3>非对称加密</h3>
+
+<p>为了防止密钥在传输的过程中泄露, 就发明了这种只传输公钥的加密算法.   <br/>
+每个人都有一个公钥+密钥(public and private key).   <br/>
+当我们在本地向github请求信息的时候:</p>
+
+<ol>
+<li>Github用我们<strong>上传的公钥</strong>对需要拉取的信息做加密处理.</li>
+<li>这段<strong>加密信息</strong>, 就只有用到我们自己<strong>本地私钥</strong>才能解密.</li>
+</ol>
+
+
+<p>大致就是这个意思, 要是说的不对或者不太懂记得给我留言哦~~</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,799 @@
+
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<title>那些年 用python刷过的面试算法题 - Henry Z's blog~</title>
+	<meta name="author" content="Daya">
+
+	
+	<meta name="description" content="那些年 用python刷过的面试算法题 准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下. fibonacci数组: /blog/20160915/dynamic-programming/ Generating all possible permutations of a &hellip;">
+	
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://changchen.me/blog/20170213/python-algorithms/">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!-- font awesome -->
+	<link href="/javascripts/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet">
+	<script src="/javascripts/libs/jquery.min.js"></script>
+
+</head>
+  
+<body>  
+	<div id="bfoot" class="container">
+		<div class="left-col">
+			<div  class="intrude-less">
+			<header  id="header" class="inner"><div class="profilepic">
+	<!--
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("daya0576@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+	-->
+	<img src="/images/gravatar.jpeg" alt="Profile Picture" style="width:160px;" />
+	<!-- <img src="http://opetwnn9x.bkt.clouddn.com/gravatar.jspeg" alt="Profile Picture" style="width:160px;" /> -->
+</div>
+<h1 style=""><a href="/" target="_self">I'm Henry</a></h1>
+<p class="subtitle" style="">Things get worse before they get better. <br>A blog to record my life~ </p>
+<nav id="main-nav"><!-- <ul class="main">
+    <li><a href="/">首页</a></li>
+	<li><a href="/blog/archives">目录</a></li>
+    <li><a href="/about">关于我</a></li>
+</ul> -->
+<ul class="main">
+    <li><a href="/">Home</a></li>
+    <li><a href="/blog/archives">Archives</a></li>
+    <li><a href="/blog/categories">Categories</a></li>
+    <li><a href="/about">About</a></li>
+</ul>
+
+<section class="aboutme">
+ <p>
+     (═‘′═) 
+  </p>
+</section>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		<a class="weibo" href="http://www.weibo.com/2478163907" title="Weibo">Weibo</a>
+		
+		
+			<a class="email" href="mailto:daya0576@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+			<a class="github" href="https://github.com/daya0576" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+		
+			<a class="facebook" href="http://www.facebook.com/daya.henry" title="Facebook">Facebook</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  
+	<h1 class="title" itemprop="name">那些年 用python刷过的面试算法题</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>fibonacci数组:</h2>
+
+<p><a href="/blog/20160915/dynamic-programming/">/blog/20160915/dynamic-programming/</a></p>
+
+<h2>Generating all possible permutations of a list</h2>
+
+<p>生成一个列表的所有组合.  <br/>
+1.The feeling of completing an algorithm with only one error, awesome.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">len_fix</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">len_fix</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span><span class="o">-</span><span class="n">len_fix</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">part1</span><span class="p">,</span> <span class="n">part2</span> <span class="o">=</span> <span class="n">ABC</span><span class="p">[:</span><span class="n">len_fix</span><span class="p">],</span> <span class="n">ABC</span><span class="p">[</span><span class="n">len_fix</span><span class="p">:]</span>
+</span><span class='line'>            <span class="n">part2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">part2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">part2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">part2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span class='line'>            <span class="n">permutation</span><span class="p">(</span><span class="n">part1</span><span class="o">+</span><span class="n">part2</span><span class="p">,</span> <span class="n">len_fix</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ABC</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="n">permutation</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.Python buildin method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">horses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">races</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">horses</span><span class="p">)</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">races</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xb754f1dc</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">horses</span><span class="p">)))</span>
+</span><span class='line'><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+</span><span class='line'> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span><span class='line'><span class="o">...</span>
+</span><span class='line'> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+</span><span class='line'> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<br><br>
+
+
+<blockquote><p>本来是想刷一遍leecode, 但算法题有四百多题..刷了三四题就放弃了  <br/>
+接下来的一些算法题是剑指offer里的:<br>
+<a href="https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1">https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1</a></p></blockquote>
+
+<br>
+
+
+<h2>输入一个链表，从尾到头打印链表每个节点的值.</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'><span class="c"># class ListNode:</span>
+</span><span class='line'><span class="c">#     def __init__(self, x):</span>
+</span><span class='line'><span class="c">#         self.val = x</span>
+</span><span class='line'><span class="c">#         self.next = None</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># 返回从尾部到头部的列表值序列，例如[1,2,3]</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">printListFromTailToHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listNode</span><span class="p">):</span>
+</span><span class='line'>        <span class="c"># write code here</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="n">listNode</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="p">[]</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">listNode</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">while</span> <span class="n">listNode</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">listNode</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">listNode</span> <span class="o">=</span> <span class="n">listNode</span><span class="o">.</span><span class="n">next</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">return</span> <span class="n">result</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>反转链表</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'><span class="c"># class ListNode:</span>
+</span><span class='line'><span class="c">#     def __init__(self, x):</span>
+</span><span class='line'><span class="c">#         self.val = x</span>
+</span><span class='line'><span class="c">#         self.next = None</span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">ReverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pHead</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pHead</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">pHead</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="n">pHead</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReverseList</span><span class="p">(</span><span class="n">pHead</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c"># reverse the linked list, except last one(because of return).</span>
+</span><span class='line'>        <span class="n">pHead</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">pHead</span>
+</span><span class='line'>        <span class="c"># head set null</span>
+</span><span class='line'>        <span class="n">pHead</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">None</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">h</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>合并两个有序的链表</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">Merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pHead1</span><span class="p">,</span> <span class="n">pHead2</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pHead1</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="n">pHead2</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pHead2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="n">pHead1</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pHead1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">pHead2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">pHead1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">pHead1</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">pHead2</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">head</span> <span class="o">=</span> <span class="n">pHead1</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">pHead2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">pHead1</span><span class="p">,</span> <span class="n">pHead2</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">head</span> <span class="o">=</span> <span class="n">pHead2</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">head</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>生成二叉树的镜像</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'><span class="c"># class TreeNode:</span>
+</span><span class='line'><span class="c">#     def __init__(self, x):</span>
+</span><span class='line'><span class="c">#         self.val = x</span>
+</span><span class='line'><span class="c">#         self.left = None</span>
+</span><span class='line'><span class="c">#         self.right = None</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># 返回镜像树的根节点</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">Mirror</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Mirror</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Mirror</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">root</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>输入两棵二叉树A，B，判断B是不是A的子结构。</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'><span class="c"># class TreeNode:</span>
+</span><span class='line'><span class="c">#     def __init__(self, x):</span>
+</span><span class='line'><span class="c">#         self.val = x</span>
+</span><span class='line'><span class="c">#         self.left = None</span>
+</span><span class='line'><span class="c">#         self.right = None</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">HasSubtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pRoot1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">pRoot2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">is_subtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pRoot2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">elif</span> <span class="n">pRoot1</span> <span class="ow">and</span> <span class="n">pRoot2</span> <span class="ow">and</span> <span class="n">pRoot1</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># t1 = TreeNode(1)</span>
+</span><span class='line'><span class="c"># t1.left = TreeNode(1)</span>
+</span><span class='line'><span class="c"># t1.left.right = TreeNode(3)</span>
+</span><span class='line'><span class="c"># t1.left.left = TreeNode(2)</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># t2 = TreeNode(1)</span>
+</span><span class='line'><span class="c"># t2.left = TreeNode(2)</span>
+</span><span class='line'><span class="c"># t2.right = TreeNode(3)</span>
+</span><span class='line'><span class="c"># # t2.left.left = TreeNode(4)</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># print(Solution().is_sametree(t1, t2))</span>
+</span><span class='line'><span class="c"># print(Solution().HasSubtree(t1, t2))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>一层一层打印二叉树</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'><span class="c"># class TreeNode:</span>
+</span><span class='line'><span class="c">#     def __init__(self, x):</span>
+</span><span class='line'><span class="c">#         self.val = x</span>
+</span><span class='line'><span class="c">#         self.left = None</span>
+</span><span class='line'><span class="c">#         self.right = None</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="c"># 返回从上到下每个节点值列表，例：[1,2,3]</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">PrintFromTopToBottom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+</span><span class='line'>        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">nodes_in_level</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="k">if</span> <span class="n">root</span> <span class="k">else</span> <span class="p">[]</span>
+</span><span class='line'>        <span class="k">while</span> <span class="n">nodes_in_level</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">nodes_in_next_level</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class='line'>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes_in_level</span><span class="p">:</span>
+</span><span class='line'>                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span><span class='line'>                <span class="n">nodes_in_next_level</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+</span><span class='line'>                <span class="n">nodes_in_next_level</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="n">nodes_in_level</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes_in_next_level</span> <span class="k">if</span> <span class="n">node</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">result</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="c"># t1 = TreeNode(1)</span>
+</span><span class='line'><span class="c"># t1.left = TreeNode(1)</span>
+</span><span class='line'><span class="c"># t1.left.right = TreeNode(3)</span>
+</span><span class='line'><span class="c"># t1.left.left = TreeNode(2)</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># print(Solution().PrintFromTopToBottom(t1))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>栈的压入弹出序列</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># 输入两个整数序列，第一个序列表示栈的压入顺序, 请判断第二个序列是否为该栈的弹出顺序。</span>
+</span><span class='line'><span class="c"># 假设压入栈的所有数字均不相等。</span>
+</span><span class='line'><span class="c"># 例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">IsPopOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pushV</span><span class="p">,</span> <span class="n">popV</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="n">pushV</span> <span class="ow">and</span> <span class="n">popV</span> <span class="ow">and</span> <span class="nb">set</span><span class="p">(</span><span class="n">pushV</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">popV</span><span class="p">):</span>
+</span><span class='line'>            <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">pushV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">while</span> <span class="n">popV</span><span class="p">:</span>
+</span><span class='line'>                <span class="c"># False</span>
+</span><span class='line'>                <span class="k">if</span> <span class="n">popV</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+</span><span class='line'>                    <span class="k">return</span> <span class="bp">False</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="c"># 1. push</span>
+</span><span class='line'>                <span class="k">elif</span> <span class="n">pushV</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">popV</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+</span><span class='line'>                    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pushV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="c"># 2. pull</span>
+</span><span class='line'>                <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>                    <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span class='line'>                    <span class="n">popV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20170213/python-algorithms"
+            data-title="那些年 用python刷过的面试算法题"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20170213/python-algorithms/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
+
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20170214/python-garbage-collection/" style="margin-right:20px ;"  title="Next Post: Python - Note of Garbage Collection">&laquo; Python - Note of Garbage Collection  </a>
+      
+      
+    	<a href="/blog/20170213/effective-python-chapter6/" style="" title="Previous Post: Note of 《Effective Python》(第六章)"> Note of 《Effective Python》(第六章)  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+var disqus_config = function () {
+this.page.url = 'http://changchen.me/blog/20170213/python-algorithms/';;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
+
+</article>
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017
+
+    Daya
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+		</div>
+	</div>
+	<script src="/javascripts/slash.js"></script>
+<!-- <script src="/javascripts/jquery.fancybox.pack.js"></script> -->
+
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="/javascripts/fancybox_source/jquery.fancybox.js?v=2.1.5"></script>
+<link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+<!-- Add Button helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.css?v=1.0.5" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> -->
+
+<!-- Add Thumbnail helper (this is optional) -->
+<!-- <link rel="stylesheet" type="text/css" href="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" /> -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script> -->
+
+<!-- Add Media helper (this is optional) -->
+<!-- <script type="text/javascript" src="/javascripts/fancybox_source/helpers/jquery.fancybox-media.js?v=1.0.6"></script> -->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	// $('.fancybox').fancybox();
+
+	// $(".fancybox").fancybox({
+	//     onStart     :   function() {
+	//         return window.confirm('Continue?');
+	//     },
+	//     onCancel    :   function() {
+	//         alert('Canceled!');
+	//     },
+	//     onComplete  :   function() {
+	//            alert('Completed!');
+	//     },
+	//     onCleanup   :   function() {
+	//            return window.confirm('Close?');
+	//     },
+	//     onClosed    :   function() {
+	//            alert('Closed!');
+	//     }
+	// });
+
+	$('.fancybox').fancybox({
+		// prevEffect : 'none',
+		// nextEffect : 'none',
+
+		// closeBtn  : false,
+
+		'overlayShow' : false,
+
+		afterLoad : function() {
+			this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+		},
+
+		helpers:{
+	        overlay:{
+	            locked:false
+	        }
+	    }
+	});
+
+});
+</script>
+
+<!-- Delete or comment this line to disable Fancybox -->
+<!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+
+
+
+ -->
+
+<script id="dsq-count-scr" src="/javascripts/disqus_count.js" async></script>
+
+<!-- baidu analyse -->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?f08a1f7937d18f480bef30f531b4289f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<!-- pace -->
+<script src="/javascripts/pace-1.0.2/pace.min.js"></script>
+<link href="/javascripts/pace-1.0.2/pace.css" rel="stylesheet" />
+
+	<!-- <audio autoplay id="bgsound">
+	<source src="../images/jay.mp3"
+		type="audio/mp3">
+	<source src="../images/jay.OGG"
+		type="audio/ogg; codecs=vorbis">
+	 <p>Your user agent does not support the HTML5 Audio element.</p>
+</audio> -->
+
+	<!-- lazyload plugin -->
+	
+
+<script src="/javascripts/libs/jquery.lazyload.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+     $("img.lazy").lazyload({
+     	effect: 'fadeIn', 
+     	/*threshold : 300, */
+     	placeholder : "/images/loading/gif_hehe/result/loading_test_ver2.0.gif"
+     });
+
+	 $('.fancybox').each(function(){
+		var img_url = $(this).find("img").eq(0).attr("data-original");
+		// alert(img_url)
+		$(this).attr("href", img_url);
+		// $(this).attr("data-fancybox-group", "gallery");
+	 });
+
+     // $('.fancybox').attr("href", "javascript:;")
+  });
+</script>
+</body>
+
+</html>

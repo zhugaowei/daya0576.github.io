@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cse | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/cse/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SSH to UNSW CSE Server Without Password]]></title>
+    <link href="http://changchen.me/blog/20160819/cse-ssh/"/>
+    <updated>2016-08-19T19:56:56+08:00</updated>
+    <id>http://changchen.me/blog/20160819/cse-ssh</id>
+    <content type="html"><![CDATA[<blockquote><p>It&rsquo;s so painful to input password every time login to cse server, so this article will show u how to ssh cse server without password.</p></blockquote>
+
+<!--more-->
+
+
+<br>
+
+
+<p>The CSE login servers doc: <a href="http://taggi.cse.unsw.edu.au/FAQ/Accessing_CSE_login_servers/">http://taggi.cse.unsw.edu.au/FAQ/Accessing_CSE_login_servers/</a></p>
+
+<br>
+
+
+<h2>My solution:</h2>
+
+<ul>
+<li><strong>Step1:</strong> generate your ssh public key in your own laptop, my favorite tutotial about this step:   <br/>
+<a href="https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html">https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html</a></li>
+<li><strong>Step2:</strong> put the public key into <code>~/.ssh/authorized_keys</code> in the remote server.</li>
+<li><strong>Step3:</strong> Done!!!   <br/>
+<img style="max-height:300px" class="lazy" data-original="/images/blog/160819_ssh/ssh.png"></li>
+</ul>
+
+
+<h2>Another tips:</h2>
+
+<ul>
+<li>Use sshfs to mount the whole disk to ur own maschine
+<code>bash
+mkdir /tmp/ssh
+alias zsshfs='sshfs z5082423@login.cse.unsw.edu.au:/import/adams/2/z5082423 /tmp/ssh'
+</code></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[my UNSW CSE course website]]></title>
+    <link href="http://changchen.me/blog/20160509/unsw-course-web/"/>
+    <updated>2016-05-09T09:18:58+08:00</updated>
+    <id>http://changchen.me/blog/20160509/unsw-course-web</id>
+    <content type="html"><![CDATA[<blockquote><p>想了想，还是写篇文章，记录一下我做这个网站以来心路历程.  <br/>
+<a href="http://www.unsw.co">unsw.co</a> or <a href="http://u.changchen.me">u.changchen.me</a></p></blockquote>
+
+<!--more-->
+
+
+<br>   
+
+
+<blockquote><h3>正文前的小感</h3>
+
+<p>想了一下还是先做个计划写个目录好了，就像以前写文章一样， <br/>
+老师总是说要先搭好框架，但我总是想到哪写到哪。 <br/>
+但开始写程序了以后就慢慢明白做计划才是最重要的，   <br/>
+就像做菜一样，把所有食材准备好，思路理清，效率就特别高了。  <br/>
+引用一门课assignment里老师的一段话： <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160509_unsw_web/os_design.jpg"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>Category</h3>
+
+<ol>
+<li>History (half a year ago)</li>
+<li>Purpose (Just for fun?)</li>
+<li>Difficulties (First user)</li>
+<li>Priciple (sharing and requires)</li>
+<li>Future..</li>
+</ol>
+</blockquote>
+
+<br>
+
+
+<blockquote><h3>历史</h3>
+
+<p>这个项目最早要从去年11月份说起，那时看到一个挺不错的教程叫做<a href="http://www.tangowithdjango.com/">《Tango With Django》</a>   <br/>
+然后按着教程一步步的把网站搭起来，最早是放到github上，后来就移到私人的bitbucket上了。  <br/>
+把教程完成后，想到顺便做个课程经历分享的网站把，加了好多东西，最后变成了今天的样子。   <br/>
+现在域名也从u.changchen.me &mdash;> unsw.co, 显得更正式一点   <br/>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160509_unsw_web/bitbucket.jpg"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>目的</h3>
+
+<p>这也是我常常被问起的一个问题：为什么你要做这个网站，然后我总是会说just for fun~  <br/>
+认真说的话其实有这几个原因：  <br/>
+1) 虽然以前在moobox的两个月对django有了一定的了解，但师傅小小鸟也说过要自己从零开始搭一个django的项目，才能更好的深入学习django和python。      <br/>
+2) 利用这个网站寻找志同道合的小伙伴，making friends。去接触外国的学生，融入他们的圈子。其实有三四个人对这个项目很感兴趣，我也分别约谈他们介绍这个项目的结构和django的基本原理，但不知道是他们觉得太难了还是我不够亲近，联系了一次以后就没有然后了。  <br/>
+3) 收集各个课的经历，虽然我们有handbook，上边有详细的描述和课程主页，但是再详细的描述也比不上主观的亲身经历来的直观有力。  <br/>
+4) 真的只是 just for fun~~</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>遇到的困难</h3>
+
+<p><strong>1. 用户</strong>  <br/>
+网站做好后最大的困难就是。。几乎没有用户注册，分享经历。   <br/>
+于是我做了第三方登录，去多个途径推广，比如csesoc的主页，专业的微信群。  <br/>
+但。。好像还是并没有什么ruan用。   <br/>
+写代码还行，对推广marketing什么的真的是毫无头绪。 <br/>
+2. &hellip;   <br/>
+<img style="max-height:350px" class="lazy" data-original="/images/blog/160509_unsw_web/analyse.png">  <br/>
+但磕磕绊绊这一年也有超过4000的独立访客, 想到帮助了很多人, 也就满足了吧.  <br/>
+<img style="max-height:450px" class="lazy" data-original="/images/blog/160509_unsw_web/area_count.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h3>原则</h3>
+
+<p>做这个网站主要基于两个原则: 需求&amp;&amp;分享       <br/>
+<strong>1. 需求：</strong>  <br/>
+在我入学第一次选课的时候，对着茫茫的课程真的不知道该如何下手，  <br/>
+这就是需求，因为所有的人都会遇到这个问题。  <br/>
+做产品最重要的就是给用户他们想要的东西，有需求，就有成功的可能。  <br/>
+<strong>2.分享</strong>  <br/>
+这是我对做网站另一个很欣赏的东西。  <br/>
+像大众点评，知乎，Facebook，github，etc..所有的网站都只是提供了一个平台  <br/>
+但优质内容都是由用户提供的，可见用户的强大力量。   <br/>
+做这个网站也是这个模式，搭建了一个平台，让学生分享他们的经历，帮助更多的人。</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>关于未来</h3>
+
+<p><strong>1. 推广</strong>
+在第一个学期末考试结束时，仔细思考一下，再努力做下推广。<br/>
+（有时候你要多站在用户的角度思考一下，你觉着便捷的功能，巧妙的交互， <br/>
+用户可能完全发现不了，觉得完全是shit，直接关闭网页了）     <br/>
+<strong>2. 朋友</strong>  <br/>
+发动朋友先写一些经历，别人看到了说不定才有分享自己经历的欲望。  <br/>
+<strong>3. 开源：</strong> <br/>
+打算在第二个学期结束，毕业时把项目开源了，现在还放在bitbucket的私人库上。</p></blockquote>
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>

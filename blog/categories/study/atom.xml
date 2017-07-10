@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: study | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/study/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Python Personal Note]]></title>
+    <link href="http://changchen.me/blog/20161204/python-notes/"/>
+    <updated>2016-12-04T10:08:59+08:00</updated>
+    <id>http://changchen.me/blog/20161204/python-notes</id>
+    <content type="html"><![CDATA[<blockquote><p>Planning to figure out problems of Python that confused me for a long phase.    <br/>
+The blog trace the steps of my study.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h2>Handling int()</h2>
+
+<p>Official explain about this build-in function: <a href="https://docs.python.org/3/library/functions.html#int">https://docs.python.org/3/library/functions.html#int</a>   <br/>
+Just found out that there is an arguement called <code>base</code>,  e.g., int(&lsquo;010&rsquo;, 2).     <br/>
+In the past, when I was handling the value of form from user in web application, the program was quite not robust. For example, the program will easily crash if user input twelve in the register form of age.    <br/>
+So exception could be used to solve this problem:   <br/>
+```python
+try:</p>
+
+<pre><code>value = int(value)
+</code></pre>
+
+<p>except ValueError:</p>
+
+<pre><code>pass  # it was a string, not an int.
+</code></pre>
+
+<p>```</p>
+
+<h2>Lambda, filter, reduce and map</h2>
+
+<p>Summary: <a href="http://www.python-course.eu/lambda.php">http://www.python-course.eu/lambda.php</a>   <br/>
+<strong>filter a list:</strong>
+<code>python
+In [10]: list(filter(lambda x:x&gt;0, a))
+Out[10]: [1, 2, 3, 5]
+</code>
+In Python 2.x, <code>filter</code> returned a list, but in Python 3.x, it returns an iterator.    <br/>
+iterator: <a href="https://docs.python.org/3/tutorial/classes.html#iterators">https://docs.python.org/3/tutorial/classes.html#iterators</a>   <br/>
+Or   <br/>
+<code>python
+In [23]: [i for i in l if i&gt;0]
+Out[23]: [1, 2, 3, 5]
+</code></p>
+
+<p><strong>filter a dict:</strong>
+```python
+from random import randint</p>
+
+<p>d = {x: randint(0, 10) for x in range(10)}
+{0: 10, 1: 1, 2: 8, 3: 1, 4: 3, 5: 7, 6: 7, 7: 2, 8: 7, 9: 9}</p>
+
+<p>{k: v for k, v in d.items() if v>5}
+<code>``
+</code>random.randint(a, b):` Return a random integer N such that <strong>a &lt;= N &lt;= b</strong>. Alias for randrange(a, b+1).</p>
+
+<p><strong>filter a set:</strong>
+<code>Python3 Set:</code><a href="https://docs.python.org/3/tutorial/datastructures.html#sets">https://docs.python.org/3/tutorial/datastructures.html#sets</a></p>
+
+<h2>enum for tuple</h2>
+
+<p><strong>1. global variable:</strong>  <br/>
+NAME, AGE, EMAIL = range(3)   <br/>
+<strong>2. namedtuple:</strong>    <br/>
+doc: <a href="https://docs.python.org/3/library/collections.html?highlight=namedtuple#collections.namedtuple">https://docs.python.org/3/library/collections.html?highlight=namedtuple#collections.namedtuple</a>  <br/>
+```python
+from collections import namedtuple</p>
+
+<p>Student = namedtuple(&lsquo;Stu&rsquo;, [&lsquo;name&rsquo;, &lsquo;age&rsquo;, &lsquo;gender&rsquo;, &lsquo;email&rsquo;])
+s = Student(&lsquo;Henry&rsquo;, 24, &rsquo;m', &lsquo;<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x64;&#x61;&#x79;&#x61;&#x30;&#53;&#55;&#54;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#46;&#99;&#111;&#x6d;">&#100;&#x61;&#x79;&#x61;&#x30;&#x35;&#x37;&#54;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#x6d;</a>&rsquo;)</p>
+
+<p>s.name
+```</p>
+
+<h2>Dictionary</h2>
+
+<p><strong>Sorting a dictionary by value:</strong>  <br/>
+<code>python
+sorted(data.items(), key=lambda x:x[1], reverse=True)
+</code>
+<strong>Finding matching keys of dictionaries</strong>  <br/>
+```python
+from random import randint, sample
+from functools import reduce</p>
+
+<p>d1 = {x:randint(1, 4) for x in sample(&lsquo;abcdefg&rsquo;, randint(3, 6))}
+d2 = {x:randint(1, 4) for x in sample(&lsquo;abcdefg&rsquo;, randint(3, 6))}
+d3 = {x:randint(1, 4) for x in sample(&lsquo;abcdefg&rsquo;, randint(3, 6))}</p>
+
+<p>keys_lists = list(map(lambda x:x.keys(), [d1, d2, d3]))
+result = reduce((lambda x, y:x&amp;y), keys_lists)
+```
+<strong>OrderedDict</strong>
+doc: <a href="https://docs.python.org/3/library/collections.html?highlight=ordereddict#collections.OrderedDict">https://docs.python.org/3/library/collections.html?highlight=ordereddict#collections.OrderedDict</a></p>
+
+<h2>Random-sample:</h2>
+
+<p>random: <a href="https://docs.python.org/3/library/random.html">https://docs.python.org/3/library/random.html</a>    <br/>
+<strong>random.sample:</strong> <br/>
+```python
+In [107]: l = &lsquo;abcdefg&rsquo;</p>
+
+<p>In [108]: from random import sample</p>
+
+<p>In [109]: sample(l, 3)
+Out[109]: [&lsquo;c&rsquo;, &lsquo;f&rsquo;, &lsquo;a&rsquo;]
+```</p>
+
+<h2>Python list implementation</h2>
+
+<p><a href="http://www.laurentluce.com/posts/python-list-implementation/">http://www.laurentluce.com/posts/python-list-implementation/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fibonacci number(Recursive, DP and Decorator)]]></title>
+    <link href="http://changchen.me/blog/20160915/dynamic-programming/"/>
+    <updated>2016-09-15T08:52:49+08:00</updated>
+    <id>http://changchen.me/blog/20160915/dynamic-programming</id>
+    <content type="html"><![CDATA[<blockquote><p>I found a <a href="https://www.youtube.com/watch?v=OQ5jsbhAv_M">fatastic video</a> about Dynamic Programming, it can be used to solve Fibonacci number problem efficiently. Decorater can also be used to make code elegent ^o^</p></blockquote>
+
+<!--more-->
+
+
+
+
+<br>
+
+
+<h1>Fibonacci number: 1, 1, 2, 3, 5, 8, 13&hellip;</h1>
+
+<br>
+
+
+<h3>1. Original recursive implementation</h3>
+
+<p>``` python
+def fib(n):</p>
+
+<pre><code>if n&lt;=2: f = 1
+else: f = fib(n-1) + fib(n-2)
+
+return f
+</code></pre>
+
+<p>```</p>
+
+<br><br>
+
+
+<h3>2. Improvement: memoization</h3>
+
+<ul>
+<li>Reuse solutions to <strong>sub-problems</strong> to solve the problem</li>
+<li>So time = #sub-problems * O(sub-problem)   <br/>
+``` python
+
+<h1>!/usr/bin/python3</h1>
+
+<p>from collections import defaultdict
+import sys</p></li>
+</ul>
+
+
+<p>n = int(sys.argv[1])
+mem = defaultdict(lambda: 0)</p>
+
+<p>def fib(n):</p>
+
+<pre><code>global mem
+# print(n)
+if mem[n]:
+    return mem[n]
+
+if n&lt;=2: f = 1
+else: f = fib(n-1) + fib(n-2)
+
+mem[n] = f
+print(f)
+return f
+</code></pre>
+
+<p>def fib_con(n):</p>
+
+<pre><code>mem = {}
+for k in range(1, 1+n):
+    if k&lt;=2:
+        mem[k] = 1
+    else:
+        mem[k] = mem[k-1] + mem[k-2]
+
+    print(mem[k])
+return mem[n]
+</code></pre>
+
+<p>fib(n)
+fib_con(n)</p>
+
+<p><code>``
+**Video link**: [https://www.youtube.com/watch?v=OQ5jsbhAv_M](https://www.youtube.com/watch?v=OQ5jsbhAv_M)    
+</code>DP = recursion + memorization + guessing`</p>
+
+<br><br>
+
+
+<h3>3. Problem of the improvement above:</h3>
+
+<p>The disadvantage of this method is that the clarity and the beauty of the original recursive implementation is lost.   <br/>
+So we use a helper function to handle the fib() function, the idea of .  <br/>
+``` python
+def memoize(f):</p>
+
+<pre><code>memo = {}
+
+def helper(x):
+    if x not in memo:
+        memo[x] = f(x)
+    return memo[x]
+
+return helper
+</code></pre>
+
+<p>def fib(n):</p>
+
+<pre><code>if n == 0:
+    return 0
+elif n == 1:
+    return 1
+else:
+    return fib(n - 1) + fib(n - 2)
+</code></pre>
+
+<p>fib = memoize(fib)
+print(fib(40))
+<code>
+That is Decorator: `@memoize`      
+U can check this website for more information:    
+[http://www.python-course.eu/python3_memoization.php](http://www.python-course.eu/python3_memoization.php)   
+</code> python
+@memoize
+def fib(n):</p>
+
+<pre><code>...
+</code></pre>
+
+<p>print(fib(40))
+```</p>
+
+<br>
+
+
+<h3>4. Generator version</h3>
+
+<p>```python
+def fib(n):</p>
+
+<pre><code>a, b = 0, 1
+for _ in range(n):
+    yield a
+    a, b = b, a+b
+</code></pre>
+
+<p>for i in fib(10):</p>
+
+<pre><code>print(i)
+</code></pre>
+
+<p>```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Notes of Atlassian git tutorial]]></title>
+    <link href="http://changchen.me/blog/20160705/git-notes/"/>
+    <updated>2016-07-05T14:18:24+08:00</updated>
+    <id>http://changchen.me/blog/20160705/git-notes</id>
+    <content type="html"><![CDATA[<blockquote><p>Although we have powerful tools such as sourcetree,  <br/>
+learning the details of git is still very necessary.  <br/>
+I found a fantastic tutorial:<a href="https://www.atlassian.com/git/tutorials">https://www.atlassian.com/git/tutorials</a>, this is my learning notes.</p></blockquote>
+
+<!--more-->
+
+
+<br>  
+
+
+<h3>git log vs git status</h3>
+
+<p><code>git log</code>: showing all the comments in this branch  <br/>
+<code>git status</code>: showing the overview of this branch</p>
+
+<br>
+
+
+<h3>Show commits in graph</h3>
+
+<p>draw a graph of all comments:  <br/>
+<code>
+git log --graph --decorate --oneline    
+</code>
+<img style="max-height:400px" class="lazy" data-original="/images/blog/160705_git/graph.png"></p>
+
+<br> 
+
+
+<h3>git diff</h3>
+
+<ul>
+<li>Using &ldquo;git diff&rdquo; to compare two commits. <br/>
+<img style="max-height:330px" class="lazy" data-original="/images/blog/160705_git/diff.png"></li>
+</ul>
+
+
+<br>
+
+
+<h3>Undoing Changes</h3>
+
+<ul>
+<li><strong>&ldquo;git add <file>&hellip;&rdquo;</strong> to update what will be committed(stage changes)     <br/>
+<strong>&ldquo;git reset <file>&rdquo;</strong> to remove the specified file from the staging area, but <strong>leave the working directory unchanged</strong>.)</li>
+</ul>
+
+
+<br>
+
+
+<ul>
+<li>&ldquo;git revert <commit>&rdquo; to generate a new commit that undoes all of the changes introduced in <commit>, then apply it to the current branch.</li>
+</ul>
+
+
+<p>&ldquo;Whereas reverting is designed to safely undo a public commit, git reset is designed to undo local changes.&rdquo;   <br/>
+<img style="max-height:430px" class="lazy" data-original="/images/blog/160705_git/redo.svg"></p>
+
+<br>
+
+
+<p>&ldquo;The <code>git reset --hard</code> and <code>git clean -f</code> commands are your best friends after you’ve made some embarrassing developments in your local repository and want to burn the evidence.&rdquo;  <br/>
+Example:  <br/>
+``` python</p>
+
+<h1>Edit some existing files</h1>
+
+<h1>Add some new files</h1>
+
+<h1>Realise you have no idea what you&rsquo;re doing</h1>
+
+<h1>Undo changes in tracked files</h1>
+
+<p>git reset &mdash;hard</p>
+
+<h1>Remove untracked files</h1>
+
+<p>git clean -df
+```</p>
+
+<br>
+
+
+<h3>Rewriting history</h3>
+
+<p>git commit &mdash;amend: <br/>
+``` python</p>
+
+<h1>Edit hello.py and main.py</h1>
+
+<p>git add hello.py
+git commit</p>
+
+<h1>Realise you forgot to add the changes from main.py</h1>
+
+<p>git add main.py
+git commit &mdash;amend &mdash;no-edit
+```</p>
+
+<br>
+
+
+<h3>Difference of git fetch and git pull</h3>
+
+<p><code>git pull</code> = <code>git fetch</code> followed by a <code>git merge</code>(remote branch).  <br/>
+Still a little confused.  <br/>
+这篇文章解释的很清楚：<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657">http://www.ruanyifeng.com/blog/2014/06/git_remote.html?20160711102657</a>  <br/>
+&lsquo;fetch&rsquo; is updating the remote branch info, then local branch merge to remote branch !!</p>
+
+<br>
+
+
+<h3>git set defaul remote to push</h3>
+
+<p>Edit your .git/config  <br/>
+<code>
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+</code></p>
+
+<br>
+
+
+<h3>merge conflict</h3>
+
+<p>Automatic merge failed; fix conflicts and then commit the result.   <br/>
+<code>Try: git mergetool</code></p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[python_mooc笔记-高阶函数]]></title>
+    <link href="http://changchen.me/blog/20150710/python-mooc/"/>
+    <updated>2015-07-10T16:15:41+08:00</updated>
+    <id>http://changchen.me/blog/20150710/python-mooc</id>
+    <content type="html"><![CDATA[<blockquote><p>最近看了慕课网上的一个课程，  <br/>
+感觉还不错，做点笔记，以后忘了看看</p></blockquote>
+
+<!--more-->
+
+
+
+
+<br>
+
+
+<h3>字符串的一些处理：</h3>
+
+<p><strong>将字符串中的大小写转换：</strong> <br/>
+<code>python
+strlwr(sStr1)
+sStr1 = sStr1.upper()
+sStr1 = sStr1.lower()
+print 'JUST TO TEST IT'.capitalize()
+</code></p>
+
+<br>
+
+
+<p><strong>字符串的首字母转换成大写， 其余转换成小写：</strong> <br/>
+<code>python
+print 'JUST TO TEST IT'.title()
+</code><br/>
+<strong>字符串中所有单词的首字母转换成大写， 其余转换成小写</strong> <br/>
+Just to test it >>> Just To Test It</p>
+
+<br>
+
+
+<p><strong>把函数作为参数:</strong> <br/>
+``` python
+import math
+def add(x, y, f):</p>
+
+<pre><code>return f(x) + f(y)
+</code></pre>
+
+<p>print add(25, 9, math.sqrt)
+```</p>
+
+<br>
+
+
+<p><strong>map()函数:</strong> <br/>
+``` python
+输入：[&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;]
+输出：[&lsquo;Adam&rsquo;, &lsquo;Lisa&rsquo;, &lsquo;Bart&rsquo;]
+def format_name(name):</p>
+
+<pre><code>return name.capitalize()
+</code></pre>
+
+<p>print map(format_name, [&lsquo;adam&rsquo;, &lsquo;LISA&rsquo;, &lsquo;barT&rsquo;])
+```</p>
+
+<br>
+
+
+<p><strong>reduce()函数:</strong> <br/>
+``` python
+输入：[2, 4, 5, 7, 12]
+输出：2<em>4</em>5<em>7</em>12的结果
+def prod(x, y):</p>
+
+<pre><code>return x*y
+</code></pre>
+
+<p>print reduce(prod, [2, 4, 5, 7, 12])
+```</p>
+
+<br>
+
+
+<p><strong>filter()函数: </strong><br/>
+请利用filter()过滤出1~100中平方根是整数的数，即结果应该是：
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+``` python
+import math
+def is_sqr(x):</p>
+
+<pre><code>return math.sqrt(x)%1 == 0
+</code></pre>
+
+<p>print filter(is_sqr, range(1, 101))
+```</p>
+
+<br>
+
+
+<p><strong>自定义排序函数:</strong> <br/>
+输入：[&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;] <br/>
+输出：[&lsquo;about&rsquo;, &lsquo;bob&rsquo;, &lsquo;Credit&rsquo;, &lsquo;Zoo&rsquo;] <br/>
+```python
+def cmp_ignore_case(s1, s2):</p>
+
+<pre><code>t1=s1.upper()
+t2=s2.upper()
+if t1 &gt; t2:
+    return 1
+if t1 &lt; t2:
+    return -1
+else:
+    return 0
+</code></pre>
+
+<p>print sorted([&lsquo;bob&rsquo;, &lsquo;about&rsquo;, &lsquo;Zoo&rsquo;, &lsquo;Credit&rsquo;], cmp_ignore_case)
+```</p>
+
+<br>
+
+
+<p><strong>闭包:</strong> <br/>
+```python
+def count():</p>
+
+<pre><code>fs = []
+for i in range(1, 4):
+    def f(i):
+        def g():
+            return i*i
+        return g
+
+    r = f(i)
+    fs.append(r)
+
+return fs
+</code></pre>
+
+<p>f1, f2, f3 = count()
+print f1(), f2(), f3()
+```</p>
+
+<br>
+
+
+<p><strong>匿名函数:</strong> <br/>
+（晕死， 原来匿名函数的英文是lambda，我说这个东西怎么这么熟悉 <br/>
+今天面试的题目，没有答出来，好可惜。）  <br/>
+<code>python
+print filter(lambda s:s and len(s.strip()) &gt; 0, ['test', None, ', 'str', '  ', 'END'])
+</code></p>
+
+<p><strong>decorator注释器:</strong>   <br/>
+```python
+import time</p>
+
+<p>def performance(f):</p>
+
+<pre><code>def fn(*args, **kw):
+    t1 = time.time()
+    r = f(*args, **kw)
+    t2 = time.time()
+    print 'call %s() in %fs' % (f.__name__, (t2 - t1))
+    return r
+return fn
+</code></pre>
+
+<p>@performance
+def factorial(n):</p>
+
+<pre><code>return reduce(lambda x,y: x*y, range(1, n+1))
+</code></pre>
+
+<p>print factorial(10)
+```</p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hidden features of Python笔记]]></title>
+    <link href="http://changchen.me/blog/20141118/hidden-features-of-python/"/>
+    <updated>2014-11-18T11:30:26+08:00</updated>
+    <id>http://changchen.me/blog/20141118/hidden-features-of-python</id>
+    <content type="html"><![CDATA[<h2>最近看了关于python的两个很不错的资料</h2>
+
+<ol>
+<li><p><a href="http://legacy.python.org/dev/peps/pep-0008/#blank-lines" >PEP 8 （Style Guide for Python Code）</a></p></li>
+<li><p><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python">Hidden features of Python [closed]</a></p></li>
+</ol>
+
+
+<h4><a style="background-color:#2783F3;color:#fff">做一下第二个的笔记 加深印象</a></h4>
+
+<!--more-->
+
+
+
+
+<h3>Quick links to answers:</h3>
+
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111176">Argument Unpacking</a></li>
+'*' 不就是c语言里取指针的值<br>  
+直接把list和dictionary里的值变成函数的参数了<br>  
+但实际很少用到把<br> 
+```python
+def draw_point(x, y):
+    # do some magic
+
+point_foo = (3, 4)
+point_bar = {'y': 3, 'x': 2}
+
+draw_point(*point_foo)
+draw_point(**point_bar)
+```
+</br>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112303">Braces</a></li>
+运行的结果： <br>    
+from __future__ import braces   <br> 
+SyntaxError: not a chance   <br> 
+貌似是个玩笑， 想要引入c语言style的花括号<br>    
+结果是not a chance、、    <br> 
+```python
+from __future__ import braces
+```
+</br>
+
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101945">Chaining Comparison Operators</a></li>
+连续的比较符吧，实际中还是挺有用的    <br>  
+突然想到的：    <br> 
+if A and B in L: → if (A and B) in L:  <br>   
+```python
+>>> x = 5
+>>> 1 < x < 10
+True
+>>> 10 < x < 20 
+False
+>>> x < 10 < x*10 < 100
+True
+>>> 10 > x <= 9
+True
+>>> 5 == x > 4
+True
+```
+</br>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101447">Decorators</a></li>
+装饰器，之前也从来没有用过，以后尝试一下    <br>   
+看了一篇装饰器的文章，写的挺好的    <br> 
+大致明白了原理和应用     <br> 
+<a href="http://www.cnblogs.com/coderzh/archive/2010/04/27/python-cookbook33-Decorators.html">http://www.cnblogs.com/coderzh/archive/2010/04/27/python-cookbook33-Decorators.html</a>
+```python
+>>> def print_args(function):
+>>>     def wrapper(*args, **kwargs):
+>>>         print 'Arguments:', args, kwargs
+>>>         return function(*args, **kwargs)
+>>>     return wrapper
+
+>>> @print_args
+>>> def write(text):
+>>>     print text
+
+>>> write('foo')
+Arguments: ('foo',) {}
+foo
+```   
+<br>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113198">Default Argument Gotchas / Dangers of Mutable Default arguments</a></li>
+I found this a lot easier to understand when I learned that the default arguments live in a tuple that's an attribute of the function,    <br> 
+e.g. foo.func_defaults. Which, being a tuple, is immutable.    <br> 
+还是不太明白    <br> 
+```python
+>>> def foo(x=[]):
+...     x.append(1)
+...     print x
+... 
+>>> foo()
+[1]
+>>> foo()
+[1, 1]
+>>> foo()
+[1, 1, 1]
+Instead, you should use a sentinel value denoting "not given" and replace with the mutable you'd like as default:
+
+>>> def foo(x=None):
+...     if x is None:
+...         x = []
+...     x.append(1)
+...     print x
+>>> foo()
+[1]
+>>> foo()
+[1]
+```
+<br>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102062">Descriptors</a></li>
+Python描述符（descriptor）解密<br>
+<a href="http://www.geekfan.net/7862/">http://www.geekfan.net/7862/</a>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#111970">Dictionary default <code>.get</code> value</a></li>
+前一种如果不包含键值，会报错，后一种会返回第二个参数的值。
+```python
+sum[value] = sum.get(value, 0) + 1
+```
+<br>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102065">Docstring Tests</a></li>
+不懂啥意思   
+<br>
+
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python/112316#112316">Ellipsis Slicing Syntax</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#117116">Enumeration</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114420">For/else</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102202">Function as iter() argument</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101310">Generator expressions</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101276"><code>import this</code></a></li>
+这个吊。。<br>
+<code><span class="kwd">import</span><span class="pln"> this
+</span><span class="com"># btw look at this module's source :)</span></code>
+<p><a href="http://svn.python.org/view/python/trunk/Lib/this.py?view=markup" rel="nofollow">De-cyphered</a>:</p>
+<blockquote>
+  <p>The Zen of Python, by Tim Peters    </p>
+  
+  <p>Beautiful is better than ugly.<br>
+  Explicit is better than implicit.<br>
+  Simple is better than complex.<br>
+  Complex is better than complicated.<br>
+  Flat is better than nested.<br>
+  Sparse is better than dense.<br>
+  Readability counts.<br>
+  Special cases aren't special enough to break the rules.<br>
+  Although practicality beats purity.<br>
+  Errors should never pass silently.<br>
+  Unless explicitly silenced.<br>
+  In the face of ambiguity, refuse the temptation to guess.
+  There should be one-- and preferably only one --obvious way to do it.<br>
+  Although that way may not be obvious at first unless you're Dutch.<br>
+  Now is better than never.<br>
+  Although never is often better than <em>right</em> now.<br>
+  If the implementation is hard to explain, it's a bad idea.<br>
+  If the implementation is easy to explain, it may be a good idea.<br>
+  Namespaces are one honking great idea -- let's do more of those!  </p>
+</blockquote>
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#102037">In Place Value Swapping</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101840">List stepping</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#112286"><code>__missing__</code> items</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101537">Multi-line Regex</a></li>
+多行正则表达式<br>
+有机会要学一下
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113164">Named string formatting</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101549">Nested list/generator comprehensions</a></li>
+双重循环生成list<br>
+炫酷。。<br>
+```python
+[(i,j) for i in range(3) for j in range(i) ]      
+((i,j) for i in range(4) for j in range(i) )  
+```
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#108297">New types at runtime</a></li>
+
+
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#113833"><code>.pth</code> files</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#1024693">ROT13 Encoding</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#143636">Regex Debugging</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#101739">Sending to Generators</a></li>
+生成器(generator) 有时间要深入学习一下
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#168270">Tab Completion in Interactive Interpreter</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#116480">Ternary Expression</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#114157"><code>try/except/else</code></a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#3267903">Unpacking+<code>print()</code> function</a></li>
+<li><a href="http://stackoverflow.com/questions/101268/hidden-features-of-python#109182"><code>with</code> statement</a></li>
+</ul>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

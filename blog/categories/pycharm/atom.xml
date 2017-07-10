@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pycharm | Henry Z's blog~]]></title>
+  <link href="http://changchen.me/blog/categories/pycharm/atom.xml" rel="self"/>
+  <link href="http://changchen.me/"/>
+  <updated>2017-07-10T23:40:08+08:00</updated>
+  <id>http://changchen.me/</id>
+  <author>
+    <name><![CDATA[Daya]]></name>
+    <email><![CDATA[daya0576@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PyCharm 收藏多年快捷键分享~]]></title>
+    <link href="http://changchen.me/blog/20170606/pycharm-shortcut/"/>
+    <updated>2017-06-06T22:43:18+08:00</updated>
+    <id>http://changchen.me/blog/20170606/pycharm-shortcut</id>
+    <content type="html"><![CDATA[<blockquote><p>介绍一些Pycharm中大幅度提高生产力的快捷键, 不看后悔一辈子! (逃)    <br/>
+大部分的快捷键在同系列的IDE(JetBrains全家桶)上应该都是能通用的</p></blockquote>
+
+<!--more-->
+
+
+<p></p>
+
+<br>     
+
+
+<blockquote><p>友情提示: 点击图片, 显示大图~</p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Alt+Shift+F</code>: 在整个项目中, 或一个目录里进行全局搜索</h4>
+
+<p><img style="max-height:350px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/0.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>F4</code>: 显示一个类的具体结构.</h4>
+
+<p><img style="max-height:200px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/1.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Ctrl+Shift+A</code>: text &mdash;> 执行一些action, 潜力无限, 有待开发.</h4>
+
+<p><img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/2.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Alt+Enter</code>: 自动 import, 还会做自动优化, 妈妈再也不用担心依赖关系啦</h4>
+
+<p><img style="max-height:200px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/3.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Shift(Double-press)</code>: Search everywhere. 我每天使用频率很高的一个快捷键, 可以按最近使用过的文件名, 类名, 方法名等去定位!</h4>
+
+<p><img style="max-height:400px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/4.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Ctrl+Alt+Shift+J</code>: Insert Live Template&hellip;插入一段提前配置好的代码!</h4>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/5.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Ctrl+Tab</code>: 和chrome一样的切换标签</h4></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Ctrl+x</code>: 不用选择, 直接删除整行代码</h4>
+
+<h4><code>Ctrl+shift+d</code>: 直接复制一行</h4></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Ctrl(shift) + +/-</code>: 折叠代码</h4></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Alt + Right/Left</code>: 可以按历史记录 移动光标位置. 当看代码看的头晕迷路时, 这个快捷键还是能让你马上找到回家的路.</h4>
+
+<h4><code>Alt + Up/Down</code>: 可以上下移动整行或整块(e.g. 一个if的block)代码</h4></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Alt + 鼠标</code> or <code>Shift + Crtl + Alt + 鼠标</code>: 选择多处进行同时编辑, 要是能像sublime那样alt+enter直接选中所有的查找结果就好了(已解决).</h4>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/6.png">   <br/>
+找到解决办法了! <code>Alt + Ctrl + y</code> 就等同于sublime里的全选所有的occurrences!  <br/>
+<code>Alt + y</code>为选中下一个occurrence. <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/8.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>正则搜索的妙用</code>: Perl中$0就代表全部匹配(本身), 所以就能实现同时替换所有搜索结果, 和多处同时编辑异曲同工:</h4>
+
+<p><img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/7_1.png"> <br/>
+按<strong>Replace all</strong>之后:   <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/7_2.png"></p></blockquote>
+
+<br>
+
+
+<blockquote><h4><code>Shift + Tab</code>: 一行或多行的<strong>逆向缩进</strong></h4></blockquote>
+
+<br>
+
+]]></content>
+  </entry>
+  
+</feed>
