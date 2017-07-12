@@ -4,7 +4,7 @@
   <title><![CDATA[Category: shanghai | Henry Z's blog~]]></title>
   <link href="http://changchen.me/blog/categories/shanghai/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-11T03:03:11+10:00</updated>
+  <updated>2017-07-13T03:55:37+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -123,8 +123,8 @@ ps. 本人渣渣, 文中也都是主观的观点, 看看开心就好, 不喜勿�
 <li><p><strong>HyperS (创立八年发展良好的创业公司):</strong> <br/>
 一面先让我做了一份试卷, 考的都是Python的特性, 我大部分都答出来了. 然后问了一些问题, 例如完全二叉树的定义, hash是如何实现去重的, Django的middleware, session. Django如何直接操作数据库. Django中template变量的默认值. range(1, 101)[::2] 迭代最后剩下的两个数. len=10的数组分成两半, 得到和的差最小 (<a href="/blog/20170525/partition-problem/">数组分隔-编程之美</a>)  <br/>
 二面感觉挺随意的, 但我也答的不是很好, 幸运还是过了.   <br/>
-最后就是CTO的面试, 他会根据面试者的简历进行提问, 看到我学过<a href="/blog/20160228/comp9315-16s1/">DBMS Implementation</a>, 就问了我数据库索引的实现方法, 我答上了三四种, 感觉他还是挺开心的.    <br/>
-而且CTO思路逻辑也十分的清晰, 想要考察的几个点都提前想好了. 最后决定去这家公司, 对这个CTO的好印象也是加了很多分的.       <br/>
+最后就是CTO的面试, 他会根据面试者的简历进行提问, 看到我学过<a href="/blog/20160228/comp9315-16s1/">DBMS Implementation</a>, 就问了我数据库索引的实现方法, 我答上了三四种, 感觉他还是挺意外的. 还问了<a href="/blog/20170611/python-sorting-algorithms/">排序算法</a>，分析一下时间复杂度，总的来说，问的都不太难。    <br/>
+感觉CTO思路逻辑也十分的清晰, 想要考察的几个点都提前想好了. 最后决定去这家公司, 对这个CTO的好印象也是加了很多分的.       <br/>
 但第一次去他家面试的时候, 其实印象是不太好的, 感觉<strong>有些压抑</strong>: 例如整个办公环境有些乱, 一些咖啡机, 桌上足球娱乐设施都堆积着杂物, 完全沦为装饰了. 去网上搜的时候, 信息也少的可怜. 例如微博主页, 微信公共号都没有持续经营. 但听说今年六月会搬公司, 期待~~</p></li>
 <li><p><strong>DAOCloud</strong>  <br/>
 应该是个很不错的公司, 但电话面试就gg了. 当最后面试官说我给你一些建议吧, 我还试图挣扎一下, 让他问我一些Python的问题, 结果他问了asyncio和import future的实现原理, GG~</p></li>
@@ -133,12 +133,14 @@ ps. 本人渣渣, 文中也都是主观的观点, 看看开心就好, 不喜勿�
 问了很多基础知识和<a href="/blog/20170308/catalan-number-interview/">一个算法题: N个数依次入栈，出栈顺序有多少种？</a></p></li>
 <li><p><strong>饿了吗</strong>  <br/>
 饿了吗还是高大上, 门口还有帅气的保安在迎接, 取了号等了一会面, 试官就来了.<br/>
-感觉面试官有些莫名的高傲, 面的也很随意, 不太喜欢. 问的也都是一些很常规的面试题, 例如写一个装饰器的单例模式, GIL, metaclass. 最后让我徒手写个flask的app O.O  <br/>
+感觉面试官有些莫名的高傲, 面的也很随意, 不太喜欢.  <br/>
+一开始问了个数据库的问题，<a href="/blog/20170515/ele-interview-solution/">查找所有用户最近的一天登录记录</a>.      <br/>
+问的也都是一些很常规的面试题, 例如写一个装饰器的单例模式, GIL, metaclass. 最后让我徒手写个flask的app O.O  <br/>
 但还是自己能力不够+没有好好准备吧 XD.</p></li>
 <li><p><strong>药明康德 &ndash; 明码生物科技</strong> <br/>
 五六个人一起面我,感觉氛围还是很轻松的.    <br/>
 公司很大, 楼都数不过来. 但自身还是不太喜欢这样国企性质的公司吧, 而且感觉技术氛围也不是特别强.  <br/>
-虽然福利好, 开的工资比hypers还高, 但位置太偏了, 女朋友要是来找我, 不是要多做一个小时地铁. 最后毫不犹豫的放弃它了.    <br/>
+虽然福利有保障, 人手一部mbp, 开的工资也比hypers还高。 但位置太偏了, 女朋友要是来找我, 不是要多做一个小时地铁. 最后毫不犹豫的放弃它了.    <br/>
 影响最深的一点就是去找面试的那幢楼的时候, 看到一幢楼竟然有个保安在门口嘘嘘&hellip;</p></li>
 </ol>
 
