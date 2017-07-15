@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Henry Z's blog~</title>
+	<title>P/NP/NPC/NP-Hard 笔记 - Henry Z's blog~</title>
 	<meta name="author" content="Daya">
 
 	
-	<meta name="description" content="Apr 7th, 2014 octopress Octopress测试网站的小技巧【原创】 octopress预览网站 的小技巧 之前预览网站的步骤都是rake generate 然后 rake preview 突然有一天想到为什么不开两个控制台。 一个一直&#8221;preview&# &hellip;">
+	<meta name="description" content="P/NP/NPC/NP-Hard 笔记 NP完全和NP难问题困扰了我好几个月， 用这篇日志记录我最近的思考和学习(红色标注的为待解决的问题)。 1. P/NP: P: polynomial-time problems P类问题就是能在多项式时间内解决的问题。 NP: non- &hellip;">
 	
 
 	<!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="" rel="alternate" title="Henry Z's blog~" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://changchen.me/blog/page/12/">
+	<link rel="canonical" href="http://changchen.me/blog/20170715/p-np-npc-nphard/">
 	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 
@@ -104,204 +104,151 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><!-- First page index -->
-
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta" >
-		<div class="date">
-
-
-
-
-
-
-
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   
+	<h1 class="title" itemprop="name">P/NP/NPC/NP-Hard 笔记</h1>
+	<div class="entry-content" itemprop="articleBody"><blockquote><p>NP完全和NP难问题困扰了我好几个月， 用这篇日志记录我最近的思考和学习(<a style='color: red'>红色标注</a>的为待解决的问题)。    <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170714_np/np.png"></p></blockquote>
+
+<!--more-->
 
 
-<time datetime="2014-04-07T22:21:46+10:00" data-updated="true" itemprop="datePublished">Apr 7<span>th</span>, 2014</time></div>
-		<div class="tags">
+<p></p>
+
+<br>  
 
 
-	<a class='category' href='/blog/categories/octopress/'>octopress</a>
+<blockquote><h3>1. P/NP:</h3>
 
+<p><strong>P: polynomial-time problems</strong> <br/>
+P类问题就是能在多项式时间内解决的问题。 <br/>
+<strong>NP: non-deterministic polynomial</strong> <br/>
+NP问题是指能在多项式时间里验证一个解是否为True的问题  <br/>
+e.g. 给出一组输入， 我们可以在多项式时间内验证这个解的答案是‘是’或者‘否’。</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>2. 归约的概念:</h3>
+
+<p><strong>归约(Reductions)</strong>:《算法导论》上举了这么一个例子。 比如说想在有两个问题：求解一个<strong>一元一次方程</strong>和求解一个<strong>一元二次方程</strong>。 <br/>
+前者可以归约到后者，就是说知道如何解一个一次二元方程， 肯定能解出一元一次方程（将一元二次方程的二次项系数设为0）。 <br/>
+所以一元二次方程的时间复杂度肯定大于等于一元一次方程，也就是说，只要能多项式时间复杂度去解决一元二次问题，一元一次方程也肯定能用多项式的时间复杂度去解决。 <br/>
+<strong>所以:</strong> <br/>
+如果可以 多项式时间复杂度从 A(一元一次方程) 归约到 B(一元二次方程) <br/>
+B 属于 P &mdash;> A 属于 P <br/>
+B 属于 NP &mdash;> B 属于 NP</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>3. NPC(NP完全问题):</h3>
+
+<p>如何证明一个问题 X 是NP-complete: <br/>
+1. X ∈ NP <br/>
+2. reduce from know NP-complete  <br/>
+那么就要说到第一个被证明为NPC问题，SAT(Boolean satisfiability problem)： <br/>
+给定一个个电路， 判断该电路的满足性(所有的输入中， 至少有一个使最后的输出为1)： <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170714_np/boolean.jpg">   <br/>
+1. 我们可以证明他是一个NP问题， 因为他的解可以在多项式的时间复杂度内验证。  <br/>
+2. 而且它是np难的， 因为它至少比np中的任意问题都难。 <br/>
+<strong><a style='color: red'>那么如何证明呢？？好困扰， 待解决中！！！</a></strong>  <br/>
+<strong>NPC问题举例：</strong> <br/>
+1. null</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>3. NP-Hard(NP难问题):</h3>
+
+<p>时间复杂度大于或等于所有np问题，既未必可以在多项式时间内<strong>验证一个解的正确性</strong>。<br/>
+<strong>NP困难问题举例：</strong> <br/>
+1. null</p></blockquote>
+
+<br>
 
 </div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140407/octopress-tips-test-web/" itemprop="url">Octopress测试网站的小技巧【原创】</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h3>octopress预览网站 的小技巧</h3>
 
-<p>之前预览网站的步骤都是<code>rake generate</code> 然后 <code>rake preview</code></p>
 
-<p>突然有一天想到为什么不开两个控制台。 <br/>
-一个一直&#8221;preview&#8221; 另一个用来&#8221;generate&#8221;</p>
 
-<p>然后又突然想到，<code>rake generate</code>如果不用是不是也可以。  <br/>
-结果真的只要保存了， 网页上就能直接反馈出来这样就真的方便多了，哈哈</p>
+  <!-- <div style="float:right;maggin:30px" class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","weixin","tqq","renren"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","tqq","renren"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
 
-<p><code>rake generate</code>：</p>
+<!-- <div style="width: 100%">
+    <div style="float:right;padding:10px 0;"
+            class="ds-share flat"
+            data-thread-key="/blog/20170715/p-np-npc-nphard"
+            data-title="P/NP/NPC/NP-Hard 笔记"
+            data-images=""
+            data-content="~~"
+            data-url="http://changchen.me/blog/20170715/p-np-npc-nphard/">
+        <div class="ds-share-inline">
+          <ul  class="ds-share-icons-16">
 
-<p>作者 <a href="http://weibo.com/2478163907">@daya0576</a>   <br/>
-于 2014 年 04月 07日  <br/>
-天津</p>
+            <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+            <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+            <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+            <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+            <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-		
-		
-	</div>
+          </ul>
+          <div class="ds-share-icons-more">
+          </div>
+        </div>
+     </div>
+</div> -->
+
+
+  <div style="height:50px;margin:20px 0">
+    <p style="font-size:180%;float:left; " class="meta">
+
+      
+    	<a href="/blog/20170716/python-class-method/" style="margin-right:20px ;"  title="Next Post: Python中的静态方法和类方法实例分析">&laquo; Python中的静态方法和类方法实例分析  </a>
+      
+      
+    	<a href="/blog/20170611/python-sorting-algorithms/" style="" title="Previous Post: 排序算法总结"> 排序算法总结  &raquo;</a>
+      
+    </p>
+
+  </div>
+  <br>
+
+  <div>
+
+      <section>
+        <h1>Comments(需翻墙)</h1>
+        <div id="comments" aria-live="polite"><!-- <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+// valid disqus
+// var disqus_config = function () {
+// this.page.url = 'http://changchen.me/blog/20170715/p-np-npc-nphard/';;  // Replace PAGE_URL with your page's canonical URL variable
+// // this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+// };
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://daya0576.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<!-- 
+ -->
+</div>
+      </section>
+  </div>
+
 
 </article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta" >
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-07T16:52:59+10:00" data-updated="true" itemprop="datePublished">Apr 7<span>th</span>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/cc/'>cc</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140407/two-year-meeting-day/" itemprop="url">【探78】【小船】和幸~~日式调调~呼</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><a href="http://s.dianping.com/topic/7162596"><strong>&mdash;&ndash;> 原文</strong></a></p>
-
-<p>嘻嘻 清明假期 和幸店小试。</p>
-
-<p><img src="/images\blog\140407_cc_和幸餐厅/thumb(2).jpg"></p>
-
-
-		
-		<a  rel="full-article"  href="/blog/20140407/two-year-meeting-day/" >  阅读全文  </a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta" >
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-07T15:44:25+10:00" data-updated="true" itemprop="datePublished">Apr 7<span>th</span>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/python/'>python</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140407/cousera-week2/" itemprop="url">Cousera-学习记录-Week2</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h1>欢迎使用 Cmd &ndash; 在线 Markdown 编辑阅读器</h1>
-
-<hr />
-
-<p>我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。</p>
-
-<p>您可以使用 Cmd Makrdown：</p>
-
-<blockquote><ul>
-<li>整理知识，学习笔记</li>
-<li>发布日记，杂文，所见所想</li>
-<li>撰写发布技术文稿（代码支持）</li>
-<li>撰写发布学术论文（LaTeX 公式支持）</li>
-</ul>
-</blockquote>
-
-<p>这是一份 Cmd Markdown 的欢迎稿兼使用说明，请保留，如需撰写 <strong>新稿件</strong>，点击顶部工具栏右侧的 <code>新建文本</code> 图标或者使用快捷键 <code>Ctrl+Alt+N</code>。</p>
-
-<hr />
-
-
-		
-		<a  rel="full-article"  href="/blog/20140407/cousera-week2/" >  阅读全文  </a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta" >
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-04-05T00:38:49+11:00" data-updated="true" itemprop="datePublished">Apr 5<span>th</span>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/life/'>life</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/20140405/my-first-blog/" itemprop="url">My First Blog</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>哈哈</p>
-
-<pre><code>这是我的第一篇blog，献给我最爱的cc~
-
-两周年快乐  (*^_^*) 
-</code></pre>
-
-
-		
-		<a  rel="full-article"  href="/blog/20140405/my-first-blog/" >  阅读全文  </a>
-	</div>
-
-</article>
-
-</div>
-
-<nav id="pagenavi">
-    
-        <a href="/blog/page/11/" class="prev">Prev</a>
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
 </div>
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2013 - 2017

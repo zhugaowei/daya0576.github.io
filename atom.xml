@@ -4,7 +4,7 @@
   <title><![CDATA[Henry Z's blog~]]></title>
   <link href="http://changchen.me/atom.xml" rel="self"/>
   <link href="http://changchen.me/"/>
-  <updated>2017-07-13T03:55:37+10:00</updated>
+  <updated>2017-07-16T05:03:50+10:00</updated>
   <id>http://changchen.me/</id>
   <author>
     <name><![CDATA[Daya]]></name>
@@ -12,6 +12,336 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Python中的静态方法和类方法实例分析]]></title>
+    <link href="http://changchen.me/blog/20170716/python-class-method/"/>
+    <updated>2017-07-16T03:59:08+10:00</updated>
+    <id>http://changchen.me/blog/20170716/python-class-method</id>
+    <content type="html"><![CDATA[<blockquote><p>以前准备面试的时候, 有一个经典的python题目, 就是Python里的<code>静态方法(@staticmethod)</code>和<code>类方法(@classmetho)</code>.  <br/>
+以前以为是个死记硬背的东西, 但上周在写一个公司的oauth2 sdk的时候竟然用上了, 还是感触颇深的, 用这篇日志记录一下.</p></blockquote>
+
+<!--more-->
+
+
+<p></p>
+
+<br>  
+
+
+<h3>我写的python包,主要有这么三个功能:</h3>
+
+<ol>
+<li><code>redirect_url = OAuth2Token.redirect(client_id, redirect_uri)</code> <br/>
+/authorize接口uri拼接,用于<strong>获取重定向的链接</strong></li>
+<li><code>token = OAuth2Token.get(client_id, client_secret, redirect_uri, code)</code> <br/>
+授权后, 用的到的code换取access token</li>
+<li><code>token_new = token.refresh(self, client_id, client_secret)</code> <br/>
+用refresh token换取新access token</li>
+</ol>
+
+
+<br>
+
+
+<h3>解释:</h3>
+
+<p>声明: 就是一个简单的类, 干掉了敏感信息,而且这个包本来就上传到PyPI, 可以看到源码的. <br/>
+我就把代码贴出来做更好的解释：</p>
+
+<p><strong>功能1(redirect)</strong> 我用了<code>静态方法(@staticmethod)</code>, 因为它没有用到Token实例. <br/>
+换句话说这个方法放在外边和类里边是一样的. 这个方法虽然没有用到实例, 但它这个类有关, 所以最好放到类里边, 可以使逻辑更加清晰, 美名曰静态方法.</p>
+
+<p><strong>功能2(get)</strong> 我用了<code>类方法(@classmethod)</code>, 因为它是一个创建实例的方法, 它的第一个参数为Token类(cls). <br/>
+我对类方法的理解是: 想新建一个或多个实例, 但无法直接调用init方法时, 就可以用类方法(@classmethod).   <br/>
+例如传入一个URL来实例化一个Token类, 我们是可以在类外边先对url做操作, 获取到init的所有参数, 再去实例化类. 但这样不就不优雅了, 不是吗? <br/>
+其实这就是传说中的工厂设计模式.</p>
+
+<p><strong>功能3(refresh)</strong> 我用了<code>类的实例方法</code>, 它的第一个参数就是当前实例本身(self).  <br/>
+因为该方法是对实例进行操作.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Token</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">access_token</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">token_type</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">refresh_token</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">expiration</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">access_token</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">token_type</span> <span class="o">=</span> <span class="n">token_type</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">refresh_token</span> <span class="o">=</span> <span class="n">refresh_token</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">expiration</span> <span class="o">=</span> <span class="n">expiration</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@staticmethod</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">redirect</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">redirect_uri</span><span class="p">,</span> <span class="n">response_type</span><span class="o">=</span><span class="s">&#39;code&#39;</span><span class="p">):</span>
+</span><span class='line'>        <span class="sd">&quot;&quot;&quot;fetch redirect url</span>
+</span><span class='line'>
+</span><span class='line'><span class="sd">        BASE URL: ***</span>
+</span><span class='line'><span class="sd">        Request:</span>
+</span><span class='line'><span class="sd">            client_id</span>
+</span><span class='line'><span class="sd">            redirect_uri</span>
+</span><span class='line'><span class="sd">            response_type: code</span>
+</span><span class='line'><span class="sd">        Request:</span>
+</span><span class='line'><span class="sd">            (Redirect URL)</span>
+</span><span class='line'><span class="sd">        &quot;&quot;&quot;</span>
+</span><span class='line'>        <span class="n">paras</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+</span><span class='line'>            <span class="n">client_id</span><span class="o">=</span><span class="n">client_id</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">redirect_uri</span><span class="o">=</span><span class="n">redirect_uri</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">response_type</span><span class="o">=</span><span class="n">response_type</span>
+</span><span class='line'>        <span class="p">)</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;{}/authorize?{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">paras</span><span class="p">))</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">url</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@classmethod</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">redirect_uri</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">grant_type</span><span class="o">=</span><span class="s">&#39;authorization_code&#39;</span><span class="p">):</span>
+</span><span class='line'>        <span class="sd">&quot;&quot;&quot;fetch token</span>
+</span><span class='line'>
+</span><span class='line'><span class="sd">        POST: ***</span>
+</span><span class='line'><span class="sd">        Request:</span>
+</span><span class='line'><span class="sd">            header: Content-Type: application/x-www-form-urlencoded</span>
+</span><span class='line'><span class="sd">            body:</span>
+</span><span class='line'><span class="sd">                client_id</span>
+</span><span class='line'><span class="sd">                client_secret</span>
+</span><span class='line'><span class="sd">                redirect_uri</span>
+</span><span class='line'><span class="sd">                grant_type： ***</span>
+</span><span class='line'><span class="sd">                code</span>
+</span><span class='line'><span class="sd">        Request:</span>
+</span><span class='line'><span class="sd">            access_token, token_type, refresh_token, expiration</span>
+</span><span class='line'><span class="sd">        &quot;&quot;&quot;</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;{}/token&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Content-Type&#39;</span><span class="p">:</span> <span class="s">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">}</span>
+</span><span class='line'>        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+</span><span class='line'>            <span class="n">client_id</span><span class="o">=</span><span class="n">client_id</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">client_secret</span><span class="o">=</span><span class="n">client_secret</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">redirect_uri</span><span class="o">=</span><span class="n">redirect_uri</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">grant_type</span><span class="o">=</span><span class="n">grant_type</span>
+</span><span class='line'>        <span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="n">result</span> <span class="o">=</span> <span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="n">headers</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">cls</span><span class="p">(</span><span class="o">**</span><span class="n">result</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">if</span> <span class="s">&#39;error&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+</span><span class='line'>            <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s">&#39;error&#39;</span><span class="p">],</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;error_description&#39;</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;access_token&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">token_type</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;token_type&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">refresh_token</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;refresh_token&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="bp">self</span><span class="o">.</span><span class="n">expiration</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;expiration&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">token_type</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_token</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration</span><span class="p">):</span>
+</span><span class='line'>            <span class="k">raise</span> <span class="n">APIError</span><span class="p">(</span><span class="s">&#39;token&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">self</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">refresh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">grant_type</span><span class="o">=</span><span class="s">&#39;refresh_token&#39;</span><span class="p">):</span>
+</span><span class='line'>        <span class="sd">&quot;&quot;&quot;refresh token</span>
+</span><span class='line'>
+</span><span class='line'><span class="sd">        POST: ***</span>
+</span><span class='line'><span class="sd">        Request:</span>
+</span><span class='line'><span class="sd">            body:</span>
+</span><span class='line'><span class="sd">                grant_type: ***</span>
+</span><span class='line'><span class="sd">                client_id</span>
+</span><span class='line'><span class="sd">                client_secret</span>
+</span><span class='line'><span class="sd">                refresh_token</span>
+</span><span class='line'><span class="sd">        Response:</span>
+</span><span class='line'><span class="sd">            access_token, token_type, refresh_token, expiration</span>
+</span><span class='line'><span class="sd">        &quot;&quot;&quot;</span>
+</span><span class='line'>        <span class="n">url</span> <span class="o">=</span> <span class="s">&#39;{}/token&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">)</span>
+</span><span class='line'>        <span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+</span><span class='line'>            <span class="n">client_id</span><span class="o">=</span><span class="n">client_id</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">client_secret</span><span class="o">=</span><span class="n">client_secret</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">refresh_token</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">,</span>
+</span><span class='line'>            <span class="n">grant_type</span><span class="o">=</span><span class="n">grant_type</span>
+</span><span class='line'>        <span class="p">)</span>
+</span><span class='line'>        <span class="n">result</span> <span class="o">=</span> <span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="p">{})</span>
+</span><span class='line'>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class='line'>        <span class="k">return</span> <span class="s">&#39;&lt;Class: {}&gt;</span><span class="se">\n</span><span class="s">&#39;</span> \
+</span><span class='line'>               <span class="s">&#39;access_token:     &quot;{}&quot;</span><span class="se">\n</span><span class="s">token_type:       &quot;{}&quot;</span><span class="se">\n</span><span class="s">&#39;</span> \
+</span><span class='line'>               <span class="s">&#39;refresh_token:    &quot;{}&quot;</span><span class="se">\n</span><span class="s">expiration:       &quot;{}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span class='line'>                <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span>
+</span><span class='line'>                <span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">token_type</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">refresh_token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">expiration</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">__repr__</span> <span class="o">=</span> <span class="n">__str__</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<br>
+
+
+<p>-EOF-</p>
+
+<br>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[P/NP/NPC/NP-Hard 笔记]]></title>
+    <link href="http://changchen.me/blog/20170715/p-np-npc-nphard/"/>
+    <updated>2017-07-15T01:43:41+10:00</updated>
+    <id>http://changchen.me/blog/20170715/p-np-npc-nphard</id>
+    <content type="html"><![CDATA[<blockquote><p>NP完全和NP难问题困扰了我好几个月， 用这篇日志记录我最近的思考和学习(<a style='color: red'>红色标注</a>的为待解决的问题)。    <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170714_np/np.png"></p></blockquote>
+
+<!--more-->
+
+
+<p></p>
+
+<br>  
+
+
+<blockquote><h3>1. P/NP:</h3>
+
+<p><strong>P: polynomial-time problems</strong> <br/>
+P类问题就是能在多项式时间内解决的问题。 <br/>
+<strong>NP: non-deterministic polynomial</strong> <br/>
+NP问题是指能在多项式时间里验证一个解是否为True的问题  <br/>
+e.g. 给出一组输入， 我们可以在多项式时间内验证这个解的答案是‘是’或者‘否’。</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>2. 归约的概念:</h3>
+
+<p><strong>归约(Reductions)</strong>:《算法导论》上举了这么一个例子。 比如说想在有两个问题：求解一个<strong>一元一次方程</strong>和求解一个<strong>一元二次方程</strong>。 <br/>
+前者可以归约到后者，就是说知道如何解一个一次二元方程， 肯定能解出一元一次方程（将一元二次方程的二次项系数设为0）。 <br/>
+所以一元二次方程的时间复杂度肯定大于等于一元一次方程，也就是说，只要能多项式时间复杂度去解决一元二次问题，一元一次方程也肯定能用多项式的时间复杂度去解决。 <br/>
+<strong>所以:</strong> <br/>
+如果可以 多项式时间复杂度从 A(一元一次方程) 归约到 B(一元二次方程) <br/>
+B 属于 P &mdash;> A 属于 P <br/>
+B 属于 NP &mdash;> B 属于 NP</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>3. NPC(NP完全问题):</h3>
+
+<p>如何证明一个问题 X 是NP-complete: <br/>
+1. X ∈ NP <br/>
+2. reduce from know NP-complete  <br/>
+那么就要说到第一个被证明为NPC问题，SAT(Boolean satisfiability problem)： <br/>
+给定一个个电路， 判断该电路的满足性(所有的输入中， 至少有一个使最后的输出为1)： <br/>
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170714_np/boolean.jpg">   <br/>
+1. 我们可以证明他是一个NP问题， 因为他的解可以在多项式的时间复杂度内验证。  <br/>
+2. 而且它是np难的， 因为它至少比np中的任意问题都难。 <br/>
+<strong><a style='color: red'>那么如何证明呢？？好困扰， 待解决中！！！</a></strong>  <br/>
+<strong>NPC问题举例：</strong> <br/>
+1. null</p></blockquote>
+
+<br>
+
+
+<blockquote><h3>3. NP-Hard(NP难问题):</h3>
+
+<p>时间复杂度大于或等于所有np问题，既未必可以在多项式时间内<strong>验证一个解的正确性</strong>。<br/>
+<strong>NP困难问题举例：</strong> <br/>
+1. null</p></blockquote>
+
+<br>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[排序算法总结]]></title>
@@ -3215,632 +3545,6 @@ ps. 本人渣渣, 文中也都是主观的观点, 看看开心就好, 不喜勿�
 </span><span class='line'>
 </span><span class='line'>    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
 </span><span class='line'>        <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;inner x&#39;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Python - Note of Garbage Collection]]></title>
-    <link href="http://changchen.me/blog/20170214/python-garbage-collection/"/>
-    <updated>2017-02-14T15:30:18+11:00</updated>
-    <id>http://changchen.me/blog/20170214/python-garbage-collection</id>
-    <content type="html"><![CDATA[<blockquote><p>阅读了一篇Python垃圾回收的文章, 用这篇日志记录一下. 原文地址:<br> <a href="http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection">http://www.digi.com/wiki/developer/index.php/Python_Garbage_Collection</a></p></blockquote>
-
-<!--more-->
-
-
-<br>  
-
-
-<h3>Introduction to Python Memory Management</h3>
-
-<p>不像c和c艹, Python的内存分配和释放是完全自动的.</p>
-
-<br>
-
-
-<p>Python的两个内存管理策略:
-1. reference counting
-2. garbage collection
-在Python 2.0之前, 只用reference counting作为内存管理. <br/>
-原理: 记录一个对象被其他对象引用的次数. 当对这个对象的引用移除了, 引用计数也减小了. 要是减到0了, 这个对象也就被释放了.</p>
-
-<br>
-
-
-<p>这种方法很高效, 但也有一些caveat(警告, 缺点的意思吧). 例如它无法解决reference circle的问题(有种死锁的味道):</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">make_cycle</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">l</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
-</span><span class='line'>    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">make_cycle</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<br>
-
-
-<h3>Automatic Garbage Collection of Cycles</h3>
-
-<p>由于有上边这个reference circle的问题, 所以需要scheduled activity去自动收集垃圾. <br/>
-原理: 当 <code>分配的值 - 释放的值 &gt; 阈值</code> 的话: the garbage collector就会自动运行了. 它会运行gc模块去查找阈值.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">gc</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Garbage collection thresholds: </span><span class="si">%r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">gc</span><span class="o">.</span><span class="n">get_threshold</span><span class="p">()</span>
-</span><span class='line'><span class="c"># Garbage collection thresholds: (700, 10, 10)</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># 我们可以看到这里默认的阈值是700</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>但要<strong>注意</strong>的是如果Python已经把内存爆了的话, automatic garbage collection是不会执行的. 这时候你需要去处理抛出的异常, 或者程序已经崩溃了.  <br/>
-&lsquo;&rsquo;&lsquo;This is aggravated by the fact that the automatic garbage collection places high weight upon the NUMBER of free objects, not on how large they are. Thus any portion of your code which frees up large blocks of memory is a good candidate for running manual garbage collection.
-&rsquo;&lsquo;&rsquo;</p>
-
-<br>
-
-
-<h3>Manual Garbage Collection</h3>
-
-<p>对于一些长时间运行的服务器应用或者嵌入式应用, 自动的垃圾回收可能就有局限性了.   <br/>
-虽然在编码中reference cycle是要尽量去避免的, 但还是要有怎么去解决他们的办法.  <br/>
-手动地回收垃圾是个释放reference cycle垃圾内存的好方法.   <br/>
-手动回收垃圾的方法:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">gc</span>
-</span><span class='line'><span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><code>gc.collect()</code>返回所有被回收的对象:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">gc</span>
-</span><span class='line'><span class="n">collected</span> <span class="o">=</span> <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-</span><span class='line'><span class="k">print</span> <span class="s">&quot;Garbage collector: collected </span><span class="si">%d</span><span class="s"> objects.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">collected</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>创建了几个reference cycle的实例:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">gc</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">make_cycle</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">l</span> <span class="o">=</span> <span class="p">{</span> <span class="p">}</span>
-</span><span class='line'>    <span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">l</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span class='line'>    <span class="n">collected</span> <span class="o">=</span> <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;Garbage collector: collected </span><span class="si">%d</span><span class="s"> objects.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">collected</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;Creating cycles...&quot;</span>
-</span><span class='line'>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">make_cycle</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">collected</span> <span class="o">=</span> <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;Garbage collector: collected </span><span class="si">%d</span><span class="s"> objects.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">collected</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-</span><span class='line'>    <span class="n">ret</span> <span class="o">=</span> <span class="n">main</span><span class="p">()</span>
-</span><span class='line'>    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>有两种调用手动回收垃圾的策略(很好理解就不解释了):  <br/>
-1. Time-based
-2. Event-based:  For example, when a user disconnects from the application or when the application is known to enter an idle state.</p>
-
-<br>
-
-
-<h3>几点建议</h3>
-
-<ol>
-<li>不要太随意地去进行垃圾回收, 会严重影响性能(因为要去evalute每一个memory object).</li>
-<li>在你的应用启动并趋于稳定后, 再进行手动地垃圾回收.</li>
-<li>Run manual garbage collection after infrequently run sections of code which use and then free large blocks of memory. 最好在这时运行手动的垃圾回收: 当一段不常用的代码使用并释放了大量内存的是时候.</li>
-<li>当一段代码对timing很敏感的时候, 手动回收垃圾最好在它之前或之后运行.
-_ <br/>
-原版的描述: <br/>
-1.Do not run garbage collection too freely, as it can take considerable time to evaluate every memory object within a large system. For example, one team having memory issues tried calling gc.collect() between every step of a complex start-up process, increasing the boot time by 20 times (2000%). Running it more than a few times per day &ndash; without specific design reasons &ndash; is likely a waste of device resources. <br/>
-2.Run manual garbage collection after your application has completed start up and moves into steady-state operation. This frees potentially huge blocks of memory used to open and parse file, to build and modify object lists, and even code modules never to be used again. For example, one application reading XML configuration files was consuming about 1.5MB of temporary memory during the process. Without manual garbage collection, there is no way to predict when that 1.5MB of memory will be returned to the python memory pools for reuse. <br/>
-3.Run manual garbage collection after infrequently run sections of code which use and then free large blocks of memory. For example, consider running garbage collection after a once-per-day task which evaluates thousands of data points, creates an XML &lsquo;report&rsquo;, and then sends that report to a central office via FTP or SMTP/email. One application doing such daily reports was creating over 800K worth of temporary sorted lists of historical data. Piggy-backing gc.collect() on such daily chores has the nice side-effect of running it once per day for &lsquo;free&rsquo;. <br/>
-4.Consider manually running garbage collection either before or after timing-critical sections of code to prevent garbage collection from disturbing the timing. As example, an irrigation application might sit idle for 10 minutes, then evaluate the status of all field devices and make adjustments. Since delays during system adjustment might affect field device battery life, it makes sense to manually run garbage collection as the gateway is entering the idle period AFTER the adjustment process &ndash; or run it every sixth or tenth idle period. This insures that garbage collection won&rsquo;t be triggered automatically during the next timing-sensitive period.</li>
-</ol>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[那些年 用python刷过的面试算法题]]></title>
-    <link href="http://changchen.me/blog/20170213/python-algorithms/"/>
-    <updated>2017-02-13T15:32:09+11:00</updated>
-    <id>http://changchen.me/blog/20170213/python-algorithms</id>
-    <content type="html"><![CDATA[<blockquote><p>准备面试的过程中用Python写了一些的算法题, 用这篇日志记录一下.</p></blockquote>
-
-<!--more-->
-
-
-<br>  
-
-
-<h2>fibonacci数组:</h2>
-
-<p><a href="http://changchen.me/blog/20160915/dynamic-programming/">/blog/20160915/dynamic-programming/</a></p>
-
-<h2>Generating all possible permutations of a list</h2>
-
-<p>生成一个列表的所有组合.  <br/>
-1.The feeling of completing an algorithm with only one error, awesome.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">def</span> <span class="nf">permutation</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="n">len_fix</span><span class="p">):</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">len_fix</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ABC</span><span class="p">)</span><span class="o">-</span><span class="n">len_fix</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">part1</span><span class="p">,</span> <span class="n">part2</span> <span class="o">=</span> <span class="n">ABC</span><span class="p">[:</span><span class="n">len_fix</span><span class="p">],</span> <span class="n">ABC</span><span class="p">[</span><span class="n">len_fix</span><span class="p">:]</span>
-</span><span class='line'>            <span class="n">part2</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">part2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">part2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">part2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-</span><span class='line'>            <span class="n">permutation</span><span class="p">(</span><span class="n">part1</span><span class="o">+</span><span class="n">part2</span><span class="p">,</span> <span class="n">len_fix</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">ABC</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span><span class='line'><span class="n">permutation</span><span class="p">(</span><span class="n">ABC</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>2.Python buildin method:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">horses</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="n">races</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">horses</span><span class="p">)</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">races</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0xb754f1dc</span><span class="o">&gt;</span>
-</span><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="n">horses</span><span class="p">)))</span>
-</span><span class='line'><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-</span><span class='line'> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-</span><span class='line'><span class="o">...</span>
-</span><span class='line'> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-</span><span class='line'> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<br><br>
-
-
-<blockquote><p>本来是想刷一遍leecode, 但算法题有四百多题..刷了三四题就放弃了  <br/>
-接下来的一些算法题是剑指offer里的:<br>
-<a href="https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1">https://www.nowcoder.com/ta/coding-interviews?query=&amp;asc=false&amp;order=submissionCount&amp;page=1</a></p></blockquote>
-
-<br>
-
-
-<h2>输入一个链表，从尾到头打印链表每个节点的值.</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'><span class="c"># class ListNode:</span>
-</span><span class='line'><span class="c">#     def __init__(self, x):</span>
-</span><span class='line'><span class="c">#         self.val = x</span>
-</span><span class='line'><span class="c">#         self.next = None</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="c"># 返回从尾部到头部的列表值序列，例如[1,2,3]</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">printListFromTailToHead</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listNode</span><span class="p">):</span>
-</span><span class='line'>        <span class="c"># write code here</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">if</span> <span class="n">listNode</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="p">[]</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">listNode</span><span class="o">.</span><span class="n">val</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">while</span> <span class="n">listNode</span><span class="o">.</span><span class="n">next</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">listNode</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-</span><span class='line'>            <span class="n">listNode</span> <span class="o">=</span> <span class="n">listNode</span><span class="o">.</span><span class="n">next</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">return</span> <span class="n">result</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>反转链表</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'><span class="c"># class ListNode:</span>
-</span><span class='line'><span class="c">#     def __init__(self, x):</span>
-</span><span class='line'><span class="c">#         self.val = x</span>
-</span><span class='line'><span class="c">#         self.next = None</span>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">ReverseList</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pHead</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pHead</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">pHead</span><span class="o">.</span><span class="n">next</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="n">pHead</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ReverseList</span><span class="p">(</span><span class="n">pHead</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="c"># reverse the linked list, except last one(because of return).</span>
-</span><span class='line'>        <span class="n">pHead</span><span class="o">.</span><span class="n">next</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="n">pHead</span>
-</span><span class='line'>        <span class="c"># head set null</span>
-</span><span class='line'>        <span class="n">pHead</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">None</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">return</span> <span class="n">h</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>合并两个有序的链表</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">Merge</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pHead1</span><span class="p">,</span> <span class="n">pHead2</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pHead1</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="n">pHead2</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pHead2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="k">return</span> <span class="n">pHead1</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pHead1</span><span class="o">.</span><span class="n">val</span> <span class="o">&lt;</span> <span class="n">pHead2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">pHead1</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">pHead1</span><span class="o">.</span><span class="n">next</span><span class="p">,</span> <span class="n">pHead2</span><span class="p">)</span>
-</span><span class='line'>            <span class="n">head</span> <span class="o">=</span> <span class="n">pHead1</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">pHead2</span><span class="o">.</span><span class="n">next</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Merge</span><span class="p">(</span><span class="n">pHead1</span><span class="p">,</span> <span class="n">pHead2</span><span class="o">.</span><span class="n">next</span><span class="p">)</span>
-</span><span class='line'>            <span class="n">head</span> <span class="o">=</span> <span class="n">pHead2</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">return</span> <span class="n">head</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>生成二叉树的镜像</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'><span class="c"># class TreeNode:</span>
-</span><span class='line'><span class="c">#     def __init__(self, x):</span>
-</span><span class='line'><span class="c">#         self.val = x</span>
-</span><span class='line'><span class="c">#         self.left = None</span>
-</span><span class='line'><span class="c">#         self.right = None</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="c"># 返回镜像树的根节点</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">Mirror</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">Mirror</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">Mirror</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">return</span> <span class="n">root</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>输入两棵二叉树A，B，判断B是不是A的子结构。</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'><span class="c"># class TreeNode:</span>
-</span><span class='line'><span class="c">#     def __init__(self, x):</span>
-</span><span class='line'><span class="c">#         self.val = x</span>
-</span><span class='line'><span class="c">#         self.left = None</span>
-</span><span class='line'><span class="c">#         self.right = None</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">HasSubtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pRoot1</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">pRoot2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
-</span><span class='line'>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">HasSubtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">is_subtree</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pRoot1</span><span class="p">,</span> <span class="n">pRoot2</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pRoot2</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">elif</span> <span class="n">pRoot1</span> <span class="ow">and</span> <span class="n">pRoot2</span> <span class="ow">and</span> <span class="n">pRoot1</span><span class="o">.</span><span class="n">val</span> <span class="o">==</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">val</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">left</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_subtree</span><span class="p">(</span><span class="n">pRoot1</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">pRoot2</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c"># t1 = TreeNode(1)</span>
-</span><span class='line'><span class="c"># t1.left = TreeNode(1)</span>
-</span><span class='line'><span class="c"># t1.left.right = TreeNode(3)</span>
-</span><span class='line'><span class="c"># t1.left.left = TreeNode(2)</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c"># t2 = TreeNode(1)</span>
-</span><span class='line'><span class="c"># t2.left = TreeNode(2)</span>
-</span><span class='line'><span class="c"># t2.right = TreeNode(3)</span>
-</span><span class='line'><span class="c"># # t2.left.left = TreeNode(4)</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c"># print(Solution().is_sametree(t1, t2))</span>
-</span><span class='line'><span class="c"># print(Solution().HasSubtree(t1, t2))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>一层一层打印二叉树</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'><span class="c"># class TreeNode:</span>
-</span><span class='line'><span class="c">#     def __init__(self, x):</span>
-</span><span class='line'><span class="c">#         self.val = x</span>
-</span><span class='line'><span class="c">#         self.left = None</span>
-</span><span class='line'><span class="c">#         self.right = None</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="c"># 返回从上到下每个节点值列表，例：[1,2,3]</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">PrintFromTopToBottom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
-</span><span class='line'>        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="n">nodes_in_level</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span> <span class="k">if</span> <span class="n">root</span> <span class="k">else</span> <span class="p">[]</span>
-</span><span class='line'>        <span class="k">while</span> <span class="n">nodes_in_level</span><span class="p">:</span>
-</span><span class='line'>            <span class="n">nodes_in_next_level</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class='line'>            <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes_in_level</span><span class="p">:</span>
-</span><span class='line'>                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
-</span><span class='line'>                <span class="n">nodes_in_next_level</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
-</span><span class='line'>                <span class="n">nodes_in_next_level</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="n">nodes_in_level</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes_in_next_level</span> <span class="k">if</span> <span class="n">node</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="k">return</span> <span class="n">result</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c"># t1 = TreeNode(1)</span>
-</span><span class='line'><span class="c"># t1.left = TreeNode(1)</span>
-</span><span class='line'><span class="c"># t1.left.right = TreeNode(3)</span>
-</span><span class='line'><span class="c"># t1.left.left = TreeNode(2)</span>
-</span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c"># print(Solution().PrintFromTopToBottom(t1))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>栈的压入弹出序列</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c"># -*- coding:utf-8 -*-</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># 输入两个整数序列，第一个序列表示栈的压入顺序, 请判断第二个序列是否为该栈的弹出顺序。</span>
-</span><span class='line'><span class="c"># 假设压入栈的所有数字均不相等。</span>
-</span><span class='line'><span class="c"># 例如序列1,2,3,4,5是某栈的压入顺序，序列4，5,3,2,1是该压栈序列对应的一个弹出序列，但4,3,5,1,2就不可能是该压栈序列的弹出序列。（注意：这两个序列的长度是相等的）</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">IsPopOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pushV</span><span class="p">,</span> <span class="n">popV</span><span class="p">):</span>
-</span><span class='line'>        <span class="k">if</span> <span class="n">pushV</span> <span class="ow">and</span> <span class="n">popV</span> <span class="ow">and</span> <span class="nb">set</span><span class="p">(</span><span class="n">pushV</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">popV</span><span class="p">):</span>
-</span><span class='line'>            <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="n">pushV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)]</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="k">while</span> <span class="n">popV</span><span class="p">:</span>
-</span><span class='line'>                <span class="c"># False</span>
-</span><span class='line'>                <span class="k">if</span> <span class="n">popV</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">l</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-</span><span class='line'>                    <span class="k">return</span> <span class="bp">False</span>
-</span><span class='line'>
-</span><span class='line'>                <span class="c"># 1. push</span>
-</span><span class='line'>                <span class="k">elif</span> <span class="n">pushV</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">popV</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
-</span><span class='line'>                    <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pushV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'>                <span class="c"># 2. pull</span>
-</span><span class='line'>                <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>                    <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-</span><span class='line'>                    <span class="n">popV</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">True</span>
-</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
-</span><span class='line'>            <span class="k">return</span> <span class="bp">False</span>
 </span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
