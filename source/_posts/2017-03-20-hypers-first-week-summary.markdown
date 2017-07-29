@@ -18,10 +18,30 @@ categories: [work, hypers]
 <br>
 
 
-# 第十八周 (16 July 2017)
+# 第十九周 (17 July 2017)
 <p></p>
 ### 完成的工作总结:
-1. 这周drinksober请假了, 感觉项目就停滞不前了, in a chaos, people just want to make their job done, instead of making it excellent.
+1. 前段升级新框架, 把转化管理那块的接口重写一下. 主要把分散各地的方法整合到REST中去, 再配合检查参数和权限的装饰器, 这代码写起来, 真的是轻松愉悦♂.  
+REST是个好东西, 因为百分之九十的接口都是对一个特定资源做**增删改查**操作, 然后把这些操作都集中起来, 就可以避免写很多重复功能的接口.       
+比如对user的retrieve操作:      
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest.jpg">
+2. 第一次去生产环境上修了bug, 感觉现在才接触生产环境晚的有些过分了, 还是应该主动多去接触自己未接触的领域.    
+3. 公司搬家咯, 感觉瞬间高大上了, 秀一张图:   
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_new.jpg">   
+
+### 给下周的自己一些建议
+1. 最近总是在想一个问题, 自己的优势(核心竞争力)到底是什么. 想出了一丝头绪, 希望未来的日子继续努力~~    
+<br>
+<br>
+---
+<br>
+<br>
+
+
+# 第十八周 (10 July 2017)
+<p></p>
+### 完成的工作总结:
+1. 这周drinksober请假了, 感觉项目突然就停滞不前了, in a chaos, people just want to make their job done, instead of making it excellent.
 2. 在解决一个nginx配置的问题上, 深深的感到自己的无力感. 还是要去培养一下自己快速学习一个新技能的能力.    
 3. 下周就要搬公司了, 希望有新的开始吧.   
 <br>
@@ -43,7 +63,7 @@ categories: [work, hypers]
 
 ### 给下周的自己一些建议
 1. 最近有一个明显的发现， 就是自己更博的速度急速下降， 侧面说明学习的脚步渐渐的放缓了。        
-所以还是要在课余多学习提高自己， 充分吸收营养， 才能拉出饱满的屎。   
+所以还是要在课余多学习提高自己， 充分吸收营养， 才能拉出新鲜饱满的屎。   
 
 <br>
 <br>
@@ -53,7 +73,7 @@ categories: [work, hypers]
 
 
 # 第十五周 (19 June 2017)   
-请假了一周多一天回学校， 参加了毕业典礼，带爸妈去澳洲玩了八天。    
+请假了一周+一天回学校， 参加了毕业典礼，带爸妈去澳洲玩了八天。    
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week15_g.jpg">    
 <br>
 <br>
@@ -345,3 +365,5 @@ categories: [work, hypers]
 2. **友善的同事:** 虽然心里有些迷惘, 但同事人都挺好的. 特别是无所不知黄俊小哥哥, 帮我换了椅子拿了本子, 第一周也是耐心回答了我无数的问题. 感覺自己运气总是很好, 能遇到耐心厉害的老师. 这些也是我在公司能待下去的最重要原因吧.    
 3. **保持效率:** 第一周的效率其实还是可以的(打个85分吧), 感觉学了很多东西. 但今天(第二周的周一)效率就有些雪崩了, 不要因为工作久了就混日子. 要努力保持清醒的头脑, 知道自己在学什么做什么, 多去虚心问问题.     
 <br>
+
+

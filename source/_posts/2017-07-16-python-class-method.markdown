@@ -3,7 +3,7 @@ layout: post
 title: "Python中的静态方法和类方法实例分析"
 date: 2017-07-16 01:59:08 +0800
 comments: true
-categories:
+categories: ['python']
 ---
 
 > 以前准备面试的时候, 有一个经典的python题目, 就是Python里的`静态方法(@staticmethod)`和`类方法(@classmetho)`.    
@@ -23,6 +23,7 @@ categories:
 
 
 ### 解释:   
+    
 声明: 就是一个简单的类, 干掉了敏感信息,而且这个包本来就上传到PyPI, 可以看到源码的.   
 我就把代码贴出来做更好的解释：    
 
@@ -143,3 +144,5 @@ class Token(object):
 <br>
 -EOF-
 <br>
+
+
