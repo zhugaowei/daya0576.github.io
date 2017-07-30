@@ -45,6 +45,7 @@ rdiscount:
     - footnotes
     - smart
 
+
 pygments: false # default python pygments have been replaced by pygments.rb
 excerpt_separator: ""
 

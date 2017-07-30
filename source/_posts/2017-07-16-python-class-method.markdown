@@ -11,7 +11,8 @@ categories: ['python']
 <!--more-->   
 <br>  
 
-### 我写的python包,主要有这么三个功能:   
+### 我写的python包
+主要有这么三个功能:   
 
 1. `redirect_url = OAuth2Token.redirect(client_id, redirect_uri)`   
 /authorize接口uri拼接,用于**获取重定向的链接**

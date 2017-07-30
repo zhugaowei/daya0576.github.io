@@ -1,0 +1,19 @@
+<!-- from https://github.com/ghiculescu/jekyll-table-of-contents -->
+
+<script src="{{ root_url }}/javascripts/toc.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    headers = $('.entry-content').find('h1, h2, h3, h4, h5, h6');
+    $.each(headers , function(i, val) {
+        $(val).attr('id', $(val).text())
+        $(val).attr('href', '#'+$(val).text())
+    })
+    $('#toc').toc(
+        {classes: { list: '_list', item: '_item'}}
+    );
+});
+</script>
+
+
+<div id="toc"></div>
