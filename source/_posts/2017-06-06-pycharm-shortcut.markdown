@@ -8,7 +8,7 @@ categories: [pycharm]
 
 > 介绍一些Pycharm中大幅度提高生产力的快捷键, 不看后悔一辈子! (逃)      
 大部分的快捷键在同系列的IDE(JetBrains全家桶)上应该都是能通用的     
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/license.png">     
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/license-min.png">     
 <!--more-->   
 <br>     
 

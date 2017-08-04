@@ -12,15 +12,17 @@ categories: [python, algorithm]
 <!--more-->   
 <br>     
 
-### 各个算法的时间和空间复杂度:
+# 各个算法的时间和空间复杂度:
 以前大二的时候, 看到这张图的时候真的头晕, 但现在看起来这个表格真的很精华.   
 理解各个算法后就慢慢明白各个算法三种情况(最优, 平均和最坏)的复杂度, 还有空间复杂度都不一样.    
 所以不同不算法都有各自的优势和应用的场景.    
 <img class="lazy" data-original="/images/blog/170610_sorting/time_complexity.png">       
 <br>
 
-### 直接把每个算法实现的解释和感想写在代码的注释里了.    
+# 直接把每个算法实现的解释和感想写在代码的注释里了.    
 ps. 代码是用python3.5写的.
+
+###1. 冒泡排序
 ```python
 def bubble_sort(l):
     """冒泡排序:
@@ -34,8 +36,10 @@ def bubble_sort(l):
             if l[j] < l[i]:
                 l[i], l[j] = l[j], l[i]
     return l
+```
 
-
+###2. 插入排序
+```python
 def insert_sort(l):
     """插入排序:
 
@@ -49,8 +53,10 @@ def insert_sort(l):
             j -= 1
         l[j+1] = v
     return l
+```
 
-
+# 3. 选择排序
+```python
 def selection_sort(l):
     """选择排序:
 
@@ -63,8 +69,10 @@ def selection_sort(l):
 
         l[i], l[min] = l[min], l[i]
     return l
+```
 
-
+# 4. 归并排序
+```python
 def merge_sort(l):
     """归并排序:
 
@@ -80,8 +88,10 @@ def merge_sort(l):
         return merge(merge_sort(l[::2]), merge_sort(l[1::2]))
     else:
         return l
+```
 
-
+#5. 快排
+```python
 def quick_sort(l):
     """快速排序:
 
@@ -96,8 +106,10 @@ def quick_sort(l):
         left = [i for i in l[1:] if i <= base]
         right = [i for i in l[1:] if i > base]
         return quick_sort(left) + [base] + quick_sort(right)
+```
 
-
+#6. 堆排
+```python
 def heap_sort(l):
     """堆排序:
 
@@ -109,8 +121,11 @@ def heap_sort(l):
     for value in l:
         heappush(h, value)
     return [heappop(h) for _ in range(len(h))]
+```
 
-
+# 运行结果: 
+测试了一下
+```python
 if __name__ == '__main__':
     a = [5, 2, 4, 6, 1, 3]
     print("Built-in sort:   {} --> {}".format(a, sorted(a)))
@@ -124,3 +139,5 @@ if __name__ == '__main__':
 ```
 <img class="lazy" data-original="/images/blog/170610_sorting/result.png">
 <br>
+
+

@@ -7,6 +7,7 @@ categories: [work, hypers]
 ---
 
 
+
 > 在宏路数据HFA(HyperS For Advertising)组开始人生第一份工作, 职场小菜鸟的磕绊前行~~.    
 转眼一周就过去了, 特写下这篇日志记录总结一下每周的总结和反思.    
 <!--more-->
@@ -14,6 +15,23 @@ categories: [work, hypers]
 
 `(DESC, 持续更新中...)`
 
+<br>
+<br>
+
+
+# 第二十周 (24 July 2017)
+<p></p>
+### 完成的工作总结:
+1. **单元测试**: 个人觉得单元测试还是个挺重要的东西. 上周提到我把以前的很多旧接口都整合到新的rest框架中. 这周对rest接口的retrieve/update/list/create写了通用的单元测试: 第一步是测试接口返回的状态码是否200, 第二步是assert返回的数据的准确性.    
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week20_rest.png">
+2. 周末买了个香港的vps, 把自己的[博客](https://changchen.me/), [小网站unsw.co](https://www.unsw.co/), 和s-s都放上去了. 希望之后可以在上边多学学nginx, docker等等
+
+### 给下周的自己一些建议
+1. 这周又感冒, 喉咙发炎了. 下周还是要多注意休息和自己的身体. 
+2. 周末在家宅了一天, 突然发现自己唯一的好朋友是我的小笔记本电脑, 还是要多出去走走下点好电影看看吧, 不然真的会慢慢变得狭隘.
+<br>
+<br>
+---
 <br>
 <br>
 
@@ -26,6 +44,7 @@ categories: [work, hypers]
 REST是个好东西, 因为百分之九十的接口都是对一个特定资源做**增删改查**操作, 然后把这些操作都集中起来, 就可以避免写很多重复功能的接口.       
 比如对user的retrieve操作:      
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest.jpg">
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest2.jpg">
 2. 第一次去生产环境上修了bug, 感觉现在才接触生产环境晚的有些过分了, 还是应该主动多去接触自己未接触的领域.    
 3. 公司搬家咯, 感觉瞬间高大上了, 秀一张图:   
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_new.jpg">   
