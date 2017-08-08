@@ -3,7 +3,7 @@ layout: post
 title: "python的编码问题笔记"
 date: 2017-07-31 20:59:46 +0800
 comments: true
-categories: 
+categories: [python3, unicode, encoding]
 ---
 
 > 近日被python的编码问题卡了好几次. 终于静下心来看了看文档, 把原理搞清楚, 用这篇文章分享记录一下.    
@@ -37,7 +37,7 @@ _
 <br>
 
 
-### 1. Python3 str类型
+### 1. Python3 str类型(unicode)
 python3的str字符串, 默认就代表**unicode字符组成的序列**.    
 ```python
 In [1]: s = '哈哈哈'   
@@ -56,7 +56,7 @@ Out[2]: str
 <br><br>
 
 
-### 2. Python3 bytes类型
+### 2. Python3 bytes类型(字节)
 bytes和str一样都是内置的类型:  
 ```python 
 In [7]: s = b'haha'
@@ -72,8 +72,8 @@ Out[8]: bytes
 
 1. **Encoding:**   
 **str → bytes**   
-因为str只是一堆unicode字符, i.e. 数字.   
-所以简单的说, encoding就是把一堆数字, 按特定的算法X(例如utf-8), 用字节的方式存储在计算机上.   
+因为str只是一堆unicode字符(数字).   
+所以简单的说, encoding就是把一堆数字, 按特定的编码算法X(例如utf-8), 用字节的方式存储在计算机上.   
 
 2. **Decoding:**   
 **bytes → str**   
@@ -95,14 +95,13 @@ Out[11]: '哈哈'
 
 ### 4. UTF-8编码(encoding)
 简单的说下unicode是如何通过utf-8编码转化为bytes, 以帮助更好的理解什么是编码(encoding).    
+**utf-8**其实属于 动态长度编码(variable length encoding).   
 
-utf-8其实属于 动态长度编码(variable length encoding).   
-
-举个**简单的栗子**, 假如说有这么一个二进制序列:   
+举个**动态长度编码简单的栗子**, 假如说有这么一个二进制序列:   
 1001000**1**, 1000000**1**, 1011001**0**, 1011001**0**   
 我们就可以利用每个byte的最后一位(标志位, 1代表继续, 0代表结束), 来判断读几个bytes.   
 
-utf-8也是类似的思想, 但是用每个字节**开头的几位**, 当作标志位, 如下表所示:    
+utf-8也是类似的思想, 但不同于上边, 它是用每个字节**开头的几位**, 当作标志位, 如下表所示:    
 <table>
 	<thead>
 		<tr>
@@ -149,12 +148,13 @@ utf-8也是类似的思想, 但是用每个字节**开头的几位**, 当作标�
 		</tr>
 	</tbody>
 </table>
+(生动活泼形象的编码例子见下图↓)
 <br><br>
 
    
 
 ### 总结
-为此我专门画了一张图, 总结了一下(python3中默认的编码方式就是utf-8):   
+为此我专门画了一张图, 总结了一下:   
 <figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>

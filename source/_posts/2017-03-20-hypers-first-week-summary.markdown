@@ -19,16 +19,40 @@ categories: [work, hypers]
 <br>
 
 
+# 第二十一周 (31 July 2017)
+<p></p>
+### 完成的工作总结:
+1. **fix bugs**: 修复对外api的一些bug.    
+2. **静态文件**: 对静态文件的整理, 我们现在项目有三个文件夹: static(最早的前端文件), static1(当前的前端框架), front-end(最新正在做升级的前端框架).    
+并将nginx上的配置更新了, 使得文档和rest的返回数据格式页面能够正常显示.
+3. **trackcode**: 对整个跟踪代码逻辑的整理. 有时候想去改旧的代码, 一是看到一些不合理的地方实在难以忍受, 二是想主动深入的去了解一些原理.    
+4. **转化管理的报表**: 新的我们新的报表的url是这种格式的: `{{url}}/user/105/actionpara.(json|chart|xlsx)`, 把一些旧的报表的逻辑放到新的报表基类中了, 简化了很多公用的代码.    
+5. **吐槽同事**: 改了同事的一段代码, 看到的时候难受的像吃了一坨大便.   
+因为和黄俊的一起努力下, 我们现在写接口已经变成这个样子, 写的时候真的很享受:   
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week21_rest.png">   
+可同事写的代码还是停留在**上个世纪**, 真的是头疼☹️, 这也无所谓努力改正就行了. 可还有个同事写的代码还停留在**远古时代**, 真的是没救了. 
+<p></p>
+### 给下周的自己一些建议
+1. **兴趣使然**: 这周一直在修bug(填坑)的折磨中度过了, 周五看着桌子上散落的些许头发, 突然好悲伤, 发现自己对写代码的那一丝热情, 竟然也就这么被一点一点的消磨殆尽. 有时候晚上回家总想着努力去提高自己, 可有时候真的累的动弹不得. 思考了一下, 自己从小到大能做好的事都是自己感兴趣的东西, 因为兴趣就是坚持的动力和天赋的体现.   
+今年的计划本来是想把算法导论那本书看完, 但想了想, 有计划虽好, 但也不能太强迫自己. 还是努力去寻找自己感兴趣的东西.     
+<br>
+<br>
+---
+<br>
+<br>
+
+
+
 # 第二十周 (24 July 2017)
 <p></p>
 ### 完成的工作总结:
-1. **单元测试**: 个人觉得单元测试还是个挺重要的东西. 上周提到我把以前的很多旧接口都整合到新的rest框架中. 这周对rest接口的retrieve/update/list/create写了通用的单元测试: 第一步是测试接口返回的状态码是否200, 第二步是assert返回的数据的准确性.    
+1. **单元测试**: 个人觉得单元测试还是个挺重要的东西. 上周提到我把以前大部分的旧接口都整合到新的rest框架中. 这周对rest接口的retrieve/update/list/create写了通用的单元测试: 第一步是测试接口返回的状态码是否200, 第二步是assert返回的数据的准确性.    
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week20_rest.png">
-2. 周末买了个香港的vps, 把自己的[博客](https://changchen.me/), [小网站unsw.co](https://www.unsw.co/), 和s-s都放上去了. 希望之后可以在上边多学学nginx, docker等等
-
+2. **VPS**: 周末买了个香港的vps, 把自己的[博客](https://changchen.me/), [小网站unsw.co](https://www.unsw.co/), 和s-s都放上去了. 希望之后可以在上边多学学nginx, docker等等
+<p></p>
 ### 给下周的自己一些建议
-1. 这周又感冒, 喉咙发炎了. 下周还是要多注意休息和自己的身体. 
-2. 周末在家宅了一天, 突然发现自己唯一的好朋友是我的小笔记本电脑, 还是要多出去走走下点好电影看看吧, 不然真的会慢慢变得狭隘.
+1. **感冒**: 这周又感冒, 喉咙发炎了. 下周还是要多注意休息和自己的身体. 
+2. **井底之蛙**:周末在家宅了一天, 突然发现自己唯一的好朋友是我的小笔记本电脑, 还是要多出去走走下点好电影看看吧, 不然真的会慢慢变得狭隘.
 <br>
 <br>
 ---
@@ -40,17 +64,17 @@ categories: [work, hypers]
 # 第十九周 (17 July 2017)
 <p></p>
 ### 完成的工作总结:
-1. 前段升级新框架, 把转化管理那块的接口重写一下. 主要把分散各地的方法整合到REST中去, 再配合检查参数和权限的装饰器, 这代码写起来, 真的是轻松愉悦♂.  
+1. **REST**: 前段升级新框架, 把转化管理那块的接口重写一下. 主要把分散各地的方法整合到REST中去, 再配合检查参数和权限的装饰器, 这代码写起来, 真的是轻松愉悦♂.  
 REST是个好东西, 因为百分之九十的接口都是对一个特定资源做**增删改查**操作, 然后把这些操作都集中起来, 就可以避免写很多重复功能的接口.       
 比如对user的retrieve操作:      
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest.jpg">
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest.png">
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_rest2.jpg">
-2. 第一次去生产环境上修了bug, 感觉现在才接触生产环境晚的有些过分了, 还是应该主动多去接触自己未接触的领域.    
-3. 公司搬家咯, 感觉瞬间高大上了, 秀一张图:   
+2. **生产环境**:第一次去生产环境上修了bug, 感觉现在才接触生产环境晚的有些过分了, 还是应该主动多去接触自己未接触的领域.    
+3. **搬家~**: 公司搬家咯, 感觉瞬间高大上了, 秀一张图:   
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week19_new.jpg">   
-
+<p></p>
 ### 给下周的自己一些建议
-1. 最近总是在想一个问题, 自己的优势(核心竞争力)到底是什么. 想出了一丝头绪, 希望未来的日子继续努力~~    
+1. **核心竞争力**: 最近总是在想一个问题, 自己的优势(核心竞争力)到底是什么. 想出了一丝头绪, 希望未来的日子继续努力~~    
 <br>
 <br>
 ---
@@ -74,16 +98,16 @@ REST是个好东西, 因为百分之九十的接口都是对一个特定资源�
 # 第十七周 (03 July 2017)
 <p></p>
 ### 完成的工作总结:
-1. **周一/周二:** 哎，请了两天假，因为得了急性肠胃炎，吐得快怀疑人生了。慢慢的开始思考身体的重要性和工作的意义。     
-2. **周三：** 开始做oauth2的开发，今天做了的工作就是把原来对外接口的token验证， 换成统一的拿access token去auth拿用户的方式。  
+1. **生病😷:** 哎，请了两天假，因为得了急性肠胃炎，吐得快怀疑人生了。慢慢的开始思考身体的重要性和工作的意义。     
+2. **OAuth2：** 开始做oauth2的开发，今天做了的工作就是把原来对外接口的token验证， 换成统一的拿access token去auth拿用户的方式。  
 希望这周能把剩下的工作做完。   
-3. **周四周五：** 还不错， 把OAuth2.0 sdk写完了，打包传到PyPI上了: `pip install hypers-oauth2`。    
+3. **OAuth2 sdk：** 还不错， 把OAuth2.0 sdk写完了，打包传到PyPI上了: `pip install hypers-oauth2`。    
 从README.md截的图:   
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week17_auth2.png">    
 
 ### 给下周的自己一些建议
-1. 最近有一个明显的发现， 就是自己更博的速度急速下降， 侧面说明学习的脚步渐渐的放缓了。        
-所以还是要在课余多学习提高自己， 充分吸收营养， 才能拉出新鲜饱满的屎。   
+1. **学习**: 最近有一个明显的发现， 就是自己更博的速度急速下降， 侧面说明学习的脚步渐渐的放缓了。        
+所以还是要在课余多学习提高自己，多去看看优秀的代码, 才会有提高。   
 
 <br>
 <br>
@@ -93,7 +117,7 @@ REST是个好东西, 因为百分之九十的接口都是对一个特定资源�
 
 
 # 第十五周 (19 June 2017)   
-请假了一周+一天回学校， 参加了毕业典礼，带爸妈去澳洲玩了八天。    
+**毕业典礼**: 请假了一周+一天回学校， 参加了毕业典礼，带爸妈去澳洲玩了八天。    
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week15_g.jpg">    
 <br>
 <br>
@@ -316,7 +340,7 @@ REST是个好东西, 因为百分之九十的接口都是对一个特定资源�
 1. 最主要的就是, 在黄俊的手把手下, 完成了公司逻辑比较复杂的一些新需求, 并完成了测试.   
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week3_sharing.png">    
 2. 写了一个自动生产API文档(function的__docstr__)的小程序.
-3. 阅读了一下django的ORM many to many的文档.[笔记]](/blog/20170405/many-to-many-relation-with-extra-field-django/)    
+3. 阅读了一下django的ORM many to many的文档.[笔记](/blog/20170405/many-to-many-relation-with-extra-field-django/)    
 因为在公司的逻辑中, 一个用户有多个账号, 一个账号又可以共享给多个用户. 原先的逻辑是用一张表去关联用户和账号的这两张表.    
 我在想能不能用django ORM自带的many to many relation代替, 但把文档读了一下, 发现还是不行.    
 原因是公司的业务逻辑中**用户对账号的关系**还有一个permission的属性, 自带的ORM好像实现不了这个功能.     
