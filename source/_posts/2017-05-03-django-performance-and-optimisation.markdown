@@ -13,6 +13,8 @@ categories: [django, orm]
 <!--more-->
 <br>
 
+
+
 ### 1. 你的时间才是最宝贵的:
 文档里的这句话还是挺有意思的(自己的时间和性能优化的trade-off): Your own time is a valuable resource, more precious than CPU time. Some improvements might be too difficult to be worth implementing, or might affect the portability or maintainability of the code. Not all performance improvements are worth the effort.
 <br>
@@ -178,7 +180,7 @@ reset_queries()
 
 <div style='margin-left: 20px'>
 配置参考:   
-```python
+``` python
 #debug_toolbar settings
 if DEBUG:
     INTERNAL_IPS = ('127.0.0.1',)
@@ -298,3 +300,5 @@ def users(self, add_self=False, add_share=True, select_id=False, **kwargs):
 
     return set(users)
 ```
+
+

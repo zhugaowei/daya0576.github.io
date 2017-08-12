@@ -18,6 +18,7 @@ categories: [pycharm, shortcut]
 **最新基于** Pycharm 2017.02
 <br><br>
 
+
 # 快速搜索
 <p></p>
 ### 1. Find in Path...
@@ -25,12 +26,12 @@ categories: [pycharm, shortcut]
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/0.png">       
 <br>
 
-### 2. Find Action...
+### 2. Find Action by Name
 `Ctrl+Shift+A`: text --> 执行一些action(git pull/commit等等等等), 潜力无限, 有待开发.   
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/2.png">       
 <br>
 
-### 3. Search everywhere...
+### 3. Search Everywhere
 `Shift(Double-press)`: 双击shift, 我每天使用频率很高的一个快捷键, 可以按最近使用过的**文件名, 类名, 方法名等**去搜索定位!    
 最棒的是它会记住你的搜索历史, 并将最常用的显示在最上边.      
 <img style="max-height:400px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/4.png">     
@@ -60,9 +61,7 @@ e.g. `import ipdb; ipdb.set_trace(context=20)`...
 ### 2. Main menu | Navigate | Back/Forward
 `Alt + Left|Right`: **移动光标**到上一次编辑或者返回移动之前的位置.   
 在错综复杂的代码中更为重要, 再也不担心迷路了咯.   
-<br>
-
-<br>
+<br><br>
 
 
 # 快速编辑
