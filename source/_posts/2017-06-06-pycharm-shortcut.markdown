@@ -22,7 +22,7 @@ categories: [pycharm, shortcut]
 # 快速搜索
 <p></p>
 ### 1. Find in Path...
-`Alt+Shift+F`: 在整个项目中 或 指定目录里 进行**全局搜索**:      
+`Ctrl+Shift+F`: 在整个项目中 或 指定目录里 进行**全局搜索**:      
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/0.png">       
 <br>
 

@@ -18,9 +18,11 @@ categories: [python, algorithm]
 所以不同不算法都有各自的优势和应用的场景.    
 <img class="lazy" data-original="/images/blog/170610_sorting/time_complexity.png">       
 <br>
+<br>
 
 # 直接把每个算法实现的解释和感想写在代码的注释里了.    
 ps. 代码是用python3.5写的.
+<br>
 
 ###1. 冒泡排序
 ```python
@@ -37,6 +39,7 @@ def bubble_sort(l):
                 l[i], l[j] = l[j], l[i]
     return l
 ```
+<br>
 
 ###2. 插入排序
 ```python
@@ -54,6 +57,7 @@ def insert_sort(l):
         l[j+1] = v
     return l
 ```
+<br>
 
 # 3. 选择排序
 ```python
@@ -70,6 +74,7 @@ def selection_sort(l):
         l[i], l[min] = l[min], l[i]
     return l
 ```
+<br>
 
 # 4. 归并排序
 ```python
@@ -89,6 +94,7 @@ def merge_sort(l):
     else:
         return l
 ```
+<br>
 
 #5. 快排
 ```python
@@ -107,6 +113,7 @@ def quick_sort(l):
         right = [i for i in l[1:] if i > base]
         return quick_sort(left) + [base] + quick_sort(right)
 ```
+<br>
 
 #6. 堆排
 ```python
@@ -122,6 +129,7 @@ def heap_sort(l):
         heappush(h, value)
     return [heappop(h) for _ in range(len(h))]
 ```
+<br>
 
 # 运行结果: 
 测试了一下

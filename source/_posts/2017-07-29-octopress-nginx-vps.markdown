@@ -6,7 +6,7 @@ comments: true
 categories: [octopress, vps]
 ---
 
-> 昨晚把博客搬香港的一个vps上了. 在这篇文章把简单的几个步骤, 总结分享一下( 本文主要以Octopress为例子, 但流程其实都是共通的).      
+> 昨晚博客搬到香港的vps上了. 在这篇文章把简单的几个步骤, 总结分享一下( 本文主要以Octopress为例子, 但流程其实都是共通的).      
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170729_hoster/boost1.png">
 <!--more-->
 <br><br>   

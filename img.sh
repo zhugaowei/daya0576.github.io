@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path1=~/Desktop/"`ls ~/Desktop | grep 'Screen Shot' | tail -n 1`"
+path1=~/Desktop/"`ls ~/Desktop | tail -n 1`"
 path2=~/zblog/source/images/blog/"$1"
 path2_dir="`echo $path2 | egrep -o '.*\/'`"
 mkdir $path2_dir

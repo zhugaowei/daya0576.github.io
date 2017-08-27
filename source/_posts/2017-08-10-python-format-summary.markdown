@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Python format方法总结"
+title: "你不知道的Python format方法"
 date: 2017-08-10 11:04:03 +0800
 comments: true
 categories: [python, str, format]
 ---
 
-> 今天看到python 官方文档的时候: [https://docs.python.org/3/library/string.html#format-string-syntax](https://docs.python.org/3/library/string.html#format-string-syntax), 突然发现format这个方法原来这么强大, 有好多原先不知道的用法. 用这篇博客总结了一下.    
+> 今天看到[官方文档](https://docs.python.org/3/library/string.html#format-string-syntax)的时候, 突然发现format()这个方法这么强大, 有好多原先不知道的用法. 用这篇博客总结了一下.    
 <!--more-->   
 <br><br>  
 

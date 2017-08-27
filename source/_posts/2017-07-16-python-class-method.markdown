@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python中的静态方法和类方法实例分析"
+title: "Python中的静态方法和类方法实战分析"
 date: 2017-07-16 01:59:08 +0800
 comments: true
 categories: ['python']

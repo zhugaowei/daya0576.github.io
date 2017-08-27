@@ -6,7 +6,7 @@ comments: true
 categories: [python3, unicode, encoding]
 ---
 
-> 近日被python的编码问题卡了好几次. 终于静下心来看了看文档, 把原理搞清楚, 用这篇文章分享记录一下.    
+> 近日常常python的编码问题纠缠的生活不能自理. 昨天终于静下心来看了看文档, 把Python3中**的编码搞清楚**, 用这篇文章分享记录一下(包括utf-8的原理).    
 <img class="lazy" style="max-height:200px" data-original="/images/blog/170801_encoding/h.png">    
 <!--more-->
 <br><br>
