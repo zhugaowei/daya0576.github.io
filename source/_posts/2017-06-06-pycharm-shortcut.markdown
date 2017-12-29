@@ -8,7 +8,7 @@ categories: [pycharm, shortcut]
 
 > 介绍一些Pycharm中大幅度提高生产力的快捷键, 不看后悔一辈子! (逃)      
 大部分的快捷键在同系列的IDE(JetBrains全家桶)上应该都是能通用的     
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/license-min.png">     
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/license-min.png">     
 <!--more-->   
 <br><br>     
 
@@ -34,7 +34,15 @@ categories: [pycharm, shortcut]
 ### 3. Search Everywhere
 `Shift(Double-press)`: 双击shift, 我每天使用频率很高的一个快捷键, 可以按最近使用过的**文件名, 类名, 方法名等**去搜索定位!    
 最棒的是它会记住你的搜索历史, 并将最常用的显示在最上边.      
-<img style="max-height:400px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/4.png">     
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/4.png">     
+<br>
+
+### 4. Main menu | Navigate | File...
+`Ctrl+N`: 快速根据名字找到文件, 比双击shift快很多.    
+<img style="max-height:150px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/search_file.jpg">     
+<img style="max-height:150px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/search_file.png">     
+但这个搜索文件有个很尴尬的地方, 模糊搜索的时候一定要带斜杠来分割文件夹, 我发邮件给了客服, 竟然刚刚实现这个功能, 下个版本就有咯, cheers~   
+<img style="max-height:200px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/email.png">     
 <br><br>
 
 
@@ -105,6 +113,14 @@ Perl中$0就代表全部匹配(本身), 所以就能实现同时替换所有搜�
 <img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/7_2.png">     
 <br>
 
+---
+
+
+# 其他奇技淫巧: 
+<p></p>
+###Annotate
+查看当前文件每一行代码是谁是哪个commit贡献的(gitbub/gitlab上的blame view, 这个名字好形象)
+<img style="max-height:400px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/annotation.jpg">  
 
 (持续更新中...)   
 如果你有什么更好的华丽操作, 记得给我留言哦~~   

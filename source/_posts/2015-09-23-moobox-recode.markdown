@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "moobox_recode(回忆篇)"
+title: "记录moobox的点滴(回忆篇)"
 date: 2015-09-23 13:13:39 +0800
 comments: true
 categories: [moobox, work]
@@ -91,3 +91,5 @@ for i in range(1, 6):
 <br>
 
 (...)
+
+

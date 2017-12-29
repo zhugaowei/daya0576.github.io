@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Python中的静态方法和类方法实战分析"
+title: "Python中的静态方法和类方法实例分析"
 date: 2017-07-16 01:59:08 +0800
 comments: true
-categories: ['python']
+categories:
 ---
 
 > 以前准备面试的时候, 有一个经典的python题目, 就是Python里的`静态方法(@staticmethod)`和`类方法(@classmetho)`.    
@@ -11,8 +11,7 @@ categories: ['python']
 <!--more-->   
 <br>  
 
-### 我写的python包
-主要有这么三个功能:   
+### 我写的python包,主要有这么三个功能:   
 
 1. `redirect_url = OAuth2Token.redirect(client_id, redirect_uri)`   
 /authorize接口uri拼接,用于**获取重定向的链接**

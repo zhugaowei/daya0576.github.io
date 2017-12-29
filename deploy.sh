@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/bin/bash --login
 
-# rvm use 1.9.3@octopress
+rvm use 1.9.3@octopress
 
 sudo systemsetup -settimezone Australia/Sydney
 # sudo timedatectl set-timezone Australia/Sydney
 
+rake integrate
 rake generate
 rake deploy
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "你不知道的Python format方法"
+title: "熟悉的陌生人: Python format用法大全~"
 date: 2017-08-10 11:04:03 +0800
 comments: true
 categories: [python, str, format]
@@ -89,7 +89,11 @@ type            ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" |
 `'<'`: 向左对齐    
 `'>'`: 向右对齐   
 `'='`: Forces the padding to be placed after the sign (if any) but before the digits. 意思就是说, 在符号(sign)的后边, 但在数字的前边做填充. 为了实现`+000000120`里, '+'和'120'的补零: `'{:0=+8}'.format(123)`     
-`'^'`: 向中对齐.   
+`'^'`: 向中对齐:    
+
+    `'{:-^30}'.format('Text')`    
+    Out[3]: '-------------Text-------------'    
+
 3. **sign:**    
 这个参数只读数字起效, 它有三个选项:    
 `'-'`: 1 → '1'(默认选项)   

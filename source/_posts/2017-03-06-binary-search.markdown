@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "面试算法题 - 二分查找的变种题"
+title: "面试算法题 - 二分查找搜索范围"
 date: 2017-03-06 12:45:09 +0800
 comments: true
 categories: [binary search, inteview, zaihui]
@@ -40,9 +40,8 @@ def bin_search(val, l, left=None, right=None):
     # 终止条件
     if left > right:
         return -1
-    else:
-        mid = (left + right) // 2
-
+  
+    mid = (left + right) // 2
     if l[mid] > val:
         return bin_search(val, l, left, mid-1)
     elif l[mid] < val:
@@ -113,3 +112,46 @@ if __name__ == '__main__':
 ## 总结
 看起来算法好像很复杂, 但核心的思想其实就那么几句伪代码.    
 还是那句永恒不变的真理: `先想请思路再下笔!`   
+<br>
+
+## 几个月后重写的一个
+``` python
+def binary_search_l(l, v):
+    left, right = 0, len(l) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        if l[mid] < v:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    if l[left] == v:
+        return left
+
+
+def binary_search_r(l, v):
+    left, right = 0, len(l) - 1
+
+    while left <= right:
+        mid = (left + right) // 2
+        if l[mid] <= v:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    if l[right] == v:
+        return right
+
+
+def range_search(l, v):
+    return binary_search_l(l, v), binary_search_r(l, v)
+
+
+if __name__ == '__main__':
+    print(range_search(A, 7))
+```
+
+
+
+
