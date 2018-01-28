@@ -16,6 +16,82 @@ categories: [work, hypers]
 <br>
 <br>
 
+
+
+
+# 第四十四周 / 四十五周 (15 January 2018)
+<p></p> 
+### 完成的工作总结:
+1. **TDD**: TDD初尝甜头. 先写测试再开发, 确实大大提高了效率, 并保证了代码质量. <br>   <img style="max-height:160px" class="lazy" data-original="/images/blog/170325_hypers_summary/week44_pytest.png">  
+2. **单元测试**: 单元测试的维护一直是个很头疼的问题. 上周终于抽空实现了之前构思的解决方案, 就在测试环境每次构建时执行单元测试并发送邮件, 如果失败就不去重启container.   <br> <img style="max-height:240px" class="lazy" data-original="/images/blog/170325_hypers_summary/week44_unittest.png">    
+3. **VIM**: 很难想象在两次尝试和放弃之后, 我竟然终于慢慢地习惯并开始享受用vim写代码. 个人感觉VIM这么多年保持强大生命力的原因: 一是无与伦比的可定制化, 二是永无止境的学习周期, 上周沉浸在阅读<Learn Vimscript the Hard Way>中, 不断汲取新知识的感觉真的是程序员的*点.<br>     <img style="max-height:200px" class="lazy" data-original="/images/blog/170325_hypers_summary/week44_vim.png">    
+4. **<The Clean Coder>**: 不管大学时最令我不屑并觉得无趣的软件工程/项目管理课程, 还是某个下午抽风在图书馆看的<代码简洁之道>, 其实对我的影响其实十分深远. 最近开始在读的<The Clean Coder>也是令人感触颇深. 我们都会遇到让人觉得很不靠谱的程序员和专业有职业素养的程序员, 那到底是哪些因素决定了一个人, 看作者以自己的亲身经历一一道来还是挺有启发的.    # TODO: 写一篇blog记录自己的读后感.   
+<p></p>
+### 个人感想  
+1. **毅力**: 去年定了好多计划, 却被自己的惰性完全打败, 最后陷入自责里无法自拔. 但上周二突发奇想下班后在寒风中一路跑到了北外滩, 第二天竟然罕见的早起了. 突然间感悟到**毅力这种东西是不是也是完全可以自己锻炼并提升**的呢? 
+2. **坚持**: 是一直悔恨自责懒惰的自己, 还是尝试用各种方法慢慢的去改变自己. “Be like a postage stamp — stick to one thing until you get there.”
+<br><img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week44_plan.png"> 
+3. **XMind**: 思维导图真的是个好东西, 自己对图形化的展现形式还是更加敏感一点. 下周可以深入一点学习一下这个软件.   
+<br>
+<br>
+---
+<br>
+<br>
+
+
+
+# 第四十二周 / 四十三周 (02 January 2018)
+<p></p> 
+### 完成的工作总结:
+1. **fix bugs**: 两周都在陆陆续续修bug.. 这个延期很久的**新版本**在下周, 终于终于要发布了. 希望一切顺利吧.. 但人的天性就是容易犯错误, 所以寻找有效的途径或工具, 帮助避免潜在的问题才是王道.   
+2. **fix 线上的bug..**: 今年刚开始就遇到了一个线上的bug, 批量导入创建XX时, 每个XX和自定义属性的对应关系混乱了. 也不知道是以前的代码写的太晦涩了, 还是因为自己对代码不够熟悉, 看了两三个小时才搞定, 真的是痛苦 :(    
+之后看代码的时候, 还是要整理思路到笔记里, 这样每次需要解决问题时, 才能快速的获取思路. 就像DP一样, never repeat yourself.    
+3. **学习**: 最近上班没事情干时喜欢看看源码, 并画出流程图, 例如看Werkzeug - run_simple的流程:    <img style="max-height:200px" class="lazy" data-original="/images/blog/170325_hypers_summary/week43_Werkzeug.jpg">    
+感觉未来还是要找一个MacOS上的流程图工具. 虽然创建时会耗费更多的时间, 但是对于未来的修改和维护的好处还是显而易见的.   
+4. **提交PR**: 上周给`pypinyin`库提交了一个PR. 说实话被它**完善的单元测试, 代码规范和文档**震撼到了. 再一对比每天工作的开发, 感觉心里挺不是滋味的..<br>     <img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week43_pypinyin.png">   
+<p></p>
+### 个人感想  
+1. **2018学习目标**: 阅读源码/官方文档 + 读书 + 算法加强. <br>     但是..重点还是如何去有效执行(`The best time to plant a tree is 20 years ago. The second best time is now.`). 例如利用打卡的app监督自己🤔🤔🤔. <br> 
+**初步计划:**   
+
+    - 睡前看书
+    - 上班空闲时看看优秀源码, 最好能给一些项目写写PR, 或参与到开发中.
+    - 其余时间在家看看算法, 用app统计了一下, 发现在家的时间真TM多, 还是要好好利用起来.<br>   
+    - ...    
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170325_hypers_summary/week43_time.jpg">  
+<br>
+<br>
+---
+<br>
+<br>
+
+
+
+
+
+
+# 第四十一周 (25 December 2017)
+<p></p> 
+### 完成的工作总结:
+1. **fix bugs**: 大多数还是业务细节上理解偏差的一些bug, 修起来也都很快. 但主要是**心疼我们的测试组**, 公司规模越来越大, 但测试还是全靠人力, 说实话挺不科学, 而且作为一个开发, 有一股深深的羞愧感.   
+2. **Oracle数据库**: 公司新接了客户(XX), 但要求使用Oracle数据库. 说实话挺头疼的, 因为感觉oracle还是有些不人性, 只能在本地写好Dockerfile, 调试成功后, 直接部署到测试环境. 过程虽然有些波折, 但至少结果目前还算成功.    
+<p></p>
+### 个人感想  
+1. **同事离职**: 一个看了四五个月机器学习的同事, '明目张胆'的找了一两个月的工作后终于要离职了. 不明白的事情是:   
+
+    - 公司对一个毫无作为的员工百般容忍, 当勤勤恳恳的员工提加薪时, 却显得有一丝吝啬. 
+    - 为什么会有这样的程序员, 写代码**从来不交流**, 实现了功能便万事大吉? 不管他觉得自己写的再怎么好, 脱离了项目原来的体系, 可读性和可维护性都是灾难级别的, 这样长远看来真的只是帮倒忙.    自己用尽全力, 将房间打扫的干干净净, 却有人随手乱认垃圾, 你说生不生气.     
+要是他一直找不到新工作, 就这么混下去, 可能离开的人就是我了(╯﹏╰).    
+2. **新年快乐**: 连着两年元旦跨年和春节都一个人在异国他乡啃着薯片喝着啤酒度过. 今年独自跨年, 心中竟没有一丝的波澜.    
+3. **碎屏**: iPad不小心调到笔记本的屏幕上了, 小小的失误, 4000大洋就没了. 但当不幸发生时, 除了发出来让大家开心开心, 还能做些什么呢?     <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week41_screencrash.jpg">
+<br>
+<br>
+---
+<br>
+<br>
+
+
+
 # 第三十九周/第四十周 (11 December 2017)
 <p></p> 
 ### 完成的工作总结:
@@ -25,8 +101,8 @@ categories: [work, hypers]
     - 重写了从HWA/HMA批量导入活动(事件).
     - 调用外部API(其他产品)时, 统一用一个方法封装, 并加上详细的log信息.  
     - 艾瑞对外api的整理 & postman的自动化测试.   
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_postman.png">
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_postman2.jpg">
+<img style="max-height:200px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_postman.png">
+<img style="max-height:150px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_postman2.jpg">
     - Django REST框架的源代码阅读和整理.    
       <img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_rest.jpg">
 2. **我是做什么的?**:     经常被人问起这么一个问题: 你是做什么的? 最开始的时候, 我竟然会一时语噎, 于是我慢慢开始思考, 我到底是干什么的?    
@@ -44,7 +120,7 @@ categories: [work, hypers]
 2. **提前做计划**: 上两周开始尝试在行动前, 做好完备的计划. 计划好每天, 每个小时做什么. 仅仅将todo list中的事一件件消灭的**成就感**, 让自己事半功倍.   
 3. **意义**: 说实话, 最近工作并不是很开心. 慢慢会陷入思考工作&人生意义的漩涡. 放空的双眼, 连写出的代码都是绝望的.
 4. **🎄Happy Xmas!**   
-<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_Xmas.jpg">
+<img style="max-height:300px" class="lazy" data-original="/images/blog/170325_hypers_summary/week39_Xmas.jpeg">
 <br>
 <br>
 ---
@@ -564,8 +640,7 @@ REST是个好东西, 因为百分之九十的接口都是对一个特定资源�
 <p></p>
 ### 给下周的自己一些建议
 1. **公司对程序员的核心吸引力?**: 今天在网上看到说什么无限零食, 办公环境对程序员都是很肤浅的吸引. 非常赞同, 因为最核心是吸引力, 个人觉得还是 给力的同事 和 给力的项目.    
-希望有一天也能像drinksober一样挑起大梁, 一起把项目打造成自己喜欢满意的样子.   
-<img style="max-height:200px" class="lazy" data-original="/images/blog/170325_hypers_summary/week9_huang.JPG">    
+希望有一天也能像drinksober一样挑起大梁, 一起把项目打造成自己喜欢满意的样子.
 <br>
 <br>
 ---

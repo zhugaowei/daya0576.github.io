@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "排序算法总结"
+title: "排序算法总结(Python实现附带思路)"
 date: 2017-06-11 00:04:35 +0800
 comments: true
 categories: [python, algorithm]
@@ -124,3 +124,5 @@ if __name__ == '__main__':
 ```
 <img class="lazy" data-original="/images/blog/170610_sorting/result.png">
 <br>
+
+

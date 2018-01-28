@@ -25,7 +25,7 @@ footer: true
 <br>
 
 
-> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Remember the good times, 和web有关的点点滴滴:</h2>
+<!--> <h2 style="border-bottom: 1px solid #ddd; position: relative; margin-bottom: 6px; margin-top: 0px"> Remember the good times, 和web有关的点点滴滴:</h2>
 
 > <a target='_blank' href="http://m.unsw.co">16年 《COMP9041作业, 仿Facebook的社交网站》</a>   
 
@@ -44,5 +44,5 @@ footer: true
 > <a target='_blank' href="http://www.changchen.me/love/fresh/">12年 《大一网页前端的实习, 那个切图拼像素的时代》</a>    
 
 <br><br>
-
+-->
 

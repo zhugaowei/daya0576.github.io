@@ -90,7 +90,8 @@ type            ::=  "b" | "c" | "d" | "e" | "E" | "f" | "F" | "g" | "G" | "n" |
 `'>'`: 向右对齐   
 `'='`: Forces the padding to be placed after the sign (if any) but before the digits. 意思就是说, 在符号(sign)的后边, 但在数字的前边做填充. 为了实现`+000000120`里, '+'和'120'的补零: `'{:0=+8}'.format(123)`     
 `'^'`: 向中对齐:    
-
+    
+    **举例**   
     `'{:-^30}'.format('Text')`    
     Out[3]: '-------------Text-------------'    
 
