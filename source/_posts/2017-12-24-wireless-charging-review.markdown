@@ -3,7 +3,7 @@ layout: post
 title: "iPhone无线充电底座选购心路历程"
 date: 2017-12-24 20:20:56 +0800
 comments: true
-categories: 
+categories: [apple, wireless charging]
 ---
 
 > 换新手机时, 有个不大不小的诱惑就是无线充电技术, 少一步插线的步骤, 其实对体验还是有很大的提升的. 用这篇文章, 尝试记录一下我的无线充电器选购心路历程:   
@@ -63,6 +63,17 @@ categories:
 
 果断拔草:    
 <img style="max-height:500px" class="lazy" data-original="/images/blog/171212_three_wireless_chargers_review/mophie2.jpg">
+<br><br>
+
+
+
+# Update, 使用两个月后...   
+###Mophie的缺点:
+
+- 底座已经完全没有了粘性, 稍微有些角度, iPhone便可能滑下.    
+- 手机稍微没有中心在底座上, 便充不了电.   
+
+敲重点!! 或许底盘更大的Belkin无线充电是个更好的选择呢~    
 
 
 

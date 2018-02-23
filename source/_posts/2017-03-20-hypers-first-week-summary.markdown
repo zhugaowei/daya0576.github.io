@@ -17,6 +17,22 @@ categories: [work, hypers]
 <br>
 
 
+# 第四十六周 (29 January 2018)
+<p></p> 
+### 完成的工作总结:
+1. **用户管理**: 用户管理界面的api编写, 前后端分离后其实就是User和UserGroup的retrieve/update/create/list方法. 还是用的TDD开发, 感觉写出的代码稳稳的.    
+2. **测试提速**: 说起TDD, 测试的执行速度就变得格外的关键了. 看了一些文档和博客, 提升了一下单元测试的速度([博客](/blog/20180204/djangodan-yuan-ce-shi-da-ti-su-300s-5s/)).   
+3. **添加出错接口的测试**: 因为修改了一个通用的方法, 导致测试环境的一个接口(用户视图)返回的数据不太正确. 于是添加了用户视图的单元测试(考虑了共享Account和Campaign的情况.), 虽然编写测试花费了一个小时左右, 但个人感觉是很值得的.   
+4. **年会**: 抽中了四等价, jd的五百块充值卡, 但还是超级喜欢公司logo定制的交通卡, 大爱😍😍😍: <img style="max-height:240px" class="lazy" data-original="/images/blog/170325_hypers_summary/week46_anniversary.png">    
+<p></p>
+### 个人感想  
+1. **跑步🏃**: 周二都穿好跑鞋准备放飞自我的时候, 一周都是雾霾..我也是醉了, 生气.  
+2. **每周鸡汤**: If you are loser — you will lose no matter what
+<br>
+<br>
+---
+<br>
+<br>
 
 
 # 第四十四周 / 四十五周 (15 January 2018)

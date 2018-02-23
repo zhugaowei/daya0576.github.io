@@ -22,12 +22,13 @@ categories: [pycharm, shortcut]
 # 快速搜索
 <p></p>
 ### 1. Find in Path...
-`Ctrl+Shift+F`: 在整个项目中 或 指定目录里 进行**全局搜索**:      
+`Ctrl+Shift+F/Ctrl+Shift+R` | `⇧⌘F/⇧⌘R`: 
+在整个项目中 或 指定目录里 进行**全局搜索/替换**:      
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/0.png">       
 <br>
 
 ### 2. Find Action by Name
-`Ctrl+Shift+A`: text --> 执行一些action(git pull/commit等等等等), 潜力无限, 有待开发.   
+`Ctrl+Shift+A` | `⇧⌘A`: text --> 执行一些action(git pull/commit等等等等), 潜力无限, 有待开发.   
 <img style="max-height:300px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/2.png">       
 <br>
 
@@ -38,7 +39,9 @@ categories: [pycharm, shortcut]
 <br>
 
 ### 4. Main menu | Navigate | File...
-`Ctrl+N`: 快速根据名字找到文件, 比双击shift快很多.    
+`Ctrl+N` | `⌘O`: 查找类Class   
+`Ctrl+Shift+Alt+N` | `⌥⌘O`: 查找所有Symbol(不知道如何解释, 包括变量, 表名, 等等)   
+`Ctrl+Shift+N` | `⇧⌘O`: 查找文件或目录(比双击shift快很多)   
 <img style="max-height:150px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/search_file.jpg">     
 <img style="max-height:150px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/search_file.png">     
 但这个搜索文件有个很尴尬的地方, 模糊搜索的时候一定要带斜杠来分割文件夹, 我发邮件给了客服, 竟然刚刚实现这个功能, 下个版本就有咯, cheers~   
@@ -53,10 +56,11 @@ categories: [pycharm, shortcut]
 <img style="max-height:200px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/3.png">     
 <br>
 
-### 2. Insert Live Template...
-`Ctrl+Alt+Shift+J`: 插入一段提前配置好的**代码模板**!    
-e.g. `import ipdb; ipdb.set_trace(context=20)`...      
-<img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/5.png">     
+### 2. Code | Insert Live Template....
+`Ctrl+Alt+Shift+J` | `⌘J`: 插入一段提前配置好的**代码模板**!    
+e.g. `import ipdb; ipdb.set_trace(context=20)`...   
+<img style="max-height:250px" class="lazy" data-original="/images/blog/170606_pycharm_shortcut/5.png">   
+[https://www.jetbrains.com/help/pycharm/creating-code-constructs-by-live-templates.html](https://www.jetbrains.com/help/pycharm/creating-code-constructs-by-live-templates.html)
 <br><br>
 
 
