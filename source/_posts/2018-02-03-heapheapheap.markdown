@@ -7,6 +7,7 @@ categories: [算法导论, algorithm, heap]
 ---
 
 > 第一次懵懵懂懂接触Heap是在学信息检索的时候, 讲到用min heap直接在disk上对posting lists做合并操作.   
+<img style="max-height:250px" class="lazy" data-original="/images/blog/180203_heap/n-way-merge.png">   
 今天看了<算法导论(3rd)>第六章堆排序, 感触颇深, 以此博客记录一下.    
 <!--more-->
 <br><br>
