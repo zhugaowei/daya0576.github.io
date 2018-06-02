@@ -2,7 +2,7 @@
 layout: page
 title: "about"
 date: 2014-02-18 16:28
-comments: false
+comments: true
 sharing: true
 footer: true
 ---
@@ -20,7 +20,8 @@ footer: true
 **Email:**    
 &nbsp;&nbsp;&nbsp;&nbsp;`echo ZGF5YTA1NzZAZ21haWwuY29tCg== | base64 -d`    
 **Career:**   
-&nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 ~ now: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
+&nbsp;&nbsp;&nbsp;&nbsp;- 03.2017 ~ 04.2018: Python Back-End Web Developer in [HyperS](http://www.hypers.com/)   
+&nbsp;&nbsp;&nbsp;&nbsp;- 04.2018 ~ now: SRE in Ant Financial.    
 <br>
 <br>
 

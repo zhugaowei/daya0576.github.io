@@ -8,7 +8,7 @@ categories: [git]
 
 > 最近YouTube上看到Gitlab频道的一个视频: [Git Internals - How Git Works - Fear Not The SHA!](https://www.youtube.com/watch?v=P6jD966jzlk)   
 感觉打开了新世界的大门🤩😍🤣. 用这篇博客记录一下感悟和思考, 希望你看完之后, 对下边这张图会有更深的理解.    
-<img style="max-height:320px" class="lazy" data-original="/images/blog/180315_git_internal/6993E92A-CB86-4BB9-9063-F3134BDC94D3.png">
+<img style="max-height:250px" class="lazy" data-original="/images/blog/180315_git_internal/6993E92A-CB86-4BB9-9063-F3134BDC94D3.png">
 <!--more-->
 <br><br>
 
