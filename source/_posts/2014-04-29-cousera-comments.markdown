@@ -6,8 +6,8 @@ comments: true
 categories: [study, python, cousera]
 ---
 
->  《An Introduction to Interactive Programming in Python》
-
+>《An Introduction to Interactive Programming in Python》
+**这门课程的大作业是随机五个人互评**。  
 突然想去看看之前mini_project别人给我的评价    
 不看不知道  一看吓一跳    
 感动的都要哭了 T ^ T   
@@ -15,21 +15,27 @@ categories: [study, python, cousera]
 
 <!--more-->
 
-- Mini-project # 1 - Rock-paper-scissors-lizard-Spock   
+<br><br>
+
+# Mini-project # 1 - Rock-paper-scissors-lizard-Spock   
 ![ico_topitme](\images\blog\140430_cousera\3.png)   
 ![ico_topitme](\images\blog\140430_cousera\4.png)
+<br><br>
 
-- Mini-project # 2 - "Guess the number" game"   
+# Mini-project # 2 - "Guess the number" game"   
 ![ico_topitme](\images\blog\140430_cousera\5.png)     
 ![ico_topitme](\images\blog\140430_cousera\6.png)   
 ![ico_topitme](\images\blog\140430_cousera\7.png)     
+<br><br>
 
-- Mini-project # 4 - "Pong"   
+# Mini-project # 4 - "Pong"   
 ![ico_topitme](\images\blog\140430_cousera\4_1.png)     
 ![ico_topitme](\images\blog\140430_cousera\4_2.png) 
+<br><br>
+
+---
+
+**":-) All the best."**
+**继续加油   以后改作业也要更认真一点了**
 
 
-
-
-####":-) All the best."
-####继续加油   以后改作业也要更认真一点了

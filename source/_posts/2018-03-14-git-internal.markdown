@@ -56,7 +56,7 @@ SHA1一共有40位, 前两位作为文件夹, 一般使用前八位作为shortcu
 **上图的文件(9daeaf)是什么呢?**   
 `git cat-file -p 9daeaf` → 文件foo.txt的内容
 **blob怎么知道是哪个path?**   
-文件名和blob的对应关系保存在 `.git/index`中. 
+文件名和blob的对应关系保存在 `.git/index`中.    
 <img style="max-height:200px" class="lazy" data-original="/images/blog/180315_git_internal/3ADA3565-0DC7-461A-B637-770264553DE6.png">
 
 ###git commit
