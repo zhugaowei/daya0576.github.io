@@ -312,7 +312,7 @@ end
 
 ## 如何处理multi-dimension classification的问题
 意思就是进行多次的二次聚类:    
-<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\share.jpg">     
+<img style="max-height:300px" class="lazy" data-original="/images/blog/180707_cousera_ml/share.jpg">     
 
 ## Overfitting, 意思就是说过度的拟合(没看懂, 放弃了)
 
