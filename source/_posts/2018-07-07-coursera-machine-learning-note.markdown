@@ -271,11 +271,9 @@ Logistic Function的值其实还有另外一个含义: 代表输出结果为1的
 
 ### Cost function:
 <img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-25.png">     
-将上面的两个cost function合并为一个:    
-<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml/cost_function.png">     
 
 ## Simplified Cost Function & distance
-和第二周的regression类似, 总的distance就等于:
+将上面的两个cost function合并为一个, 和第二周的regression类似, 总的distance就等于:
 <img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml/distance.png">     
 
 distance求导(说实话没看懂, 视频中只给了结果, 可能推到比较复杂一些):
