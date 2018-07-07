@@ -31,7 +31,7 @@ categories: [note, coursera]
 ## 机器学习算法分类:
 ### Supervised Learning
 - `regression`: 在连续的数据中预测       
-	<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage.png)">      
+	<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage.png">      
 - `classification`: 最大的区别在于预测的结果, 肯定为yes or no, 或者一个集合内, e.g. 红, 黄, 蓝, 绿  
 	<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-1.png">     
 
@@ -53,7 +53,7 @@ a fancier version of an average: 个人理解用平方将个别差异放大.
 (没看懂, 希望之后会提及) → 求导时会多出一个2, 刚好抵消了.   
 
 linear & cost function
-<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-3.png)">        
+<img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-3.png">        
 所以目标就是找到cost function的最小值: 
 <img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-4.png">     
 
@@ -271,7 +271,7 @@ Logistic Function的值其实还有另外一个含义: 代表输出结果为1的
 
 ### Cost function:
 <img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml\DraggedImage-25.png">     
-将上面的两个cost function合并为一个:
+将上面的两个cost function合并为一个:    
 <img style="max-height:300px" class="lazy" data-original="\images\blog\180707_cousera_ml/cost_function.png">     
 
 ## Simplified Cost Function & distance
